@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Enhancing Citrix MCS and Microsoft Azure – Part 3: Managed Identities
+title: "Enhancing Citrix MCS and Microsoft Azure – Part 3: Managed Identities"
 permalink: "/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/"
 subtitle: Adding Managed Identities to Citrix MCS Provisioned workloads in Microsoft Azure
 cover-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png
@@ -9,7 +9,6 @@ share-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-i
 tags: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
 categories: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
 ---
-
 
 # Enhancing Citrix MCS and Microsoft Azure – Part 3: Managed Identities
 

@@ -10,8 +10,6 @@ tags: [Citrix, CVAD, Azure, Session Management, Windows]
 categories: [Citrix, CVAD, Azure, Session Management, Windows]
 ---
 
-# Citrix Session Management Policies
-
 Session management and timeout policies in Citrix platforms are often a point of confusion and head scratching. This has extended out slightly to Azure Virtual Desktop with the introduction of Windows 10 multi-session. This is a quick post around the options and configuration points for the different OS types.
 
 As a rule of thumb, when dealing with a standard Citrix deployment, there are two operating systems types when we think about Windows.

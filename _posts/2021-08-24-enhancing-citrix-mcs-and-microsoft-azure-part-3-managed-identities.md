@@ -10,8 +10,6 @@ tags: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
 categories: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
 ---
 
-# Enhancing Citrix MCS and Microsoft Azure – Part 3: Managed Identities
-
 This is the third part of an ongoing series around enhancing Citrix MCS within Azure. Part one focused on optimizing identity disk costs via [PowerShell and Azure Automation](https://jkindon.com/2020/10/27/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/) which is somewhat redundant now given that MCS does this natively (though this can still be handy to bring an environment back into line). The second tackled enabling [Accelerated Networking with PowerShell and Azure Automation](https://jkindon.com/2020/11/10/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/). This post addresses an edge use case, but a legitimate one nonetheless: User-Assigned Managed Identities.
 
 A managed identity as [described by Microsoft](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview): A common challenge for developers is the management of secrets and credentials used to secure communication between different components making up a solution. Managed identities eliminate the need for developers to manage credentials. Managed identities provide an identity for applications to use when connecting to resources that support Azure Active Directory (Azure AD) authentication. Applications may use the managed identity to obtain Azure AD tokens. For example, an application may use a managed identity to access resources like Azure Key Vault where developers can store credentials in a secure manner or to access storage accounts.

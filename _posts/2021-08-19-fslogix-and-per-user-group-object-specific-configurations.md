@@ -10,8 +10,6 @@ tags: [FSLogix, CVAD, Windows, Profiles, Policy]
 categories: [FSLogix, CVAD, Windows, Profiles, Policy]
 ---
 
-# FSLogix and Per User/Group Object Specific Configurations
-
 Firstly, I simply could not find an image that represented what I was talking about here. So I stuck a picture of a container at the top…. I amuse myself. Anyhoo…
 
 FSLogix has been heralded for it’s simplicity in profile management and administrative “lack of” required configuration, Turn it on, walk away, and for the most part, you are done.

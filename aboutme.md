@@ -1,16 +1,13 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: A little about myself
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+A solutions Architect by day focused on the design and implementation of Microsoft, Citrix and VMware virtualisation technologies, specifically in relation to EUC and Mobility.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+Currently I work for the awesome crew at [Insentra](https://www.insentragroup.com/au/) and enjoy life on the South Coast of NSW
 
-What else do you need?
+I am lucky enough to be a part of the Citrix CTP community and a Microsoft MVP in Enterprise Mobility
 
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Community is **King**, you can find an awesome community home at [The world of EUC slack channel](https://worldofeuc.github.io/Website/)

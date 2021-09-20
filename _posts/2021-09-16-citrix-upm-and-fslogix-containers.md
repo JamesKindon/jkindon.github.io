@@ -10,8 +10,6 @@ tags: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]
 categories: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]
 ---
 
-# Citrix UPM and FSLogix Containers
-
 Too. Many. Times. That’s how I am starting this article. And because I love bullets, here is some clarity on that statement:
 
 *  Too many times I have seen environments fall on their heads due to bad profile management decisions

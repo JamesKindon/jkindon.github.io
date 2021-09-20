@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Citrix UPM and FSLogix Containers
-permalink: "citrix-upm-and-fslogix-containers/"
+permalink: "/citrix-upm-and-fslogix-containers/"
 subtitle: Delving into the when, why and why not of Citrix UPM and FSLogix Profile Containers
 cover-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
 thumbnail-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg

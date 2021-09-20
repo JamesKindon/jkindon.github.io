@@ -3,12 +3,14 @@ layout: post
 title: "Citrix MCS and Azure Ephemeral Disks"
 permalink: "/citrix-mcs-and-azure-ephemeral-disks/"
 subtitle: Baseline testing Citrix MCS and Azure Ephemeral Disks
-cover-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
+#cover-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
 thumbnail-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
 share-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
 tags: [Citrix, CVAD, Azure, Windows, MCS, Ephemeral Disks, Provisioning]
 categories: [Citrix, CVAD, Azure, Windows, MCS, Ephemeral Disks, Provisioning]
 ---
+
+[![Supported Dsv3 Spec Machines (Ephemeral OS Disk)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png)
 
 I wrote previously about [Citrix MCS and Shared Image Galleries](https://jkindon.com/2021/07/11/citrix-mcs-and-azure-shared-image-gallery/), with a focus being on the enablement of Ephemeral Disks in Microsoft Azure. Ephemeral disks are a massive addition to the MCS toolkit, potentially having some major impacts on Azure consumption and performance.
 
@@ -43,8 +45,6 @@ In a Microsoft world, the use of Ephemeral Disks is typically associated with se
 The first thing you want to be confirming is that your [instance series and size supports Ephemeral Disks](https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series).
 
 [![Supported Dsv3 Spec Machines (Ephemeral OS Disk)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_Supported.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_Supported.png)
-{:.image-caption}
-*Supported Dsv3 Spec Machines (Ephemeral OS Disk)*
 
 The size of your virtual machine will directly impact the size of both your available Temp SSD and VM Cache. For machines deployed in Azure, you are typically going to be working on a 127GiB OS Disk, which equates to a P10 Premium Disk.
 
@@ -54,14 +54,10 @@ This means that for an Ephemeral disk to be realistic, you need a VM that has a 
 *  A 200GiB Cache, more than OK to slot in our 127 GiB OS Disk
 
 [![Standard_D8s_v3 sizing]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_Size.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_Size.png)
-{:.image-caption}
-*Standard_D8s_v3 sizing*
 
 If I were to play in the DSv2-series, a minimum instance type of Standard_DS3_v2 would be required as it has a 172 GiB cache.
 
 [![Standard_DS3_v2 sizing]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_Size2.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_Size2.png)
-{:.image-caption}
-*Standard_DS3_v2 sizing*
 
 Not all deployments will build their images natively in Azure. Some customers will build an image on-prem and upload it to Azure, resulting in potentially a smaller OS disk size, which results in a smaller managed disk, resulting in smaller IOPS capability. Ephemeral Disks may well offer superior performance at a reduced cost, however, there may be an uplift in instance sizes to support a cache big enough to house the disk. Each environment is going to be unique.
 
@@ -82,26 +78,18 @@ You will need to deploy a Citrix Catalog with a custom provisioning scheme via P
 *  We must specify _UseEphemeralOsDisk_
 
 [![Custom ProvScheme including Ephemeral Disks]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/CustomProvScheme.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/CustomProvScheme.png)
-{:.image-caption}
-*Custom ProvScheme including Ephemeral Disks*
 
 When your machines are booted, all things being well, you will find that your VM will show that your Ephemeral OS disk stores the OS Cache.
 
 [![Ephemeral disk enabled and active]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_DiskEnabled.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_DiskEnabled.png)
-{:.image-caption}
-*Ephemeral disk enabled and active*
 
 Your Resource Group will no longer show an OS disk object
 
 [![No more OS disk]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_ResourceGroup.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_ResourceGroup.png)
-{:.image-caption}
-*No more OS disk*
 
 You will also find that your OS is represented as a standard HDD LRS disk (this is normal)
 
 [![Ephemeral disks display as Std HDD]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_OSDisk_StdHDD.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/Eph_OSDisk_StdHDD.png)
-{:.image-caption}
-*Ephemeral disks display as Std HDD*
 
 ## Performance Baselining with fio
 
@@ -150,44 +138,28 @@ Leee provided some nice guidance on IOmeter based on some information that Jim M
 Below is the VDI spec for Iometer:
 
 [![Iometer VDI spec as per Jim Moyle]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_vdispec.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_vdispec.png)
-{:.image-caption}
-*Iometer VDI spec as per Jim Moyle*
 
 And below is the spec we used to throw against the machine (8 workers)
 
 [![8 node worker specification]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_workerspec.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_workerspec.png)
-{:.image-caption}
-*8 node worker specification*
 
 Now here is where things get fun. I ran this spec against both machines, AAE-VM-SIG01 uses a 127 GiB Premium P10 Disk and AAE-VM-ED01 is running with an Ephemeral Disk
 
 [![8 worker configuration running against the P10 Disk]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_P10_Running.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_P10_Running.png)
-{:.image-caption}
-*8 worker configuration running against the P10 Disk*
 
 [![8 worker configuration running against the Ephemeral Disk]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_Eph_Running.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_Eph_Running.png)
-{:.image-caption}
-*8 worker configuration running against the Ephemeral Disk*
 
 The results are obvious, the Ephemeral once again punished the P10\. Below is a breakdown of the IOPS across both disks
 
 [![P10 IOPS per second]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_P10_IOPS.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_P10_IOPS.png)
-{:.image-caption}
-*P10 IOPS per second*
 
 [![Ephemeral IOPS per second]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_Eph_IOPS.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_Eph_IOPS.png)
-{:.image-caption}
-*Ephemeral IOPS per second*
 
 Below is a breakdown of the response times across both disks
 
 [![P10 response time]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_P10_Response.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_P10_Response.png)
-{:.image-caption}
-*P10 response time*
 
 [![Ephemeral response time]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_Eph_Response.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/iometer_Eph_Response.png)
-{:.image-caption}
-*Ephemeral response time*
 
 A summary of results is outlined below:
 

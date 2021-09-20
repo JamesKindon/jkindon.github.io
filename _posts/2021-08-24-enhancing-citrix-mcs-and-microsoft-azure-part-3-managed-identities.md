@@ -3,12 +3,14 @@ layout: post
 title: "Enhancing Citrix MCS and Microsoft Azure – Part 3: Managed Identities"
 permalink: "/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/"
 subtitle: Adding Managed Identities to Citrix MCS Provisioned workloads in Microsoft Azure
-cover-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png
+#cover-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png
 thumbnail-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png
 share-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png
 tags: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
 categories: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
 ---
+
+[![Enhancing Citrix MCS and Microsoft Azure – Part 3: Managed Identities]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.pngg)
 
 This is the third part of an ongoing series around enhancing Citrix MCS within Azure. Part one focused on optimizing identity disk costs via [PowerShell and Azure Automation](https://jkindon.com/2020/10/27/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/) which is somewhat redundant now given that MCS does this natively (though this can still be handy to bring an environment back into line). The second tackled enabling [Accelerated Networking with PowerShell and Azure Automation](https://jkindon.com/2020/11/10/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/). This post addresses an edge use case, but a legitimate one nonetheless: User-Assigned Managed Identities.
 
@@ -33,8 +35,6 @@ You will need, as per the last two articles:
 Once operational, you will see output the same as the other scripts similar to below:
 
 [![Output assigning a managed identity]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/LogOutput.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/LogOutput.png)
-{:.image-caption}
-*Output assigning a managed identity*
 
 ## Scheduling Considerations
 
@@ -43,8 +43,6 @@ The difference with this script is compared to the others, is that we execute ag
 The minimum interval that a schedule can execute on is 1 hour, which was not sufficient, so we deployed 4 schedules, each executing at 15-minute offsets and repeating hourly (Eg. 12:00, 12:15, 12:30, 12:45). This covers the environment sufficiently to ensure all machines have the identity tagged.
 
 [![Multiple Schedules to address Autoscale provisioning]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/Schedules.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/Schedules.png)
-{:.image-caption}
-*Multiple Schedules to address Autoscale provisioning*
 
 ## Summary
 

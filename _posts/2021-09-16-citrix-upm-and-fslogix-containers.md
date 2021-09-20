@@ -3,12 +3,14 @@ layout: post
 title: Citrix UPM and FSLogix Containers
 permalink: "/citrix-upm-and-fslogix-containers/"
 subtitle: Delving into the when, why and why not of Citrix UPM and FSLogix Profile Containers
-cover-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
+#cover-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
 thumbnail-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
 share-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
 tags: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]
 categories: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]
 ---
+
+[![Citrix UPM and FSLogix Containers]({{site.baseurl}}/assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg)]({{site.baseurl}}/assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg)
 
 Too. Many. Times. That’s how I am starting this article. And because I love bullets, here is some clarity on that statement:
 

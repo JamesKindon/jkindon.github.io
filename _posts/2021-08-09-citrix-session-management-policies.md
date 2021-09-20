@@ -3,12 +3,14 @@ layout: post
 title: "Citrix Session Management Policies"
 permalink: "/citrix-session-management-policies/"
 subtitle: Delving into the options for Session Management within CVAD environments
-cover-img: /assets/img/citrix-session-management-policies/time-out.jpg
+#cover-img: /assets/img/citrix-session-management-policies/time-out.jpg
 thumbnail-img: /assets/img/citrix-session-management-policies/time-out.jpg
 share-img: /assets/img/citrix-session-management-policies/time-out.jpg
 tags: [Citrix, CVAD, Azure, Session Management, Windows]
 categories: [Citrix, CVAD, Azure, Session Management, Windows]
 ---
+
+[![Citrix Session Management Policies]({{site.baseurl}}/assets/img/citrix-session-management-policies/time-out.jpg)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/citrix-session-management-policies/time-out.jpg)
 
 Session management and timeout policies in Citrix platforms are often a point of confusion and head scratching. This has extended out slightly to Azure Virtual Desktop with the introduction of Windows 10 multi-session. This is a quick post around the options and configuration points for the different OS types.
 
@@ -36,8 +38,6 @@ In the Citrix world, Citrix Policies driven from either Citrix Studio, or nested
 [![Citrix Policy Settings for Single Session OS - Idle]({{site.baseurl}}/assets/img/citrix-session-management-policies/CtxPol_SessionIdle.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/citrix-session-management-policies/CtxPol_SessionIdle.png)
 
 [![Citrix Policy Settings for Single Session OS - Idle Value]({{site.baseurl}}/assets/img/citrix-session-management-policies/CtxPol_SessionIdleValue.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/citrix-session-management-policies/CtxPol_SessionIdleValue.png)
-{:.image-caption}
-*Citrix Policy Settings for Single Session OS*
 
 Single-Session OS session timer policies via Citrix Policy are user-based policies, meaning that you can target different timer policies to different user groups.
 
@@ -46,8 +46,6 @@ Single-Session OS session timer policies via Citrix Policy are user-based polici
 In the same Citrix world, and to be fair, any delivery platform that utilises Multi-Session OS, Group Policy Objects are available to control session limits. These policies apply to both Server Operating Systems and Windows 10 Multi-Session and are delivered typically at the machine level and as such, may require segmentation of machines via different OU’s or policy filtering. The same policies exist in the user context, however loopback replace processing should always be used, and as such, per user settings in the user context via GPO are not really something I am going into. AppMasking may be an interesting option here to be able to create limits on a per user basis – I have not tested this at the time of writing but will update when I get a chance.
 
 [![GPO Policies for Multi Session OS]({{site.baseurl}}/assets/img/citrix-session-management-policies/GPO.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/citrix-session-management-policies/GPO.png)
-{:.image-caption}
-*GPO Policies for Multi Session OS*
 
 The timeout policies offer a selection or pre-defined values via GPO, however, can be more fine tuned by writing the specific registry key values directly (Thanks James Rankin). The values are written under the following Key: HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\
 
@@ -60,16 +58,12 @@ Citrix Cloud offers a more advanced way of dynamically controlling session timeo
 Firstly, you must set accurate peak and off-peak windows in your Autoscale configurations
 
 [![Autoscale Schedule Configurations]({{site.baseurl}}/assets/img/citrix-session-management-policies/Autoscale_Schedule.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/citrix-session-management-policies/Autoscale_Schedule.png)
-{:.image-caption}
-*Autoscale Schedule Configurations*
 
 NOTE! You may well have differing peak times for Weekdays vs Weekends. Make sure these are accurate.
 
 Then you configure advanced timeouts under the Dynamic Session Timeouts node.
 
 [![Autoscale – Dynamic Session Timeouts]({{site.baseurl}}/assets/img/citrix-session-management-policies/Autoscale_Dynamic.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/citrix-session-management-policies/Autoscale_Dynamic.png)
-{:.image-caption}
-*Autoscale – Dynamic Session Timeouts*
 
 The above example results in the following:
 
@@ -81,8 +75,6 @@ The above example results in the following:
 Active Directory allows configuration of session timeouts on the user account object itself under the sessions tab. These settings are not something I see used often and are overridden by any other value written. These settings are effectively a catchall and apply to any logon for that user that does not have an overriding value.
 
 [![Active Directory User Account Properties]({{site.baseurl}}/assets/img/citrix-session-management-policies/ADProps.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/citrix-session-management-policies/ADProps.png)
-{:.image-caption}
-*Active Directory User Account Properties*
 
 ## Summary
 

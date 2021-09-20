@@ -9,6 +9,7 @@ share-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
 tags: [Citrix, CVAD, Azure, Windows, MCS, Ephemeral Disks, Provisioning]
 categories: [Citrix, CVAD, Azure, Windows, MCS, Ephemeral Disks, Provisioning]
 ---
+
 # Citrix MCS and Azure Ephemeral Disks
 
 ![Citrix MCS and Azure Ephemeral Disks]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png)

@@ -8,6 +8,6 @@ A solutions Architect by day focused on the design and implementation of Microso
 
 Currently I work for the awesome crew at [Insentra](https://www.insentragroup.com/au/) and enjoy life on the South Coast of NSW
 
-I am lucky enough to be a part of the Citrix CTP community and a Microsoft MVP in Enterprise Mobility
+I am lucky enough to be a part of the [Citrix CTP](https://www.citrix.com/en-au/community/ctp/awardees.html) community and a [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/4022079?fullName=James%20Christopher%20Kindon) in Enterprise Mobility
 
 Community is **King**, you can find an awesome community home at [The world of EUC slack channel](https://worldofeuc.github.io/Website/)

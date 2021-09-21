@@ -10,7 +10,7 @@ tags: [Citrix, CVAD, Azure, Windows, MCS, SIG, Provisioning]
 categories: [Citrix, CVAD, Azure, Windows, MCS, SIG, Provisioning]
 ---
 
-[![Azure Shared Image Gallery]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png)
+![Azure Shared Image Gallery]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png)
 
 Citrix MCS is growing constantly in the Azure space, one of the new features made available quietly of late, is the ability to consume the Azure Shared Image Gallery for storing images.
 

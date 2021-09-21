@@ -10,7 +10,7 @@ tags: [FSLogix, CVAD, Windows, Profiles, Policy]
 categories: [FSLogix, CVAD, Windows, Profiles, Policy]
 ---
 
-[![FSLogix and Per User/Group Object Specific Configurations]({{site.baseurl}}/assets/img/fslogix-and-per-user-group-object-specific-configurations/container-1.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/fslogix-and-per-user-group-object-specific-configurations/container-1.png)
+![FSLogix and Per User/Group Object Specific Configurations]({{site.baseurl}}/assets/img/fslogix-and-per-user-group-object-specific-configurations/container-1.png)
 
 Firstly, I simply could not find an image that represented what I was talking about here. So I stuck a picture of a container at the top…. I amuse myself. Anyhoo…
 

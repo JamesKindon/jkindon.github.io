@@ -10,7 +10,7 @@ tags: [Citrix, CVAD, Azure, Windows, MCS, Ephemeral Disks, Provisioning]
 categories: [Citrix, CVAD, Azure, Windows, MCS, Ephemeral Disks, Provisioning]
 ---
 
-[![Supported Dsv3 Spec Machines (Ephemeral OS Disk)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png)
+![Supported Dsv3 Spec Machines (Ephemeral OS Disk)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png)
 
 I wrote previously about [Citrix MCS and Shared Image Galleries](https://jkindon.com/2021/07/11/citrix-mcs-and-azure-shared-image-gallery/), with a focus being on the enablement of Ephemeral Disks in Microsoft Azure. Ephemeral disks are a massive addition to the MCS toolkit, potentially having some major impacts on Azure consumption and performance.
 

@@ -10,7 +10,7 @@ tags: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]
 categories: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]
 ---
 
-[![Citrix UPM and FSLogix Containers]({{site.baseurl}}/assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg)]({{site.baseurl}}/assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg)
+![Citrix UPM and FSLogix Containers]({{site.baseurl}}/assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg)
 
 Too. Many. Times. That’s how I am starting this article. And because I love bullets, here is some clarity on that statement:
 

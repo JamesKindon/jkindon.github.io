@@ -10,7 +10,7 @@ tags: [Citrix, CVAD, Azure, Session Management, Windows]
 categories: [Citrix, CVAD, Azure, Session Management, Windows]
 ---
 
-[![Citrix Session Management Policies]({{site.baseurl}}/assets/img/citrix-session-management-policies/time-out.jpg)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/citrix-session-management-policies/time-out.jpg)
+![Citrix Session Management Policies]({{site.baseurl}}/assets/img/citrix-session-management-policies/time-out.jpg)
 
 Session management and timeout policies in Citrix platforms are often a point of confusion and head scratching. This has extended out slightly to Azure Virtual Desktop with the introduction of Windows 10 multi-session. This is a quick post around the options and configuration points for the different OS types.
 

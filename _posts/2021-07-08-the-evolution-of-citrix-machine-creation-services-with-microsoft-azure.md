@@ -10,6 +10,8 @@ tags: [Citrix, UPM, Profiles, Windows, CVAD, Cloud, Azure]
 categories: [Citrix, UPM, Profiles, Windows, CVAD, Cloud, Azure]
 ---
 
+![The Evolution of Citrix Machine Creation Services with Microsoft Azure]({{site.baseurl}}/assets/img/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/mcs-evolution.png)
+
 There is a lot of constant improvement being executed by the MCS team at Citrix, the release cadence is impressive and the feature enhancements significant. I spend a lot of time in Microsoft Azure with Citrix Cloud with a lot of happy customers. I thought it would be worth to keep a rolling tally of new features with MCS and how it relates to Azure, so that we don't lose sight of how much value add is provided.
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
@@ -73,6 +75,7 @@ It is important to be across the options when designing your delivery platform o
 ## February 2021
 
 | **Feature** | **Detail**
+|---|---|
 | [Support for Azure Gen2 images](https://docs.microsoft.com/en-us/azure/virtual-machines/generation-2) | You can now provision managed disks using Gen2 VMs in Azure environments to improve boot time performance
 | [Extended support for Citrix Managed Azure](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/#citrix-managed-azure) | Citrix Managed Azure is now available in the following Citrix Virtual Apps and Desktops service editions: Standard for Azure, Advanced, Premium, and Workspace Premium Plus
 | [Support for placing master images in Azure Shared Image Gallery](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-master-image) | Studio now provides you an option to place master images in Azure Shared Image Gallery (SIG). SIG is a repository for managing and sharing images. It lets you make your images available throughout your organization. <br><br>Citrix recommend that you store a master image in SIG when creating large non-persistent machine catalogs because doing that enables faster reset of VDA OS disks
@@ -82,25 +85,31 @@ It is important to be across the options when designing your delivery platform o
 ## January 2021
 
 | **Feature** | **Detail**
+|---|---|
 | [Azure Shared Image Gallery](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html#configure-shared-image-gallery) | Citrix Virtual Apps and Desktops service supports Azure Shared Image Gallery as a published image repository for MCS provisioned machines in Azure. Administrators have the option of storing an image in the gallery to accelerate the creation and hydration of OS disks from the master image. This process improves the boot and application launch times for non-persistent VMs
 
 ## December 2020
 
 | **Feature** | **Detail**
+|---|---|
 | [Standard SSD disk type support for Azure](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-master-image) | Studio now adds support for standard SSD disk type. Azure standard SSDs are a cost-effective storage option optimized for workloads that need consistent performance at lower IOPS levels
 
 ## October 2020
 
 | **Feature** | **Detail**
+|---|---|
 | [Use direct upload for Azure managed disks](https://azure.microsoft.com/en-us/blog/introducing-the-preview-of-direct-upload-to-azure-managed-disks/) | Direct upload eliminates the need to attach an empty managed disk to a virtual machine. Directly uploading to an Azure managed disk simplifies the workflow by enabling you to copy an on-premises VHD directly for use as a managed disk. Supported managed disks include Standard HDD, Standard SSD, and Premium SSD 
 | [Single Resource Group in Azure](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html) | You can now create and use a single Azure resource group for updating and creating catalogs in Citrix Virtual Apps and Desktops. This enhancement applies to both the full scope and narrow scope service principals. The previous limit of 240 VMs per 800 managed disks per Azure Resource Group has been removed. There is no longer a limit on the number of virtual machines, managed disks, snapshots, and images per Azure Resource Group
 
 ## September 2020
 
 | **Feature** | **Detail**
+|---|---|
 | Support for a new machine type | This release adds support for the NV v4 and the DA v4 series of AMD machines, when configuring Premium Disks for a machine catalog
 
 ## August 2020
 
 | **Feature** | **Detail**
+|---|---|
 | [Improved boot performance for Azure system disks](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html#improve-boot-performance) | This release supports improved boot performance for Citrix Cloud implementations using Azure when MCSIO is enabled. With this support, you can retain the system disk. This provides the following advantages: <br>- VMs and applications now boot and launch with performance similar to how the golden image is served <br>- Reduction in API quota consumption, deleting and creating the system disk, and state transition delay caused when you delete a VM
+

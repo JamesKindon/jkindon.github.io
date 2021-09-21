@@ -7,6 +7,8 @@
 
 # Name of website
 title: James Kindon
+description: "James Kindon, Solution Architect by day, Citrix Technology Professional and Microsoft MVP"
+language: en-AU
 
 # Your name to show in the footer
 author: James Kindon
@@ -16,15 +18,15 @@ author: James Kindon
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+    #- Beautiful Jekyll: "https://beautifuljekyll.com"
+    #- Learn markdown: "https://www.markdowntutorial.com/"
   Author's home: "https://jkindon.com"
 
 # --- Logo --- #
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/avatar-icon.png"
+avatar: "/assets/img/james_c5a8562.jpg"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -65,7 +67,7 @@ social-network-links:
 
 # If you want to show a link to an RSS in the footer, add the site description here.
 # If you don't want to show an RSS link, remove the following line.
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: Blogs whatsuch by James Kindon
 
 # --- General options --- #
 
@@ -93,7 +95,7 @@ feed_show_tags: true
 post_search: true
 
 # The keywords to associate with your website, for SEO purposes
-#keywords: "my,list,of,keywords"
+keywords: "Citrix, Azure, PowerShell, Community, FSLogix, Profiles, CVAD, EUC, Modern Workplace, Microsoft, Citrix, VMWare"
 
 # --- Colours / background image --- #
 
@@ -197,7 +199,7 @@ timezone: "Australia/Sydney"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 5
+#paginate: 5
 
 kramdown:
   input: GFM

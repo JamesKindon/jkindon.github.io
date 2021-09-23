@@ -3,7 +3,7 @@ layout: post
 title: Conquering Per User Firewall Rules with Citrix WEM Privilege Elevation
 permalink: "/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/"
 subtitle: Conquering Per User Firewall Rules with Citrix WEM Privilege Elevation
-#cover-img: /assets/img/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/RunAsInvoker.png
+cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/RunAsInvoker.png
 share-img: /assets/img/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/RunAsInvoker.png
 tags: [Citrix, WEM, Teams, Security, CVAD, Cloud, Privilige Elevation]

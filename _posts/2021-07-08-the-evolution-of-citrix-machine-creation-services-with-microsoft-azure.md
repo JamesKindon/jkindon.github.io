@@ -3,7 +3,7 @@ layout: post
 title: The Evolution of Citrix Machine Creation Services with Microsoft Azure
 permalink: "/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/"
 subtitle: Tracking the progress of Citrix MCS and Microsoft Azure
-#cover-img: /assets/img/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/mcs-evolution.png
+cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/mcs-evolution.png
 share-img: /assets/img/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/mcs-evolution.png
 tags: [Citrix, UPM, Profiles, Windows, CVAD, Cloud, Azure]

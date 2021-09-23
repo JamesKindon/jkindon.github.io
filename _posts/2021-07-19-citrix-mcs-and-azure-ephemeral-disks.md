@@ -3,7 +3,7 @@ layout: post
 title: "Citrix MCS and Azure Ephemeral Disks"
 permalink: "/citrix-mcs-and-azure-ephemeral-disks/"
 subtitle: Baseline testing Citrix MCS and Azure Ephemeral Disks
-#cover-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
+cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
 share-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
 tags: [Citrix, CVAD, Azure, Windows, MCS, Ephemeral Disks, Provisioning]

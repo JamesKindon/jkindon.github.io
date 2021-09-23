@@ -3,7 +3,7 @@ layout: post
 title: "Citrix MCS and Azure Shared Image Gallery"
 permalink: "/citrix-mcs-and-azure-shared-image-gallery/"
 subtitle: Road testing Citrix Machine Creation Services with Azure Shared Image Gallery Integration
-#cover-img: /assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png
+cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png
 share-img: /assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png
 tags: [Citrix, CVAD, Azure, Windows, MCS, SIG, Provisioning]

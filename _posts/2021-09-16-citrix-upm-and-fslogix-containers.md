@@ -3,7 +3,7 @@ layout: post
 title: Citrix UPM and FSLogix Containers
 permalink: "/citrix-upm-and-fslogix-containers/"
 subtitle: Delving into the when, why and why not of Citrix UPM and FSLogix Profile Containers
-#cover-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
+cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
 share-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
 tags: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]

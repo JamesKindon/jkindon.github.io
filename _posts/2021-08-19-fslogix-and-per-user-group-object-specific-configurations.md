@@ -3,7 +3,7 @@ layout: post
 title: "FSLogix and Per User/Group Object Specific Configurations"
 permalink: "/fslogix-and-per-user-group-object-specific-configurations/"
 subtitle: Getting flexible with FSLogix configurations
-#cover-img: /assets/img/fslogix-and-per-user-group-object-specific-configurations/container-1.png
+cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/fslogix-and-per-user-group-object-specific-configurations/container-1.png
 share-img: /assets/img/fslogix-and-per-user-group-object-specific-configurations/container-1.png
 tags: [FSLogix, CVAD, Windows, Profiles, Policy]

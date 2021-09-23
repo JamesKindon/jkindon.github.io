@@ -3,7 +3,7 @@ layout: post
 title: "Citrix Session Management Policies"
 permalink: "/citrix-session-management-policies/"
 subtitle: Delving into the options for Session Management within CVAD environments
-#cover-img: /assets/img/citrix-session-management-policies/time-out.jpg
+cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/citrix-session-management-policies/time-out.jpg
 share-img: /assets/img/citrix-session-management-policies/time-out.jpg
 tags: [Citrix, CVAD, Azure, Session Management, Windows]

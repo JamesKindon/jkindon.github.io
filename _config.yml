@@ -54,7 +54,7 @@ social-network-links:
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
 #  instagram: deanat78
-#  spotify: yourname
+  spotify: 	james.kindon
 #  telephone: +14159998888
 #  steam: deanat78
 #  twitch: yourname
@@ -67,7 +67,7 @@ social-network-links:
 
 # If you want to show a link to an RSS in the footer, add the site description here.
 # If you don't want to show an RSS link, remove the following line.
-rss-description: Blogs whatsuch by James Kindon
+rss-description: Blogs and whatsuch by James Kindon
 
 # --- General options --- #
 

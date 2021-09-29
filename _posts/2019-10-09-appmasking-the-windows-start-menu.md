@@ -48,11 +48,11 @@ Results are grand (and by grand I mean simple) but it's complex to achieve what 
 {: .box-note}
 **The right-click WinX folders** `C:\Users\*\AppData\Local\Microsoft\Windows\WinX\Group3`
 
-[![Example Masking File]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/AppMaskProfile.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/AppMaskProfile.png)
+[![Example Masking File]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/AppMaskProfile.png)]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/AppMaskProfile.png)
 
 There are a few simple rules to abide by. In your AppMasking profile, make sure you exclude your local administrator or equivalent account, as well as the local Administrators group. This will allow you to view the world as an administrator should, with no customisations made to the OS or your operating environment.
 
-[![Assignment File]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/AppMaskAssignments.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/AppMaskAssignments.png)
+[![Assignment File]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/AppMaskAssignments.png)]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/AppMaskAssignments.png)
 
 Moving forward, when applications are installed on the image, you have two things to think about:
 
@@ -69,25 +69,25 @@ My test user az.jkindon1 is the chosen user to be punished for this small demo, 
   
 We have this:
 
-[![Default Start 1]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/DefaultStart1.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/DefaultStart1.png)
+[![Default Start 1]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/DefaultStart1.png)]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/DefaultStart1.png)
 
 And this:
 
-[![Default Start 2]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/DefaultStart2.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/DefaultStart2.png)
+[![Default Start 2]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/DefaultStart2.png)]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/DefaultStart2.png)
 
 And even the default context is cluttered with this:
 
-[![Default Context]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/DefaultContext.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/DefaultContext.png)
+[![Default Context]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/DefaultContext.png)]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/DefaultContext.png)
 
 There is so much in the Start-Menu I had to take three screen dumps. Yes, there are controls to hide a lot of this stuff as you need (admin tools etc) but the point of this post is to prove simplicity with App Masking and minimal effort. 
 
 Now a nice little [Custom Start Layout](https://docs.microsoft.com/en-us/windows/configuration/customize-and-export-start-layout) handled to get rid of the junk, my nice shiny Start Menu AppMasking files in place and a new user now gets a menu that is actually relevant to them: 
 
-[![Custom Start]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/CustomStart.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/CustomStart.png)
+[![Custom Start]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/CustomStart.png)]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/CustomStart.png)
 
 Even the right-click context menu now represents entries that will most probably be of relevance to their everyday life
 
-[![Custom Context]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/CustomContext.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/CustomContext.png)
+[![Custom Context]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/CustomContext.png)]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/CustomContext.png)
 
 ## Summary
 

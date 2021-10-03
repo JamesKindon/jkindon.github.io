@@ -4,8 +4,8 @@ title: "WEM Hydration Kit Addition – Shell Folders"
 permalink: "/wem-hydration-kit-addition-shell-folders/"
 subtitle: "Shell folders module for the WEM hydration kit"
 cover-img: /assets/img/Sydney1.jpg
-thumbnail-img: /assets/img/wem-hydration-kit-addition-shell-folders/ShellFolders.PNG
-share-img: /assets/img/wem-hydration-kit-addition-shell-folders/ShellFolders.PNG
+thumbnail-img: /assets/img/wem-hydration-kit-addition-shell-folders/ShellFolders.png
+share-img: /assets/img/wem-hydration-kit-addition-shell-folders/ShellFolders.png
 tags: [Apps and Desktops, Citrix, WEM, Windows, XenApp]
 categories: [Apps and Desktops, Citrix, WEM, Windows, XenApp]
 ---

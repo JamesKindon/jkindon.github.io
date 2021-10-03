@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Studio Apps to WEM to address Citrix Session Sharing challenges"
-permalink: "/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/"
+permalink: "/studio-apps-to-wem-to-address-citrix-session-sharing-challenges/"
 subtitle: "Mitigating Receiver fails with WEM Studio App Intgegration"
 cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/studio-apps-to-wem-to-address-citrix-session-sharing-challenges/Problems.png

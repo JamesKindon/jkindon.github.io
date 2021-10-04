@@ -8,7 +8,9 @@ thumbnail-img: /assets/img/wem-variables-dynamic-tokens-hashtags-and-strings/Tok
 share-img: /assets/img/wem-variables-dynamic-tokens-hashtags-and-strings/Tokens.png
 tags: [Apps and Desktops, Citrix, WEM, Windows, XenApp]
 categories: [Apps and Desktops, Citrix, WEM, Windows, XenApp]
-redirect_from: /2019/03/08/wem-variables-dynamic-tokens-hashtags-and-strings
+redirect_from: 
+    - /2019/03/08/wem-variables-dynamic-tokens-hashtags-and-strings
+    - /2019/03/08/wem-variables-dynamic-tokens-hashtags-and-strings/
 ---
 
 ![Tokens]({{site.baseurl}}/assets/img/wem-variables-dynamic-tokens-hashtags-and-strings/Tokens.png)

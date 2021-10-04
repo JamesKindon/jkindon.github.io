@@ -76,11 +76,9 @@ The last image outlined below shows the Start Menu Structure once I have moved t
 
 The keen eye can see that Windows is ignoring the move from `James2` to `James3` backing up the fact that changes only reflect instantly against the Profile Based Start Menu location `(_%AppData%)`.
 
-[caption id="attachment_1933" align="aligncenter" width="1063"]![DynamicAggregation2](https://jkindon.files.wordpress.com/2019/02/dynamicaggregation2.png) Common Start Menu Ignored Again[/caption]
-
 [![Common Start Menu Ignored Again]({{site.baseurl}}/assets/img/windows-10-start-menu-custom-folders-and-shortcut-aggregation/DynamicAggregation2.png)]({{site.baseurl}}/assets/img/windows-10-start-menu-custom-folders-and-shortcut-aggregation/DynamicAggregation2.png)
 
-    AboveL: Common Start Menu Ignored Again
+    Above: Common Start Menu Ignored Again
 
 ## Summary and Lessons Learnt
 

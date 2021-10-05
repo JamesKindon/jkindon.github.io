@@ -11,5 +11,9 @@ gem "webrick", "~> 1.7"
 
 gem 'jekyll-redirect-from'
 
+gem 'jekyll-admin', group: :jekyll_plugins
+
+gem 'jemoji'
+
 gemspec
 

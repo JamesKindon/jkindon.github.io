@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/deploying-citrix-adcs-in-microsoft-azure/Monitor2.png
 share-img: /assets/img/deploying-citrix-adcs-in-microsoft-azure/Monitor2.png
 tags: [ADC, ARM, automation, Azure, Citrix, Cloud, NetScaler]
 categories: [ADC, ARM, automation, Azure, Citrix, Cloud, NetScaler]
+redirect_from: 
+    - /2021/04/25/deploying-citrix-adcs-in-microsoft-azure
+    - /2021/04/25/deploying-citrix-adcs-in-microsoft-azure/
 ---
 
 !["Deploying Citrix ADC's in Microsoft Azure – ADC HA Availability Set"]({{site.baseurl}}/assets/img/deploying-citrix-adcs-in-microsoft-azure/Monitor2.png)

@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-manag
 share-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png
 tags: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
 categories: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
+redirect_from: 
+    - /2021/08/24/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities
+    - /2021/08/24/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/
 ---
 
 ![Enhancing Citrix MCS and Microsoft Azure – Part 3: Managed Identities]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png)

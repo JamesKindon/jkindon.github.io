@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-1-ident
 share-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/BeerCurrency.png
 tags: [Apps and Desktops, Azure, Citrix, Cloud, MCS, PowerShell, XenApp]
 categories: [Apps and Desktops, Azure, Citrix, Cloud, MCS, PowerShell, XenApp]
+redirect_from: 
+    - /2020/10/27/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization
+    - /2020/10/27/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/
 ---
 
 ![Beer Currency]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/BeerCurrency.png)
@@ -18,9 +21,9 @@ MCS in Azure uses on-demand provisioning which means for pooled or newly provisi
 
 One of the current downfalls at the time of writing this post, is that the identity disk is created at the same Sku as the ProvScheme OS disk. To be clear, if you choose a premium disk in your provisioning scheme, the identity disk is also created at a premium Sku. For the OSDisk, you are only charged for the time that the Disk exists (it is deleted when the machine is powered off in a non-persistent environment), however the identity disk persists, and is charged at the premium Sku. Luckily, the new sizing from Microsoft means that this disk is only a 4Gb disk (P1), however there is absolutely no technical reason or requirement for this disk to remain at the premium Sku given its function is to do nothing except provide identity details for a non-persistent machine. As such, for cost optimization, we can change this disk to the cheapest Sku possible, which is a Standard 4GiB SSD (E1). It would be easy to think that a Standard HDD is the better option, however the minimum billable size is a 32GiB (S4) disk, which is far more expensive that a 4GiB (P1) disk. An outline in AUD is shown below:
 
-*   Premium SSD 4 GiB (P1), $1.19 per month AUD
-*   Standard HDD 32 GiB (S4), 3.37 per month AUD (+ transactional costs)
-*   Standard SSD 4 GiB (E1), 0.56 per month AUD (+ transactional costs)
+*  Premium SSD 4 GiB (P1), $1.19 per month AUD
+*  Standard HDD 32 GiB (S4), 3.37 per month AUD (+ transactional costs)
+*  Standard SSD 4 GiB (E1), 0.56 per month AUD (+ transactional costs)
 
 These costs are so small initially that they may seem insignificant, but let's do some math in a language most of us understand: Beer currency.
 

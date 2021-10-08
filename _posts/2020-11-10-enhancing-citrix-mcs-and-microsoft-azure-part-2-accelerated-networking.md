@@ -8,13 +8,18 @@ thumbnail-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-2-accel
 share-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/AcceleratedNetworking.png
 tags: [Apps and Desktops, Azure, Citrix, Cloud, MCS, PowerShell, Windows]
 categories: [Apps and Desktops, Azure, Citrix, Cloud, MCS, PowerShell, Windows]
+redirect_from: 
+    - /2020/11/10/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking
+    - /2020/11/10/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/
 ---
 
 ![Enhancing Citrix MCS and Microsoft Azure - Part 2: Accelerated Networking]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/AcceleratedNetworking.png)
 
 This is the second part of an ongoing series around enhancing Citrix MCS within Azure. The first post focused on optimizing identity disk costs via [PowerShell and Azure Automation](https://jkindon.com/2020/10/27/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/). This is post will tackle one of the biggest impacting performance optimizations you can make to machines within Azure: Accelerated Networking.
 
-[Accelerated Networking](https://docs.microsoft.com/en-us/azure/virtual-network/create-vm-accelerated-networking-powershell) is defined by Microsoft as “_Accelerated networking enables single root I/O virtualization (SR-IOV) to a VM, greatly improving its networking performance. This high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the most demanding network workloads on supported VM types_”
+[Accelerated Networking](https://docs.microsoft.com/en-us/azure/virtual-network/create-vm-accelerated-networking-powershell) is defined by Microsoft as:
+
+> Accelerated networking enables single root I/O virtualization (SR-IOV) to a VM, greatly improving its networking performance. This high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the most demanding network workloads on supported VM types
 
 Recapping on what we discussed last time, MCS in Azure uses on-demand provisioning which means for pooled or newly provisioned workloads (in the case of dedicated) that when the machine is not powered on, it simply does not exist. The only evidence of the powered off machines existence (typically, and this assumes MCSIO is not in play) is a single identity disk, and a single Network Interface. When the machine is powered on, it is created “on demand” based on the provided provisioning scheme (ProvScheme). A new OSDisk is created (full cloned) and both the Identity disk, and Network Interface attached to the machine at creation.
 

@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/fslogix-and-per-user-group-object-specific-configurat
 share-img: /assets/img/fslogix-and-per-user-group-object-specific-configurations/container-1.png
 tags: [FSLogix, CVAD, Windows, Profiles, Policy]
 categories: [FSLogix, CVAD, Windows, Profiles, Policy]
+redirect_from: 
+    - /2021/08/19/fslogix-and-per-user-group-object-specific-configurations
+    - /2021/08/19/fslogix-and-per-user-group-object-specific-configurations/
 ---
 
 ![FSLogix and Per User/Group Object Specific Configurations]({{site.baseurl}}/assets/img/fslogix-and-per-user-group-object-specific-configurations/container-1.png)

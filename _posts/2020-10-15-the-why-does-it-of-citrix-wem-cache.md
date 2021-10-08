@@ -8,6 +8,9 @@ thumbnail-img: "/assets/img/the-why-does-it-of-citrix-wem-cache/cache.png"
 share-img: /assets/img/the-why-does-it-of-citrix-wem-cache/cache.png
 tags: [Apps and Desktops, Citrix, WEM]
 categories: [Apps and Desktops, Citrix, WEM]
+redirect_from: 
+    - 2020/10/15/the-why-does-it-of-citrix-wem-cache
+    - 2020/10/15/the-why-does-it-of-citrix-wem-cache/
 ---
 
 ![The why does it… of Citrix WEM Cache]({{site.baseurl}}/assets/img/the-why-does-it-of-citrix-wem-cache/cache.png)

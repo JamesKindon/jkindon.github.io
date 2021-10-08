@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/fslogix-cloud-cache-lessons-learned-in-azure/LessonsL
 share-img: /assets/img/fslogix-cloud-cache-lessons-learned-in-azure/LessonsLearned.jpeg
 tags: [Apps and Desktops, Azure, Cloud, FSLogix, Profiles, Storage Accounts, Windows]
 categories: [Apps and Desktops, Azure, Cloud, FSLogix, Profiles, Storage Accounts, Windows]
+redirect_from: 
+    - /2020/10/12/fslogix-cloud-cache-lessons-learned-in-azure
+    - /2020/10/12/fslogix-cloud-cache-lessons-learned-in-azure/
 ---
 
 ![FSLogix Cloud Cache - Lessons learned in Azure]({{site.baseurl}}/assets/img/fslogix-cloud-cache-lessons-learned-in-azure/LessonsLearned.jpeg)

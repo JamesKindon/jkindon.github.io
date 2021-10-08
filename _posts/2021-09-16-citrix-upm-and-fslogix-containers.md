@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
 share-img: /assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg
 tags: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]
 categories: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]
+redirect_from: 
+    - /2021/09/16/citrix-upm-and-fslogix-containers
+    - /2021/09/16/citrix-upm-and-fslogix-containers/
 ---
 
 ![Citrix UPM and FSLogix Containers]({{site.baseurl}}/assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg)

@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
 share-img: /assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png
 tags: [Citrix, CVAD, Azure, Windows, MCS, Ephemeral Disks, Provisioning]
 categories: [Citrix, CVAD, Azure, Windows, MCS, Ephemeral Disks, Provisioning]
+redirect_from: 
+    - /2021/07/19/citrix-mcs-and-azure-ephemeral-disks
+    - /2021/07/19/citrix-mcs-and-azure-ephemeral-disks/
 ---
 
 ![Supported Dsv3 Spec Machines (Ephemeral OS Disk)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png)

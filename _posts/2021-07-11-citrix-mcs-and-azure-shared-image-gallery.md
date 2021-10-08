@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image
 share-img: /assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png
 tags: [Citrix, CVAD, Azure, Windows, MCS, SIG, Provisioning]
 categories: [Citrix, CVAD, Azure, Windows, MCS, SIG, Provisioning]
+redirect_from: 
+    - /2021/07/11/citrix-mcs-and-azure-shared-image-gallery
+    - /2021/07/11/citrix-mcs-and-azure-shared-image-gallery/
 ---
 
 ![Azure Shared Image Gallery]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png)

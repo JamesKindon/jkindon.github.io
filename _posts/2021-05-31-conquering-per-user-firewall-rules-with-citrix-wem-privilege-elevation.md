@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/conquering-per-user-firewall-rules-with-citrix-wem-pr
 share-img: /assets/img/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/RunAsInvoker.png
 tags: [Citrix, WEM, Teams, Security, CVAD, Cloud, Privilige Elevation]
 categories: [Citrix, WEM, Teams, Security, CVAD, Cloud, Privilige Elevation]
+redirect_from: 
+    - /2021/05/31/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation
+    - /2021/05/31/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/
 ---
 
 ![Conquering Per User Firewall Rules with Citrix WEM Privilege Elevation]({{site.baseurl}}/assets/img/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/RunAsInvoker.png)

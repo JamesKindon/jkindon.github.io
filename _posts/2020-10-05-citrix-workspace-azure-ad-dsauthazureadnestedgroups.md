@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/citrix-workspace-azure-ad-dsauthazureadnestedgroups/M
 share-img: /assets/img/citrix-workspace-azure-ad-dsauthazureadnestedgroups/Missing.png
 tags: [Apps and Desktops, Azure, Citrix, Cloud, Identity, Workspace]
 categories: [Apps and Desktops, Azure, Citrix, Cloud, Identity, Workspace]
+redirect_from: 
+    - /2020/10/05/citrix-workspace-azure-ad-dsauthazureadnestedgroups
+    - /2020/10/05/citrix-workspace-azure-ad-dsauthazureadnestedgroups/
 ---
 
 ![Citrix Workspace, Azure AD & DSAuthAzureAdNestedGroups]({{site.baseurl}}/assets/img/citrix-workspace-azure-ad-dsauthazureadnestedgroups/Missing.png)

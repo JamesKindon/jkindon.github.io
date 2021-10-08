@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/citrix-session-management-policies/time-out.jpg
 share-img: /assets/img/citrix-session-management-policies/time-out.jpg
 tags: [Citrix, CVAD, Azure, Session Management, Windows]
 categories: [Citrix, CVAD, Azure, Session Management, Windows]
+redirect_from: 
+    - /2021/08/09/citrix-session-management-policies
+    - /2021/08/09/citrix-session-management-policies/
 ---
 
 ![Citrix Session Management Policies]({{site.baseurl}}/assets/img/citrix-session-management-policies/time-out.jpg)

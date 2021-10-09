@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/appmasking-the-windows-start-menu/StartMenuFeatured.p
 share-img: /assets/img/appmasking-the-windows-start-menu/StartMenuFeatured.png
 tags: [Citrix, Profiles, Start Menu, Windows]
 categories: [Citrix, Profiles, Start Menu, Windows]
+redirect_from: 
+    - /2019/10/09/appmasking-the-windows-start-menu
+    - /2019/10/09/appmasking-the-windows-start-menu/
 ---
 
 ![AppMasking The Windows Start Menu]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/StartMenuFeatured.png)
@@ -20,22 +23,22 @@ I also had a conversation recently with CTP legend [Dave Brett](https://twitter.
 
 For years I have been hunting down and ranting on about all sorts of different ways to handle the Start Menu, from Tile management to custom toolbars, WEM and simply stripping it all out:
 
-*   Citrix Blog Series:
-    *   [customizing-the-windows-10-start-menu-to-enable-better-control-better-experience](https://www.citrix.com/blogs/2018/04/10/customizing-the-windows-10-start-menu-to-enable-better-control-better-experience/)
-    *   [customizing-the-windows-10-start-menu-part-ii-what-to-do-post-deployment](https://www.citrix.com/blogs/2018/05/30/customizing-the-windows-10-start-menu-part-ii-what-to-do-post-deployment/)
-*   Kindon rant series:
-    *   [citrix-wem-modern-start-menus-and-tiles](https://jkindon.com/2017/10/13/citrix-wem-modern-start-menus-and-tiles/)
-    *   [windows-10-start-menu-declutter-the-default](https://jkindon.com/2018/03/20/windows-10-start-menu-declutter-the-default/)
-    *   [selective-control-of-the-immersive-control-panel-settings-in-server-2016](https://jkindon.com/2018/09/29/selective-control-of-the-immersive-control-panel-settings-in-server-2016/)
-    *   [modern-start-menu-management-and-windows-toolbars](https://jkindon.com/2019/01/29/modern-start-menu-management-and-windows-toolbars/)
-    *   [windows-10-start-menu-custom-folders-and-shortcut-aggregation](https://jkindon.com/2019/02/06/windows-10-start-menu-custom-folders-and-shortcut-aggregation/)
+*  Citrix Blog Series:
+    *  [customizing-the-windows-10-start-menu-to-enable-better-control-better-experience](https://www.citrix.com/blogs/2018/04/10/customizing-the-windows-10-start-menu-to-enable-better-control-better-experience/)
+    *  [customizing-the-windows-10-start-menu-part-ii-what-to-do-post-deployment](https://www.citrix.com/blogs/2018/05/30/customizing-the-windows-10-start-menu-part-ii-what-to-do-post-deployment/)
+*  Kindon rant series:
+    *  [citrix-wem-modern-start-menus-and-tiles](https://jkindon.com/2017/10/13/citrix-wem-modern-start-menus-and-tiles/)
+    *  [windows-10-start-menu-declutter-the-default](https://jkindon.com/2018/03/20/windows-10-start-menu-declutter-the-default/)
+    *  [selective-control-of-the-immersive-control-panel-settings-in-server-2016](https://jkindon.com/2018/09/29/selective-control-of-the-immersive-control-panel-settings-in-server-2016/)
+    *  [modern-start-menu-management-and-windows-toolbars](https://jkindon.com/2019/01/29/modern-start-menu-management-and-windows-toolbars/)
+    *  [windows-10-start-menu-custom-folders-and-shortcut-aggregation](https://jkindon.com/2019/02/06/windows-10-start-menu-custom-folders-and-shortcut-aggregation/)
 
 I have a process that I use consistently with success and have been more than happy with the results, however it required a few moving parts to achieve my simple requirements as outlined below:
 
-*   Remove user permissions from the unwanted junk in the "common start menu" directories. What they can't read they can't see, and thus we non-intrusively remove junk the users start menu. Typically, I have driven this via Group Policy
-*   Remove junk from the user profile once created (sourced from the *default* user profile). This has typically been handled by the likes of Citrix Workspace Environment Management or Group Policy Preferences
-*   Remove the WinX menu's that are not relevant for users in a shared hosted environment, once again typically handled by WEM or GPP
-*   A custom Start Layout to handle the user experience in relation to tiles as a baseline and sometimes for ongoing control
+*  Remove user permissions from the unwanted junk in the "common start menu" directories. What they can't read they can't see, and thus we non-intrusively remove junk the users start menu. Typically, I have driven this via Group Policy
+*  Remove junk from the user profile once created (sourced from the *default* user profile). This has typically been handled by the likes of Citrix Workspace Environment Management or Group Policy Preferences
+*  Remove the WinX menu's that are not relevant for users in a shared hosted environment, once again typically handled by WEM or GPP
+*  A custom Start Layout to handle the user experience in relation to tiles as a baseline and sometimes for ongoing control
 
 Results are grand (and by grand I mean simple) but it's complex to achieve what should be simple, and admittedly some components are intrusive and there is no easy way to come back from the changes that get made. Enter FSLogix AppMasking to once again simply my life. Using AppMasking rules, we can create the perfect junk-free Start Menu with simplicity and ease, also allowing for an immediate rollback of any changes should things go pear-shaped, reverting the user profile and OS itself to an unaltered state in no time. Using AppMasking, we can mask the following
 

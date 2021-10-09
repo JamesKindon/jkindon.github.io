@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/designing-profile-management-with-active-active-resou
 share-img: /assets/img/designing-profile-management-with-active-active-resource-locations/TitleImage.jpg
 tags: [Apps and Desktops, Citrix, FSLogix, Profiles, UPM, Windows]
 categories: [Apps and Desktops, Citrix, FSLogix, Profiles, UPM, Windows]
+redirect_from: 
+    - /2019/10/15/designing-profile-management-with-active-active-resource-locations
+    - /2019/10/15/designing-profile-management-with-active-active-resource-locations/
 ---
 
 ![Designing Profile Management with Active-Active Resource Locations]({{site.baseurl}}/assets/img/designing-profile-management-with-active-active-resource-locations/TitleImage.jpg)

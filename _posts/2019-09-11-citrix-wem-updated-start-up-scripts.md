@@ -8,24 +8,27 @@ thumbnail-img: /assets/img/citrix-wem-updated-start-up-scripts/Image.png
 share-img: /assets/img/citrix-wem-updated-start-up-scripts/Image.png
 tags: [Apps and Desktops, Citrix, Cloud, WEM, Windows, XenApp]
 categories: [Apps and Desktops, Citrix, Cloud, WEM, Windows, XenApp]
+redirect_from: 
+    - /2019/09/11/citrix-wem-updated-start-up-scripts
+    - /2019/09/11/citrix-wem-updated-start-up-scripts/
 ---
 
 ![Citrix WEM Updated Start-Up Scripts]({{site.baseurl}}/assets/img/citrix-wem-updated-start-up-scripts/Image.png)
 
-I have been recommending in all deployments ever since I started with WEM, to implement the very simple "WEM Agent Refresh" Start-Up Script. Every deployment I have seen, touched or been involved that uses this basic concept of "refresh my cache at start-up" has no issues relating to cache, delayed start-up or inconsistent behaviours. It just works. 
+I have been recommending in all deployments ever since I started with WEM, to implement the very simple "WEM Agent Refresh" Start-Up Script. Every deployment I have seen, touched or been involved that uses this basic concept of "refresh my cache at start-up" has no issues relating to cache, delayed start-up or inconsistent behaviours. It just works.
 
-With the release of Citrix WEM 1903 (Cloud) and 1909 (on-prem), there are some major changes to the path structures for WEM as the team begins the rebranding process away for Norskale. This of course results in some changes to how the start-up scripts are going to run and process. 
+With the release of Citrix WEM 1903 (Cloud) and 1909 (on-prem), there are some major changes to the path structures for WEM as the team begins the rebranding process away for Norskale. This of course results in some changes to how the start-up scripts are going to run and process.
 
 The following changes are going to occur so be ready:
 
 1.  A new clean installation of the WEM Agent will result in a complete change of Service Names and Folder Structures as below
-    *   The new Service name is: `Citrix WEM Agent Host Service`
-    *   The new process name is: `Wem.Agent.Service.exe`
-    *   The new path structure is: `%ProgramFiles%\Citrix\Workspace Environment Management Agent`
+    *  The new Service name is: `Citrix WEM Agent Host Service`
+    *  The new process name is: `Wem.Agent.Service.exe`
+    *  The new path structure is: `%ProgramFiles%\Citrix\Workspace Environment Management Agent`
 2.  An upgraded installation of the WEM agent will result in partial changes to your environment:
-    *   The new Service name is: `Citrix WEM Agent Host Service`
-    *   The new process name is: `Wem.Agent.Service.exe`
-    *   The path on the file system will not be altered and will remain as it was: `%ProgramFiles%\Norskale\Norskale Agent Host`
+    *  The new Service name is: `Citrix WEM Agent Host Service`
+    *  The new process name is: `Wem.Agent.Service.exe`
+    *  The path on the file system will not be altered and will remain as it was: `%ProgramFiles%\Norskale\Norskale Agent Host`
 
 Be aware also that in both clean and upgraded deployments, the Windows Event logs will change from `Norskale Agent Service` to `WEM Agent Service`
 

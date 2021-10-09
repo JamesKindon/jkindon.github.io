@@ -4,19 +4,22 @@ title: "Deploying Brave and Microsoft Edge Dev Browsers in Citrix CVAD environme
 permalink: "/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/"
 subtitle: "Deploy the Brave and Edge Browsers in CVAD"
 cover-img: /assets/img/Sydney1.jpg
-thumbnail-img: /assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Dark Mode.png
-share-img: /assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Dark Mode.png
+thumbnail-img: /assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/DarkMode.png
+share-img: /assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/DarkMode.png
 tags: [Apps and Desktops, Browsers, Citrix, Windows]
 categories: [Apps and Desktops, Browsers, Citrix, Windows]
+redirect_from: 
+    - /2019/09/17/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments
+    - /2019/09/17/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/
 ---
 
-![Deploying Brave and Microsoft Edge Dev Browsers in Citrix CVAD environments]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Dark Mode.png)
+![Deploying Brave and Microsoft Edge Dev Browsers in Citrix CVAD environments]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/DarkMode.png)
 
-I like choice, and I really like privacy, so naturally, I am drawn to the [Brave browser](https://brave.com/) due to its underpinning fundamentals of “privacy first”. In short, it’s the Chrome engine with a load of inbuilt privacy and tracking protection similar to uBlock Origin, an extension for Google Chrome but all built-in. 
+I like choice, and I really like privacy, so naturally, I am drawn to the [Brave browser](https://brave.com/) due to its underpinning fundamentals of “privacy first”. In short, it’s the Chrome engine with a load of inbuilt privacy and tracking protection similar to uBlock Origin, an extension for Google Chrome but all built-in.
 
-I had some fun getting it to work in a Citrix environment but after some playing around have a neat deployment. 
+I had some fun getting it to work in a Citrix environment but after some playing around have a neat deployment.
 
-Important to note, I am not providing advice to move to Brave, it’s not really enterprise-ready (if you want all the controls that something like Chrome or IE give you in a supported fashion), however should you choose to have a play, the below should get you started. 
+Important to note, I am not providing advice to move to Brave, it’s not really enterprise-ready (if you want all the controls that something like Chrome or IE give you in a supported fashion), however should you choose to have a play, the below should get you started.
 
 Conversely, the same symptoms and challenges are raised with the new [Chromium-based Microsoft Edge browser](https://www.microsoftedgeinsider.com/en-us/download?form=MI13E8&OCID=MI13E8), so I documented both.
 
@@ -32,17 +35,17 @@ Task Manager shows us a load of processes launched, but nothing plays
 
 ## The Solution
 
-No surprises, but the underlying cause of this is the Citrix API hooks latching themselves onto either the `Brave.exe` or the `MSEdge.exe` processes. Simply disabling the hooking brings it back to life. 
+No surprises, but the underlying cause of this is the Citrix API hooks latching themselves onto either the `Brave.exe` or the `MSEdge.exe` processes. Simply disabling the hooking brings it back to life.
 
 As per the Citrix, Article [disable all Citrix Application Programming Interface (API) hooks on a per-application basis](https://support.citrix.com/article/CTX107825), this can either be done via the ExlcudedImages key (pre-VDA 7.9) or the UviProcessExcludes key in anything modern. 
 
-I tested both out of curiosity and they both worked perfectly fine, the `UviProcessExcludes` required a full reboot. 
+I tested both out of curiosity and they both worked perfectly fine, the `UviProcessExcludes` required a full reboot.
 
-As a quick note, the following string already exists in a default install, so you may want to take this and simply append our new processes to the end: 
+As a quick note, the following string already exists in a default install, so you may want to take this and simply append our new processes to the end:
 
 Original Value: `LsaIso.exe;BioIso.exe;FsIso.exe;sppsvc.exe;vmsp.exe;`
 
-New value: `LsaIso.exe;BioIso.exe;FsIso.exe;sppsvc.exe;vmsp.exe;brave.exe;msedge.exe;` 
+New value: `LsaIso.exe;BioIso.exe;FsIso.exe;sppsvc.exe;vmsp.exe;brave.exe;msedge.exe;`
 
 I am writing them with a simple computer-based Group Policy Preference below
 
@@ -52,34 +55,34 @@ And upon successful run you should see your registry reflect your changes:
 
 [![Registry]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Registry.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Registry.png)
 
-Brave and Edge now launch as expected: 
+Brave and Edge now launch as expected:
 
-[![Brave Launch]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Brave Launch.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Brave Launch.png)
+[![Brave Launch]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/BraveLaunch.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/BraveLaunch.png)
 
-[![Edge Launch]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Edge Launch.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Edge Launch.png)
+[![Edge Launch]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/EdgeLaunch.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/EdgeLaunch.png)
 
 Brave uses the concept of shields to protect your browsing experience, below hitting eBay landing page alone shows 8 blocked trackers. I run Pi-Hole to protect my household from this junk and am a massive advocate for DNS based protection in the Enterprise, however it's nice to see exactly which nasty stuff is going on in the browser locally.
 
 [![ShieldsUp]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/ShieldsUp.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/ShieldsUp.png)
 
-Go and hit a page like ninemsn.com.au and watch your shields start going into overdrive 
+Go and hit a page like ninemsn.com.au and watch your shields start going into overdrive
 
 [![ninemsn]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/ninemsn.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/ninemsn.png)
 
-The browsing experience in Brave (and anything protected by DNS filtering and privacy-based tracking protection extensions) is so much snappier than without. 
+The browsing experience in Brave (and anything protected by DNS filtering and privacy-based tracking protection extensions) is so much snappier than without.
 
-Brave is just Chromium under the hood so the usual capabilities apply, however, there is no enterprise capability around centrally managing it at the moment, however a few things I like to do below in my own profiles 
+Brave is just Chromium under the hood so the usual capabilities apply, however, there is no enterprise capability around centrally managing it at the moment, however a few things I like to do below in my own profiles
 
 `brave://settings/getStarted` (in the URL bar)
 
-*   Hide Brave rewards bar
-*   Show the home button
-*   Set your Search Engine (Duck Duck Go for me given I am on an anti-advertising rant)
-*   Set your Downloads if different than default locations
-*   Set Dark Mode
-*   Install any extensions you may need (though hopefully, that’s limited)
+*  Hide Brave rewards bar
+*  Show the home button
+*  Set your Search Engine (Duck Duck Go for me given I am on an anti-advertising rant)
+*  Set your Downloads if different than default locations
+*  Set Dark Mode
+*  Install any extensions you may need (though hopefully, that’s limited)
 
-[![Dark Mode]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Dark Mode.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Dark Mode.png)
+[![Dark Mode]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/DarkMode.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/DarkMode.png)
 
 ## Profile Management
 
@@ -101,31 +104,31 @@ Edge: `<Exclude>AppData\Local\Microsoft\Edge Dev\User Data\Default\Cache</Exclud
 
 [![FSLogix]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/FSLogix.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/FSLogix.png)
 
-For Citrix UPM you will need to add the following to your **Exclusion list – directories** policy 
+For Citrix UPM you will need to add the following to your **Exclusion list – directories** policy
 
-Brave: `!ctx_localappdata!\BraveSoftware\Brave-Browser\User Data\Default\Cache` 
+Brave: `!ctx_localappdata!\BraveSoftware\Brave-Browser\User Data\Default\Cache`
 
 Edge: `!ctx_localappdata!\Microsoft\Edge Dev\User Data\Default\Cache`
 
-## **System Impact**
+## System Impact
 
 Both Brave and Microsoft Edge will throw in their own update services that you will want to deal with:
 
-[![Services - Brave]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Services - Brave.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Services - Brave.png)
+[![Services - Brave]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Services-Brave.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Services-Brave.png)
 
-[![Services - Edge]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Services - Edge.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Services - Edge.png)
+[![Services - Edge]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Services-Edge.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/Services-Edge.png)
 
 They will also both throw in the usual scheduled tasks to slap:
 
-[![SchedTasks - Brave]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/SchedTasks - Brave.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/SchedTasks - Brave.png)
+[![SchedTasks - Brave]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/SchedTasks-Brave.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/SchedTasks-Brave.png)
 
-[![SchedTasks - Edge]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/SchedTasks - Edge.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/SchedTasks - Edge.png)
+[![SchedTasks - Edge]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/SchedTasks-Edge.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/SchedTasks-Edge.png)
 
 Interestingly, and not that I have done any level of extensive testing, but out of the three Chromium-based browsers, Microsoft Edge appears to have the lowest consumption of resources, followed by Google Chrome and then Brave. 
 
 [![TaskMgr]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/TaskMgr.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/TaskMgr.png)
 
-## **Seamless Apps**
+## Seamless Apps
 
 The usual rules apply for both Brave and Edge for application publishing 
 
@@ -137,6 +140,6 @@ Both apps launch seamlessly and without any obvious issues I can see
 
 [![PublishedApps]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/PublishedApps.png)]({{site.baseurl}}/assets/img/deploying-brave-and-microsoft-edge-dev-browsers-in-citrix-cvad-environments/PublishedApps.png)
 
-## **Summary**
+## Summary
 
 Whilst this is not in any way shape or form an extensive guide to deploying these browsers, hopefully, it unlocks the door to allow you some basic testing, and give you a few more options in your tool kit

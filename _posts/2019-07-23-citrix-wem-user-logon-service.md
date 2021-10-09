@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/citrix-wem-user-logon-service/ExpectDelays.jpg
 share-img: /assets/img/citrix-wem-user-logon-service/ExpectDelays.jpg
 tags: [Apps and Desktops, Citrix, Cloud, Optimization, WEM, Windows, XenApp]
 categories: [Apps and Desktops, Citrix, Cloud, Optimization, WEM, Windows, XenApp]
+redirect_from: 
+    - /2019/07/23/citrix-wem-user-logon-service
+    - /2019/07/23/citrix-wem-user-logon-service/
 ---
 
 ![Citrix WEM User Logon Service]({{site.baseurl}}/assets/img/citrix-wem-user-logon-service/ExpectDelays.jpg)

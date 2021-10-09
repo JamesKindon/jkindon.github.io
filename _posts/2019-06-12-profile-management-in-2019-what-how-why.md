@@ -8,17 +8,20 @@ thumbnail-img: /assets/img/profile-management-in-2019-what-how-why/Options.jpg
 share-img: /assets/img/profile-management-in-2019-what-how-why/Options.jpg
 tags: [Citrix, FSLogix, Profiles, UPM, WEM, Windows, XenApp]
 categories: [Citrix, FSLogix, Profiles, UPM, WEM, Windows, XenApp]
+redirect_from: 
+    - /2019/06/12/profile-management-in-2019-what-how-why
+    - /2019/06/12/profile-management-in-2019-what-how-why/
 ---
 
 ![Options]({{site.baseurl}}/assets/img/profile-management-in-2019-what-how-why/Options.jpg)
 
-EUC and User Profiles. Everyone's favourite topic and one that can raise some heated discussions on why, how, who, when and what should I do to manage these things, ideally with as little administrative sleepless nights as possible. Profile Management has not typically been the friend of your every day fun loving EUC admin. 
+EUC and User Profiles. Everyone's favourite topic and one that can raise some heated discussions on why, how, who, when and what should I do to manage these things, ideally with as little administrative sleepless nights as possible. Profile Management has not typically been the friend of your every day fun loving EUC admin.
 
 The last few years has been interesting in this space, with technologies and techniques popping up all over the place trying to ease the pain. The rapid releases of Windows 10 in particular have managed to create that much noise around profile management that the world is full of opinions and views on how to deal with the chaos in the EUC space. So here is my take on it.
 
 ## The Basics. What is a user profile and is it that important?
 
-A user profile is effectively a collection of settings and configurations which define how the user operates and interacts with their desktop environment. Some of this is customisable and set by the user (backgrounds, taskbars, desktop icons and layouts) and some of this is set by IT departments by using a myriad of tools such as Group Policy (GPO), User environment management solutions (UEM), Scripts etc. A profile more often than not, contains application settings and configurations specific to that user. 
+A user profile is effectively a collection of settings and configurations which define how the user operates and interacts with their desktop environment. Some of this is customisable and set by the user (backgrounds, taskbars, desktop icons and layouts) and some of this is set by IT departments by using a myriad of tools such as Group Policy (GPO), User environment management solutions (UEM), Scripts etc. A profile more often than not, contains application settings and configurations specific to that user.
 
 Sadly, a profile is typically tied to an operating system version, a Windows 7 profile doesn't work with Windows 8, nor does a Windows 8.1 profile work with Windows 10. Hell, half the time Windows profiles don't work between Windows 10 versions and they sure don't work between desktop and Server OS which isn't much fun at all.
 
@@ -26,79 +29,79 @@ Sadly, a profile is typically tied to an operating system version, a Windows 7 p
 
 ### Local (Glorious)
 
-A local profile is the default happy place in any windows environment. No profile management, no worries. The profile lives locally, it contains by default, absolutely everything associated with that users operating environment. You upgrade windows, you upgrade your profile…too easy really. That is of course, until you sign in to another machine and start all over again. Uh Oh. 
+A local profile is the default happy place in any windows environment. No profile management, no worries. The profile lives locally, it contains by default, absolutely everything associated with that users operating environment. You upgrade windows, you upgrade your profile…too easy really. That is of course, until you sign in to another machine and start all over again. Uh Oh.
 
 {: .box-error}
 User experience fail number 1.
 
 ### Roaming Profiles
 
-Microsoft Introduced roaming profiles way back in the day, the pretence being: *how about we take the local profile, move it to a network location, and then roam it around multiple machines*. 
+Microsoft Introduced roaming profiles way back in the day, the pretence being: *how about we take the local profile, move it to a network location, and then roam it around multiple machines*.
 
-Great plan, except it often sucked. I know I know, we all start somewhere, but give me anyone who enjoyed working with Microsoft roaming profiles and I'll eat my own face. 
+Great plan, except it often sucked. I know I know, we all start somewhere, but give me anyone who enjoyed working with Microsoft roaming profiles and I'll eat my own face.
 
-Roaming profiles grew legs and it became commonplace. They filled a gap that we as admins and users as users needed filled, and whilst it solved some challenges, the user experience was often slow and painful, it hurt admins sleep patterns, and it was not an enjoyable time to live in the EUC world (yet it's still out there). I have seen miracles performed by admins with Roaming Profiles, the patience they have to tweak these things to within an inch of their life is nothing short of Medal worthy, but reality is, this is often due to implementations that try to address situations that simply should not exist. 
+Roaming profiles grew legs and it became commonplace. They filled a gap that we as admins and users as users needed filled, and whilst it solved some challenges, the user experience was often slow and painful, it hurt admins sleep patterns, and it was not an enjoyable time to live in the EUC world (yet it's still out there). I have seen miracles performed by admins with Roaming Profiles, the patience they have to tweak these things to within an inch of their life is nothing short of Medal worthy, but reality is, this is often due to implementations that try to address situations that simply should not exist.
 
 {: .box-error}
-User experience fail number 2. 
+User experience fail number 2.
 
 Microsoft did admittedly have some neat tricks up their sleeves with mandatory profiles and even super mandatory profiles if you really needed to lock and control your environment, but other solutions also provided the same (read on).
 
 The resting place of Roaming Profiles:
 [![Rubbish]({{site.baseurl}}/assets/img/profile-management-in-2019-what-how-why/Rubbish.png)]({{site.baseurl}}/assets/img/profile-management-in-2019-what-how-why/Rubbish.png)
 
-My friend and the industries go to guy for anything profiles based [James Rankin](http://james-rankin.com/) has an upcoming post on the history of profiles, he will as always no doubt get into the good stuff at a far deeper level than I am here, watch out for it. 
+My friend and the industries go to guy for anything profiles based [James Rankin](http://james-rankin.com/) has an upcoming post on the history of profiles, he will as always no doubt get into the good stuff at a far deeper level than I am here, watch out for it.
 
 > (Updated - James' Post is [live](https://james-rankin.com/features/the-history-of-the-windows-user-profile-in-euc-environments-1994-2019/) and well worth the read)
 
 ### Citrix Profile Management
 
-More on this a little later, but Citrix introduced a technology (via sepagoPROFILE, thanks [Helge](https://helgeklein.com))) that offered a far better option for profile roaming in the Citrix world: [Citrix User Profile management](https://www.citrix.com/en-au/go/jmp/upm.html) (UPM). 
+More on this a little later, but Citrix introduced a technology (via sepagoPROFILE, thanks [Helge](https://helgeklein.com))) that offered a far better option for profile roaming in the Citrix world: [Citrix User Profile management](https://www.citrix.com/en-au/go/jmp/upm.html) (UPM).
 
 [![UPM]({{site.baseurl}}/assets/img/profile-management-in-2019-what-how-why/UPM.png)]({{site.baseurl}}/assets/img/profile-management-in-2019-what-how-why/UPM.png)
 
-It was light, it was flexible and for the good part of 10 years, has been the defacto standard for Citrix environments. Unfortunately, UPM was still a solution that suffered from many of the challenges of Microsoft Profiles, albeit with a load more mitigation techniques and logic to help protect admins and users from a world of pain. 
+It was light, it was flexible and for the good part of 10 years, has been the defacto standard for Citrix environments. Unfortunately, UPM was still a solution that suffered from many of the challenges of Microsoft Profiles, albeit with a load more mitigation techniques and logic to help protect admins and users from a world of pain.
 
-One of the things I *really* liked about UPM was how seamlessly it could migrate a Microsoft Roaming Profile into a Citrix UPM Profile, I recall clearly one project I ran where I had around 5K Microsoft Profiles to move across to Citrix UPM. Not a single support call. Not one! The process was seamless, the performance increase was obvious and the profiles simply moved across without an issue. 
+One of the things I *really* liked about UPM was how seamlessly it could migrate a Microsoft Roaming Profile into a Citrix UPM Profile, I recall clearly one project I ran where I had around 5K Microsoft Profiles to move across to Citrix UPM. Not a single support call. Not one! The process was seamless, the performance increase was obvious and the profiles simply moved across without an issue.
 
 Not perfect, but a load better than Roaming Profiles in a Citrix environment. Let me digress for a short while onto the companion of profile management in folder redirection.
 
 ### Folder Redirection
 
-Folder Redirection combined with Profile Management, be it Microsoft, Citrix or any other player really opened up a few doors and architectures that somewhat helped (at a cost) our scope of profile management. 
+Folder Redirection combined with Profile Management, be it Microsoft, Citrix or any other player really opened up a few doors and architectures that somewhat helped (at a cost) our scope of profile management.
 
-Folder redirection let us take critical user components out of the profile and put it on a network share, Documents, Desktop, Start Menu (before we went modern) and all sorts of user important data which really helped make the user "profile" less critical. Now we can access user data from any device (given appropriate connectivity), from any OS version at pretty much any time, providing a level of consistency and familiarity simply not possible with a standard profile management solution. 
+Folder redirection let us take critical user components out of the profile and put it on a network share, Documents, Desktop, Start Menu (before we went modern) and all sorts of user important data which really helped make the user "profile" less critical. Now we can access user data from any device (given appropriate connectivity), from any OS version at pretty much any time, providing a level of consistency and familiarity simply not possible with a standard profile management solution.
 
-Folder redirection is [not without its drawbacks](http://james-rankin.com/articles/citrix-xenapp-xendesktop-and-folder-redirection-the-last-word/), however I still firmly believe it has a place in enterprise, James Rankin has an interesting read [here](http://james-rankin.com/articles/citrix-xenapp-xendesktop-and-folder-redirection-the-last-word/) if you want to understand some of the finer fun points and some methodologies that I tend to agree with for the most part. 
+Folder redirection is [not without its drawbacks](http://james-rankin.com/articles/citrix-xenapp-xendesktop-and-folder-redirection-the-last-word/), however I still firmly believe it has a place in enterprise, James Rankin has an interesting read [here](http://james-rankin.com/articles/citrix-xenapp-xendesktop-and-folder-redirection-the-last-word/) if you want to understand some of the finer fun points and some methodologies that I tend to agree with for the most part.
 
 [![FolderRedir]({{site.baseurl}}/assets/img/profile-management-in-2019-what-how-why/FolderRedir.png)]({{site.baseurl}}/assets/img/profile-management-in-2019-what-how-why/FolderRedir.png)
 
-A common bearer of misery and endless sorrow often utilised to plug some holes in folder redirection, is the magic that is Offline Files. What a glorious, file corrupting, data isolating, user enraging system this was. Offline Files was a great concept, but a [horrible reality](https://helgeklein.com/blog/2012/04/windows-7-offline-files-survival-guide/) that resulted in next to no happy stories. 
+A common bearer of misery and endless sorrow often utilised to plug some holes in folder redirection, is the magic that is Offline Files.What a glorious, file corrupting, data isolating, user enraging system this was. Offline Files was a great concept, but a [horrible reality](https://helgeklein.com/blog/2012/04/windows-7-offline-files-survival-guide/) that resulted in next to no happy stories.
 
 {: .box-error}
-User experience fail number 3. 
+User experience fail number 3.
 
-You have all been there. I won't waste any more of your time in going further down that path in life again, needless to say, it's not right and thank god basic concepts such as OneDrive and Known Folder Move address some of the utter rubbish we had to manage back in the day. 
+You have all been there. I won't waste any more of your time in going further down that path in life again, needless to say, it's not right and thank god basic concepts such as OneDrive and Known Folder Move address some of the utter rubbish we had to manage back in the day.
 
-So, with our basic folder redirection in place, and assuming that we ignore the whole hysteria inducing deployments of offline files, it seems like job done really. Now we can blow away a profile, and all we lose is junk data right? Wrong. Three Words: **Application**. **Bloody**. **Data**. 
+So, with our basic folder redirection in place, and assuming that we ignore the whole hysteria inducing deployments of offline files, it seems like job done really. Now we can blow away a profile, and all we lose is junk data right? Wrong. Three Words: **Application**. **Bloody**. **Data**.
 
-AppData is where most of our applications store their data, some in local (typically throw away), some in roaming (we need this to follow us around so that our apps look, feel and operate the same). The problem here becomes obvious, the solution even more so based on above. Just redirect AppData too! Bup. Bow. 
+AppData is where most of our applications store their data, some in local (typically throw away), some in roaming (we need this to follow us around so that our apps look, feel and operate the same). The problem here becomes obvious, the solution even more so based on above. Just redirect AppData too! Bup. Bow.
 
-This sucked. AppData redirection is categorically horrible. It's a performance nightmare, it can lead to all sorts of weird and wonderful app behaviours and it's something that should simply die. Want to have a good fun read, churn through this series by [Aaron, Shawn and Helge](https://stealthpuppy.com/folder-redirection-2015-part-1/) 
+This sucked. AppData redirection is categorically horrible. It's a performance nightmare, it can lead to all sorts of weird and wonderful app behaviours and it's something that should simply die. Want to have a good fun read, churn through this series by [Aaron, Shawn and Helge](https://stealthpuppy.com/folder-redirection-2015-part-1/)
 
-What got worse again is that many applications are now being written to live in the user AppData exclusively. Slack, Teams, WhatsApp, Github Desktop… anything based on the [Electron framework](https://electronjs.org/apps) really. This framework kills profile management. 
+What got worse again is that many applications are now being written to live in the user AppData exclusively. Slack, Teams, WhatsApp, Github Desktop… anything based on the [Electron framework](https://electronjs.org/apps) really. This framework kills profile management.
 
 If we want AppData redirection to die, then what are our options? We need apps to work else it's a big User Experience Fail
 
 ### Citrix UPM (continued)
 
-Microsoft and Citrix UPM both have selective ways of dealing with AppData. Microsoft Profiles are dead to me, so I am not going to focus on them. Citrix UPM on the other hand is very much alive and until recently, has been my profile management flavour of choice. 
+Microsoft and Citrix UPM both have selective ways of dealing with AppData. Microsoft Profiles are dead to me, so I am not going to focus on them. Citrix UPM on the other hand is very much alive and until recently, has been my profile management flavour of choice.
 
-Citrix User Profile Management allows us to fine grain every component of the profile, we can include, exclude, synchronise and mirror profile components and we can pretty much achieve everything with UPM that you need in an EUC environment. We can stream, we can containerise small portions, we can enable active write back (at your own risk and only if specifically needed), we can really get pretty funky and to date, there hasn't been much that can't be done, albeit with bugs and challenges along the way, particularly whilst trying to keep up with the windows 10 release cadence. 
+Citrix User Profile Management allows us to fine grain every component of the profile, we can include, exclude, synchronise and mirror profile components and we can pretty much achieve everything with UPM that you need in an EUC environment. We can stream, we can containerise small portions, we can enable active write back (at your own risk and only if specifically needed), we can really get pretty funky and to date, there hasn't been much that can't be done, albeit with bugs and challenges along the way, particularly whilst trying to keep up with the windows 10 release cadence.
 
 There are three methods here when dealing with AppData via Citrix UPM:
 
-*  Include everything. This means your profiles are huge and will bog down and start to cause performance issues. 
+*  Include everything. This means your profiles are huge and will bog down and start to cause performance issues.
 
 {: .box-error}
 User experience fail number 4

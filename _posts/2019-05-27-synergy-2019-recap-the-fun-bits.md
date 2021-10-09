@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/synergy-2019-recap-the-fun-bits/Synergy.jpg
 share-img: /assets/img/synergy-2019-recap-the-fun-bits/Synergy.jpg
 tags: [Apps and Desktops, Azure, Citrix, Cloud, Synergy, Windows]
 categories: [Apps and Desktops, Azure, Citrix, Cloud, Synergy, Windows]
+redirect_from: 
+    - /2019/05/27/synergy-2019-recap-the-fun-bits
+    - /2019/05/27/synergy-2019-recap-the-fun-bits/
 ---
 
 ![Synergy 2019]({{site.baseurl}}/assets/img/synergy-2019-recap-the-fun-bits/Synergy.jpg)

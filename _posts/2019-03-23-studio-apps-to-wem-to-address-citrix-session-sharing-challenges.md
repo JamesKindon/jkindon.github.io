@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/studio-apps-to-wem-to-address-citrix-session-sharing-
 share-img: /assets/img/studio-apps-to-wem-to-address-citrix-session-sharing-challenges/Problems.png
 tags: [Apps and Desktops, Citrix, Start Menu, WEM, Windows, XenApp]
 categories: [Apps and Desktops, Citrix, Start Menu, WEM, Windows, XenApp]
+redirect_from: 
+    - /2019/03/23/studio-apps-to-wem-to-address-citrix-session-sharing-challenges
+    - /2019/03/23/studio-apps-to-wem-to-address-citrix-session-sharing-challenges/
 ---
 
 ![Problems]({{site.baseurl}}/assets/img/studio-apps-to-wem-to-address-citrix-session-sharing-challenges/Problems.png)

@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/wem-hydration-kit-addition-shell-folders/ShellFolders
 share-img: /assets/img/wem-hydration-kit-addition-shell-folders/ShellFolders.png
 tags: [Apps and Desktops, Citrix, WEM, Windows, XenApp]
 categories: [Apps and Desktops, Citrix, WEM, Windows, XenApp]
+redirect_from: 
+    - /2019/06/07/wem-hydration-kit-addition-shell-folders
+    - /2019/06/07/wem-hydration-kit-addition-shell-folders/
 ---
 
 ![Shell Folders]({{site.baseurl}}/assets/img/wem-hydration-kit-addition-shell-folders/ShellFolders.png)

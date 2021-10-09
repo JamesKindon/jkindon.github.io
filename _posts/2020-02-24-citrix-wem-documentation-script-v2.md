@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/citrix-wem-documentation-script-v2/PS.png
 share-img: /assets/img/citrix-wem-documentation-script-v2/PS.png
 tags: [Citrix, PowerShell, WEM]
 categories: [Citrix, PowerShell, WEM]
+redirect_from: 
+    - /2020/02/24/citrix-wem-documentation-script-v2
+    - /2020/02/24/citrix-wem-documentation-script-v2/
 ---
 
 ![WEM Dco v2]({{site.baseurl}}/assets/img/citrix-wem-documentation-script-v2/PS.png)

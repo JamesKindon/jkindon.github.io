@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/azure-and-ubiquiti-vpn-with-dynamic-ip-address/Overvi
 share-img: /assets/img/azure-and-ubiquiti-vpn-with-dynamic-ip-address/Overview.png.png
 tags: [Azure, Cloud, PowerShell, Ubiquiti]
 categories: [Azure, Cloud, PowerShell, Ubiquiti]
+redirect_from: 
+    - /2020/04/14/azure-and-ubiquiti-vpn-with-dynamic-ip-address
+    - /2020/04/14/azure-and-ubiquiti-vpn-with-dynamic-ip-address/
 ---
 
 ![Azure and Ubiquiti VPN with Dynamic IP Addresse]({{site.baseurl}}/assets/img/azure-and-ubiquiti-vpn-with-dynamic-ip-address/Overview.png)

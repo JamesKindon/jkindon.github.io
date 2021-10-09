@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/navigating-azure-storage-options-for-fslogix-containe
 share-img: /assets/img/navigating-azure-storage-options-for-fslogix-containers/ANF.png
 tags: [Azure, Citrix, Containers, FSLogix, Profiles, Windows]
 categories: [Azure, Citrix, Containers, FSLogix, Profiles, Windows]
+redirect_from: 
+    - /2020/05/27/navigating-azure-storage-options-for-fslogix-containers
+    - /2020/05/27/navigating-azure-storage-options-for-fslogix-containers/
 ---
 
 ![Navigating Azure Storage options for FSLogix Containers]({{site.baseurl}}/assets/img/navigating-azure-storage-options-for-fslogix-containers/ANF.png)

@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/securing-and-optimizing-access-to-azure-storage-accou
 share-img: /assets/img/securing-and-optimizing-access-to-azure-storage-accounts-with-azure-endpoints/MicrosoftImagePrivateLink.png
 tags: [Apps and Desktops, Azure, Citrix, Cloud, FSLogix, Storage Accounts, UPM, Windows]
 categories: [Apps and Desktops, Azure, Citrix, Cloud, FSLogix, Storage Accounts, UPM, Windows]
+redirect_from: 
+    - /2020/06/16/securing-and-optimizing-access-to-azure-storage-accounts-with-azure-endpoints
+    - /2020/06/16/securing-and-optimizing-access-to-azure-storage-accounts-with-azure-endpoints/
 ---
 
 ![Securing and Optimizing Access to Azure Storage Accounts with Azure Endpoints]({{site.baseurl}}/assets/img/securing-and-optimizing-access-to-azure-storage-accounts-with-azure-endpoints/MicrosoftImagePrivateLink.png)

@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/fslogix-containers-search-index-considerations-and-tr
 share-img: /assets/img/fslogix-containers-search-index-considerations-and-troubleshooting/Explorer2.png
 tags: [FSLogix, Profiles, Search, Start Menu, Windows]
 categories: [FSLogix, Profiles, Search, Start Menu, Windows]
+redirect_from: 
+    - /2020/01/06/fslogix-containers-search-index-considerations-and-troubleshooting
+    - /2020/01/06/fslogix-containers-search-index-considerations-and-troubleshooting/
 ---
 
 ![Search Index]({{site.baseurl}}/assets/img/fslogix-containers-search-index-considerations-and-troubleshooting/Explorer2.png)

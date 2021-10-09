@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/improve-the-wem-cloud-service-agent-processing-speed/
 share-img: /assets/img/improve-the-wem-cloud-service-agent-processing-speed/Speed.jpg
 tags: [Apps and Desktops, Citrix, Cloud, WEM, Windows, XenApp]
 categories: [Apps and Desktops, Citrix, Cloud, WEM, Windows, XenApp]
+redirect_from: 
+    - /2020/02/03/improve-the-wem-cloud-service-agent-processing-speed
+    - /2020/02/03/improve-the-wem-cloud-service-agent-processing-speed/
 ---
 
 ![Speed]({{site.baseurl}}/assets/img/improve-the-wem-cloud-service-agent-processing-speed/Speed.jpg)

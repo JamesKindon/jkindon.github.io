@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/automating-active-directory-domain-join-for-azure-sto
 share-img: /assets/img/automating-active-directory-domain-join-for-azure-storage-accounts-with-container-workloads/PS.png
 tags: [Apps and Desktops, Azure, Citrix, Cloud, FSLogix, PowerShell, Profiles, Windows]
 categories: [Apps and Desktops, Azure, Citrix, Cloud, FSLogix, PowerShell, Profiles, Windows]
+redirect_from: 
+    - /2020/06/08/automating-active-directory-domain-join-for-azure-storage-accounts-with-container-workloads
+    - /2020/06/08/automating-active-directory-domain-join-for-azure-storage-accounts-with-container-workloads/
 ---
 
 ![Automating Active Directory Domain Join for Azure Storage Accounts with Container Workloads]({{site.baseurl}}/assets/img/automating-active-directory-domain-join-for-azure-storage-accounts-with-container-workloads/PS.png)

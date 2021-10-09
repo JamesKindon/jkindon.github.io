@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/azure-site-recovery-and-mcs-provisioned-workloads/Bro
 share-img: /assets/img/azure-site-recovery-and-mcs-provisioned-workloads/BrokenState1.png
 tags: [Apps and Desktops, ASR, Azure, Citrix, Cloud, MCS, PowerShell, Windows]
 categories: [Apps and Desktops, ASR, Azure, Citrix, Cloud, MCS, PowerShell, Windows]
+redirect_from: 
+    - /2020/07/29/azure-site-recovery-and-mcs-provisioned-workloads
+    - /2020/07/29/azure-site-recovery-and-mcs-provisioned-workloads/
 ---
 
 ![Azure Site Recovery and MCS Provisioned Workloads]({{site.baseurl}}/assets/img/azure-site-recovery-and-mcs-provisioned-workloads/HappyState1.png)

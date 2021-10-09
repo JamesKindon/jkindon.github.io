@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/citrix-wem-cache-problems-again/rage.jpg
 share-img: /assets/img/citrix-wem-cache-problems-again/rage.jpg
 tags: [Apps and Desktops, Citrix, Cloud, PowerShell, WEM]
 categories: [Apps and Desktops, Citrix, Cloud, PowerShell, WEM]
+redirect_from: 
+    - /2020/09/07/citrix-wem-cache-problems-again
+    - /2020/09/07/citrix-wem-cache-problems-again/
 ---
 
 ![Citrix WEM Cache Problems]({{site.baseurl}}/assets/img/citrix-wem-cache-problems-again/rage.jpg)

@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/windows-search-in-server-2019-and-multi-session-windo
 share-img: /assets/img/windows-search-in-server-2019-and-multi-session-windows-10/Search.jpg
 tags: [Citrix, Containers, FSLogix, Outlook, Search, UPM, Windows]
 categories: [Citrix, Containers, FSLogix, Outlook, Search, UPM, Windows]
+redirect_from: 
+    - /2020/03/15/windows-search-in-server-2019-and-multi-session-windows-10
+    - /2020/03/15/windows-search-in-server-2019-and-multi-session-windows-10/
 ---
 
 ![Windows Search]({{site.baseurl}}/assets/img/windows-search-in-server-2019-and-multi-session-windows-10/Search.jpg)

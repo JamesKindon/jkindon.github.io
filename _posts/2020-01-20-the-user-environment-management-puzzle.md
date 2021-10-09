@@ -8,6 +8,9 @@ thumbnail-img: /assets/img/the-user-environment-management-puzzle/Puzzle.png
 share-img: /assets/img/the-user-environment-management-puzzle/Puzzle.png
 tags: [Apps and Desktops, Citrix, Profiles, Start Menu, UPM, WEM, Windows, XenApp, Optimization]
 categories: [Apps and Desktops, Citrix, Profiles, Start Menu, UPM, WEM, Windows, XenApp, Optimization]
+redirect_from: 
+    - /2020/01/20/the-user-environment-management-puzzle
+    - /2020/01/20/the-user-environment-management-puzzle/
 ---
 
 ![The User Environment Management Puzzle]({{site.baseurl}}/assets/img/the-user-environment-management-puzzle/Puzzle.png)

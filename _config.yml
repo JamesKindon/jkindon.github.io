@@ -17,10 +17,27 @@ author: James Kindon
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    #- Beautiful Jekyll: "https://beautifuljekyll.com"
-    #- Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://jkindon.com"
+  Profiles:
+    - Citrix CTP Profile: "https://www.citrix.com/en-au/community/ctp/awardees.html"
+    - Microsoft MVP Profile: "https://mvp.microsoft.com/en-us/PublicProfile/4022079?fullName=James%20Kindon"
+    - Insentra Profile: "https://www.insentragroup.com/gb/about-insentra/meet-the-crew/james-kindon/"
+  Blogs I Rate:
+    - Aaron Parker: "https://stealthpuppy.com/"
+    - George Spiers: "https://www.jgspiers.com/"
+    - David Wilkinson: "https://www.davidwilkinson.co.uk/"
+    - James Rankin: "https://james-rankin.com/"
+    - Carl Stalhood: "https://carlstalhood.com/"
+    - Carl Webster: "https://carlwebster.com/"
+    - Rene Bigler: "https://dreadysblog.com/author/renebigler/"
+    - Kasper Johansen: "https://virtualwarlock.net/"
+    - Dennis Span: "https://dennisspan.com/"
+  Awesome Tools:
+    - ControlUp: "https://www.control.up.com/"
+    - Remote Display Analyzer: "https://rdanalyzer.com/"
+    - AppVentix: "https://appventix.com/"
+  Community:
+    - CUGC: "https://www.mycugc.org/page/home-cugc"
+    - World Of EUC: "https://worldofeuc.github.io/Website/"
 
 # --- Logo --- #
 

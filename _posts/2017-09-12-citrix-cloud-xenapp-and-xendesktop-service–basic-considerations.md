@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Citrix Cloud - xenapp and XenDesktop Service - Basic Considerations"
+title: "Citrix Cloud - XenApp and XenDesktop Service - Basic Considerations"
 permalink: "/citrix-cloud-xenapp-and-xendesktop-service–basic-considerations/"
 subtitle: "Some Citrix Cloud basics"
 cover-img: /assets/img/Sydney1.jpg

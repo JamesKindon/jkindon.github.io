@@ -13,5 +13,7 @@ gem 'jekyll-redirect-from'
 
 gem 'jemoji'
 
+gem 'jekyll-admin', group: :jekyll_plugins
+
 gemspec
 

@@ -11,6 +11,8 @@ categories: [Citrix, UPM, FSLogix, Profiles, Windows, CVAD]
 redirect_from: 
     - /2021/09/16/citrix-upm-and-fslogix-containers
     - /2021/09/16/citrix-upm-and-fslogix-containers/
+    - /2021/09/16/citrix-upm-and-fslogix-containers/AMP
+    - /2021/09/16/citrix-upm-and-fslogix-containers/AMP/
 ---
 
 ![Citrix UPM and FSLogix Containers]({{site.baseurl}}/assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg)

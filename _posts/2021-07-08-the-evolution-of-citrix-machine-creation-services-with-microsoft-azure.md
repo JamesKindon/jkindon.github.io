@@ -27,18 +27,74 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - October 2021
+
+{: .box-note}
+
+**Feature:** [Ability to update persistent MCS catalogs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-manage.html#update-a-catalog)
+
+**Detail:** Citrix introduced the `Update Machines` option for persistent MCS catalogs in the Full Configuration management interface. The option lets customers manage the image or template the catalog uses. When updating a persistent catalog, consider the following:
+
+> Only machines you add to the catalog later are created using the new image or template. We do not roll out the update to existing machines in the catalog
+
+This is signifcant given the [previous method](https://support.citrix.com/article/CTX129205) wasn't easily understood for those not in bed with PowerShell
+
+{: .box-note}
+
+**Feature:** [Provision VMs on an Azure dedicated host](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html#azure-dedicated-hosts)
+
+**Detail:** Citrix added an option, `Use a host group`, to the Machine Catalog Setup > Master Image page of the Full Configuration management interface. The option lets customers specify which host group they want to use when provisioning VMs in Azure environments
+
+{: .box-note}
+
+**Feature:** [Bind a machine catalog to a Workspace Environment Management configuration set](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html#workspace-environment-management-optional)
+
+**Detail:** A machine catalog can now be bound to a Workspace Environment Management configuration set on creation. Customers can also choose to bind the catalog after they create the catalog.
+
+Whilst not specifically an MCS feature, it is an enhancement that MCS will consume, so it makes the list of goodies
+
 ## - - - - - September 2021
+
+{: .box-note}
+
+**Feature:** [Azure VMware Solution (AVS) integration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#azure-vmware-solution-avs-integration)
+
+**Detail:** Citrix Virtual Apps and Desktops service supports AVS, the Azure VMware Solution. Customers can leverage the Citrix Virtual Apps and Desktop service to use AVS for provisioning workloads in the same they would using vSphere in on-premises environments
+
+{: .box-note}
+
+**Feature:** [Same resource group for multiple catalogs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#azure-resource-groups)
+
+**Detail:** Customers can now use the same resource group for updating and creating catalogs in the Citrix Virtual Apps and Desktops Service. This process:
+
+*  Applies to any resource group that contains one or more machine catalogs
+*  Supports resource groups that are not created by Machine Creation Services
+*  Creates the VM and associated resources
+*  Deletes resources in the resource group when the VM or the catalog is removed
+
+{: .box-note}
+
+**Feature:** [Retrieve information for Azure VMs, snapshots, OS disk, and gallery image definition](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#retrieve-information-for-azure-vms-snapshots-os-disk-and-gallery-image-definition)
+
+**Detail:** You can display information for an Azure VM, OS disk, snapshot and gallery image definition. This information is displayed for resources on the master image when a machine catalog is assigned. Use this functionality to view and select either a Linux or Windows image
+
+{: .box-note}
+
+**Feature:** [Support for non-domain-joined catalogs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html#machine-identities)
+
+**Destail:** Citrix added an identity type, `Non-domain-joined`, to the Machine Catalog Setup > Machine Identities page of the Full Configuration management interface. With this identity type, MCS can create machines that are not joined to any domain
 
 {: .box-note}
 
 **Feature:** Support for using a machine profile when deploying MCS workloads in Azure
 
 **Detail:** This option lets you specify which machine profile you want the image to inherit the configuration from when creating VMs in Azure environments. The image can inherit the following configurations from the selected machine profile:
-*     Accelerated networking
-*     Boot diagnostics
-*     Host disk caching (OS and MCSIO disks)
-*     Machine size (unless otherwise specified),
-*     Tags placed on the VM
+
+*  Accelerated networking
+*  Boot diagnostics
+*  Host disk caching (OS and MCSIO disks)
+*  Machine size (unless otherwise specified),
+*  Tags placed on the VM
 
 This is awesome. If you have needed to implement my [Accelerated Networking scripts](https://jkindon.com/2020/11/10/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/), then consider using this feature instead
 
@@ -140,7 +196,7 @@ Ephemeral OS disks require that your provisioning scheme use managed disks and a
 
 **Feature:** [Azure dedicated hosts](https://docs.microsoft.com/en-us/azure/virtual-machines/dedicated-hosts)
 
-**Detail:** Azure dedicated hosts allow you to provision virtual machines on hardware dedicated to a single customer. While using a dedicated host, Azure ensures that your virtual machines would be the only machines running on that host. This provides more control and visibility to customers thereby ensuring they meet their regulatory or internal security requirements. 
+**Detail:** Azure dedicated hosts allow you to provision virtual machines on hardware dedicated to a single customer. While using a dedicated host, Azure ensures that your virtual machines would be the only machines running on that host. This provides more control and visibility to customers thereby ensuring they meet their regulatory or internal security requirements.
 
 A pre-configured Azure host group, in the region of the hosting unit, is required when using the HostGroupId parameter. Also, Azure auto-placement is required. 
 
@@ -246,8 +302,7 @@ To retain the data, enable the Use persistent write-back cache disk option, avai
 
 **Feature:** [Improved boot performance for Azure system disks](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html#improve-boot-performance)
 
-**Details:** This release supports improved boot performance for Citrix Cloud implementations using Azure when MCSIO is enabled. With this support, you can retain the system disk. This provides the following advantages: 
+**Details:** This release supports improved boot performance for Citrix Cloud implementations using Azure when MCSIO is enabled. With this support, you can retain the system disk. This provides the following advantages:
 
-* VMs and applications now boot and launch with performance similar to how the golden image is served
-* Reduction in API quota consumption, deleting and creating the system disk, and state transition delay caused when you delete a VM
-
+*  VMs and applications now boot and launch with performance similar to how the golden image is served
+*  Reduction in API quota consumption, deleting and creating the system disk, and state transition delay caused when you delete a VM

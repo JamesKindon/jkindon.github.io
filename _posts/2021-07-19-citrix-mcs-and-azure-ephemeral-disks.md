@@ -74,6 +74,16 @@ Comparing the [throughput spec against the temp/cache storage of the VM against 
 
 ### Consuming Ephemeral Disks with Citrix MCS
 
+{: .box-note}
+**Update 18.10.2021** - you can now select to consume Azure Ephemeral Disks via the CVAD Studio GUI
+
+[![GUI]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/GUI.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/GUI.png)
+
+    Above: Updated ability to deploy Ephemeral Disks via the GUI
+
+{: .box-warning}
+**NOTE:** You no longer are forced to deploy via PowerShell, however it is still a valid option
+
 You will need to deploy a Citrix Catalog with a custom provisioning scheme via PowerShell. This Catalog will also need to be deployed with a Shared Image Gallery. These two go hand in hand. This is far less scary than it sounds, however for those not comfortable in PowerShell, will likely be a small challenge. The three key components are simply:
 
 *  We must specify _UseManagedDisks_

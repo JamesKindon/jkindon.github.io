@@ -81,6 +81,9 @@ Comparing the [throughput spec against the temp/cache storage of the VM against 
 
     Above: Updated ability to deploy Ephemeral Disks via the GUI
 
+{: .box-note}
+**Update 18.10.2021** Note that MCSIO is not available when using Ephemeral Disks. The GUI will remove the option for any disk cache configurations
+
 {: .box-warning}
 **NOTE:** You no longer are forced to deploy via PowerShell, however it is still a valid option
 

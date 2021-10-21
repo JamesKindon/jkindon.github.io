@@ -11,6 +11,8 @@ categories: [Citrix, UPM, Profiles, Windows, CVAD, Cloud, Azure]
 redirect_from: 
     - /2021/07/08/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure
     - /2021/07/08/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/
+    - /2021/07/08/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/AMP
+    - /2021/07/08/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/AMP/
 ---
 
 ![The Evolution of Citrix Machine Creation Services with Microsoft Azure]({{site.baseurl}}/assets/img/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/mcs-evolution.png)

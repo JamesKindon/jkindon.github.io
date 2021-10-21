@@ -31,6 +31,14 @@ It is important to be across the options when designing your delivery platform o
 
 {: .box-note}
 
+**Feature:** [Improve performance by preserving a provisioned VM when power cycling](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#preserving-a-provisioned-virtual-machine-when-power-cycling)
+
+**Detail:** Citrix added a setting `Retain VMs across power cycles` to the Machine Catalog Setup > Disk Settings page of the Full Configuration management interface. The setting lets you preserve a provisioned VM when power cycling in Azure environments. 
+
+Be wary of cost implications associated with persistent OS disks
+
+{: .box-note}
+
 **Feature:** [Ability to update persistent MCS catalogs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-manage.html#update-a-catalog)
 
 **Detail:** Citrix introduced the `Update Machines` option for persistent MCS catalogs in the Full Configuration management interface. The option lets customers manage the image or template the catalog uses. When updating a persistent catalog, consider the following:

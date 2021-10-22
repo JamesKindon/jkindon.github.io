@@ -60,7 +60,7 @@ Once again, to provide a zero touch self managing solution, Azure Automation Acc
 
 You can then create a PowerShell Runbook to execute the code
 
-[![RunBook]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/RunBook.png)]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/RunBook.png)
+[![RunBook]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/Runbook.png)]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/Runbook.png)
 
 In the editor window, [copy in the code](https://github.com/JamesKindon/Citrix/blob/master/Azure/EnableAcceleratedNetworking.ps1) and set the appropriate parameter values. You can change the parameter variables at this stage to your subscriptions (ID not name) and resource groups
 

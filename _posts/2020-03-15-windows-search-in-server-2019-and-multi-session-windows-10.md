@@ -17,9 +17,18 @@ redirect_from:
 
 As always in our industry, small changes in one platform can result in significant impact across what is "standard practice" in many other areas. This week's lucky contender is Windows Search.
 
+{: .box-note}
+**Update 25/10/2021:** There is a [new update](https://support.microsoft.com/en-us/topic/october-19-2021-kb5006744-os-build-17763-2268-preview-e043a8a3-901b-4190-bb6b-f5a4137411c0) from Microsoft available stating the fix as follows:
+<br><br>
+*Addresses an issue that causes searchindexer.exe to keep handles to the per user search database in the path below after you sign out:*
+<br><br>
+`C:\Users\username\AppData\Roaming\Microsoft\Search\Data\Applications\{SID}`
+<br><br>
+*As a result, searchindexer.exe stops working and duplicate profile names are created.*
+
 Windows Search in both Windows Server 2019 and Windows 10 Multi-Session has [changed how it operates](https://social.msdn.microsoft.com/Forums/en-US/a9b5000d-e2a8-442b-9cbf-48e05136f732/support-for-server-2019-and-office-2019-search-roaming?forum=FSLogix), introducing the concept of per-user search natively into the Search Service. This is fundamentally different from previous versions (namely Windows Server 2016 etc) and changes how we need to think about search roaming with supporting technologies such as FSLogix Containers and Citrix UPM.
 
-The biggest change is that the Windows Search index is now stored *per user* in the user profile, specifically 
+The biggest change is that the Windows Search index is now stored *per user* in the user profile, specifically
 > `C:\Users\%Username%\AppData\Roaming\Microsoft\Search\Data\Applications\{UserSID}\{UserSID}.edb`
 
 On each login, the Windows Search process creates a new instance of the search database for the user based on the existing EDB. If no EDB file exists, a new one is created by the Operating System.
@@ -28,13 +37,13 @@ On each login, the Windows Search process creates a new instance of the search d
 
 There are two components associated with the Search functionality split into individual processes:
 
-*   **SearchIndexer.exe**: This process runs under the `NT AUTHORITY\SYSTEM` account and accesses the index database for each user (profile based)
-*   **SearchProtocolHost.exe**: an instance of this process runs per user and is a child process of **SearchIndexer.exe**. This process handles amongst other things, the indexing of the Outlook OST file, not the searching of the index file, but the actual index creation of it making content available to search. Searching should be operational with or without this process running. When new items need to be indexed, the process will run, once finished, it will stop
+*  **SearchIndexer.exe**: This process runs under the `NT AUTHORITY\SYSTEM` account and accesses the index database for each user (profile based)
+*  **SearchProtocolHost.exe**: an instance of this process runs per user and is a child process of **SearchIndexer.exe**. This process handles amongst other things, the indexing of the Outlook OST file, not the searching of the index file, but the actual index creation of it making content available to search. Searching should be operational with or without this process running. When new items need to be indexed, the process will run, once finished, it will stop
 
 The impacts here, should you have dealt with FSLogix or Citrix UPM Search roaming should start to become obvious when you think about how these solutions tackle the Search side of things (they rip out a component of the index and store them within a container). The long and short of it is as follows:
 
-*   For FSLogix environments, you must **_<u>NOT</u>_** enable search roaming within the FSLogix GPO. Specifically, you want SearchRoam set to **0** in the registry. This needs to be reversed in your master image should you have enabled it previously, in fact, given the what we know of Search challenges and the attempted hooks into it, I would be tempted to suggest that should you have enabled search roaming in either Windows Server 2019 or Windows 10 multi-session previously, then revert the setting, reinstall Microsoft Office and make sure that the event logs are clear from a Windows Search perspective
-*   For Citrix UPM environments, the following article has been released which is [quite confusing](https://support.citrix.com/article/CTX270433). TLDR, the key it’s discussing should not be set to anything other than 0, and ideally shouldn’t exist as a whole in Windows Server 2019\. Citrix UPM configurations will need to cater for the new location of the Search Index, however, the OST container can stay in place and do its thing. I haven’t had time to test, but I would assume that the new search location in the user profile is an ideal candidate for the UPM container feature
+*  For FSLogix environments, you must **_<u>NOT</u>_** enable search roaming within the FSLogix GPO. Specifically, you want SearchRoam set to **0** in the registry. This needs to be reversed in your master image should you have enabled it previously, in fact, given the what we know of Search challenges and the attempted hooks into it, I would be tempted to suggest that should you have enabled search roaming in either Windows Server 2019 or Windows 10 multi-session previously, then revert the setting, reinstall Microsoft Office and make sure that the event logs are clear from a Windows Search perspective
+*  For Citrix UPM environments, the following article has been released which is [quite confusing](https://support.citrix.com/article/CTX270433). TLDR, the key it’s discussing should not be set to anything other than 0, and ideally shouldn’t exist as a whole in Windows Server 2019\. Citrix UPM configurations will need to cater for the new location of the Search Index, however, the OST container can stay in place and do its thing. I haven’t had time to test, but I would assume that the new search location in the user profile is an ideal candidate for the UPM container feature
 
 Unfortunately, Windows Search is an ongoing challenge and there is a fair number of customers who are experiencing issues with the native multi-user search capability in both Windows 10 Multi-Session and Windows Server 2019. Some are experiencing repeated crashing of the service others are finding that search index files are not released on logoff resulting in locked files and corrupt indexes.
 
@@ -42,11 +51,11 @@ In the below walkthrough, I will try and outline what happens with Windows Searc
 
 First of all, an outline of the environment I am using to demonstrate the situation
 
-*   Windows Server 2019 Datacenter, latest rollup at the time of writing
-*   FSLogix release 2.9.7237.48865
-*   Profile and Office Container configured
-*   Microsoft Office 365 ProPlus, x64, Semi-Annual channel
-*   No PVS or MCS provisioning
+*  Windows Server 2019 Datacenter, latest rollup at the time of writing
+*  FSLogix release 2.9.7237.48865
+*  Profile and Office Container configured
+*  Microsoft Office 365 ProPlus, x64, Semi-Annual channel
+*  No PVS or MCS provisioning
 
 Secondly, below is an outline of some of the event log entries we will be referring to:
 
@@ -97,11 +106,11 @@ On the first logon for a new user, the following event logs entries will occur, 
 
 In summary, in a healthy operational state, for a new user, the following event log patterns will occur on logon:
 
-*   5 = Search Creates a default configuration
-*   102 = Search Indexer creates a new instance for the user
-*   105 = Search Indexer starts the new instance for the user
-*   637 = New flush map file created for the user
-*   325 = Search Indexer creates the new database
+*  5 = Search Creates a default configuration
+*  102 = Search Indexer creates a new instance for the user
+*  105 = Search Indexer starts the new instance for the user
+*  637 = New flush map file created for the user
+*  325 = Search Indexer creates the new database
 
 ## User Logoff
 
@@ -119,9 +128,9 @@ And this is where things go pear-shaped, you will most probably find the 103 ent
 
 In this state, when the user next connects, they are going to be hit with a problem. What we are looking for, is a happy combination of the following events when the user logs on for the second time:
 
-*   102 = Search Indexer creates a new instance for the user
-*   105 = Search Indexer starts the new instance for the user
-*   326 = Search Indexer attaches an existing database
+*  102 = Search Indexer creates a new instance for the user
+*  105 = Search Indexer starts the new instance for the user
+*  326 = Search Indexer attaches an existing database
 
 What we end up with though due to the above event ID 2 on Logoff, is the following:
 
@@ -167,11 +176,11 @@ Along with successful alterations to the `%AppData%\Microsoft\Search\Data\Applic
 
 Fixed it would seem. So, logically here, we know that the resolution is to restart the Windows Search Service based on the failure Event, which is represented by **Event ID 2\.** Specifically:
 
-*   **Event Log:** Application
-*   **Event Level:** Error
-*   **Event Source:** Search-ProfileNotify
-*   **Event ID:** 2
-*   **Event Data:** Unable to remove Windows Search Service indexed data for user `KINDO\JKindon5` in response to user profile deletion. Error code 0x80004002
+*  **Event Log:** Application
+*  **Event Level:** Error
+*  **Event Source:** Search-ProfileNotify
+*  **Event ID:** 2
+*  **Event Data:** Unable to remove Windows Search Service indexed data for user `KINDO\JKindon5` in response to user profile deletion. Error code 0x80004002
 
 By implementing a scheduled task with the above Event ID as the trigger, and a simple configuration of PowerShell to restart the search service as the action:
 

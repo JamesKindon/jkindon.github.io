@@ -20,11 +20,11 @@ As always in our industry, small changes in one platform can result in significa
 {: .box-note}
 **Update 25/10/2021:** There is a [new update](https://support.microsoft.com/en-us/topic/october-19-2021-kb5006744-os-build-17763-2268-preview-e043a8a3-901b-4190-bb6b-f5a4137411c0) from Microsoft available stating the fix as follows:
 <br><br>
-*Addresses an issue that causes searchindexer.exe to keep handles to the per user search database in the path below after you sign out:*
+*Addresses an issue that causes `searchindexer.exe` to keep handles to the per user search database in the path below after you sign out:*
 <br><br>
 `C:\Users\username\AppData\Roaming\Microsoft\Search\Data\Applications\{SID}`
 <br><br>
-*As a result, searchindexer.exe stops working and duplicate profile names are created.*
+*As a result, `searchindexer.exe` stops working and duplicate profile names are created.*
 
 Windows Search in both Windows Server 2019 and Windows 10 Multi-Session has [changed how it operates](https://social.msdn.microsoft.com/Forums/en-US/a9b5000d-e2a8-442b-9cbf-48e05136f732/support-for-server-2019-and-office-2019-search-roaming?forum=FSLogix), introducing the concept of per-user search natively into the Search Service. This is fundamentally different from previous versions (namely Windows Server 2016 etc) and changes how we need to think about search roaming with supporting technologies such as FSLogix Containers and Citrix UPM.
 

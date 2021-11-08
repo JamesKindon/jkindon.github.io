@@ -29,6 +29,14 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - November 2021
+
+{: .box-note}
+
+**Feature:** Support for displaying Azure Marketplace purchase plan information
+
+**Detail:** When creating a machine catalog, you can now view purchase plan information for master images originated from Azure Marketplace images
+
 ## - - - - - October 2021
 
 {: .box-note}
@@ -64,6 +72,14 @@ This is signifcant given the [previous method](https://support.citrix.com/articl
 Whilst not specifically an MCS feature, it is an enhancement that MCS will consume, so it makes the list of goodies
 
 ## - - - - - September 2021
+
+{: .box-note}
+
+**Feature:** [Informative description for image updates](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-manage.html#adding-descriptions-to-an-image)
+
+**Detail:** Change details associated with catalog updates can now be added via PowerShell using the `masterImageNote` attribute. This functionality is useful for administrators who want to add descriptive labels when updating an image used by a catalog. 
+
+Hopefully this lands in the GUI shortly for general consumption
 
 {: .box-note}
 

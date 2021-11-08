@@ -23,23 +23,26 @@ For the most part, most machines in Microsoft Azure have the following component
 
 *  An Operating System Disk (typically a managed disk on remote storage)
 *  A Temporary Disk which is flushed on reboot. Azure by default will place the page file on this disk for instances built in Azure
-*  A machine “Cache” which lives locally on the hypervisor running the VM
+*  A machine "Cache" which lives locally on the hypervisor running the VM
 
 Not all instance types are the same. Not all instance types have a temporary disk, and not all instance types have a cache.
 
 Take an NV12 spec machine, for example, it has a massive temporary disk (300Gb), however, it has no cache. A Dsv4-series VM has neither.
 
-An Ephemeral disk is simply put, your Operating System disk placed onto either the VM Cache IF the size of that Cache is larger than the OS disk, or, at time of writing, [a preview feature allows the OS disk to be housed on the Temporary disk](https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks#preview---ephemeral-os-disks-can-now-be-stored-on-temp-disks) IF the Temp disk is larger than the OS disk.
+An Ephemeral disk is simply put, your Operating System disk placed onto either the VM Cache `If` the size of that Cache is larger than the OS disk, or, at time of writing, [a preview feature allows the OS disk to be housed on the Temporary disk](https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks#preview---ephemeral-os-disks-can-now-be-stored-on-temp-disks) `If` the Temp disk is larger than the OS disk.
 
 Why do we care? Simple. An Ephemeral Disk is free and its fast. There is no charge for operating an Ephemeral Disk. It is housed on high performing, low latent local SSD disk.
 
-Ephemeral Disks do NOT survive a VM de-allocation. They are destroyed and recreated, they do, however, survive an operating system reboot. This makes them a perfect candidate for non-persistent VDI or SBC based workloads, a Citrix MCS specialty…
+Ephemeral Disks do NOT survive a VM de-allocation. They are destroyed and recreated, they do, however, survive an operating system reboot. This makes them a perfect candidate for non-persistent VDI or SBC based workloads, a Citrix MCS specialty...
 
 ## Citrix MCS and Azure Ephemeral Disks
 
-Citrix MCS now can utilise cached base ephemeral disks. Once Microsoft removed the preview status of “cache disk based Ephemeral Disks”, MCS will support that too with a logic of “if the cache is big enough – use it”, if it’s not, use the temp disk.
+Citrix MCS now can utilise cached base ephemeral disks. Once Microsoft removes the preview status of "cache disk based Ephemeral Disks", MCS will support that too with a logic of "*if the cache is big enough – use it, if it's not, use the temp disk*".
 
 The Citrix iteration of this relies on the use of a shared image gallery, and as of the time of writing, requires a custom provisioning scheme driven by PowerShell. I am expecting at some point soon, this will be a tick box in Studio.
+
+{: .box-note}
+**Update 18.10.2021** - you can now select to consume Azure Ephemeral Disks via the CVAD Studio GUI
 
 In a Microsoft world, the use of Ephemeral Disks is typically associated with services that can consume scale sets, and one of the significant changes is that if an Ephemeral Disk is in use, the page lives on the OS disk. With MCS however, the brains of provisioning still move this page file to the Temp Disk, freeing up IOPS for more important use cases.
 
@@ -127,25 +130,25 @@ I ran three baseline tests on both VM’s
 
 Check out the results below, the ephemeral disk destroys the P10 in all tests, those results are very eye opening as to the capability of that local Cache storage
 
-#### **Single 4KiB random write process**
+#### Single 4KiB random write process
 
-*  P10: WRITE: **bw=42.8MiB/s (44.8MB/s)**, 42.8MiB/s-42.8MiB/s (44.8MB/s-44.8MB/s), **io=4186MiB (4390MB)**, run=97875-97875msec
-*  EPH: WRITE: **bw=57.7MiB/s (60.5MB/s)**, 57.7MiB/s-57.7MiB/s (60.5MB/s-60.5MB/s), **io=5544MiB (5814MB)**, run=96081-96081msec
+*  `P10`: WRITE: **bw=42.8MiB/s (44.8MB/s)**, 42.8MiB/s-42.8MiB/s (44.8MB/s-44.8MB/s), **io=4186MiB (4390MB)**, run=97875-97875msec
+*  `EPH`: WRITE: **bw=57.7MiB/s (60.5MB/s)**, 57.7MiB/s-57.7MiB/s (60.5MB/s-60.5MB/s), **io=5544MiB (5814MB)**, run=96081-96081msec
 
-#### **16 parallel 64KiB random write processes**
+#### 16 parallel 64KiB random write processes
 
-*  P10: WRITE: **bw=2795MiB/s (2931MB/s)**, 81.1MiB/s-528MiB/s (85.0MB/s-554MB/s), **io=243GiB (261GB)**, run=88748-88999msec
-*  EPH: WRITE: **bw=4003MiB/s (4197MB/s)**, 211MiB/s-356MiB/s (221MB/s-373MB/s), i**o=275GiB (295GB)**, run=69430-70220msec
+*  `P10`: WRITE: **bw=2795MiB/s (2931MB/s)**, 81.1MiB/s-528MiB/s (85.0MB/s-554MB/s), **io=243GiB (261GB)**, run=88748-88999msec
+*  `EPH`: WRITE: **bw=4003MiB/s (4197MB/s)**, 211MiB/s-356MiB/s (221MB/s-373MB/s), **io=275GiB (295GB)**, run=69430-70220msec
 
-#### **Single 1MiB random write process (run 1)**
+#### Single 1MiB random write process (run 1)
 
-*  P10: WRITE: **bw=24.3KiB/s (24.9kB/s)**, 24.3KiB/s-24.3KiB/s (24.9kB/s-24.9kB/s), **io=2048KiB (2097kB)**, run=84271-84271msec
-*  EPH: WRITE: **bw=383MiB/s** (402MB/s), 383MiB/s-383MiB/s (402MB/s-402MB/s), **io=36.3GiB (39.0GB)**, run=97012-97012msec
+*  `P10`: WRITE: **bw=24.3KiB/s (24.9kB/s)**, 24.3KiB/s-24.3KiB/s (24.9kB/s-24.9kB/s), **io=2048KiB (2097kB)**, run=84271-84271msec
+*  `EPH`: WRITE: **bw=383MiB/s** (402MB/s), 383MiB/s-383MiB/s (402MB/s-402MB/s), **io=36.3GiB (39.0GB)**, run=97012-97012msec
 
-#### **Single 1MiB random write process (run 2)**
+#### Single 1MiB random write process (run 2)
 
-*  P10: WRITE: **bw=25.4KiB/s** (26.0kB/s), 25.4KiB/s-25.4KiB/s (26.0kB/s-26.0kB/s), **io=2048KiB (2097kB)**, run=80758-80758msec
-*  EPH: WRITE: **bw=1315MiB/s** (1379MB/s), 1315MiB/s-1315MiB/s (1379MB/s-1379MB/s), **io=125GiB (135GB)**, run=97570-97570msec
+*  `P10`: WRITE: **bw=25.4KiB/s** (26.0kB/s), 25.4KiB/s-25.4KiB/s (26.0kB/s-26.0kB/s), **io=2048KiB (2097kB)**, run=80758-80758msec
+*  `EPH`: WRITE: **bw=1315MiB/s** (1379MB/s), 1315MiB/s-1315MiB/s (1379MB/s-1379MB/s), **io=125GiB (135GB)**, run=97570-97570msec
 
 ## Performance Baselining with IOMeter
 
@@ -190,4 +193,4 @@ A summary of results is outlined below:
 
 It's not rocket science here, the results based on baselining tools speak for themselves. The Ephemeral disk annihilates the P10 disk. From a user experience standpoint, the general "feel" was that both disks performed fairly similarly until they were under load. Under the same load, the premium disk-based instance was barely useable, however, the Ephemeral based instance was still happily responsive. Of course, a P-series disk can have a high performance tier associated with it as required, and the results will change, but for a standard P10 vs Ephemeral deployment, the options are interesting.
 
-This is good news for those that use multi-session environments as well as those suffering due to small disks in Azure and the associated price point the P-Series disk uplifts. Whilst it may not be the right answer in all use cases, this is yet another awesome piece of integration with MCS and Azure and adds another bow to the quiver for those looking to improve performance and user experience in the Azure cloud.
+This is good news for those that use multi-session environments as well as those suffering due to small disks in Azure and the associated price point the P-Series disk uplifts. Whilst it may not be the right answer in all use cases, this is yet another awesome piece of integration with MCS and Azure and adds another arrow to the quiver for those looking to improve performance and user experience in the Azure cloud.

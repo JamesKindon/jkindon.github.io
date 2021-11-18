@@ -25,6 +25,8 @@ There are two configuration points for bvkcup2
 
 For any queries, the [support forum](https://bvckup2.com/support/forum/topic/438) is typically my go to in the first instance.
 
+It's also worth noting that there are a few other awesome utilities available which are [great additions to the toolbag](https://iobureau.com/#peanuts)
+
 ### Backup Settings
 
 The basics are typically, well, basic.... Install the tool on your server that you are replicating from - this is not a hard and fast, but so far it's been the most efficient way of configuring replication jobs for me

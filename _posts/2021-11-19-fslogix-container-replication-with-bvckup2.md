@@ -25,7 +25,7 @@ There are two configuration points for bvkcup2
 
 For any queries, the [support forum](https://bvckup2.com/support/forum/topic/438) is typically my go to in the first instance.
 
-It's also worth noting that there are a few other awesome utilities available which are [great additions to the toolbag](https://iobureau.com/#peanuts)
+It's also worth noting that there are a few other awesome utilities available which are [great additions to the toolbag](https://iobureau.com/#peanuts), along with both Diskovery (a data storage inspection tool) and CCSIO (Cold-cache Sequential I/O Benchmark) [available here](https://iobureau.com/)
 
 ### Backup Settings
 
@@ -33,7 +33,7 @@ The basics are typically, well, basic.... Install the tool on your server that y
 
 Choose your `source` (backup from), and choose your `destination` (backup to)
 
-Optionally configure an appropriate [service account](https://bvckup2.com/support/forum/topic/413) to access both locations (press the key…). This is important when copying permissions etc
+Optionally configure an appropriate [service account](https://bvckup2.com/support/forum/topic/413) to access both locations (press the key...). This is important when copying permissions etc
 
 [![job]({{site.baseurl}}/assets/img/fslogix-container-replication-with-bvckup2/job.png)]({{site.baseurl}}/assets/img/fslogix-container-replication-with-bvckup2/job.png)
 
@@ -91,6 +91,8 @@ Logging is amazingly verbose, and surprisingly interactive within the GUI, you c
 ## Advanced configuration and considerations
 
 Each backup job is stored (if in service mode) under the programdata directory (`C:\ProgramData\Bvckup2\engine\backup-0001\override.ini`). If in user mode, this is configured in the user profile.
+
+You can read up on [service mode configurations](https://bvckup2.com/support/forum/topic/799#). This will allow you to leave your jobs unattended and operate in a shared configuration mode (multiple admins can alter the job).
 
 Each job allows for an override.ini file to be created for more advanced replication use cases. You can read up on the use of configuration files [here](https://bvckup2.com/support/forum/topic/480). Specifically for ini files, you can read up [here](https://bvckup2.com/support/forum/topic/800)
 

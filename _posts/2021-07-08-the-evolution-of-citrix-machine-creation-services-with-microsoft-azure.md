@@ -33,6 +33,16 @@ It is important to be across the options when designing your delivery platform o
 
 {: .box-note}
 
+**Feature:** [Annotate an image when updating machines](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-manage.html#update-a-catalog)
+
+**Detail:** When updating an MCS-created catalog, notes can be added to assist with tracking changes. Each time the catalog is updated, a note-related entry is created whether or not a prescriptive note is added. If the catalog is updated without adding a note, the entry appears as null (-).
+
+To view note history for the image, select the catalog, click Template Properties in the lower pane, and then click View note history.
+
+This is not Azure specific, but I am adding this as it's very handy and long awaited
+
+{: .box-note}
+
 **Feature:** Support for displaying Azure Marketplace purchase plan information
 
 **Detail:** When creating a machine catalog, you can now view purchase plan information for master images originated from Azure Marketplace images

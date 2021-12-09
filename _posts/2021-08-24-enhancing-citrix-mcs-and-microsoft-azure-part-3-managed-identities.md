@@ -6,8 +6,8 @@ subtitle: Adding Managed Identities to Citrix MCS Provisioned workloads in Micro
 cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png
 share-img: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png
-tags: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
-categories: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation]
+tags: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation, MCS]
+categories: [Citrix, CVAD, Azure, PowerShell, Runbooks, Automation, MCS]
 redirect_from: 
     - /2021/08/24/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities
     - /2021/08/24/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/

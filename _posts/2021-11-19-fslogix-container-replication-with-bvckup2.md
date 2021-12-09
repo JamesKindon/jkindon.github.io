@@ -6,8 +6,8 @@ subtitle: "Utilising bvckup2 to replicate FSLogix Container workloads"
 cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/fslogix-container-replication-with-bvckup2/bvckup2-screenshot.png
 share-img: /assets/img/fslogix-container-replication-with-bvckup2/bvckup2-screenshot.png
-tags: [Citrix, Profiles, Windows, FSlogix, Replication, Bvckup2]
-categories: [Citrix, Profiles, Windows, FSlogix, Replication, Bvckup2]
+tags: [Citrix, Profiles, Windows, FSLogix, Replication, Bvckup2]
+categories: [Citrix, Profiles, Windows, FSLogix, Replication, Bvckup2]
 ---
 
 ![bvckup2-screenshot]({{site.baseurl}}/assets/img/fslogix-container-replication-with-bvckup2/bvckup2-screenshot.png)

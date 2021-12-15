@@ -29,6 +29,14 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - December 2021
+
+{: .box-note}
+
+**Feature:** [Web Studio now supports Azure Ephemeral Disk selection](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** Previously, PowerShell was the only choice to create machines that use ephemeral OS disks. There is a new option to select "Azure ephemeral OS disk" in the Machine Catalog Setup > Storage and License Types page
+
 ## - - - - - November 2021
 
 {: .box-note}

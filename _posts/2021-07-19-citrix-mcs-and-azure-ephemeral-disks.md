@@ -31,6 +31,9 @@ Take an NV12 spec machine, for example, it has a massive temporary disk (300Gb),
 
 An Ephemeral disk is simply put, your Operating System disk placed onto either the VM Cache `If` the size of that Cache is larger than the OS disk, or, at time of writing, [a preview feature allows the OS disk to be housed on the Temporary disk](https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks#preview---ephemeral-os-disks-can-now-be-stored-on-temp-disks) `If` the Temp disk is larger than the OS disk.
 
+{: .box-note}
+**Update 15.12.2021** - this feature is now GA and production ready
+
 Why do we care? Simple. An Ephemeral Disk is free and its fast. There is no charge for operating an Ephemeral Disk. It is housed on high performing, low latent local SSD disk.
 
 Ephemeral Disks do NOT survive a VM de-allocation. They are destroyed and recreated, they do, however, survive an operating system reboot. This makes them a perfect candidate for non-persistent VDI or SBC based workloads, a Citrix MCS specialty...
@@ -38,6 +41,9 @@ Ephemeral Disks do NOT survive a VM de-allocation. They are destroyed and recrea
 ## Citrix MCS and Azure Ephemeral Disks
 
 Citrix MCS now can utilise cached base ephemeral disks. Once Microsoft removes the preview status of "cache disk based Ephemeral Disks", MCS will support that too with a logic of "*if the cache is big enough – use it, if it's not, use the temp disk*".
+
+{: .box-note}
+**Update 15.12.2021** - Citrix MCS will support deployment of the OS disk to either the Cache Disk if present and capable, or to the Temp SSD if the Cache is not. A preference to local cache is always the default, if the machine is resized and the temp SSD disk is the only available option, MCS will handle the configuration accordingly
 
 The Citrix iteration of this relies on the use of a shared image gallery, and as of the time of writing, requires a custom provisioning scheme driven by PowerShell. I am expecting at some point soon, this will be a tick box in Studio.
 

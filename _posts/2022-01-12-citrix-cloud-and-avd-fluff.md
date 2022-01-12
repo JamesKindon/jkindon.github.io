@@ -59,21 +59,21 @@ Citrix Cloud does not touch AVD in any way, shape of form. Never has, and to the
 This is as close to a bakeoff as I am going, that is not the intention of this post. AVD is a great solution, typically you are going to need something to bridge the gaps and make it consumable at scale ([Nerdio](https://getnerdio.com/) or [WVD Admin](https://blog.itprocloud.de/Windows-Virtual-Desktop-Admin/) or [Project Hydra](https://github.com/MarcelMeurer/WVD-Hydra))
 
 | | **Citrix Cloud** | **AVD**
-| Control plane | Managed by Citrix | Managed by Microsoft
-| Access layer | Citrix Gateway managed by Citrix | Azure POPs managed by Microsoft
-| Workload platforms | Hybrid: Azure plus on-premises, AWS, GCP | Azure only
-| Windows 10/11 multi-session | Yes, Azure-only | Yes, Azure-only
-| Client | Citrix Workspace app | Microsoft Remote Desktop app
-| Client platforms | Windows, Linux, macOS, iOS, Android, HTML5 | Windows, macOS, IGEL, HTML5
-| Physical PC remote access | Yes | No
-| Linux virtual desktops | Yes | No
-| Optimisation | Teams, Skype, Zoom, WebEx, Jabber, HTML5, etc. | Teams
-| License | Citrix Cloud + Microsoft 365 | Microsoft 365
-| Image management | Familiar tools and Citrix Machine Creation Services | Azure native tools requiring a cloud-native skillset
-| Scaling | Automated scaling and cost management with mature Citrix Autoscale | Limited scaling capability natively
-| Protocols | HDX | RDP
-| Monitoring | Citrix Director is familiar and provides rich metrics and reports | Azure Monitor and Log Analytics are challenging for staff not familiar with these tools
-| Policy control | Plenty of controls for secure access, peripherals etc. | Limited controls, mostly GPO and MEM
+| **Control plane** | Managed by Citrix | Managed by Microsoft
+| **Access layer** | Citrix Gateway managed by Citrix | Azure POPs managed by Microsoft
+| **Workload platforms** | Hybrid: Azure plus on-premises, AWS, GCP | Azure only
+| **Windows 10/11 multi-session** | Yes, Azure-only | Yes, Azure-only
+| **Client** | Citrix Workspace app | Microsoft Remote Desktop app
+| **Client platforms** | Windows, Linux, macOS, iOS, Android, HTML5 | Windows, macOS, IGEL, HTML5
+| **Physical PC remote access** | Yes | No
+| **Linux virtual desktops** | Yes | No
+| **Optimisation** | Teams, Skype, Zoom, WebEx, Jabber, HTML5, etc. | Teams
+| **License** | Citrix Cloud + Microsoft 365 | Microsoft 365
+| **Image management** | Familiar tools and Citrix Machine Creation Services | Azure native tools requiring a cloud-native skillset
+| **Scaling** | Automated scaling and cost management with mature Citrix Autoscale | Limited scaling capability natively
+| **Protocols** | HDX | RDP
+| **Monitoring** | Citrix Director is familiar and provides rich metrics and reports | Azure Monitor and Log Analytics are challenging for staff not familiar with these tools
+| **Policy control** | Plenty of controls for secure access, peripherals etc. | Limited controls, mostly GPO and MEM
 
 ## Summary
 

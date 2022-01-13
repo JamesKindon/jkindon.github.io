@@ -64,10 +64,10 @@ This is as close to a bakeoff as I am going, that is not the intention of this p
 | **Workload platforms** | Hybrid: Azure plus on-premises, AWS, GCP | Azure only
 | **Windows 10/11 multi-session** | Yes, Azure-only | Yes, Azure-only
 | **Client** | Citrix Workspace app | Microsoft Remote Desktop app
-| **Client platforms** | Windows, Linux, macOS, iOS, Android, HTML5 | Windows, macOS, IGEL, HTML5
+| **Client platforms** | Windows, Linux, macOS, iOS, Android, HTML5, Thin Clients | Windows, macOS, IGEL, HTML5, Android, iOS, Thin Clients
 | **Physical PC remote access** | Yes | No
 | **Linux virtual desktops** | Yes | No
-| **Optimisation** | Teams, Skype, Zoom, WebEx, Jabber, HTML5, etc. | Teams
+| **Optimisation** | Teams, Skype, Zoom, WebEx, Jabber, HTML5, etc. | Teams, Zoom
 | **License** | Citrix Cloud + Microsoft 365 | Microsoft 365
 | **Image management** | Familiar tools and Citrix Machine Creation Services | Azure native tools requiring a cloud-native skillset
 | **Scaling** | Automated scaling and cost management with mature Citrix Autoscale | Limited scaling capability natively

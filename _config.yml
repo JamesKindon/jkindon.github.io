@@ -16,7 +16,9 @@ author: James Kindon
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "aboutme"
+  About Me:
+    - About Me: "aboutme"
+    - Consulting: "consulting"
   Profiles:
     - Citrix CTP Profile: "https://www.citrix.com/en-au/community/ctp/awardees.html"
     - Microsoft MVP Profile: "https://mvp.microsoft.com/en-us/PublicProfile/4022079?fullName=James%20Kindon"

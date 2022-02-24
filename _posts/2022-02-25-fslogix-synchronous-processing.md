@@ -1,0 +1,61 @@
+---
+layout: post
+title: "FSLogix Synchronous Processing"
+permalink: "/fslogix-synchronous-processing/"
+subtitle: "Got slow logon times with FSLogix? Hello Synchronous GPO processing"
+cover-img: /assets/img/Sydney1.jpg
+thumbnail-img: /assets/img/fslogix-synchronous-processing/warning.jpg
+share-img: /assets/img/fslogix-synchronous-processing/warning.jpg
+tags: [Citrix, FSLogix, Profiles, Windows, CVAD, GPO]
+categories: [Citrix, FSLogix, Profiles, Windows, CVAD, GPO]
+---
+![warning!]({{site.baseurl}}/assets/img/fslogix-synchronous-processing/warning.jpg)
+
+For those on the FSLogix profile management path, there are some nasty behaviours you may be experiencing as it relates to Group Policy processing modes. The long and short, FSLogix is enforcing **Synchronous** processing for all logons rather than allowing and enabling **Asynchronous** processing like it used to. If you aren’t sure on why this is a big deal, have a read of [James Rankins](https://twitter.com/james____rankin) article [Make Citrix logons use asynchronous user Group Policy processing mode](https://james-rankin.com/articles/make-citrix-logons-use-asynchronous-user-group-policy-processing-mode/).
+
+This is not a new behaviour; however, it is undocumented (to the best of my knowledge) and it was not communicated which is not amazing. The change was introduced with FSLogix Apps 2.9.7654. Versions prior to this allowed Group Policy state roaming, effectively telling Windows that "*no, this is not the first logon, use async processing*".
+
+The support information I have from a customer (8 months ago!) direct from Microsoft is as follows:
+
+> *The current functionality is expected. Unfortunately, the logon may take longer in the newer FSLogix version, but this is how we do as FSLogix users should be treated as “FirstLogon" every time in non-persistent VDI environment, and the slow logon is expected because the user needs to be applied GP synchronously on every logon. <br><br> The previous FSLogix version(2.9.7349.30108) had some wrongly optimization on GP processing as it caused regression, so we need to revert back in the later version. The FSLogix behavior has historically always been to not roam any GP state. We attempted to add some optimizations for this, but this optimization caused some GP issues so that change was reverted. <br><br> This is currently working as designed from FSLogix perspective.*
+
+In the ideal state, the first time we logon we will have an expected Synchronous process for GPO as shown below
+
+[![sync_bad]({{site.baseurl}}/assets/img/fslogix-synchronous-processing/sync.png)]({{site.baseurl}}/assets/img/fslogix-synchronous-processing/sync.png)
+
+However, a second logon to the same box should result in Asynchronous processing as below:
+
+[![async_good]({{site.baseurl}}/assets/img/fslogix-synchronous-processing/async.png)]({{site.baseurl}}/assets/img/fslogix-synchronous-processing/async.png)
+
+## How did it work before?
+
+It would appear the secret sauce (and I am making an educated guess here) was that previously the `state` keys for the user was migrated and injected by FSLogix into HKLM, allowing the machine to understand that this was not the first logon, even in a non-persistent environment, specifically:
+
+> `HKLM\Software\Microsoft\Windows\CurrentVersion\Group Policy\State\user_SID`
+
+This no longer occurs, hence every logon is a new logon.
+
+## Where to from here?
+
+As mentioned, this is not new. I am typically involved in deployments where we leverage environment management tools rather than depend on Group Policy Preferences in an attempt to get logon times quick. When you do not have a large amount (or any) CSE’s in the use context, the difference between **Synchronous** and **Asynchronous** is not all that big.
+
+Working on a new engagement, the customer (hello) wanted to retain GPP for simplicity, this has proven an issue as we now have a significant logon tax that we do not want, off to WEM we go, which is great, but a same that it is a forced move.
+
+You will be feeling this if any of the following are true:
+
+*  You are on an FSLogix agent version newer than 2.9.7349.30108
+*  You use client-side extensions (CSE) (Group Policy Preferences, Folder Redirection etc)
+*  You sold the dream of FSLogix “speeding up logons” (I won’t get started on that)
+
+You can reduce the impact by:
+
+*  Reducing CSE usage
+*  Migrating existing GPP and CSE to an environment management tool of your choice
+*  Using an old version of FSLogix apps (not a good idea)
+*  Asking Microsoft some very pointed questions
+
+## Summary (for now....)
+
+I feel like there is more to this story. Microsoft surely made this change for technical reasons and due to some problem somewhere experienced by someone, but I know for sure that the customers I deployed too, had no issues with Asynchronous processing, so I am not sure why the global slap, and how this isn’t an optional setting.
+
+Surely there is more to be uncovered here, and I am hoping there is a way to bring back the good days

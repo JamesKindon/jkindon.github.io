@@ -39,7 +39,7 @@ This no longer occurs, hence every logon is a new logon.
 
 As mentioned, this is not new. I am typically involved in deployments where we leverage environment management tools rather than depend on Group Policy Preferences in an attempt to get logon times quick. When you do not have a large amount (or any) CSE’s in the use context, the difference between **Synchronous** and **Asynchronous** is not all that big.
 
-Working on a new engagement, the customer (hello) wanted to retain GPP for simplicity, this has proven an issue as we now have a significant logon tax that we do not want, off to WEM we go, which is great, but a same that it is a forced move.
+Working on a new engagement, the customer (hello) wanted to retain GPP for simplicity. This has proven an issue as we now have a significant logon tax that we do not want. Off to WEM we go, which is great, but a shame that it is a forced move.
 
 You will be feeling this if any of the following are true:
 

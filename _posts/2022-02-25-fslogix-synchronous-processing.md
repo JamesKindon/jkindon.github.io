@@ -59,7 +59,7 @@ You can reduce the impact by:
 
 ## Summary (for now....)
 
-I feel like there is more to this story. Microsoft surely made this change for technical reasons and due to some problem somewhere experienced by someone, but I know for sure that the customers I deployed to, had no issues with Asynchronous processing (see update above), so I am not sure why the global slap, and how this isn’t an optional setting.
+I feel like there is more to this story. Microsoft surely made this change for technical reasons and due to some problem somewhere experienced by someone, but I know for sure that the customers I deployed to, had no issues with Asynchronous processing (see update above), so I am not sure why the global change, and how this isn’t an optional setting.
 
 Surely there is more to be uncovered here, and I am hoping there is a way to bring back the good days.
 

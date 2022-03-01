@@ -16,7 +16,7 @@ categories: [Citrix, FSLogix, Profiles, Windows, CVAD, GPO]
 
 For those on the FSLogix profile management path, there are some nasty behaviours you may be experiencing as it relates to Group Policy processing modes. The long and short, FSLogix is enforcing **Synchronous** processing for all logons rather than allowing and enabling **Asynchronous** processing like it has in the past. If you aren’t sure on why this is a big deal, have a read of [James Rankins](https://twitter.com/james____rankin) article [Make Citrix logons use asynchronous user Group Policy processing mode](https://james-rankin.com/articles/make-citrix-logons-use-asynchronous-user-group-policy-processing-mode/).
 
-This is not a new behaviour; however, it is undocumented (to the best of my knowledge) and it was not communicated which is not amazing. A change was introduced with FSLogix Apps 2.9.7654.46150 to allow Async Processing. A versions prior to this (specifically 2.9.7349.30108 at this stage) allowed Group Policy state roaming, effectively telling Windows that "*no, this is not the first logon, use async processing*".
+This is not a new behaviour; however, it is undocumented (to the best of my knowledge) and it was not communicated which is not amazing. A change was introduced with FSLogix Apps 2.9.7654.46150 to allow Async Processing. A version prior to this (specifically 2.9.7349.30108 at this stage) allowed Group Policy state roaming, effectively telling Windows that "*no, this is not the first logon, use async processing*".
 
 The support information I have from a customer direct from Microsoft is as follows:
 

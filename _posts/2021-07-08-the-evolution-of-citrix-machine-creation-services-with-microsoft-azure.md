@@ -66,7 +66,7 @@ On the Machine Catalogs node, select the catalog and then select Edit Machine Ca
 
 **Feature:** [Support for storing Azure ephemeral OS disk either on the cache disk or temporary disk](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
 
-**Detail:** It is now supported to store the Azure ephemeral OS disk either on `cache disk` or `temporary disk` for an Azure-enabled virtual machine. You can read more on [Azure Ephemeral Disks with MCS here] (https://jkindon.com/citrix-mcs-and-azure-ephemeral-disks/)
+**Detail:** It is now supported to store the Azure ephemeral OS disk either on `cache disk` or `temporary disk` for an Azure-enabled virtual machine. You can read more on [Azure Ephemeral Disks with MCS here](https://jkindon.com/citrix-mcs-and-azure-ephemeral-disks/)
 
 ## - - - - - January 2022
 

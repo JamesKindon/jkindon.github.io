@@ -29,6 +29,14 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - March 2022
+
+{: .box-note}
+
+**Feature:** [Image Portability Service (IPS) is GA](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/migrate-workloads.html)
+
+**Detail:** Whilst not Azure specific, this is heavily Azure focused and will impact MCS capability. IPS simplifies the management of images across platforms. This feature is useful for managing images between an on-premises Resource Location and the public cloud
+
 ## - - - - - February 2022
 
 {: .box-note}

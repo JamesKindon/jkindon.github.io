@@ -29,13 +29,63 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - February 2022
+
+{: .box-note}
+
+**Feature:** [An update to Azure permissions detail](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#about-azure-permissions)
+
+**Detail:** There are two sets of permissions required for security requirements and to minimize risk
+
+*  Minimum permissions: This set of permissions gives better security control. However, new features that require additional permissions will fail because of using minimum permissions
+*  General permissions: This set of permissions does not block you from getting new enhancement benefit
+
+{: .box-note}
+
+**Feature:** [Use VM's temporary disk to host the write-back cache disk](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** A new option added: `Use non-persistent write-back cache disk`, to the `Machine Catalog Setup > Disk Settings` page of the `Manage > Full Configuration` interface. Select that option if you do not want the write-back cache disk to persist for the provisioned VMs. With the option selected, the VM’s temporary disk is used to host the write-back cache disk if the temporary disk has sufficient space. Doing this reduces cost
+
+{: .box-note}
+
+**Feature:** [Change certain VM settings after creating Azure VM catalogs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-manage.html#edit-a-catalog)
+
+**Detail:** Using the Full Configuration management interface, you can now change the following settings after creating a catalog:
+
+*  Machine size
+*  Availability zones
+*  Machine profile
+*  Windows licenses
+
+On the Machine Catalogs node, select the catalog and then select Edit Machine Catalog in the action bar.
+
+{: .box-warning}
+**Note:** These changes only impact newly reprovisioned machines. Previously created machines remain the same
+
+{: .box-note}
+
+**Feature:** [Support for storing Azure ephemeral OS disk either on the cache disk or temporary disk](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** It is now supported to store the Azure ephemeral OS disk either on `cache disk` or `temporary disk` for an Azure-enabled virtual machine. You can read more on [Azure Ephemeral Disks with MCS here] (https://jkindon.com/citrix-mcs-and-azure-ephemeral-disks/)
+
+## - - - - - January 2022
+
+{: .box-note}
+
+**Feature:** [Ability to specify the Azure secret expiration date for existing connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-service-principal)
+
+**Detail:** Using the Full Configuration management interface, there is now an option to specify the date after which the application secret expires. This is useful as it will prevent being surprise locked out of Azure
+
+*  For service principals created manually in Azure, you can directly edit the expiration date on the `Edit Connection > Connection Properties` page
+*  For first-time edits of the expiration date for service principals created through Full Configuration on your behalf, go to `Edit Connection > Edit settings > Use existing`. You can make subsequent edits on the `Edit Connection > Connection Properties` page
+
 ## - - - - - December 2021
 
 {: .box-note}
 
 **Feature:** [Web Studio now supports Azure Ephemeral Disk selection](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
 
-**Detail:** Previously, PowerShell was the only choice to create machines that use ephemeral OS disks. There is a new option to select "Azure ephemeral OS disk" in the Machine Catalog Setup > Storage and License Types page
+**Detail:** Previously, PowerShell was the only choice to create machines that use ephemeral OS disks. There is a new option to select "Azure ephemeral OS disk" in the `Machine Catalog Setup > Storage and License Types` page
 
 ## - - - - - November 2021
 

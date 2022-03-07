@@ -36,7 +36,17 @@ It would appear the secret sauce (and I am making an educated guess here) was th
 
 > `HKLM\Software\Microsoft\Windows\CurrentVersion\Group Policy\State\user_SID`
 
-This no longer occurs, hence every logon is a new logon.
+{: .box-note}
+**07.03.2022**: Functionality confirmation
+
+With version 2.9.7349.30108, FSLogix introduced some new capability which appears to have actioned the following:
+
+*  On user logoff, export the HKLM based `state` and `sid` key for the current user into the local profile. This file appears to have been encrypted. It was stored under `C:\Users\%UserName%\AppData\Local\FSLogix`
+*  On user logon, import the `state` key back into the system, which would trick the OS into thinking that this was not the first logon, and async processing would occur. This was actioned as soon as the VHD attach was successful
+
+This process can clearly be seen in the FSLogix logs. This no longer occurs, hence every logon is a new logon.
+
+This has been updated on [James Rankins initial post](https://james-rankin.com/articles/make-citrix-logons-use-asynchronous-user-group-policy-processing-mode/) as it was the most fitting place for the information to live.
 
 ## Where to from here?
 
@@ -62,6 +72,3 @@ You can reduce the impact by:
 I feel like there is more to this story. Microsoft surely made this change for technical reasons and due to some problem somewhere experienced by someone, but I know for sure that the customers I deployed to, had no issues with Asynchronous processing (see update above), so I am not sure why the global change, and how this isn’t an optional setting.
 
 Surely there is more to be uncovered here, and I am hoping there is a way to bring back the good days.
-
-{: .box-note}
-**02.03.2022**: as expected, there is more, and will be documented as we figure out the details as to why

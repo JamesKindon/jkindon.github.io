@@ -130,3 +130,19 @@ Not even FSLogix can do this natively – two sessions writing back to the same 
 *  Citrix are ensuring that `Appdata\Local\Microsoft\Windows\UsrClass.Dat*` is added to `Exclusion list – files`
 
 To disable automatic configuration, use the [Disable automatic configuration](https://docs.citrix.com/en-us/profile-management/2103/policies/descriptions-and-defaults.html#disable-automatic-configuration) policy
+
+## - - - - - Version 2009
+
+{: .box-note}
+
+**Feature:** [Profile container enhancements](https://docs.citrix.com/en-us/profile-management/2009/configure/profile-container.html)
+
+**Detail:** Starting with this release, multiple concurrent sessions can access a profile container and you can put an entire user profile in its profile container. In addition, Profile Management now accesses the VHDX files in a user context and does not grant Domain Computers full control of the folder where the VHDX files are stored
+
+## - - - - - Version 2003
+
+{: .box-note}
+
+**Feature:** [Enable multi-session write-back for FSLogix Profile Container](https://docs.citrix.com/en-us/profile-management/2003/configure/enable-multi-session-write-back-for-fslogix-profile-container.html)
+
+**Detail:** Profile Management now provides a solution to save changes in multi-session scenarios for FSLogix Profile Container. If the same user launches multiple sessions on different machines, changes made in each session are synchronized and saved to FSLogix Profile Container.

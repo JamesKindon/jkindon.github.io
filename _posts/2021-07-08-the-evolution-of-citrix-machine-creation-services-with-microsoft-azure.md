@@ -33,6 +33,12 @@ It is important to be across the options when designing your delivery platform o
 
 {: .box-note}
 
+**Feature:** [Azure trusted launch support](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** MCS now supports Azure trusted launch in the Full Configuration management interface. If you choose to select an image with trusted launch enabled, *using a machine profile is mandatory*. This machine profile must have trusted launch enabled
+
+{: .box-note}
+
 **Feature:** [Image Portability Service (IPS) is GA](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/migrate-workloads.html)
 
 **Detail:** Whilst not Azure specific, this is heavily Azure focused and will impact MCS capability. IPS simplifies the management of images across platforms. This feature is useful for managing images between an on-premises Resource Location and the public cloud

@@ -163,137 +163,179 @@ The service requires Citrix Cloud Connector version `6.29.0.58841`
 
 **Feature:** [Support for Windows 11](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#october-2021)
 
-**Detail:**
-
-Minimum agent version required: 2109.2.0.1
+**Detail:** Minimum agent version required: 2109.2.0.1
 
 ## - - - - - September 2021
 
 {: .box-note}
 
-**Feature:** [More granular control over applying privilege elevation to child processes]()
+**Feature:** [More granular control over applying privilege elevation to child processes](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/security.html#privilege-elevation)
 
-**Detail:**
+**Detail:** Previously, when you used the Apply to Child Processes setting in a rule, you applied the rule to all child processes that the executable started. This release provides you with three additional options, giving you more granular control over applying privilege elevation to child processes
+
+*  Apply only to executables in the same folder
+*  Apply only to signed executables
+*  Apply only to executables of the same publisher
+
+Minimum agent version required: 2109.2.0.1
 
 {: .box-note}
 
-**Feature:** [Support for Windows Server 2022]()
+**Feature:** [Support for Windows Server 2022](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#september-2021)
 
-**Detail:**
+**Detail:** Minimum agent version required: 2109.2.0.1
 
 ## - - - - - August 2021
 
 {: .box-note}
 
-**Feature:** [Enablement of Asia Pacific South based instances]()
+**Feature:** [Enablement of Asia Pacific South based instances](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#august-2021)
 
-**Detail:**
+**Detail:** Citrix now offers Asia Pacific South based instances
 
 ## - - - - - July 2021
 
 {: .box-note}
 
-**Feature:** [Notifications about new agent versions]()
+**Feature:** [Notifications about new agent versions](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#july-2021)
 
-**Detail:**
+**Detail:** You can now opt in to Agent Version Upgrade notifications
 
 ## - - - - - June 2021
 
 {: .box-note}
 
-**Feature:** [Parameter matching for privilege elevation]()
+**Feature:** [Parameter matching for privilege elevation](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/security.html#privilege-elevation)
 
-**Detail:**
+**Detail:** This release introduces parameter matching for the privilege elevation feature. Parameter matching gives you more granular control by letting you restrict privilege elevation to executables that match the specified parameter. A parameter works as a match criterion. To further expand the criterion, you can use regular expressions.
 
-{: .box-note}
-
-**Feature:** [Privilege elevation support for Windows installer files]()
-
-**Detail:**
+Minimum agent version required: 2106.2.0.1
 
 {: .box-note}
 
-**Feature:** [Profile Management Enhancements]()
+**Feature:** [Privilege elevation support for Windows installer files](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/security.html#privilege-elevation)
 
-**Detail:**
+**Detail:** Starting with this release, you can apply privilege elevation to `.msi` and `.msp` Windows installer files. Using the feature, you elevate the privileges of non-administrative users to an administrator level necessary for some Windows installer files. As a result, those users can run those files as if they are members of the administrators group
+
+Minimum agent version required: 2105.1.0.1
+
+{: .box-note}
+
+**Feature:** [Profile Management Enhancements](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/policies-and-profiles/citrix-upm-settings.html)
+
+**Detail:** Workspace Environment Management now supports all versions of Profile Management through 2106. The Administration Console > Policies and Profiles > Citrix Profile Management Settings user interface has changed, adding:
+
+*  Replicate user stores
+*  Accelerate folder mirroring
+*  User Store Credentials
+
+Minimum agent version required: 2106.2.0.1
 
 ## - - - - - May 2021
 
 {: .box-note}
 
-**Feature:** [Configure user processes as triggers for external tasks]()
+**Feature:** [Configure user processes as triggers for external tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/actions/external-tasks.html)
 
-**Detail:**
+**Detail:** This release includes enhancements to the external task feature. The feature now provides you with two additional options to control when to run external tasks:
+
+*  **Run when processes start** controls whether to run the external task when specified processes start
+*  **Run when processes end** controls whether to run the external task when specified processes end
+
+Using the two options, you can define external tasks to supply resources only when certain processes are running and to revoke those resources when the processes end. Using processes as triggers for external tasks lets you manage your user environments more precisely compared with processing external tasks on logon or logoff
+
+Minimum agent version required: 2104.1.0.1
 
 {: .box-note}
 
-**Feature:** [Enhancements to process hierarchy control]()
+**Feature:** [Enhancements to process hierarchy control](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/security.html#process-hierarchy-control)
 
-**Detail:**
+**Detail:** This release introduces enhancements to the process hierarchy control feature that improve overall performance and stability. The enhancements include the following changes:
+
+*  The AppInfoViewer tool has been updated to include the following two options: `Enable Process Hierarchy Control` and `Disable Process Hierarchy Control`. For the process hierarchy control feature to work, you must first use the tool on each agent machine to enable the feature. Every time you use the tool to enable or disable the feature, a machine restart is required
+*  In certain scenarios, you must restart your agent machine after upgrading or uninstalling the agent
+
+Minimum agent version required: 2105.1.0.1
 
 ## - - - - - April 2021
 
 {: .box-note}
 
-**Feature:** [Process hierarchy control]()
+**Feature:** [Process hierarchy control](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/security.html#process-hierarchy-control)
 
-**Detail:**
+**Detail:** This release introduces the process hierarchy control feature. The feature lets you control whether certain child processes can be started through their parent processes. You create a rule by defining parent processes and then designating an allow list or a block list for their child processes. You then assign the rule on a per user or per user group basis. The following rule types are available:
+
+*  **Path** applies the rule to an executable according to the executable file path
+*  **Publisher** applies the rule according to publisher information
+*  **Hash** applies the rule to identical executables as specified
+
+Minimum agent version required: 2103.2.0.1
 
 {: .box-note}
 
-**Feature:** [Overwrite or merge application security rules]()
+**Feature:** [Overwrite or merge application security rules](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/security.html#application-security)
 
-**Detail:**
+**Detail:** This release adds two settings, **Overwrite** and **Merge**, to the **Administration Console > Security > Application Security tab**. The settings let you determine how the agent processes application security rules.
+
+*  Select Overwrite if you want to overwrite existing rules. When selected, the rules that are processed last overwrite rules that were processed earlier. We recommend that you apply this setting only to single-session machines
+*  Select Merge if you want to merge rules with existing rules. When conflicts occur, the rules that are processed last overwrite rules that were processed earlier
 
 ## - - - - - March  2021
 
 {: .box-note}
 
-**Feature:** [Discover Citrix Cloud Connectors from the CVAD service]()
+**Feature:** [Discover Citrix Cloud Connectors from the CVAD service](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/install-and-configure.html#step-2-configure-group-policies-optional)
 
-**Detail:**
-
-{: .box-note}
-
-**Feature:** [Support for the Windows 10 2009 template]()
-
-**Detail:**
+**Detail:** This release introduces a policy setting titled Discover Citrix Cloud Connector from CVAD service. If you have not yet configured Cloud Connectors for the agent, use the setting to control whether the agent discovers Cloud Connector information from the relevant Citrix Virtual Apps and Desktops (CVAD) service deployment. The agent then connects to the corresponding Cloud Connector machines automatically
 
 {: .box-note}
 
-**Feature:** [Brand-new home page]()
+**Feature:** [Support for the Windows 10 2009 template](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/system-optimization/citrix-optimizer.html)
 
-**Detail:**
+**Detail:** Citrix added support for the Windows 10 2009 (also known as 20H2) template introduced in Citrix optimizer. You can now use WEM service to perform template-based system optimizations for Windows 10 2009 machines. In addition, Citrix have updated all existing templates to reflect changes introduced in the latest standalone Citrix optimizer
 
 {: .box-note}
 
-**Feature:** [Profile Management Enhancements]()
+**Feature:** [Brand-new home page](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#march-2021)
 
-**Detail:**
+**Detail:** This release replaces the home page of the WEM administration console with a quick-start page that provides information necessary for you to get started with the WEM service
+
+{: .box-note}
+
+**Feature:** [Profile Management Enhancements](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/policies-and-profiles/citrix-upm-settings.html)
+
+**Detail:** Workspace Environment Management service now supports all versions of Profile Management through 2103. The following new options are now available in the Administration Console > Policies and Profiles > Citrix Profile Management Settings interface:
+
+*  Enable Local Cache for Profile Container
+*  Enable multi-session write-back for profile containers
+*  Enable Profile Streaming for Folders
 
 ## - - - - - January  2021
 
 {: .box-note}
 
-**Feature:** [Microsoft Sync Framework 2.1 deprecation]()
+**Feature:** [Microsoft Sync Framework 2.1 deprecation](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#january-2021)
 
-**Detail:**
-
-{: .box-note}
-
-**Feature:** [WEM agent integration with the Citrix Virtual Apps and Desktops product software]()
-
-**Detail:**
+**Detail:** Microsoft Sync Framework 2.1 reached End of Life on January 12, 2021. WEM has removed the legacy sync service based on that framework and instead uses a new sync framework, Dotmim.Sync, an open-source sync framework
 
 {: .box-note}
 
-**Feature:** [Support for condition-based assignment of Group Policy settings]()
+**Feature:** [WEM agent integration with the Citrix Virtual Apps and Desktops product software](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html#step-5-workspace-environment-management)
 
-**Detail:**
+**Detail:** The WEM agent is integrated with the Citrix Virtual Apps and Desktops product software, letting you include the WEM agent when installing a Virtual Delivery Agent (VDA). This integration is reflected in the Citrix Virtual Apps and Desktops 2012 product software and later
 
 {: .box-note}
 
-**Feature:** [Privilege elevation]()
+**Feature:** [Support for condition-based assignment of Group Policy settings](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/actions/group-policy-settings.html#contextualize-group-policy-settings)
 
-**Detail:**
+**Detail:** Starting with this release, you can make Group Policy settings conditional by using a filter to contextualize their assignments. A filter comprises a rule and multiple conditions. The WEM agent applies the assigned Group Policy settings only when all conditions in the rule are met in the user environment at runtime. Otherwise, the agent skips those settings when enforcing filters.
 
+{: .box-note}
+
+**Feature:** [Privilege elevation](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/security.html#privilege-elevation)
+
+**Detail:** This release introduces the privilege elevation feature. The feature lets you elevate the privileges of non-administrative users to an administrator level necessary for some executables. As a result, those users can start those executables as if they are members of the administrators group.
+
+You can configure how a rule behaves according to the type of the operating system. You can also configure whether a rule takes effect at a particular time or within a particular time range. You assign a rule on a per user or per user group basis.
+
+Minimum agent version required: 2010.2.0.1

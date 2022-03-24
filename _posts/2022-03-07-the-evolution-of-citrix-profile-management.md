@@ -18,6 +18,16 @@ This list will start at CVAD 1912 LTSR, anything prior to that, refer to the app
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - Version 2203
+
+{: .box-note}
+
+**Feature:** [Policy to automatically reattach VHDX disks in sessions](https://docs.citrix.com/en-us/profile-management/current-release/configure/auto-reattach-detached-vhdx-disks-in-sessions.html)
+
+**Detail:** Previously, to have Profile Management automatically reattach VHDX disks in sessions, you had to configure the registry manually. You can now enable the feature by using a policy. With the Automatically reattach VHDX disks in sessions feature, Profile Management ensures a high level of stability of VHDX-based policies.
+
+Profile Management monitors VHDX disks that are in use. If any of the disks are detached, Profile Management reattaches the disk automatically. This is a container resiliency solution.
+
 ## - - - - - Version 2112
 
 {: .box-note}

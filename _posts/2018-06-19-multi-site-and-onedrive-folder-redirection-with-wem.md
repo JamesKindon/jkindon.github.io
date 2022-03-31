@@ -199,7 +199,7 @@ Digging in a little deeper, we can see there is a specific key which relates to 
 
 [![RegKey1]({{site.baseurl}}/assets/img/multi-site-and-onedrive-folder-redirection-with-wem/RegKey1.png)]({{site.baseurl}}/assets/img/multi-site-and-onedrive-folder-redirection-with-wem/RegKey1.png)
 
-    Above: HKEY_CURRENT_USER\Software\VirtuAll Solutions\VirtuAll User Environment Manager\Agent\UsvUserConfigurationSettings
+    Above: HKEY_CURRENT_USER\Software\VirtuAll Solutions\VirtuAll User Environment Manager\Agent\Tasks Exec Cache\UsvUserConfigurationSettings
 
 [![RegKey2]({{site.baseurl}}/assets/img/multi-site-and-onedrive-folder-redirection-with-wem/RegKey2.png)]({{site.baseurl}}/assets/img/multi-site-and-onedrive-folder-redirection-with-wem/RegKey2.png)
 

@@ -29,6 +29,43 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - April 2022
+
+{: .box-note}
+
+**Feature:** [Ability to manage ProvScheme parameters](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create.html#important-consideration-about-setting-provscheme-parameters)
+
+**Detail:** You will now get an error if you set the `New-ProvScheme` parameters in unsupported hypervisors during machine catalog creation or update `Set-ProvScheme` parameters after machine catalog is created
+
+{: .box-note}
+
+**Feature:** [Increased resource location limits](https://docs.citrix.com/en-us/citrix-daas/limits.html#resource-location-limits)
+
+**Detail:** Not Azure and MCS specific, but will impact design decisions. Resource Location limits for single-session VDAs and multi-session VDAs are now increased to 10000 and 1000 respectively
+
+{: .box-note}
+
+**Feature:** [Machines are not shut down during outages](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#april-2022)
+
+**Detail:** Citrix DaaS now prevents virtual machines from being shut down by the broker when the zone that the machines are in experiences an outage. The machines automatically become available for connections when the outage ends. You don't have to take any action to make the machines available after the outage
+
+{: .box-note}
+
+**Feature:** [Updates for Autoscale](https://docs.citrix.com/en-us/citrix-daas/manage-deployment/autoscale/autoscale-tagged-machines.html)
+
+**Detail:** A couple of small changes to Autoscale
+
+*  Renamed **Restrict Autoscale** to **Autoscaling Tagged Machines** to make it easy to understand
+*  Added a new option, **Control when Autoscale starts powering on tagged machines**. The option lets you control when Autoscale starts powering on tagged machines based on the usage of untagged machines
+
+{: .box-note}
+
+**Feature:** [Support for updating MCS provisioned machines in Azure environments](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#update-provisioned-machines-to-current-provisioning-scheme-state)
+
+**Detail:** `Set-ProvScheme` changes the template (provisioning scheme) associated with the catalog, but does not affect existing machines. Using `Request-ProvVMUpdate` command, you can now apply the current provisioning scheme to an existing machine (or set of machines). Currently, the property update supported by this feature is `ServiceOffering`.
+
+This is very handy when you need to change exsting VM sizes within an existing catalog
+
 ## - - - - - March 2022
 
 {: .box-note}

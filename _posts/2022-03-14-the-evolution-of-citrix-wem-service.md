@@ -16,7 +16,65 @@ Citrix WEM Service environment is consistently updating and bringing enhanced ca
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - April 2022
+
+{: .box-note}
+
+**Feature:** [Updates to the **More** menu in **Monitoring > Administration**](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/administration.html#wem-agents)
+
+**Detail:** This release organizes existing options in the **More** menu in **Web Console > Monitoring > Administration** into the following groups: **Agent, Profile**, and **Power management**. The workflows for using the options remain the same.
+
+Additional updates to the **More** menu include:
+
+*  Renaming **Wake up agents** to **Wake** and moving it to the **Power management** group
+*  Adding the following four power management options:
+    *  **Shut down**. Lets you shut down agents
+    *  **Restart**. Lets you restart agents
+    *  **Sleep**. Lets you put agents into sleep mode
+    *  **Hibernate**. Lets you put agents into hibernate mode
+
+Minimum agent version required: `2204.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Support for cloning scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html#clone-a-scripted-task)
+
+**Detail:** You can now clone an existing scripted task to use as a template for a new one, without the need to create a similar task from scratch
+
+{: .box-note}
+
+**Feature:** [Manage Azure Virtual Desktop using Citrix Optimization Pack](https://docs.citrix.com/en-us/workspace-environment-management/service/citrix-optimization-pack/azure-virtual-desktop.html)
+
+**Detail:** The Citrix Optimization Pack for Azure Virtual Desktop is a new Citrix offering for optimizing Azure Virtual Desktop workloads
+
 ## - - - - - March 2022
+
+{: .box-note}
+
+**Feature:** [Profile Management now available in the web console (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management.html)
+
+**Detail:** In the web console, you can now use Citrix Profile Management to manage user profiles across sessions and desktops (You need to turn this feature on to use it)
+
+{: .box-note}
+
+**Feature:** [Ability to pass parameters to scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task)
+
+**Detail:** Using the web console, you can now provide inputs as parameter variables in a scripted task at runtime. Doing that lets you control how the scripted task behaves without changing the underlying code.
+
+WEM provides you flexibility in what parameters you want to use — parameters that accept only objects of a specific type (such as, string, integer, switch) and named parameters (using the name of the parameter)
+
+Minimum agent version required: `2203.2.0.1`
+
+{: .box-note}
+
+**Feature:** [Option to upgrade agents on demand](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/administration.html#wem-agents)
+
+**Detail:** You can now upgrade your WEM agents from the console on demand. The option is available in both the legacy console and the web console. To use the feature:
+
+*  In the legacy console, go to **Administration > Agents**, right-click an agent, and then select **Upgrade agent to latest version**
+*  In the web console, go to **Monitoring > Administration > Agents**, select one or more agents, click **More**, and then select **Upgrade agent to latest version**
+
+Minimum agent version required: `2203.2.0.1`
 
 {: .box-note}
 

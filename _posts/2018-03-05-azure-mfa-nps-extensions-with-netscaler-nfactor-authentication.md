@@ -53,24 +53,23 @@ Note that if you are using an earlier version of NetScaler than 12, Carl has gui
 
 Why nFactor for this type of deployment? Primarily believe it or not, it's due to its simplicity when integrating with multiple client types, the lack of requirement for rewrites on the authentication pages, and the support of whatever theme you want.
 
-As per [Citrix Documentation on nFactor](https://docs.citrix.com/en-us/netscaler-gateway/12/authentication-authorization/nfactor-for-gateway-authentication.html): 
+As per [Citrix Documentation on nFactor](https://docs.citrix.com/en-us/netscaler-gateway/12/authentication-authorization/nfactor-for-gateway-authentication.html):
 
 > nFactor authentication enables a whole new set of possibilities with respect to authentication. Administrators using nFactor enjoy authentication, authorization, and auditing (AAA) flexibility when configuring authentication factors for virtual servers
-> 
+>
 > Traditionally, Citrix clients (including Browsers and Receivers) use the active directory (AD) password as the first password field. The second password is usually reserved for the One-Time-Password (OTP). However, in order to secure AD servers, OTP is required to be validated first. nFactor can do this without requiring client modifications.
-
 
 ### Create Authentication Virtual Server
 
-*Go to Security -> AAA – Application Traffic -> Virtual Servers.* 
+*Go to Security -> AAA – Application Traffic -> Virtual Servers.*
 
-**Create** a non-addressable **Authentication vServer**. 
+**Create** a non-addressable **Authentication vServer**.
 
 [![Auth vServer 1]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer1.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer1.png)
 
     Above: Non-addressable Authentication Virtual Server
 
-**Bind** your Certificate as normal. Skip through the other settings for now 
+**Bind** your Certificate as normal. Skip through the other settings for now
 
 [![Auth vServer 2]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer2.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer2.png)
 
@@ -78,9 +77,9 @@ As per [Citrix Documentation on nFactor](https://docs.citrix.com/en-us/netscaler
 
 ### Add an LDAP and RADIUS Authentication Server Profile
 
-*Go to Security -> AAA – Application Traffic -> Policies -> Authentication -> Basic Policies -> LDAP* 
+*Go to Security -> AAA – Application Traffic -> Policies -> Authentication -> Basic Policies -> LDAP*
 
-Select **Servers** and create an **LDAP Server** if you don't have one 
+Select **Servers** and create an **LDAP Server** if you don't have one
 
 [![LDAP Profile 1]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LDAPProfile1.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LDAPProfile1.png)
 
@@ -88,13 +87,13 @@ Select **Servers** and create an **LDAP Server** if you don't have one
 
 *Go to Security -> AAA – Application Traffic -> Policies -> Authentication -> Basic Policies -> RADIUS*
 
-Select **Servers** and create a **RADIUS Server** if you don't have one (I use the NetScaler VIP created as my RADIUS LB) Ensure that your **RADIUS profile** has the appropriate **timeouts**, **NAS ID** and **password encoding** set 
+Select **Servers** and create a **RADIUS Server** if you don't have one (I use the NetScaler VIP created as my RADIUS LB) Ensure that your **RADIUS profile** has the appropriate **timeouts**, **NAS ID** and **password encoding** set
 
 [![RADIUSServer1]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/RADIUSServer1.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/RADIUSServer1.png)
 
     Above: RADIUS Server - Note Time-Out, NAS ID and Password Encoding Type
 
-Once completed, confirm your Server object exists 
+Once completed, confirm your Server object exists
 
 [![RADIUSProfile1]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/RADIUSProfile1.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/RADIUSProfile1.png)
 
@@ -102,7 +101,7 @@ Once completed, confirm your Server object exists
 
 ### **Add LDAP and RADIUS Authentication Policies**
 
-*Go to Security -> AAA – Application Traffic -> Policies -> Authentication -> Advanced Policies -> Authentication Policies.* 
+*Go to Security -> AAA – Application Traffic -> Policies -> Authentication -> Advanced Policies -> Authentication Policies.*
 
 **Add** two policies: one for **LDAP** and one for **RADIUS**. set the **Request Server** to the **Authentication Servers** you created previously, and **set** the expression to ***true***
 
@@ -114,19 +113,19 @@ Once completed, confirm your Server object exists
 
 *Go to Security -> AAA – Application Traffic -> Login Schema*
 
-Select the **Profiles** tab and Click the **Add** button 
+Select the **Profiles** tab and Click the **Add** button
 
 [![LoginSchema1]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchema1.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchema1.png)
 
     Above: New Authentication Login Schema
 
-Select the **pencil** next to the noschema default entry under **Authentication Schema**: Choose the **SingleAuth.xml** entry as your starting template. Select **Edit** on the right hand side 
+Select the **pencil** next to the noschema default entry under **Authentication Schema**: Choose the **SingleAuth.xml** entry as your starting template. Select **Edit** on the right hand side
 
 [![LoginSchema2]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchema2.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchema2.png)
 
     Above:  SingleAuth.xml Schema Template
 
-Give the **Schema** **Profile** a name and edit any fields you want to alter 
+Give the **Schema** **Profile** a name and edit any fields you want to alter
 
 [![LoginSchema3]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchema3.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchema3.png)
 
@@ -138,19 +137,19 @@ Select **Save** Ensure that you **select** your new template and then select **c
 
     Above: Ensure you select the new Schema
 
-Confirm the **login Schema Profile** is created 
+Confirm the **login Schema Profile** is created
 
 [![LoginSchema5]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchema5.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchema5.png)
 
     Above: Login Schema Profile created
 
-Select the **Policies** tab and Click the **Add** button Give the **Policy** a name and select the **Profile** you just created. Give the rule a value of **true**. 
+Select the **Policies** tab and Click the **Add** button Give the **Policy** a name and select the **Profile** you just created. Give the rule a value of **true**.
 
 [![LoginSchemaPolicy1]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchemaPolicy1.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchemaPolicy1.png)
 
     Above: New Login Schema Policy
 
-Select **Create** Confirm the new **policy** is created 
+Select **Create** Confirm the new **policy** is created
 
 [![LoginSchemaPolicy2]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchemaPolicy2.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/LoginSchemaPolicy2.png)
 
@@ -160,22 +159,21 @@ Select **Create** Confirm the new **policy** is created
 
 > A policy label specifies the authentication policies for a particular factor. Each policy label corresponds to a single factor. The policy label must be bound as the next factor of an authentication policy or of another authentication policy label. Typically, a policy label includes authentication policies for a specific authentication mechanism
 
+*Go to Security -> AAA – Application Traffic -> Policies -> Authentication -> Advanced Policies -> Policy Label*
 
-*Go to Security -> AAA – Application Traffic -> Policies -> Authentication -> Advanced Policies -> Policy Label* 
-
-Select **Add. **Give the **PolicyLabel** a name 
+Select **Add.**Give the **PolicyLabel** a name
 
 [![AuthenticationPolicyLabel1]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthenticationPolicyLabel1.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthenticationPolicyLabel1.png)
 
     Above: New Authentication PolicyLabel for RADIUS Authentication
 
-Select **Continue.** **Select** the **RADIUS** **Authentication Policy** you created above. Note this is a very simple use of nFactor, we are only using a single **Policylabel** with **RADIUS** as our **second factor** 
+Select **Continue.** **Select** the **RADIUS** **Authentication Policy** you created above. Note this is a very simple use of nFactor, we are only using a single **Policylabel** with **RADIUS** as our **second factor**
 
 [![AuthenticationPolicyLabel2]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthenticationPolicyLabel2.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthenticationPolicyLabel2.png)
 
     Above: Bind the RADIUS Authentication Policy to the PolicyLabel
 
-Select **Bind** 
+Select **Bind**
 
 [![AuthenticationPolicyLabel3]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthenticationPolicyLabel3.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthenticationPolicyLabel3.png)
 
@@ -185,13 +183,13 @@ Select **Bind**
 
 *Go to Security -> AAA – Application Traffic -> Virtual Servers*
 
-**Edit** the **Authentication vServer** you created earlier and **select** **"Advanced Authentication Policies"** 
+**Edit** the **Authentication vServer** you created earlier and **select** **"Advanced Authentication Policies"**
 
 [![AuthvServer3]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer3.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer3.png)
 
     Above: Advanced Authentication Policies for the Authentication vServer
 
-Select the **LDAP** **Policy** that you created previously and then select your **RADIUS Policy Label** as the **next Factor** 
+Select the **LDAP** **Policy** that you created previously and then select your **RADIUS Policy Label** as the **next Factor**
 
 [![AuthvServer4]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer4.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer4.png)
 
@@ -201,9 +199,9 @@ Select **Bind**
 
 ### Assign a Login Schema to the Authentication vServer
 
-*Go to Security -> AAA – Application Traffic -> Virtual Servers* 
+*Go to Security -> AAA – Application Traffic -> Virtual Servers*
 
-**Edit** the **Authentication vServer** you created earlier and select "**Login Schema**" Bind the **Login Schema Policy** you created previously 
+**Edit** the **Authentication vServer** you created earlier and select "**Login Schema**" Bind the **Login Schema Policy** you created previously
 
 [![AuthvServer5]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer5.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthvServer5.png)
 
@@ -211,7 +209,7 @@ Select **Bind**
 
 ### Configuring the NetScaler Gateway vServer
 
-At this point, you would **remove existing Authentication Policies** assigned to your Gateway vServer, and bind your new **Authentication Profile.** 
+At this point, you would **remove existing Authentication Policies** assigned to your Gateway vServer, and bind your new **Authentication Profile.**
 
 *Go to NetScaler Gateway -> Virtual Servers -> Edit your Gateway -> Select Authentication Profile.*
 
@@ -219,21 +217,21 @@ At this point, you would **remove existing Authentication Policies** assigned to
 
     Above: Current Authentication Profile
 
-Select the **+** to Add Give the **Authentication Profile** a **name**, and select the **Authentication vServer** you created earlier 
+Select the **+** to Add Give the **Authentication Profile** a **name**, and select the **Authentication vServer** you created earlier
 
 [![GatewayAuthProf2]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/GatewayAuthProf2.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/GatewayAuthProf2.png)
 
     Above: Create Authentication Profile
 
-Select **OK** and confirm your **Authentication Profile** is applied 
+Select **OK** and confirm your **Authentication Profile** is applied
 
 [![GatewayAuthProf3]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/GatewayAuthProf3.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/GatewayAuthProf3.png)
 
     Above: Authentication Profile Assigned to Gateway
 
-Note that this creates the profile below, but doesn’t need all the other mandatory fields that creating it manually requires 
+Note that this creates the profile below, but doesn't need all the other mandatory fields that creating it manually requires
 
-*Security -> AAA – Application Traffic -> Authentication Profile* 
+*Security -> AAA – Application Traffic -> Authentication Profile*
 
 [![AuthProfile1]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthProfile1.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/AuthProfile1.png)
 
@@ -241,17 +239,17 @@ Note that this creates the profile below, but doesn’t need all the other manda
 
 ### End Result
 
-Once everything has been applied, you should experience a simple logon scheme on your Gateway vServer as below: 
+Once everything has been applied, you should experience a simple logon scheme on your Gateway vServer as below:
 
 [![EndResult1]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/EndResult1.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/EndResult1.png)
 
     Above: RFWebUI Web Page - First Factor
 
-Once you have entered your first Factor (LDAPS Username and Password), the nFactor configuration will move to RADIUS, the behaviour of the next stage will differ depending on your Authentication Mechanism within MFA. 
+Once you have entered your first Factor (LDAPS Username and Password), the nFactor configuration will move to RADIUS, the behaviour of the next stage will differ depending on your Authentication Mechanism within MFA.
 
-If you use the Authenticator App, you will be prompted for confirmation on your mobile device. The NetScaler will wait 30 seconds for this confirmation to take place before timing out. 
+If you use the Authenticator App, you will be prompted for confirmation on your mobile device. The NetScaler will wait 30 seconds for this confirmation to take place before timing out.
 
-If you use Text Message/SMS based authentication, the NetScaler will prompt you for your confirmation PIN as follows: 
+If you use Text Message/SMS based authentication, the NetScaler will prompt you for your confirmation PIN as follows:
 
 [![EndResult2]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/EndResult2.png)]({{site.baseurl}}/assets/img/azure-mfa-nps-extensions-with-netscaler-nfactor-authentication/EndResult2.png)
 
@@ -266,39 +264,47 @@ As with everything NetScaler, there are many ways to achieve the same result. Th
 {: .box-note}
 **Update 24.04.22** - Additional Logic and Code by [Wee Sern Soo](https://www.linkedin.com/in/citrixconsultant)
 
-The below nFactor flow command blocks re-create the above, modified to contain a decision block between the secure LDAP and RADIUS factors to check for a group membership before deciding to perform RADIUS authentication or allow the user to login with just secure LDAP. 
+The below nFactor flow command blocks re-create the above, modified to contain a decision block between the secure LDAP and RADIUS factors to check for a group membership before deciding to perform RADIUS authentication or allow the user to login with just secure LDAP.
 
-This might be handy if you are not doing the big bang approach to enabling Azure MFA across the board while still needing to authenticate users via Citrix ADC and Azure MFA with NPS extensions (i.e no Azure AD SAML). 
+This might be handy if you are not doing the big bang approach to enabling Azure MFA across the board while still needing to authenticate users via Citrix ADC and Azure MFA with NPS extensions (i.e no Azure AD SAML).
 
 The below assumes you have setup the NPS servers and have a Citrix Gateway virtual server already.
 
-Note to replace the angular bracketed fields with your environment’s specifics.
+Note to replace the angular bracketed fields with your environment's specifics.
 
 First create secure LDAP authentication action and policy, noting that this action will also perform group extraction for the authenticated user hence we will specify the groupAttrName parameter in the LDAP action:
 
 {: .box-warning}
-The below code is for example and simplicity only. It is suggested in all instances that both LDAPS and RADIUS is load balanced, by the ADC for resiliency, and as such you would be pointing back to the ADC for the appropriate LB values
+The below code is for example and simplicity only. It is suggested in all instances that both LDAPS and RADIUS is load balanced by the ADC for resiliency, and as such you would be pointing back to the ADC for the appropriate LB values
 
 ```plaintext
 add authentication ldapAction ldaps_auth-AzureMFA -serverIP <IP address of Domain Controller> -serverPort 636 -ldapBase "DC=<domain,DC=com,DC=au>" -ldapBindDn <servicaccount@domain.com.au> -ldapBindDnPassword <1234567890> -ldapLoginName sAMAccountName -groupAttrName memberOf -subAttributeName cn -secType SSL -nestedGroupExtraction ON -groupNameIdentifier sAMAccountName -groupSearchAttribute sAMAccountName
 add authentication Policy ldaps-nfactor-auth-pol -rule True -action ldaps_auth-AzureMFA
 ```
+
 Next create the RADIUS authentication action and policy:
+
 ```plaintext
 add authentication radiusAction radius_AzureMFA2 -serverIP <IP Address of NPS Server> -serverPort 1812 -authTimeout <150> -radKey <1234567890> -radNASid MFA -passEncoding mschapv2
 add authentication Policy radius-nfactor-auth-pol -rule TRUE -action radius_AzureMFA
 ```
+
 Create login schemas that we will use later:
+
 ```plaintext
 add authentication loginSchema passthrough -authenticationSchema noschema
 add authentication loginSchema nFactor_AzureMFA_LoginSchema -authenticationSchema "/nsconfig/loginschema/LoginSchema/SingleAuth.xml"
 ```
-Now create the RADIUS block for nFactor: 
+
+Now create the RADIUS block for nFactor:
+
 ```plaintext
 add authentication policylabel nFactor-RADIUS-AzureMFA-PolicyLabel -loginSchema passthrough
 bind authentication policylabel nFactor-RADIUS-AzureMFA-PolicyLabel -policyName radius-nfactor-auth-pol -priority 100 -gotoPriorityExpression END
 ```
+
 When ready, create decision block for nFactor and link it to the policy label for the RADIUS factor if the condition matches that the user is a member of Azure-MFA-Users. This is the main difference from the original solution and this particular variation:
+
 ```plaintext
 add authentication Policy memberOf-Azure-MFA-Users -rule "AAA.USER.IS_MEMBER_OF(\"Azure-MFA-Users\")" -action NO_AUTHN
 add authentication Policy not-memberOf-Azure-MFA-Users -rule "AAA.USER.IS_MEMBER_OF(\"Azure-MFA-Users\").NOT" -action NO_AUTHN
@@ -306,7 +312,9 @@ add authentication policylabel nFactor-GroupCheck-PolicyLabel -loginSchema passt
 bind authentication policylabel nFactor-GroupCheck-PolicyLabel -policyName memberOf-Azure-MFA-Users -priority 100 -gotoPriorityExpression NEXT -nextFactor nFactor-RADIUS-AzureMFA-PolicyLabel
 bind authentication policylabel nFactor-GroupCheck-PolicyLabel -policyName not-memberOf-Azure-MFA-Users -priority 110 -gotoPriorityExpression NEXT
 ```
+
 Create authentication (AAA) virtual server which is non-addressable and bind the starting authentication policy and starting schema policy. Link it to the policy label nFactor-GroupCheck-Policy Label for the decision block:
+
 ```plaintext
 add authentication vserver AuthVS-AzureMFA-NPS SSL 0.0.0.0
 set ssl vserver AuthVS-AzureMFA-NPS -ssl3 DISABLED -tls1 DISABLED -tls11 DISABLED -dtls1 DISABLED
@@ -320,11 +328,13 @@ bind ssl vserver AuthVS-AzureMFA-NPS -eccCurveName P_384
 bind ssl vserver AuthVS-AzureMFA-NPS -eccCurveName P_224
 bind ssl vserver AuthVS-AzureMFA-NPS -eccCurveName P_521
 ```
+
 Create the authentication profile which we will use to configure the Citrix Gateway:
+
 ```plaintext
 add authentication authnProfile Auth-Profile-nFactor-AzureMFA -authnVsName AuthVS-AzureMFA-NPS
 ```
+
 Finally, bind the authentication profile with the Citrix Gateway when you are ready and test. You can handle this via normal CLI or the GUI as you see fit
 
 Hopefully, you will find these command blocks below with explanations useful in your travels. Enjoy – [Wee Sern Soo](https://www.linkedin.com/in/citrixconsultant)
-

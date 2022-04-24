@@ -38,6 +38,9 @@ I suggest starting with his article as the only point of change here, is once we
 
 This configuration is based on a NetScaler Enterprise Licence, if you do not have Enterprise you will need to configure traditional Authentication Policies.
 
+{: .box-note}
+**Update 24.04.22** - Additional Logic and Code by [Wee Sern Soo](https://www.linkedin.com/in/citrixconsultant). The code block allows for group based decisions to selectively control MFA requirements at the ADC level. The block is at the end of this article
+
 ## Setting up Load Balancing for the NPS Servers
 
 Once you have configured both NPS Servers, it's time to setup RADIUS load balancing on the NetScaler front.
@@ -259,3 +262,69 @@ This behaviour will follow across Web, Receiver, Mobile Receiver and the SSL VPN
 ## Conclusion
 
 As with everything NetScaler, there are many ways to achieve the same result. This is only a basic use of the nFactor capability on NetScaler and there probably more advanced or different ways of configuring the above, however it seems to fit well together with NPS and Azure MFA across multiple device types.
+
+{: .box-note}
+**Update 24.04.22** - Additional Logic and Code by [Wee Sern Soo](https://www.linkedin.com/in/citrixconsultant)
+
+The below nFactor flow command blocks re-create the above, modified to contain a decision block between the secure LDAP and RADIUS factors to check for a group membership before deciding to perform RADIUS authentication or allow the user to login with just secure LDAP. 
+
+This might be handy if you are not doing the big bang approach to enabling Azure MFA across the board while still needing to authenticate users via Citrix ADC and Azure MFA with NPS extensions (i.e no Azure AD SAML). 
+
+The below assumes you have setup the NPS servers and have a Citrix Gateway virtual server already.
+
+Note to replace the angular bracketed fields with your environment’s specifics.
+
+First create secure LDAP authentication action and policy, noting that this action will also perform group extraction for the authenticated user hence we will specify the groupAttrName parameter in the LDAP action:
+
+{: .box-warning}
+The below code is for example and simplicity only. It is suggested in all instances that both LDAPS and RADIUS is load balanced, by the ADC for resiliency, and as such you would be pointing back to the ADC for the appropriate LB values
+
+```plaintext
+add authentication ldapAction ldaps_auth-AzureMFA -serverIP <IP address of Domain Controller> -serverPort 636 -ldapBase "DC=<domain,DC=com,DC=au>" -ldapBindDn <servicaccount@domain.com.au> -ldapBindDnPassword <1234567890> -ldapLoginName sAMAccountName -groupAttrName memberOf -subAttributeName cn -secType SSL -nestedGroupExtraction ON -groupNameIdentifier sAMAccountName -groupSearchAttribute sAMAccountName
+add authentication Policy ldaps-nfactor-auth-pol -rule True -action ldaps_auth-AzureMFA
+```
+Next create the RADIUS authentication action and policy:
+```plaintext
+add authentication radiusAction radius_AzureMFA2 -serverIP <IP Address of NPS Server> -serverPort 1812 -authTimeout <150> -radKey <1234567890> -radNASid MFA -passEncoding mschapv2
+add authentication Policy radius-nfactor-auth-pol -rule TRUE -action radius_AzureMFA
+```
+Create login schemas that we will use later:
+```plaintext
+add authentication loginSchema passthrough -authenticationSchema noschema
+add authentication loginSchema nFactor_AzureMFA_LoginSchema -authenticationSchema "/nsconfig/loginschema/LoginSchema/SingleAuth.xml"
+```
+Now create the RADIUS block for nFactor: 
+```plaintext
+add authentication policylabel nFactor-RADIUS-AzureMFA-PolicyLabel -loginSchema passthrough
+bind authentication policylabel nFactor-RADIUS-AzureMFA-PolicyLabel -policyName radius-nfactor-auth-pol -priority 100 -gotoPriorityExpression END
+```
+When ready, create decision block for nFactor and link it to the policy label for the RADIUS factor if the condition matches that the user is a member of Azure-MFA-Users. This is the main difference from the original solution and this particular variation:
+```plaintext
+add authentication Policy memberOf-Azure-MFA-Users -rule "AAA.USER.IS_MEMBER_OF(\"Azure-MFA-Users\")" -action NO_AUTHN
+add authentication Policy not-memberOf-Azure-MFA-Users -rule "AAA.USER.IS_MEMBER_OF(\"Azure-MFA-Users\").NOT" -action NO_AUTHN
+add authentication policylabel nFactor-GroupCheck-PolicyLabel -loginSchema passthrough
+bind authentication policylabel nFactor-GroupCheck-PolicyLabel -policyName memberOf-Azure-MFA-Users -priority 100 -gotoPriorityExpression NEXT -nextFactor nFactor-RADIUS-AzureMFA-PolicyLabel
+bind authentication policylabel nFactor-GroupCheck-PolicyLabel -policyName not-memberOf-Azure-MFA-Users -priority 110 -gotoPriorityExpression NEXT
+```
+Create authentication (AAA) virtual server which is non-addressable and bind the starting authentication policy and starting schema policy. Link it to the policy label nFactor-GroupCheck-Policy Label for the decision block:
+```plaintext
+add authentication vserver AuthVS-AzureMFA-NPS SSL 0.0.0.0
+set ssl vserver AuthVS-AzureMFA-NPS -ssl3 DISABLED -tls1 DISABLED -tls11 DISABLED -dtls1 DISABLED
+bind authentication vserver AuthVS-AzureMFA-NPS -portaltheme RfWebUI
+bind authentication vserver AuthVS-AzureMFA-NPS -policy ldaps-nfactor-auth-pol -priority 100 -nextFactor nFactor-GroupCheck-PolicyLabel -gotoPriorityExpression NEXT
+bind authentication vserver AuthVS-AzureMFA-NPS -policy nFactor-AzureMFA-Schema-Pol -priority 100 -gotoPriorityExpression END
+bind ssl vserver AuthVS-AzureMFA-NPS -cipherName DEFAULT
+bind ssl vserver AuthVS-AzureMFA-NPS -certkeyName <cert key name>
+bind ssl vserver AuthVS-AzureMFA-NPS -eccCurveName P_256
+bind ssl vserver AuthVS-AzureMFA-NPS -eccCurveName P_384
+bind ssl vserver AuthVS-AzureMFA-NPS -eccCurveName P_224
+bind ssl vserver AuthVS-AzureMFA-NPS -eccCurveName P_521
+```
+Create the authentication profile which we will use to configure the Citrix Gateway:
+```plaintext
+add authentication authnProfile Auth-Profile-nFactor-AzureMFA -authnVsName AuthVS-AzureMFA-NPS
+```
+Finally, bind the authentication profile with the Citrix Gateway when you are ready and test. You can handle this via normal CLI or the GUI as you see fit
+
+Hopefully, you will find these command blocks below with explanations useful in your travels. Enjoy – [Wee Sern Soo](https://www.linkedin.com/in/citrixconsultant)
+

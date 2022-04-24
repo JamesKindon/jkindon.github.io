@@ -270,12 +270,12 @@ This might be handy if you are not doing the big bang approach to enabling Azure
 
 The below assumes you have setup the NPS servers and have a Citrix Gateway virtual server already.
 
-Note to replace the angular bracketed fields with your environment's specifics.
-
-First create secure LDAP authentication action and policy, noting that this action will also perform group extraction for the authenticated user hence we will specify the groupAttrName parameter in the LDAP action:
+Note to replace the angular bracketed fields <*replaceme*> with your environment's specifics.
 
 {: .box-warning}
 The below code is for example and simplicity only. It is suggested in all instances that both LDAPS and RADIUS is load balanced by the ADC for resiliency, and as such you would be pointing back to the ADC for the appropriate LB values
+
+First create secure LDAP authentication action and policy, noting that this action will also perform group extraction for the authenticated user hence we will specify the `groupAttrName` parameter in the LDAP action:
 
 ```plaintext
 add authentication ldapAction ldaps_auth-AzureMFA -serverIP <IP address of Domain Controller> -serverPort 636 -ldapBase "DC=<domain,DC=com,DC=au>" -ldapBindDn <servicaccount@domain.com.au> -ldapBindDnPassword <1234567890> -ldapLoginName sAMAccountName -groupAttrName memberOf -subAttributeName cn -secType SSL -nestedGroupExtraction ON -groupNameIdentifier sAMAccountName -groupSearchAttribute sAMAccountName

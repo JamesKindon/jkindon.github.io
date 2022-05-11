@@ -37,22 +37,22 @@ So how can we action changes like this when our Citrix based provisioning tools 
 
 I have [written a script](https://github.com/JamesKindon/Citrix/blob/master/Azure/ConvertIdentityDisks.ps1) that does the following:
 
-*   Looks for all Identity disks within a subscription, or a list of subscriptions and optionally, specific resource groups. It looks for identity disks based on the well-known naming pattern that Citrix uses "_*-IdentityDisk-*"_
-*   Takes an input of a disk type to look for - so in our example (and the target example really), looks for a Premium SSD disk Sku
-*   Takes an input for what to convert these disks too - Standard SSD
-*   Gathers an array of disks to target, and then does some basic checks:
-    *   Is the disk unattached or reserved? If yes, then convert the disk
-    *   Is the disk attached to a machine? If yes, ignore until the next run
+*  Looks for all Identity disks within a subscription, or a list of subscriptions and optionally, specific resource groups. It looks for identity disks based on the well-known naming pattern that Citrix uses "_*-IdentityDisk-*"_
+*  Takes an input of a disk type to look for - so in our example (and the target example really), looks for a Premium SSD disk Sku
+*  Takes an input for what to convert these disks too - Standard SSD
+*  Gathers an array of disks to target, and then does some basic checks:
+    *  Is the disk unattached or reserved? If yes, then convert the disk
+    *  Is the disk attached to a machine? If yes, ignore until the next run
 
 ## Executing the Script
 
 Azure Automation Accounts offer the perfect utility to execute the code in a scheduled fashion, you will need the following:
 
-*   An Automation account with permissions adequate to alter resources in the target subscriptions. I used Contributor
-*   You must import the following modules into the Automation Account (they are available in the gallery)
-    *   AZ.Accounts
-    *   AZ.Resources
-    *   AZ.Compute
+*  An Automation account with permissions adequate to alter resources in the target subscriptions. I used Contributor
+*  You must import the following modules into the Automation Account (they are available in the gallery)
+    *  AZ.Accounts
+    *  AZ.Resources
+    *  AZ.Compute
 
 [![AZ Modules]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/AZModules.png)]({{site.baseurl}}/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/AZModules.png)
 

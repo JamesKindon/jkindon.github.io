@@ -10,8 +10,6 @@ tags: [Citrix, CVAD, Cloud, Azure]
 categories: [Citrix, CVAD, Cloud, Azure]
 ---
 
-![AZ]({{site.baseurl}}/assets/img/microsoft-azure-zone-architecture-with-citrix-cvads/availability-zones.png)
-
 Azure resiliency is a hot topic for any customer considering, or already operational within the Microsoft Azure ecosystem. The resiliency options are changing constantly (like everything in Azure to be fair) with a constant enhancement of availability and redundancy options available as the platform expands.
 
 The focus of this articles is to delve into Availability Zone Architectural options and considerations for deploying highly available Citrix Cloud CVAD/DaaS solutions in Microsoft Azure.
@@ -77,16 +75,20 @@ It is possible to retrofit zones into an existing catalog or change the zone ass
 
 The current MCS architecture means there are two key deployment models for Zone based provisioning:
 
-*  A catalog-to-zone assignment. This is similar to MCS on AWS architecture and specifies a unique catalog per zone, with a single Delivery Group to aggregate multiple. This has double the image release overheads from a deployment standpoint, but gives full control of zone placement for provisioned workloads
+*  A catalog-to-zone assignment. This is similar to MCS on AWS architecture and specifies a unique catalog per zone, with a single Delivery Group to aggregate multiple. This has double or triple the image release overheads from a deployment standpoint, but gives full control of zone placement for provisioned workloads
 *  Deploy a catalog with multiple zones defined and allow non-controlled distribution across the zones (you hope the machines are dispersed evenly)
 
-Simple is typically better, the latter option is what I tend to lead with in design workshops.
+Simple is typically better, the latter option is what I tend to lead with in design workshops, however requirements will define your decisions.
+
+{: .box-warning}
+
+Currently, Citrix MCS deploys the preparation VM used to prep the image with an awareness of Zones based on the catalog configuration. This means that if there are capacity issues within a zone, your prep machine can, and will be impacted.
 
 **Citrix FAS** has a direct dependency on **Microsoft Certificate Authorities** to provide user certificates. I like the architecture of combining each FAS server with a subordinate issuing CA role, allowing each box to act independently, and also provide high availability for each component with a crossover logic (FAS server 2 is a secondary issuing CA for FAS server 1).
 
 This architecture leads to simple supporting Azure Zone patterns. If not following this model, then you will need to ensure CA architecture is Zone redundant and ideally FAS preference is for its "same zone CA" with a failover to the second or third zone.
 
-**Citrix ADCs** in Azure are simply virtual machines. A native Zone based template is provided by Citrix, ensuring that all components are deployed at an appropriate SKU to support zone deployments (Azure Load Balancers, IP addresses etc), however this template is HA pair based, meaning that you are limited to **two** zones which is a slight issues if you are designing a 3-zone resiliency model.
+**Citrix ADCs** in Azure are simply virtual machines. A native Zone based template is provided by Citrix, ensuring that all components are deployed at an appropriate SKU to support zone deployments (Azure Load Balancers, IP addresses etc), however this template is HA pair based, meaning that you are limited to **two** zones which is a slight issue if you are designing a 3-zone resiliency model.
 
 These templates are located on the [Citrix Github](https://github.com/citrix/citrix-adc-azure-templates/tree/master/templates/high_availability) repository for reference.
 
@@ -133,7 +135,13 @@ Many customers may have started with an Availability Set, or even no redundancy 
 
 There is no way to simply change a VM's zone once that VM is deployed. Additionally, it is not just the VM that needs to be thought through, its corresponding disk or disks need to be aligned to the appropriate zones.
 
-The process typically involves blowing away the existing VM and Disk, redeploying a new one of each in the appropriate Zone, and then moving on with life. Lucky enough, there is PowerShell. I have written a small but powerful script which will take an existing VM and its associated disks and redeploy them into a zone of your choice. You can [view the code here](https://github.com/JamesKindon/Azure/blob/master/ChangeVMAz.ps1), feel free to add, update or critique as required.
+The process typically involves blowing away the existing VM and Disk, redeploying a new one of each in the appropriate Zone, and then moving on with life. Lucky enough, there is PowerShell. I have written a small but powerful script which will take an existing VM and its associated disks and redeploy them into a zone of your choice. The script also supports Citrix ADC via the `*-IsADC*` switch. This switch retrieves additional required attributes for marketplace details.
+
+{: .box-warning}
+
+If you are migrating an ADC, you must ensure that ALL components are of a supported SKU. You cannot have any `Basic` tier components in the mix (Load balancers or public IP's). These must be of a `Standard` Sku.
+
+You can [view the code here](https://github.com/JamesKindon/Azure/blob/master/ChangeVMAz.ps1). Feel free to add, update or critique as required.
 
 ## POD operational architecture with Zones – "the art of the possible"
 

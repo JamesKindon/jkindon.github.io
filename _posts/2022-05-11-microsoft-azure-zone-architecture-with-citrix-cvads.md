@@ -10,6 +10,8 @@ tags: [Citrix, CVAD, Cloud, Azure]
 categories: [Citrix, CVAD, Cloud, Azure]
 ---
 
+![Zones]({{site.baseurl}}/assets/img/microsoft-azure-zone-architecture-with-citrix-cvads/azure-availability-zones-image.jpg)
+
 Azure resiliency is a hot topic for any customer considering, or already operational within the Microsoft Azure ecosystem. The resiliency options are changing constantly (like everything in Azure to be fair) with a constant enhancement of availability and redundancy options available as the platform expands.
 
 The focus of this articles is to delve into Availability Zone Architectural options and considerations for deploying highly available Citrix Cloud CVAD/DaaS solutions in Microsoft Azure.

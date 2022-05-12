@@ -45,6 +45,10 @@ I have written a script that does the following:
 
 A word of warning at this point. I have no way of checking to see what the machine type is when the machine doesn’t exist. So if the script finds a Network Interface that is unattached, it will enable Accelerated Networking. Do your homework before enabling this and make sure your Instance sizes are ok. Luckily, for persistent machines, the “enable” action will fail if attached to a machine with an unsupported Instance Size
 
+{: .box-warning}
+
+Please note that this post contains configuration associated with an Azure Automation Run As Account. This has been replaced with modern methods such as a System Assigned Managed Identity. Please visit [this post entitled: Migrate Azure Runbook RunAs Accounts to a System Assigned Managed Identity ](https://jkindon.com/migrate-azure-runbook-runas-to-system-assigned-managed-identity) for updated deployment guidance when it comes to configuring the credential
+
 ## Executing the Script
 
 Once again, to provide a zero touch self managing solution, Azure Automation Accounts is our go to. You will need:

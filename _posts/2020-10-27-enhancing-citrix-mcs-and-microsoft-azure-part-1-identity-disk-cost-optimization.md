@@ -44,6 +44,10 @@ I have [written a script](https://github.com/JamesKindon/Citrix/blob/master/Azur
     *  Is the disk unattached or reserved? If yes, then convert the disk
     *  Is the disk attached to a machine? If yes, ignore until the next run
 
+{: .box-warning}
+
+Please note that this post contains configuration associated with an Azure Automation Run As Account. This has been replaced with modern methods such as a System Assigned Managed Identity. Please visit [this post entitled: Migrate Azure Runbook RunAs Accounts to a System Assigned Managed Identity ](https://jkindon.com/migrate-azure-runbook-runas-to-system-assigned-managed-identity) for updated deployment guidance when it comes to configuring the credential
+
 ## Executing the Script
 
 Azure Automation Accounts offer the perfect utility to execute the code in a scheduled fashion, you will need the following:

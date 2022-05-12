@@ -24,6 +24,11 @@ I worked with a customer recently (hello!) who had a need to assign a User-Assig
 *  Looks for all machines in a specified list of subscriptions and resource groups. Checks to see if the machine has a managed identity that matches the required one, and assigns it if not
 *  Ignores any machines specified in the ExcludedVMList array
 
+
+{: .box-warning}
+
+Please note that this post contains configuration associated with an Azure Automation Run As Account. This has been replaced with modern methods such as a System Assigned Managed Identity. Please visit [this post entitled: Migrate Azure Runbook RunAs Accounts to a System Assigned Managed Identity ](https://jkindon.com/migrate-azure-runbook-runas-to-system-assigned-managed-identity) for updated deployment guidance when it comes to configuring the credential
+
 ## Executing The Script
 
 You will need, as per the last two articles:

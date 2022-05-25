@@ -17,6 +17,12 @@ redirect_from:
 
 For those customers integrating Azure Active Directory with Citrix Workspace as their primary Identity Provider (IdP), there are some changes that have been implemented which will result in some potentially unwanted behaviours in relation to the sign-on experience.
 
+{: .box-warning}
+
+**Update 26.25.2022** This feature has finally become an opt-in opt-out setting within Workspace
+
+[![WorkspaceFedControl]({{site.baseurl}}/assets/img/azure-ad-and-citrix-workspace-sso/WorkspaceFedControl.png)]({{site.baseurl}}/assets/img/azure-ad-and-citrix-workspace-sso/WorkspaceFedControl.png)
+
 The expected behaviour would be as follows:
 
 ### Scenario 1

@@ -33,7 +33,7 @@ To implement the solution, you simply need an Azure Automation Account using a [
 
 {: .box-warning}
 
-The managed identity must have ***contributor*** permissions on the source ***and*** target Resource Groups as the script will handle locks on existing Snapshots, Storage Account creation and deletion when going cross-region and creation/deletion of snapshots in the target Resource Group when in Sync mode
+The managed identity must have ***contributor*** permissions on the **source** *and* **target** Resource Groups as the script will handle locks on existing Snapshots, Storage Account creation and deletion when going cross-region and creation/deletion of snapshots in the target Resource Group when in Sync mode
 
 Update the Azure Modules on the runbook to make sure they are the latest (PowerShell 7.1 please)
 
@@ -51,9 +51,7 @@ Make sure you have permissions on both the **source** and **target** Resource Gr
 
 [![Permissions]({{site.baseurl}}/assets/img/microsoft-azure-snapshot-replication-framework/Permissions.png)]({{site.baseurl}}/assets/img/microsoft-azure-snapshot-replication-framework/Permissions.png)
 
-Add the code, and set your variables either statically within the script, or within the schedule, if you are doing multiple jobs and sync cycles to different regions. Either is fine.
-
-Assign a schedule and off you go. All output will be pushed to the console so you can review it appropriately.
+Add the [code](https://github.com/JamesKindon/Azure/blob/master/ReplicateAzureSnapshot.ps1), and set your variables either statically within the script, or within the schedule if you are doing multiple jobs and sync cycles to different regions. Either is fine.
 
 *  `SourceSubscriptionID` The source subscription ID of where your snapshots live
 *  `TargetSubscriptionID` If moving cross subscription, this is the target Subscription ID for where your snapshots will sync to
@@ -67,6 +65,8 @@ Assign a schedule and off you go. All output will be pushed to the console so yo
 *  `isAzureRunbook` The designed operational model for this runbook (Defaults to `true`)
 *  `LogPath` Logpath output for all operations – valid when not running as a runbook primarily
 *  `LogRollover` Number of days before logfiles are rolled over. Default is `5`
+
+Assign a schedule and off you go. All output will be pushed to the console so you can review it appropriately.
 
 [![SnapReplicate]({{site.baseurl}}/assets/img/microsoft-azure-snapshot-replication-framework/SnapReplicate.png)]({{site.baseurl}}/assets/img/microsoft-azure-snapshot-replication-framework/SnapReplicate.png)
 

@@ -18,6 +18,46 @@ This list will start at CVAD 1912 LTSR, anything prior to that, refer to the app
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - Version 2206
+
+This is a significant release as it relates to the evolution of Citrix Profile Management Containers vs FSLogix capability. There are a couple of very key features to note below. OneDrive support (preview), Async policy processing control, concurrent session support for Outlook search data roaming.
+
+Combine this capability with the wealth of other options and controls including combining the best of file and container capability, UPM should now start becoming a much more attractive solution for all use cases. The best thing is that the solution is actively and aggressively developed. "Ask and you shall receive" so to speak...
+
+{: .box-note}
+
+**Feature:** [Enhancement to profile streaming in concurrent session scenarios](https://docs.citrix.com/en-us/profile-management/current-release/configure/stream-profiles.html)
+
+**Detail:** A new policy, `Enable profile streaming for pending area`, is now available as an enhancement to the profile streaming feature. This enhancement ensures optimal logon experience in concurrent session scenarios
+
+{: .box-note}
+
+**Feature:** [Concurrent session support for Outlook search data roaming] (https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html)
+
+**Detail:** A new policy, `Enable Concurrent session support for Outlook search data roaming`, is now available as an enhancement to the `Search index roaming for Outlook` policy. With the two policies enabled, Citrix Profile Management can provide a native Outlook search experience in concurrent sessions
+
+***Important Note:*** To let the search index roaming feature work on Microsoft Windows 10 1809 and later, and on Windows Server 2019 and later, add a `DWORD` value `EnablePerUserCatalog` = `0` under `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search`. Restart the VDA to make your registry setting take effect. This indicates that whilst Microsoft have now removed per user search index roaming from FSLogix in favor of OS level capability, Citrix can, and does still support roaming this index using the traditional mode
+
+{: .box-note}
+
+**Feature:** [Enable asynchronous processing for user Group Policy on logon](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-async-for-user-gpo.html)
+
+**Detail:** In the fallout of this [little discovery around Synchronous Processing](https://jkindon.com/fslogix-synchronous-processing/) we spoke with the Citrix Profile Management team. Ask the right people, get a good answer
+
+Windows provides both synchronous and asynchronous processing modes for user Group Policy. Windows uses a registry value to determine the processing mode for the next user logon. If the registry value doesn't exist, synchronous mode is applied.
+
+With a new policy, `Enable asynchronous processing for user Group Policy on logon`, the registry value can now roam with users. As a result, the actual processing mode is applied each time users log on
+
+{: .box-note}
+
+**Feature:** [Support for roaming OneDrive folders (preview)](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-the-onedrive-container.html)
+
+**Detail:** The last major gap between FSLogix and UPM Container capability. OneDrive support.
+
+With a new policy, `Enable OneDrive container`, OneDrive folders can now roam with users. A user's OneDrive folders are stored in a VHDX file (called OneDrive container). The VHDX file is attached on user logon and detached on user logoff.
+
+Starting with this release, the profile container for the entire profile now supports roaming OneDrive folders `by default`
+
 ## - - - - - Version 2203
 
 {: .box-note}

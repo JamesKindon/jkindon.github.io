@@ -20,7 +20,11 @@ I will do my best to maintain this list as and when features come out, as well a
 
 ## - - - - - Version 2206
 
-This is a significant release as it relates to the evolution of Citrix Profile Management Containers vs FSLogix capability. There are a couple of very key features to note below. OneDrive support (preview), Async policy processing control, concurrent session support for Outlook search data roaming.
+This is a significant release as it relates to the evolution of Citrix Profile Management Containers vs FSLogix capability. There are a couple of very key features to note below:
+
+*  OneDrive support (preview)
+*  Async policy processing control
+*  concurrent session support for Outlook search data roaming
 
 Combine this capability with the wealth of other options and controls including combining the best of file and container capability, UPM should now start becoming a much more attractive solution for all use cases. The best thing is that the solution is actively and aggressively developed. "Ask and you shall receive" so to speak...
 
@@ -36,7 +40,7 @@ Combine this capability with the wealth of other options and controls including 
 
 **Detail:** A new policy, `Enable Concurrent session support for Outlook search data roaming`, is now available as an enhancement to the `Search index roaming for Outlook` policy. With the two policies enabled, Citrix Profile Management can provide a native Outlook search experience in concurrent sessions
 
-***Important Note:*** To let the search index roaming feature work on Microsoft Windows 10 1809 and later, and on Windows Server 2019 and later, add a `DWORD` value `EnablePerUserCatalog` = `0` under `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search`. Restart the VDA to make your registry setting take effect. This indicates that whilst Microsoft have now removed per user search index roaming from FSLogix in favor of OS level capability, Citrix can, and does still support roaming this index using the traditional mode
+***Important Note:*** To let the search index roaming feature work on Microsoft Windows 10 1809 and later, and on Windows Server 2019 and later, add a `DWORD` value `EnablePerUserCatalog` = `0` under `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search`. Restart the VDA to make your registry setting take effect. This indicates that whilst Microsoft have now removed per user search index roaming from FSLogix in favor of OS level capability, Citrix can, and does, still support roaming this index using the traditional mode
 
 {: .box-note}
 

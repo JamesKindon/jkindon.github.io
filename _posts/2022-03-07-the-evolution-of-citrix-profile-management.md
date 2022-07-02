@@ -36,7 +36,7 @@ Combine this capability with the wealth of other options and controls including 
 
 {: .box-note}
 
-**Feature:** [Concurrent session support for Outlook search data roaming] (https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html)
+**Feature:** [Concurrent session support for Outlook search data roaming](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html)
 
 **Detail:** A new policy, `Enable Concurrent session support for Outlook search data roaming`, is now available as an enhancement to the `Search index roaming for Outlook` policy. With the two policies enabled, Citrix Profile Management can provide a native Outlook search experience in concurrent sessions
 

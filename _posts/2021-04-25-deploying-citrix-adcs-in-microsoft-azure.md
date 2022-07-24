@@ -144,6 +144,7 @@ In my parameters file, I needed to add the new params we defined
         "publicIpsku": {
             "value": "Standard"
         }
+
 The ARM template is [available here](https://github.com/JamesKindon/Citrix/tree/master/Azure/ADC%20ARM%20Template%20-%20HA%20AS%20-%20Standard%20ALB) if you would like to use it
 
 Before you can deploy the template, you will need to accept the marketplace terms via PowerShell. The below should take of this for you

@@ -29,7 +29,128 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - July 2022
+
+{: .box-note}
+
+**Feature:** [Dynamic session timeouts for single-session OS machines](https://docs.citrix.com/en-us/citrix-daas/manage-deployment/autoscale/dynamic-session-timeout.html)
+
+**Detail:** Again, whilst not Azure specific, this has implications on Azure capability. Dynamic session timeouts now support single-session OS machines. A delivery group with at least one VDA of version 2206 or later is required. ***Ensure that those VDAs have registered with Citrix Cloud at least once***
+
+{: .box-note}
+
+**Feature:** [Send logoff reminders without forcing user logoff in Autoscale](https://docs.citrix.com/en-us/citrix-daas/manage-deployment/autoscale/force-user-logoff.html)
+
+**Detail:** Whilst not Azure specific, this is still important for Azure based deployments. A new feature is now available in `User Logoff Notifications` (formerly `Force User Logoff`) in Autoscale. The feature provides functionality to send logoff reminders to users without forcing them to log off. Doing that avoids potential data loss caused by forcing users to log off from their sessions
+
+{: .box-note}
+
+**Feature:** [Ability to set the Linux OS license type when creating Linux VM catalogs in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create.html#master-image)
+
+**Detail:** Using the Full Configuration interface, the Linux OS license type can be selected when creating Linux VM catalogs in Azure. There are two choices for bring-your-own Linux licenses: 
+
+*  Red Hat Enterprise Linux
+*  SUSE Linux Enterprise Server
+
+{: .box-note}
+
+**Feature:** [Support for using ARM template specs as machine profiles](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** Previously, only VMs could be used as machine profiles. ARM template specs can be used as machine profiles when creating Azure machine catalogs. This allows for taking advantage of Azure ARM template features such as versioning. To ensure that the selected spec is configured correctly and contains required configurations, Citrix perform validation tasks on it. If the validation fails, a different machine profile must be selected
+
+{: .box-note}
+
+**Feature:** [Support for validating ARM template spec](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** Validation of an ARM template spec to make sure that it can be used as a machine profile to create a machine catalog is now available. There are two ways to validate the ARM template spec:
+
+*  Using the Full Configuration management interface
+*  Using PowerShell
+
+## - - - - - June 2022
+
+{: .box-note}
+
+**Feature:** [Support for Azure Resource Manager (ARM) template specs when using machine profiles](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** When using the Full Configuration management interface to select a machine profile for the VMs to inherit configurations from, an ARM template spec can now be selected
+
+{: .box-note}
+
+**Feature:** [Ability to change the network setting for an existing provisioning scheme](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#change-the-network-setting-for-an-existing-provisioning-scheme)
+
+**Detail:** The network setting for an existing provisioning scheme can be altered so that the new VMs are created on the new subnetwork. Use the parameter `-NetworkMapping` in the `Set-ProvScheme` command to change the network setting. ***Only the newly provisioned VMs from the scheme will have the new subnetwork settings***. Subnetworks must be under the same hosting unit
+
+{: .box-note}
+
+**Feature:** [Retrieve region name information for Azure VMs, managed disks, snapshots, Azure VHD, and ARM template](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#retrieve-region-name--information-for-azure-vms-managed-disks-snapshots-azure-vhd-and-arm-template)
+
+**Detail:** The region name information for an Azure VM, managed disks, snapshots, Azure VHD, and ARM template can now be displayed. This information is displayed for the resources on the master image when a machine catalog is assigned
+
+{: .box-note}
+
+**Feature:** [Ability to use machine profile property values in Azure environment](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#retrieve-region-name--information-for-azure-vms-managed-disks-snapshots-azure-vhd-and-arm-template)
+
+**Detail:** While creating an Azure catalog with a machine profile, property values from the ARM template spec or VM, whichever is used as a machine profile, can be set if the values are not explicitly defined in the custom properties. The properties affected by this feature are:
+
+*  Availability zone
+*  Dedicated Host Group Id
+*  Disk Encryption Set Id
+*  OS type
+*  License type
+*  Service Offering
+*  Storage type
+
+If some of the properties are missing from the machine profile and not defined in the custom properties, then the default value of the properties takes place wherever applicable. See [Create a machine catalog using an Azure Resource Manager image](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image) for more information
+
+## - - - - - May 2022
+
+{: .box-note}
+
+**Feature:** [Support for using Set-ProvServiceConfigurationData in Remote PowerShell SDK](https://developer-docs.citrix.com/projects/citrix-virtual-apps-desktops-sdk/en/latest/MachineCreation/Set-ProvServiceConfigurationData)
+
+**Detail:** `Set-ProvServiceConfigurationData` can now be run using Remote PowerShell SDK to apply settings on all applicable parameters. The following list of settings are supported with `Set-ProvServiceConfigurationData`:
+
+*  Change Image Preparation Timeout: `Set-ProvServiceConfigurationData -Name "ImageManagementPrep_PreparationTimeout" -value 60`
+*  Skip Enable DHCP: `Set-ProvServiceConfigurationData -Name ImageManagementPrep_Excluded_Steps -Value EnableDHCP`
+*  Skip Microsoft Windows KMS Rearm: `Set-ProvServiceConfigurationData -Name ImageManagementPrep_Excluded_Steps -Value OsRearm`
+*  Skip Microsoft Office KMS Rearm: `Set-ProvServiceConfigurationData -Name ImageManagementPrep_Excluded_Steps -Value OfficeRearm`
+*  Disable preparation VM auto shutdown: `Set-ProvServiceConfigurationData –Name ImageManagementPrep_NoAutoShutdown –Value true`
+*  Disable domain injection: `Set-ProvServiceConfigurationData –Name DisableDomainInjection –Value true`
+
+{: .box-note}
+
+**Feature:** [Support for Azure Stack HCI provisioning through SCVMM](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/msscvmm.html)
+
+**Detail:** MCS now supports Azure Stack HCI provisioning through Microsoft System Center Virtual Machine Manager (SCVMM). Azure stack HCI clusters can be managed with existing tools including SCVMM
+
 ## - - - - - April 2022
+
+{: .box-note}
+
+**Feature:** [Show the progress of catalog creation and updates](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html#start-creating-the-catalog)
+
+**Detail:** Full Configuration now shows updates on catalog creation and updates. This displays the overview of the creation and update process, view the history of steps performed, and monitoring of both the progress and running time of the current step
+
+{: .box-note}
+
+**Feature:** [Support for creating Azure Active Directory joined machines](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html#machine-identities)
+
+**Detail:** An Azure Active Directory joined identity type is now available in Machine Identities when creating a Catalog. With that identity type, MCS can  create machines that are joined to Azure Active Directory. An extra option is available, `Enroll the machines in Microsoft Intune`, to enroll the machines in Microsoft Intune for management.
+
+For information about requirements and considerations related to Azure Active Directory join, see [Azure Active Directory joined detail](https://docs.citrix.com/en-us/citrix-daas/manage-deployment/machine-identities/azure-ad-joined.html)
+
+{: .box-note}
+
+**Feature:** [Support for creating hybrid Azure Active Directory joined machines](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html#machine-identities)
+
+**Detail:** A Hybrid Azure Active Directory joined identity type is now available in Machine Identities when creating a Catalog. With that identity type, MCS can create hybrid Azure Active Directory joined machines. Those machines are owned by an organization and signed into with an Active Directory Domain Services account that belongs to that organization. Additional information is available for [Hybrid Azure Active Directory joined device provisioning](https://docs.citrix.com/en-us/citrix-daas/manage-deployment/machine-identities/hybrid-azure-ad-joined.html)
+
+{: .box-note}
+
+**Feature:** [Azure trusted launch support for snapshots](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:**  In addition to images, Azure trusted launch is now available for snapshots. If selecting a snapshot with trusted launch enabled, using a machine profile is mandatory. A machine profile with trusted launch enabled must be selected
 
 {: .box-note}
 

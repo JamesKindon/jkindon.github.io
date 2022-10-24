@@ -16,6 +16,239 @@ Citrix WEM Service environment is consistently updating and bringing enhanced ca
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - October 2022
+
+{: .box-note}
+
+**Feature:** [Additional trigger types available](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/triggers.html)
+
+**Detail:** The following built-in trigger types are now available when you create triggers:
+
+*  **Machine shutdown**. Activates the trigger when machines shut down
+*  **Machine startup**. Activates the trigger when machines start up
+
+You can create triggers of these types and associate tasks with them. When activated, the triggers start those tasks in the user environment. The two additional trigger types give you more flexibility to control when to run your scripted tasks
+
+Minimum agent version required: `2210.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Support for using task results as triggers (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/triggers.html#create-a-trigger)
+
+**Detail:** The following trigger types are now available when you create triggers
+
+*  **Cloud Health Check result**. Activates the trigger when Cloud Health Check returns specified health statuses
+*  **Profile Management health check result**. Activates the trigger when Profile Management health check returns specified health statuses
+*  **Custom scripted task result**. Activates the trigger when scripted tasks return specified results
+
+You can create triggers of these types and associate tasks with them. When activated, the triggers start those tasks in the user environment. These trigger types let you automatically manage your user environments based on task execution results.
+
+To enable this feature, go to Home, click the preview features icon in the upper-right corner, and enable **Use task results as triggers**.
+
+Minimum agent version required: `2210.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/policies-and-profiles/citrix-upm-settings.html#file-deduplication)
+
+**Detail:** Workspace Environment Management now supports all supported versions of Profile Management through 2209. The following feature is now available in both the legacy console and the web console.
+
+*  **File deduplication**. If enabled, Profile Management removes duplicate files from the user store and stores one copy of them in a central location. Doing so reduces the load on the user store by avoiding file duplication, thus reducing your storage cost.
+    *  In the web console, the feature is available under each configuration set in **Profiles > Profile Management Settings > File deduplication**
+    *  In the legacy console, the feature is available in **Policies and Profiles > Citrix Profile Management Settings > File Deduplication**
+
+Minimum agent version required: `2210.1.0.1`
+
+{: .box-note}
+
+**Feature:** [View the registration status of agents](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/administration.html#registrations)
+
+**Detail:** In the web console, a tab, **Registrations**, is now available in **Monitoring > Administration > Agents**. The tab lets you view the registration status of agents in your WEM deployment. With the information, you can troubleshoot agent registration issues.
+
+{: .box-note}
+
+**Feature:** [Support for cloning assignment targets](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/assignment.html#clone-an-assignment-target)
+
+**Detail:** You can now clone assignment targets (users and groups) from one configuration set to another, without the need to add them from scratch
+
+## - - - - - September 2022
+
+{: .box-note}
+
+**Feature:** [Install and upgrade: Workspace Environment Management agent](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/install-and-configure.html#step-1-download-the-agent)
+
+**Detail:** The Workspace Environment Management agent is no longer included as an additional component in the VDA installation.
+
+## - - - - - August 2022
+
+{: .box-note}
+
+**Feature:** [Use Windows events as triggers](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/triggers.html)
+
+**Detail:** A new trigger type, **Windows event**, is now available when you create triggers. It lets you create a Windows event based trigger. You can then associate tasks with it. When the Windows events meet the defined criteria, the trigger is activated and starts the associated tasks. This trigger type lets you automatically manage your user environments based on Windows events
+
+Minimum agent version required: `2208.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Use file shares for file downloads on the agent side](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings.html)
+
+**Detail:** Previously, file downloads on the agent side always occurred through Citrix Cloud. You can now let file downloads on the agent side occur through file shares. Doing so reduces network resources needed for other critical operations. This feature reduces traffic on networks and reduces the time to download files to agent machines.
+
+Minimum agent version required: `2208.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Set timeouts for scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task)
+
+**Detail:** An option, **Set a timeout value**, is now available when you configure a scripted task. The option lets you specify the time (in minutes) after which the task is forced to end. If you do not specify a timeout, the task might keep running, thus preventing other tasks from running
+
+Minimum agent version required: `2207.2.0.1`
+
+{: .box-note}
+
+**Feature:** [Invite users to enroll agents](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/enrollment.html)
+
+**Detail:** A new node, Enrollment, is now available in the web console. The node contains two pages:
+
+*  **Enrolled Agents**. Lists all enrolled agents. You can manage them as needed.
+*  **Invitation**. Lets you send enrollment invitations to users. Each invitation includes an invitation code and the steps needed to complete the enrollment.
+
+Minimum agent version required: `2207.2.0.1`
+
+{: .box-note}
+
+**Feature:** [Contextualize scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task)
+
+**Detail:** An option, Filter, is now available in General when you configure a scripted task. The option lets you use a filter to contextualize the task. As a result, the WEM agent runs the task only when all conditions in the selected filter are met
+
+Minimum agent version required: `2207.2.0.1`
+
+## - - - - - July 2022
+
+{: .box-note}
+
+**Feature:** [Support for performing administrative tasks for non-domain-joined and enrolled agents](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/administration.html#agents)
+
+**Detail:** You can now perform administrative tasks (such as refreshing the cache, resetting settings, and retrieving agent information) for non-domain-joined and enrolled agents through the administration console, just like you do for other agents. Technically, this feature is a different implementation. The target agents are not immediately notified of performing those tasks. The notifications are sent when the target agents or other agents on the same subnet connect to Citrix Cloud to refresh settings. So, there might be a delay until the tasks run on the agent side. The more agents you have on the same subnet, the shorter the delay.
+
+This feature is available in both the legacy console and the web console.
+
+*  In the web console, go to **Monitoring > Administration > Agents**
+*  In the legacy console, go to **Administration > Agents**
+
+Minimum agent version required: `2207.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Configure Windows GPOs by using Group Policy Administrative Templates](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions.html#group-policy-settings)
+
+**Detail:** In the web console, a tab, **Template-based**, is now available in **Actions > Group Policy Settings** under each configuration set. The tab lets you configure Windows GPOs by using Group Policy Administrative Templates. You can configure GPOs at a machine and user level. After that, you deploy them by assigning them to your users, just like you do for registry-based GPOs.
+
+Minimum agent version required: `2207.1.0.1`
+
+{: .box-note}
+
+**Feature:** [New features available in scripted task settings](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task)
+
+**Detail:** The following new features are now available when you configure a scripted task:
+
+*  **File path**. A parameter type that lets you pass a file path as a parameter to the `System.IO.FileInfo` class.
+*  **Collect output even if runtime errors occur**. An option that controls whether to collect output file content and console output even if errors occur while running the task
+
+Minimum agent version required: `2207.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Deploy GPOs through the web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions.html#group-policy-settings)
+
+**Detail:** In the web console, you can now manage Group Policy settings. The management takes the form of configuring Windows Group Policy Objects (GPOs). After you add or import your settings, you deploy them by assigning them to your users
+
+Minimum agent version required: `2206.2.0.1`
+
+{: .box-note}
+
+**Feature:** [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/policies-and-profiles/citrix-upm-settings.html#advanced-settings)
+
+**Detail:** Workspace Environment Management now supports all versions of Profile Management through 2206. The following new options are now available in both the legacy console and the web console.
+
+*  **Enable profile streaming for pending area**. If enabled, files in the pending area are fetched to the local profile only when they are requested. This ensures optimum logon experience in concurrent session scenarios.
+    *  In the web console, the option is available under each configuration set in **Profiles > Profile Management Settings > Streamed user profiles**
+    *  In the legacy console, the option is available in **Policies and Profiles > Citrix Profile Management Settings > Streamed user profiles**
+*  **Enable concurrent session support**. Provides native Outlook search experience in concurrent sessions. If enabled, each concurrent session uses a separate Outlook OST file. You can specify the maximum number of VHDX disks for storing Outlook OST files.
+*  **Enable asynchronous processing for user Group Policy on logon**. If enabled, Profile Management roams with users a registry value that Windows uses to determine the processing mode for the next user logon — synchronous or asynchronous processing mode. This ensures that the actual processing mode is applied each time users log on.
+*  **Enable OneDrive container**. If enabled, Profile Management roams OneDrive folders with users by storing the folders on a VHDX disk. The disk is attached during logons and detached during logoffs.
+    *  In the web console, the three options are available under each configuration set in **Profiles > Profile Management Settings > Advanced settings**
+    *  In the legacy console, the three options are available in **Policies and Profiles > Citrix Profile Management Settings > Advanced settings**
+
+Minimum agent version required: `2206.2.0.1`
+
+{: .box-note}
+
+**Feature:** [Application launcher](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/actions/applications.html#application-launcher)
+
+**Detail:** An application launcher tool, AppLauncherUtil.exe, is now available in the agent installation folder. The tool aggregates all applications you assigned to your users through the administration console. Using the tool, users can launch all assigned applications in one place
+
+Minimum agent version required: `2206.2.0.1`
+
+## - - - - - May 2022
+
+{: .box-note}
+
+**Feature:** [Enroll agents without configuring Citrix Cloud Connectors](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/enroll-agent.html)
+
+**Detail:** Previously, you had to configure Cloud Connectors for WEM agents to manage them. You can configure Cloud Connectors in two ways:
+
+*  [Configure Cloud Connectors while installing the agent](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/install-and-configure.html#step-3-install-the-agent)
+*  [Configure the Discover Citrix Cloud Connector from CVAD service policy](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/install-and-configure.html#step-2-configure-group-policies-optional). The agent discovers Cloud Connector information from the relevant Citrix DaaS (formerly Citrix Virtual Apps and Desktops service) deployment and then connects to the corresponding Cloud Connector machines
+
+Starting with this release, you can enroll WEM agents without configuring Citrix Cloud Connectors. The enrollment applies to both domain-joined and non-domain-joined machines.
+
+Minimum agent version required: `2205.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Scripted task updates](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html#add-a-scripted-task)
+
+**Detail:** The following features are now available with scripted tasks:
+
+*  [Support for bundling multiple files into a single zip file to upload](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html#add-a-scripted-task). When adding a scripted task, you can now bundle multiple files into a single zip file to upload. This feature is useful when you want to run a scripted task that comprises multiple script files. After uploading the zip file, you specify an entry point, indicating which file to run at the beginning of the task
+*  [Include only regular expression matches in scripted task reports](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task). A new option, **Include only regular expression matches in reports**, is now available in **Output** when you configure a scripted task. The option controls whether to include the entire output content in reports or only content that matches the regular expression. Enabling the option reduces the amount of data transmitted to Citrix Cloud
+*  [Ability to use tags to identify scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html#add-a-scripted-task). You can now use tags to identify your scripted tasks. Also, the tags act as filters, letting you rearrange your view of tasks depending on criteria that are important to you
+*  [More scheduling options available with scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task). You now have additional options to control when scripted tasks run. In addition to the hourly recurring pattern, you can now set daily, weekly, and monthly recurrence patterns. You can also specify the date and time at which you want scripted tasks to run, giving you more precise control. For agents earlier than 2205.1.0.1, be aware of the considerations when using the feature
+
+Minimum agent version required: `2205.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Enhancements to Profile Management health check](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings.html#monitoring-preferences)
+
+**Detail:** Enhancements to the Profile Management health check feature:
+
+*  In the **More** menu of **Monitoring > Administration > Agents**:
+    *  Renamed **Refresh Profile Management configuration check** to **Run Profile Management health check** to make it easy to understand
+    *  Added an option, **View Profile Management health check report**. The option provides quick access to Profile Management health reports related to the target agent machines.
+*  In **Advanced Settings > Monitoring Preference**s under a configuration set
+    *  Added a section, **Profile Management health check**. The section lets you specify which aspects to cover in Profile Management health check reports
+
+Minimum agent version required: `2205.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Ability to import Group Policy settings from registry files](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/actions/group-policy-settings.html)
+
+**Detail:** An option, **Import Group Policy settings from Registry Files**, is now available in **Legacy Console > Actions > Group Policy Settings**. With the option, you can convert registry values that you export using the Windows Registry Editor into GPOs for management and assignment. If you are familiar with the **Import registry files** option available with Registry Entries, this feature:
+
+*  Lets you import registry values under both `HKEY_LOCAL_MACHINE` and `HKEY_CURRENT_USER`
+*  Lets you import registry values of the `REG_BINARY` and `REG_MULTI_SZ` types
+*  Supports converting deletion operations associated with registry keys and values that you define in .reg files
+
+{: .box-note}
+
+**Feature:** [Filters now available in the web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/assignment.html#filters)
+
+**Detail:** In the web console, a new page, **Filters**, is now available within **Assignments** under each configuration set. Using that page, you can add filters for controlling when to assign actions to your users.
+
 ## - - - - - April 2022
 
 {: .box-note}

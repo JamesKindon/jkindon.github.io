@@ -29,6 +29,75 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - October 2022
+
+{: .box-note}
+
+**Feature:** [Support for using machine profiles and host groups at the same time](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** When creating a catalog using an Azure Resource Manager master image, you can now use a machine profile and a host group at the same time. This is useful in scenarios where you want to use trusted launch for improved security and at the same time run the machines on dedicated hosts
+
+## - - - - - September 2022
+
+{: .box-note}
+
+**Feature:** [Machine catalogs with Trusted launch in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#machine-catalogs-with-trusted-launch)
+
+**Detail:** You can create machine catalogs enabled with Trusted launch, and use the `SupportsTrustedLaunch` property of the VM inventory to determine the VM sizes that support Trusted launch.
+
+Trusted launch is a seamless way to improve the security of Generation 2 VMs. Trusted launch protects against advanced and persistent attack techniques.
+
+{: .box-note}
+
+**Feature:** [Support for machine catalog creation using an image from a different subscription in the same Azure tenant](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#september-2022)
+
+**Detail:** Previously, in Azure environments, you could only select an image within your subscription to create a machine catalog. With this feature, you can now select an image in Azure Compute Gallery (formerly Shared Imaged Gallery) that belongs to a different shared subscription to create and update MCS catalogs.
+
+*  [More information on creating a catalog](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+*  [Sharing image with another service principal in the same tenant](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#image-sharing-with-another-service-principal-in-the-same-tenant)
+*  [Select an image from a different subscription](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#using-powershell-to-select-an-image-from-a-different-subscription)
+*  [Azure Compute Gallery](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#azure-shared-image-gallery)
+
+## - - - - - August 2022
+
+{: .box-note}
+
+**Feature:** [Support for using host groups and Azure availability zones at the same time](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#using-host-groups-and-azure-availability-zones-at-the-same-time)
+
+**Detail:** There is now a pre-flight check to assess whether the creation of a machine catalog will be successful based on the Azure availability zone specified in the custom property and the host group’s zone. Catalog creation fails if the availability zone custom property does not match the host group’s zone.
+
+A host group is a resource that represents a collection of dedicated hosts. A dedicated host is a service that provides physical servers that host one or more virtual machines. Azure availability zones are physically separate locations within each Azure region that are tolerant to local failures.
+
+{: .box-note}
+
+**Feature:** [Page file setting during image preparation in Azure environments](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#page-file-location)
+
+**Detail:** In Azure environments, you can now avoid potential confusion with the page file location. MCS now determines the page file location when you create the provisioning scheme during image preparation. This calculation is based on certain rules. Features like ephemeral OS disk (EOS) and MCS I/O have their own expected page file location and are exclusive to each other.
+
+If you decouple image preparation from provisioning scheme creation, MCS correctly determines the page file location.
+
+{: .box-note}
+
+**Feature:** [Support for updating page file setting in Azure environments](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#update-page-file-setting)
+
+**Detail:** While creating a catalog in an Azure environment, you can now specify the page file setting, including its location and the size, using PowerShell commands. This overrides the page file setting determined by MCS. You can do this by running the `New-ProvScheme` command with the following custom properties:
+
+*  `PageFileDiskDriveLetterOverride`: Page file location disk drive letter
+*  `InitialPageFileSizeInMB`: Initial page file size in MB
+*  `MaxPageFileSizeInMB`: Maximum page file size in MB
+
+{: .box-note}
+
+**Feature:** [Support for enabling Azure VM extensions](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#use-powershell-to-enable-azure-vm-extensions)
+
+**Detail:** When using an ARM template spec as a machine profile to create a machine catalog, you can now add Azure VM extensions to the VMs in the catalog, view the list of supported extensions, and remove extensions you added. Azure VM extensions are small applications that provide post-deployment configuration and automation tasks on Azure VMs. For example, if a VM requires software installation, antivirus protection, or the ability to run a script inside it, you can use a VM extension
+
+{: .box-note}
+
+**Feature:** [Trusted launch support for ephemeral OS disk](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** You can now create provisioning schemes using ephemeral OS disk on Windows with trusted launch. Trusted launch is a seamless way to improve the security of generation 2 VMs. It protects against advanced and persistent attack techniques by combining technologies that can be independently enabled like secure boot and virtualized version of trusted platform module (vTPM
+
 ## - - - - - July 2022
 
 {: .box-note}

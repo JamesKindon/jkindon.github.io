@@ -18,6 +18,26 @@ This list will start at CVAD 1912 LTSR, anything prior to that, refer to the app
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - Version 2209
+
+{: .box-note}
+
+**Feature:** [File deduplication policies to reduce storage cost for the user store](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-file-deduplication.html)
+
+**Detail:** Identical files can exist among various user profiles in the user store. With the new policies enabled, Profile Management removes duplicate files from the user store and stores one copy of them in a central location. Doing so avoids file duplications in the user store, thus saving your storage cost
+
+{: .box-note}
+
+**Feature:** [Ability to replicate the profile container for profile redundancy](https://docs.citrix.com/en-us/profile-management/current-release/configure/replicate-user-stores.html)
+
+**Detail:** With the profile container enabled for the full user profile, you can now replicate the container to multiple paths using the **Replicate user stores** policy. Doing so provides profile redundancy for user logons. This is a similar concept to FSLogix Cloud Cache
+
+{: .box-note}
+
+**Feature:** [OneDrive container policy generally available](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-the-onedrive-container.html)
+
+**Detail:** Previously available as a preview, the **Enable OneDrive container** policy is now generally available.
+
 ## - - - - - Version 2206
 
 This is a significant release as it relates to the evolution of Citrix Profile Management Containers vs FSLogix capability. There are a couple of very key features to note below:

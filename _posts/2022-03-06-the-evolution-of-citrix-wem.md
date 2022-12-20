@@ -16,6 +16,96 @@ Citrix WEM is consistently updating and bringing enhanced capability to the tabl
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - Version 2212
+
+{: .box-note}
+
+**Feature:** [Apply settings to unbound agents](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/active-directory-objects.html#advanced)
+
+**Detail:** Starting with this release, you can apply settings to agents that are not bound to any configuration set. This feature lets you control how unbound agents behave
+
+{: .box-note}
+
+**Feature:** [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/policies-and-profiles/citrix-upm-settings.html#file-deduplication)
+
+**Detail:** Workspace Environment Management now supports all versions of Profile Management through `2212`. The following tab is now available in **Administration Console > Policies and Profiles > Citrix Profile Management Settings**.
+
+*  **File Deduplication**. If enabled, Profile Management removes duplicate files from the user store and stores one copy of them in a central location. Doing so reduces the load on the user store by avoiding file duplication, thus reducing your storage cost
+
+{: .box-note}
+
+**Feature:** [Change to Google Analytics configuration](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/infrastructure-services.html#configure-the-infrastructure-service)
+
+**Detail:** Starting with this release, Workspace Environment Management determines which option of the following two to select based on the region of the machine hosting the infrastructure service:
+
+*  **Help improve Workspace Environment Management using Google Analytics**. This option is selected if the machine resides in non-European regions
+*  **Do not help improve Workspace Environment Management using Google Analytics**. This option is selected if the machine resides in European regions
+
+This behavior applies only to fresh installations.
+
+## - - - - - Version 2209
+
+{: .box-note}
+
+**Feature:** [Ability to import Group Policy settings from registry files](https://docs.citrix.com/en-us/workspace-environment-management/2209/user-interface-description/actions/group-policy-settings.html#import-group-policy-settings-from-registry-files)
+
+**Detail:** Starting with this release, you can convert registry values that you export using the Windows Registry Editor into GPOs for management and assignment. If you are familiar with the **Import registry files** option available with **Registry Entries**, this feature:
+
+*  Lets you import registry values under both `HKEY_LOCAL_MACHINE` and `HKEY_CURRENT_USER`
+*  Lets you import registry values of the `REG_BINARY` and `REG_MULTI_SZ` types
+*  Supports converting delete operations associated with registry keys and values that you define in .reg files
+
+{: .box-note}
+
+**Feature:** [External task](https://docs.citrix.com/en-us/workspace-environment-management/2209/user-interface-description/actions/external-tasks.html)
+
+**Detail:** This release includes enhancements to the external task feature. The feature now provides you with three additional options to control when to run external tasks:
+
+*  **Disconnect**. Controls whether to run the external task when a user disconnects from a machine where the agent is running
+*  **Lock**. Controls whether to run the external task when a user locks a machine where the agent is running
+*  **Unlock**. Controls whether to run the external task when a user unlocks a machine where the agent is running
+
+{: .box-note}
+
+**Feature:** [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/2209/user-interface-description/policies-and-profiles/citrix-upm-settings.html#advanced-settings)
+
+**Detail:** Workspace Environment Management now supports all versions of Profile Management through `2209`. The following new option is now available in the **Administration Console > Policies and Profiles > Citrix Profile Management Settings > Advanced Settings** interface.
+
+*  **Enable OneDrive container**. If enabled, Profile Management roams OneDrive folders with users by storing the folders on a VHDX disk. The disk is attached during logons and detached during logoffs
+
+## - - - - - Version 2206
+
+{: .box-note}
+
+**Feature:** [Process hierarchy control](https://docs.citrix.com/en-us/workspace-environment-management/2206/user-interface-description/security.html#process-hierarchy-control)
+
+**Detail:** This release introduces the process hierarchy control feature. The feature lets you control whether certain child processes can be started through their parent processes. You create a rule by defining parent processes and then designating an allow list or a block list for their child processes. You then assign the rule on a per user or per user group basis. The following rule types are available:
+
+*  Path. Applies the rule to an executable according to the executable file path
+*  Publisher. Applies the rule according to publisher information
+*  Hash. Applies the rule to identical executables as specified
+
+For the feature to work, you need to use the **AppInfoViewer** tool on each agent machine to enable the feature. Every time you use the tool to enable or disable the feature, a machine restart is required
+
+{: .box-note}
+
+**Feature:** [Enhancements to memory management](https://docs.citrix.com/en-us/workspace-environment-management/2206/user-interface-description/system-optimization/memory-management.html)
+
+**Detail:** This release includes enhancements to the memory management feature. The feature now provides you with two extra options to perform memory management:
+
+*  **Do Not Optimize When Total Available Memory Exceeds (MB).** This option lets you specify a threshold below which WEM optimizes memory usage for idle applications
+*  **Enable Memory Usage Limit for Specific Processes.** This option lets you limit the memory usage of processes by setting upper limits for the memory they can consume
+
+{: .box-note}
+
+**Feature:** [Administration console](https://docs.citrix.com/en-us/workspace-environment-management/2206/whats-new.html#whats-new-in-2206)
+
+**Detail:** The user interface of the administration console has changed:
+
+*  A new node, **Process Hierarchy Control**, is now available in **Security**. The node contains a tab that lets you control whether certain child processes can be started through their parent processes
+*  An option, **Do Not Optimize When Total Available Memory Exceeds**, is now available in **System Optimization > Memory Management > Memory Management**. The option lets you specify a threshold limit below which Workspace Environment Management optimizes memory usage for idle applications
+*  A new tab, **Memory Usage Limit**, is now available in **System Optimization > Memory Management**. The tab lets you configure memory usage limits for specific processes
+
 ## - - - - - Version 2203
 
 {: .box-note}

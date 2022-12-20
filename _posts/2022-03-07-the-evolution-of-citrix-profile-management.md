@@ -18,6 +18,14 @@ This list will start at CVAD 1912 LTSR, anything prior to that, refer to the app
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - Version 2212
+
+{: .box-note}
+
+**Feature:** [Ability to access file-based user stores using credentials](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-credential-based-access-to-user-stores.html)
+
+**Detail:** Previously, impersonating the current user was the only solution to access file-based user stores. With the **Enable credential-based access to user stores policy**, you can now enable Profile Management to access file-based user stores using the stores’ own credentials. This feature gives you more flexibility in deploying and accessing file-based user stores
+
 ## - - - - - Version 2209
 
 {: .box-note}

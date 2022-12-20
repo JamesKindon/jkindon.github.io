@@ -29,6 +29,35 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - November 2022
+
+{: .box-note}
+
+**Feature:** [Ability to annotate master images extended to catalog creation](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create.html#master-image)
+
+**Detail:** When creating an MCS catalog in Full Configuration, you can now annotate its master image. This was previously only available for updates to an existing Catalog, and whilst not Azure specific, definitely adds value to Azure deployments.
+
+{: .box-note}
+
+**Feature:** [Support for changing the storage type to a lower tier when a VM is shut down in Azure environments](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#change-the-storage-type-to-a-lower-tier-when-a-vm-is-shut-down)
+
+**Detail:** You can now save storage costs by switching the storage type of a managed disk to a lower tier when you shut down a VM. To do this, use the `StorageTypeAtShutdown` custom property. The storage type of the disk changes to a lower tier (as specified in the `StorageTypeAtShutdown` custom property) when you shut down the VM. After you power on the VM, the storage type changes back to the original storage type (as specified in `StorageType` or `WBCDiskStorageType` custom property)
+
+{: .box-note}
+
+**Feature:** [Support for updating machine profile and additional custom properties of MCS provisioned machines in Azure environments](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#update-provisioned-machines-to-current-provisioning-scheme-state)
+
+**Detail:** Previously, in Azure environments, you could use `Request-ProvVMUpdate` to update the `ServiceOffering` custom property of an MCS provisioned machine. Now, you can also update the machine profile and the following custom properties:
+
+*  `StorageType`
+*  `WBCDiskStorageType`
+*  `IdentityDiskStorageType`
+*  `LicenseType`
+*  `DedicatedHostGroupId`
+*  `PersistWBC`
+*  `PersistOsDisk`
+*  `PersistVm`
+
 ## - - - - - October 2022
 
 {: .box-note}

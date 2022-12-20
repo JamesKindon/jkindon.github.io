@@ -16,6 +16,39 @@ Citrix WEM Service environment is consistently updating and bringing enhanced ca
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - November 2022
+
+{: .box-note}
+
+**Feature:** [External task (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions.html)
+
+**Detail:** Using the web console, you can now create external tasks to assign to users. External tasks can be scripts or applications. Specify when to run external tasks to manage user environments precisely and effectively. The web console provides an extra capability for external tasks — letting you associate the scheduled trigger with external tasks to schedule when to run
+
+To enable this feature, go to **Home**, click the preview features icon in the upper-right corner, and enable **External task**
+
+Minimum agent version required: `2211.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Agents to download configuration data only when needed](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#november-2022)
+
+**Detail:** Previously, WEM agents periodically connected to the WEM service to download configuration data whether or not there was a configuration change. Agents now periodically check with the service to see if any configuration changes were made:
+
+*  If yes, agents download the configuration data.
+*  If no, the configuration data is not downloaded.
+
+This enhancement significantly reduces network usage, especially if you have a large deployment with many agents.
+
+Minimum agent version required: `2211.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Filter enhancements](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/assignment.html#add-a-filter)
+
+**Detail:** This is a **huge** feature addition to the WEM Service and has been long awaited. This feature lets you use the **AND** and **OR** operators to build filters. You can use the operators to combine two or more conditions into a compound condition. This feature gives you more flexibility to build filters for use with assignments and scripted tasks.
+
+Minimum agent version required: `2210.2.0.1`
+
 ## - - - - - October 2022
 
 {: .box-note}

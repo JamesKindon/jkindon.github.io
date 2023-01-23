@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Getting started with automated image builds in Azure"
+title: "Getting Started With Automated Image Builds in Azure"
 permalink: "/getting-started-with-automated-image-builds-in-azure/"
 subtitle: "Automating DaaS and AVD Images in Azure"
 cover-img: /assets/img/Sydney1.jpg

@@ -29,6 +29,57 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - February 2023
+
+{: .box-note}
+
+**Feature:** [Real-time GPU Utilization available for AMD GPUs](https://docs.citrix.com/en-us/citrix-daas/monitor/troubleshoot-deployments/machines.html#gpu-utilization)
+
+**Detail:** I am including this one because there are Azure specific considerations here.
+
+You can now see GPU Utilization of AMD Radeon Instinct MI25 GPUs and AMD EPYC 7V12(Rome) CPUs on Monitor. Monitor already supports the NVIDIA Tesla M60 GPUs. GPU Utilization displays graphs with real-time percentage utilization of the GPU, the GPU memory, and of the Encoder and the Decoder to troubleshoot GPU-related issues on multi-session and single-session OS VDAs.
+
+{: .box-note}
+
+**Feature:** [Support for scheduling configuration updates in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#schedule-configuration-updates)
+
+**Detail:** In Azure environments, you can now schedule a time slot for the configuration updates of the existing MCS provisioned machines using the PowerShell command `Schedule-ProvVMUpdate`. Any power on or restart during the scheduled time slot applies a scheduled provisioning scheme update to a machine. You can also cancel the configuration update before the scheduled time using `Cancel-ProvVMUpdate`.
+
+You can schedule and cancel the configuration update of:
+
+*  A single or multiple VMs
+*  An entire catalog
+
+{: .box-note}
+
+**Feature:** [Support for zone-redundant storage in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#enable-zone-redundant-storage)
+
+**Detail:** Previously, MCS offered only locally-redundant storage. With this feature, zone-redundant storage is now an option in Azure, allowing you to select a storage type depending on what type of redundancy you want to use. Zone-redundant storage replicates your Azure managed disk across multiple availability zones, which allows you to recover from a failure in one zone by utilizing the redundancy in others
+
+## - - - - - January 2023
+
+{: .box-note}
+
+**Feature:** [Option to downgrade storage disk to Standard HDD when VMs shut down](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+
+**Detail:** A new option, `Enable storage cost saving`, is now available on the `Disk Settings` page when you create or update Azure catalogs. The option saves storage costs by downgrading to Standard HDD for the storage disk and the write-back cache disk when the VM shuts down. The VM switches to its original settings on restart.
+
+This is awesome to see come to life - more cost savings
+
+{: .box-note}
+
+**Feature:** [Non-persistent VMs are deleted from hypervisors or cloud services when you delete them or their machine catalogs in Full Configuration](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html)
+
+**Detail:** The option to retain VMs in hypervisors or cloud services is now available only to persistent VMs
+
+## - - - - - December 2022
+
+{: .box-note}
+
+**Feature:** [Support in MCS for deleting VM objects without accessing the hypervisor](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#delete-machines-without-hypervisor-access)
+
+**Detail:** You can now delete VM objects in MCS without having access to the hypervisor. When deleting a VM or provisioning scheme, MCS needs to remove tags so that the resources are no longer tracked or identified. Previously, if the hypervisor could not be accessed, the tag removal failures were ignored. With this feature, if the hypervisor is not accessible while using the `Remove-ProvVM` command the tag removal will fail, but by using the `PurgeDBOnly` option, you can still delete the VM resource object from the database.
+
 ## - - - - - November 2022
 
 {: .box-note}

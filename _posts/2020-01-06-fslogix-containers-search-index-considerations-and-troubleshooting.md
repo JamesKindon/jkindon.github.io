@@ -221,7 +221,7 @@ This utility is designed to queue a windows-based search reindex for the specifi
 
 ### **FSLogix Context Menu Handler**
 
-First, you must install this utility using the command `frxcontext.exe –install`
+First, you must install this utility using the command `frxcontext.exe --install`
 
 [![frxcontext.exe install]({{site.baseurl}}/assets/img/fslogix-containers-search-index-considerations-and-troubleshooting/FRXContext.png)]({{site.baseurl}}/assets/img/fslogix-containers-search-index-considerations-and-troubleshooting/FRXContext.png)
 

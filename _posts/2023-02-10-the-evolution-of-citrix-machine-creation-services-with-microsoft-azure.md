@@ -121,7 +121,7 @@ This is awesome to see come to life - more cost savings
 
 {: .box-note}
 
-**Feature:** [Machine catalogs with Trusted launch in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#machine-catalogs-with-trusted-launch)
+**Feature:** [Machine catalogs with Trusted launch in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#machine-catalogs-with-trusted-launch)
 
 **Detail:** You can create machine catalogs enabled with Trusted launch, and use the `SupportsTrustedLaunch` property of the VM inventory to determine the VM sizes that support Trusted launch.
 
@@ -432,7 +432,7 @@ This is not Azure specific, but I am adding this as it's very handy and long awa
 
 **Feature:** [Improve performance by preserving a provisioned VM when power cycling](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#preserving-a-provisioned-virtual-machine-when-power-cycling)
 
-**Detail:** Citrix added a setting `Retain VMs across power cycles` to the Machine Catalog Setup > Disk Settings page of the Full Configuration management interface. The setting lets you preserve a provisioned VM when power cycling in Azure environments. 
+**Detail:** Citrix added a setting `Retain VMs across power cycles` to the Machine Catalog Setup > Disk Settings page of the Full Configuration management interface. The setting lets you preserve a provisioned VM when power cycling in Azure environments.
 
 Be wary of cost implications associated with persistent OS disks
 
@@ -601,7 +601,7 @@ Ephemeral OS disks require that your provisioning scheme use managed disks and a
 
 {: .box-note}
 
-**Feature:** Use a customer-managed encryption key to encrypt data on machines
+**Feature:** [Use a customer-managed encryption key to encrypt data on machines](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#azure-server-side-encryption)
 
 **Detail:** Studio adds a setting called Customer-managed encryption key to the Machine Catalog Setup > Disk Settings page. The setting lets you choose whether to encrypt data on the machines to be provisioned in the catalog
 

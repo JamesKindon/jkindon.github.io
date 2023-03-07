@@ -60,7 +60,7 @@ You can schedule and cancel the configuration update of:
 
 {: .box-note}
 
-**Feature:** [Option to downgrade storage disk to Standard HDD when VMs shut down](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+**Feature:** [Option to downgrade storage disk to Standard HDD when VMs shut down](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#change-the-storage-type-to-a-lower-tier-when-a-vm-is-shut-down)
 
 **Detail:** A new option, `Enable storage cost saving`, is now available on the `Disk Settings` page when you create or update Azure catalogs. The option saves storage costs by downgrading to Standard HDD for the storage disk and the write-back cache disk when the VM shuts down. The VM switches to its original settings on restart.
 

@@ -81,7 +81,7 @@ If not using on-demand provisioning, or choosing to persist OS Disks which are p
 
 BYOL/[Hybrid Use Benefit (HUB)](https://azure.microsoft.com/en-us/pricing/hybrid-benefit/) offers monster gains under the right conditions. If you have an appropriate agreement to bring your own Windows Licence or consume HUB, do not forgot the tick the box accordingly – else, you will be paying a nice amount of $$ to Microsoft for Windows licencing as part of your instance costs.
 
-Citrix DaaS MCS allows [provisioned machines to tagged](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html) with either a "Windows Server License" for Server OS or "Windows Client License" for single session desktop OS (Windows 10 or 11. There are also considerations for Redhat and Suse Linux.
+Citrix DaaS MCS allows [provisioned machines to be tagged](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html) with either a "Windows Server License" for Server OS or "Windows Client License" for single session desktop OS (Windows 10 or 11. There are also considerations for Redhat and Suse Linux.
 
 ## Category: IaaS
 

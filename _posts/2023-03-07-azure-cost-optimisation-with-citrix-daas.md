@@ -66,13 +66,13 @@ Don’t forget to plug in your instance $$ figure into your Delivery Group so th
 
 This one can be massive depending on the use of DaaS workloads. [Reserved Instances](https://azure.microsoft.com/en-us/pricing/reserved-vm-instances/) allow a pre-commit to consume the instance over a 1- or 3-year period. This typically offers a massive reduction in cost for the instance itself.
 
-In some scenarios, where DaaS workloads run for extended periods of time, reserved instances can offer greater cost gains than AutoScale.
+In some scenarios, where DaaS workloads run for extended periods of time, Reserved Instances can offer greater cost gains than Autoscale.
 
-In other scenarios, a combination of both Reserved Instances and Autoscale can be beneficial, where the baseline (minimum) number of instances to serve the business can be reserved, and then autoscale can handle the rest on a PAYG rate.
+In other scenarios, a combination of both Reserved Instances and Autoscale can be beneficial, where the baseline (minimum) number of instances to serve the business can be reserved, and then Autoscale can handle the rest on a PAYG rate.
 
-Remember, [Instance reservations float](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-vm-reservation-charges?toc=%2Fazure%2Fcost-management-billing%2Freservations%2Ftoc.json#how-reservation-discount-is-applied), they aren’t tied to a specific VM, so if AutoScale Powers off a VM with a reservation associated to it (and MCS is using on-demand provisioning and the VM is destroyed), the benefit can just be moved across to another VM that is still running.
+Remember, [Instance Reservations float](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-vm-reservation-charges?toc=%2Fazure%2Fcost-management-billing%2Freservations%2Ftoc.json#how-reservation-discount-is-applied), they aren’t tied to a specific VM, so if Autoscale powers off a VM with a reservation associated to it (and MCS is using on-demand provisioning and the VM is destroyed), the benefit can just be moved across to another VM that is still running.
 
-Build an Excel sheet and map out run time, reserved instance (1 and 3 year options) pricing and see what your costs can look like – it will be surprising when you start to mix and match.
+Build an Excel sheet and map out run time, Reserved Instance (1 and 3 year options) pricing and see what your costs can look like – it will be surprising when you start to mix and match.
 
 If not using on-demand provisioning, or choosing to persist OS Disks which are premium, [Reserved Instances for Managed Disks](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-reserved-capacity) may also offer some cost benefits.
 

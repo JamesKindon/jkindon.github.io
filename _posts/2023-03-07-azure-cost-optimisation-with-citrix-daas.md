@@ -21,7 +21,7 @@ Luckily there are some easy wins to try and make a small dent in that bill. Belo
 {: .box-note}
 **Identity Disks**
 
-Identity disks are low hanging and fruit, and in modern deployments of Citrix DaaS should no longer be a subject of concern as MCS now uses standard SSD for everything. However, if you have not been watching, or have some older deployments, have a read on the [impact/considerations of identity disks with Citrix MCS](https://jkindon.com/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/)
+Identity disks are low hanging fruit, and in modern deployments of Citrix DaaS should no longer be a subject of concern as MCS now uses standard SSD for everything. However, if you have not been watching, or have some older deployments, have a read on the [impact/considerations of identity disks with Citrix MCS](https://jkindon.com/enhancing-citrix-mcs-and-microsoft-azure-part-1-identity-disk-cost-optimization/)
 
 {: .box-note}
 **Ephemeral Disks**

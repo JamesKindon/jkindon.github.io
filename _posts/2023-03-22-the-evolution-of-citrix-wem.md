@@ -16,6 +16,17 @@ Citrix WEM is consistently updating and bringing enhanced capability to the tabl
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - Version 2303
+
+{: .box-note}
+
+**Feature:** [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/policies-and-profiles/citrix-upm-settings.html)
+
+**Detail:** Workspace Environment Management now supports all versions of Profile Management through 2303. The following new options are now available in **Administration Console > Policies and Profiles > Citrix Profile Management Settings**.
+
+-  **Enable concurrent session support**. Provides native Outlook search experience in concurrent sessions. If enabled, each concurrent session uses a separate Outlook OST file. You can specify the maximum number of VHDX disks for storing Outlook OST files. The option is available in **Policies and Profiles > Citrix Profile Management Settings > Advanced Settings**.
+-  **Enable profile streaming for pending area**. If enabled, files in the pending area are fetched to the local profile only when they are requested. This ensures optimum logon experience in concurrent session scenarios. The option is available in **Policies and Profiles > Citrix Profile Management Settings > Streamed User Profiles**.
+
 ## - - - - - Version 2212
 
 {: .box-note}

@@ -18,6 +18,47 @@ This list will start at CVAD 1912 LTSR, anything prior to that, refer to the app
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - Version 2303
+
+{: .box-note}
+
+**Feature:** [App access control](https://docs.citrix.com/en-us/profile-management/current-release/configure/app-access-control.html)
+
+**Detail:** Hello AppMasking. The long awaited missing feature that had us all deploying FSLogix regardless of using it for Profiles or not, this is Citrix first steps into the AppMasking space. This will warrant it's own post in time.
+
+Profile Management can now hide applications from users, machines, and processes based on the rules you provide. With a new policy, **App access control**, you can enable this feature and provide control rules.
+
+A PowerShell tool, **Rule Generator**, is delivered with the Profile Management installation package, letting you create, manage, and generate rules for app access control.
+
+Note that this toolset is actually a combination of tools still being released. There is a PowerShell tool to assist with basic rule creation for simple CPM only deployments, and there is a releasing feature as part of the WEM Service which will provide a nice GUI to create the rules and provide the raw data for import into WEM, Citrix Policy or GPO.
+
+This is part one, it's effectively a preview release for now, don't expect the world just yet.
+
+{: .box-note}
+
+**Feature:** [Active write-back on session lock and disconnection](https://docs.citrix.com/en-us/profile-management/current-release/configure/active-write-back.html)
+
+**Detail:** Active write back is a silent killer in many environments, it can very quickly knock file servers off their perch and into a pitt of doom. Sometimes there is a valid use case for it though, so this is a welcome change to try and reduce the impacts of AWB.
+
+A new policy, **Active write back on session lock and disconnection**, is now available to extend the Active write back and Active write back registry policies:
+
+-  With both this new policy and the **Active write back policy** enabled, profile files and folders are written back only when a session is locked or disconnected.
+-  With this new policy and both the **Active write back** and **Active write back registry** policies enabled, registry entries are written back only when a session is locked or disconnected.
+
+{: .box-note}
+
+**Feature:** [VHD disk compaction](https://docs.citrix.com/en-us/profile-management/current-release/configure/vhd-disk-compaction.html)
+
+**Detail:** Hello FSLogix feature parity...and more
+
+With a new policy, **Enable VHD disk compaction**, VHD files are now automatically compacted on user logoff when certain conditions are met. This policy enables you to save the storage space consumed by profile container, OneDrive container, and folder mirroring container.
+
+Depending on your needs and the resources available, you can adjust the default VHD compaction settings and behavior using the following policies:
+
+-  Free space ratio to trigger VHD disk compaction
+-  Number of logoffs to trigger VHD disk compaction
+-  Disable defragmentation for VHD disk compaction
+
 ## - - - - - Version 2212
 
 {: .box-note}

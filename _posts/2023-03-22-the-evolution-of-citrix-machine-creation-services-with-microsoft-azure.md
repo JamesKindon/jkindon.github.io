@@ -29,7 +29,43 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - March 2023
+
+{: .box-note}
+
+**Feature:** [Support for changing the storage type of existing VMs to a lower tier on shutdown in Azure environments](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#change-the-storage-type-of-existing-vms-to-a-lower-tier-on-shutdown)
+
+**Detail:** In Azure environments, you can now save storage costs by changing the storage type of existing VMs to a lower tier when the VMs are shut down. To do this, use the `StorageTypeAtShutdown` custom property.
+
+This is release is allow to set these properties on an existing catalog rather than a new one as specified in an earlier release.
+
+{: .box-note}
+
+**Feature:** [Shared tenants for connections](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections.html#edit-connection-settings)
+
+**Detail:** You can now add tenants and subscriptions that share the Azure Compute Gallery with the subscription of the connection. As a result, when creating or updating catalogs, you can select shared images from those tenants and subscriptions.
+
+{: .box-note}
+
+**Feature:** [Removed support for changing the OS type for Azure catalogs](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#march-2023)
+
+**Detail:** When changing catalog images, only images with the same OS type as the image in use are shown. With this enhancement, Citrix DaaS no longer supports changing the OS type for Azure catalogs after catalog creation.
+
 ## - - - - - February 2023
+
+{: .box-note}
+
+**Feature:** [Support for sharing images across different Azure tenants](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager.html#image-sharing-across-azure-tenants)
+
+**Detail:** Previously, in Azure environments, you could share images only with shared subscriptions using Azure Compute Gallery. With this feature, you can now select an image in Azure Compute Gallery that belongs to a different shared subscription in a different tenant to create and update an MCS catalog.
+
+{: .box-note}
+
+**Feature:** [Updates for Autoscale](https://docs.citrix.com/en-us/citrix-daas/manage-deployment/autoscale/autoscale-tagged-machines.html#control-when-autoscale-powers-on-resources)
+
+**Detail:** Whilst not MCS specific, Autoscale ties in nicely here.
+
+Citrix updated the **Control when Autoscale starts powering on tagged machines** option to make it easy to understand. The option controls when Autoscale starts powering on tagged machines based on the percentage of the remaining capacity of untagged machines. When the percentage falls below the threshold (default, 10%), Autoscale starts powering on tagged machines. When the percentage exceeds the threshold, Autoscale goes into power-off mode
 
 {: .box-note}
 

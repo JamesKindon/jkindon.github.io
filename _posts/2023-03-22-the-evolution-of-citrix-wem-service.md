@@ -16,6 +16,67 @@ Citrix WEM Service environment is consistently updating and bringing enhanced ca
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - February 2023
+
+{: .box-note}
+
+**Feature:** [Applications (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#applications-preview)
+
+**Detail:** The new web console is slick. Here is another new addition for applications.
+
+Using the web console, you can now add applications to assign to your users. When assigned, those applications have their shortcuts created on the desktop, Start menu, or taskbar, depending on your configuration. The feature has been enhanced to provide a better user experience. For more information, see Actions.
+
+To enable this feature, go to **Home**, click the preview features icon in the upper-right corner, and enable **Applications**.
+
+Minimum agent version required: `2302.1.0.1`
+
+{: .box-note}
+
+**Feature:** [WEM Tool Hub (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub.html)
+
+**Detail:** A tool set, **WEM Tool Hub**, is now available for WEM administrators. It includes a collection of tools that aims to simplify the configuration experience for administrators. To download it, go to **Citrix Cloud > WEM service > Utilities**.
+
+Expect growth in this toolset, currently it is the missing link between pulling resources from internal storefront environments (and workspace resources) into WEM, and assisting with the creation of icons without the madness of import/export/upload/etc.
+
+{: .box-note}
+
+**Feature:** [New settings added to external tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#new-settings-added-to-external-tasks)
+
+**Detail:** When using external tasks in the web console, you can now directly configure when the agent processes external tasks without going to **Legacy Console > Advanced Settings** for related settings. The newly added settings are:
+
+-  Process external tasks on logon and refresh
+-  Process external tasks on reconnection
+
+This enhancement also provides detailed information on how to ensure that the agent processes external tasks.
+
+## - - - - - January 2023
+
+{: .box-note}
+
+**Feature:** [Enhancements to automatic agent upgrade](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings.html#agent-settings)
+
+**Detail:** The automatic agent upgrade feature has been migrated to the web console and is available in **Advanced Settings > Agent Settings** under each configuration set. The feature now provides a better user experience and offers extra capabilities. In addition to scheduling automatic upgrades for the agents, you now have the flexibility to control whether to apply agent upgrades to persistent or non-persistent machines.
+
+Another good example of the WEM team listening to feedback - nice to see things come to life.
+
+Minimum agent version required: `2301.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Automatically bind non-domain-joined agents to desired configuration sets](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/directory-objects.html#advanced-settings)
+
+**Detail:** You can now set up binding rules for unbound non-domain-joined agents. Those rules dictate which configuration set to bind the matching agents to. This feature simplifies the process of adding non-domain-joined agents for WEM to manage.
+
+Minimum agent version required: `2301.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Support for assigning GPOs to organizational units](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/assignment.html#add-an-assignment-target)
+
+**Detail:** Using the web console, you can now assign GPOs to organizational units. This eliminates the need to change your Active Directory structure for use with WEM.
+
+Minimum agent version required: `2301.1.0.1`
+
 ## - - - - - November 2022
 
 {: .box-note}

@@ -7,7 +7,7 @@ cover-img: /assets/img/Sydney1.jpg
 thumbnail-img: /assets/img/warm-up-citrix-vdas-with-control-up-logon-simulator-powershell/PowerShellRunning.jpg
 share-img: /assets/img/warm-up-citrix-vdas-with-control-up-logon-simulator-powershell/PowerShellRunning.jpg
 tags: [Citrix, ControlUp, PowerShell]
-categories: Citrix, ControlUp, PowerShell]
+categories: [Citrix, ControlUp, PowerShell]
 redirect_from: 
     - /2017/08/27/warm-up-citrix-vdas-with-control-up-logon-simulator-powershell
     - /2017/08/27/warm-up-citrix-vdas-with-control-up-logon-simulator-powershell/

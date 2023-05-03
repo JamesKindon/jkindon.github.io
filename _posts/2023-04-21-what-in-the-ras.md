@@ -50,7 +50,7 @@ There is as much complexity as you want or as much simplicity. For small shops, 
 -  Application publishing extends to AppV packages, Web Apps, documents and folders (published content, anyone?).
 -  VDI for Windows Client based VDI workloads. These can be both persistent and non-persistent. In fact, RAS defaults to a persistent assignment by default. This doesn't mean the workload is persistent, just the assignment. These assignments can be released on a schedule to align with a true "pooled" methodology.
 -  Remote PC capability - similar to that of Citrix Remote PC. They even have simple onboarding for users and a level of device management for endpoints.
-RAS has its own equivalent of Machine Creation Services. It offers an automated approach with full sysprep, or it has its own funky RASPrep which achieves the same thing in way less time. When a machine is cloned, it is prepared and added to a pool of resources for sessions to launch from. Simples. AutoScale steps in and dynamically provisions and de-provisions workloads based on your defined thresholds.
+-  RAS has its own equivalent of Machine Creation Services. It offers an automated approach with full sysprep, or it has its own funky RASPrep which achieves the same thing in way less time. When a machine is cloned, it is prepared and added to a pool of resources for sessions to launch from. Simples. AutoScale steps in and dynamically provisions and de-provisions workloads based on your defined thresholds.
 
 [![RAS Prep]({{site.baseurl}}/assets/img/what-in-the-ras/ras_prep.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_prep.png)
 
@@ -114,7 +114,7 @@ They automate the deployment of your AVD resources. They can help with initial i
 
 [![RAS AVD]({{site.baseurl}}/assets/img/what-in-the-ras/ras_avd.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_avd.png)
 
-They are also incredibly clever with how they make all of this work. Long and short, connections to AVD via RAS still go via AVD control planes. It's either the native AVD client or a more advanced set of features layered on top (Uni Scanning and Printing etc). But the rest is AVD at the core, just made "*better" by RAS. Well played, I have no biff here.
+They are also incredibly clever with how they make all of this work. Long and short, connections to AVD via RAS still go via AVD control planes. It's either the native AVD client or a more advanced set of features layered on top (Uni Scanning and Printing etc). But the rest is AVD at the core, just made "*better*" by RAS. Well played, I have no biff here.
 
 ## Summary. For now
 

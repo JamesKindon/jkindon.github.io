@@ -23,7 +23,102 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - May 2023
+
+{: .box-note}
+
+**Feature:** [Support for converting a non-machine profile-based machine catalog to machine profile-based machine catalog in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#convert-a-non-machine-profile-based-machine-catalog-to-machine-profile-based-machine-catalog)
+
+**Detail:** In Azure, you can now use a VM or template spec as a machine profile input to convert a non-machine profile-based machine catalog to machine profile-based machine catalog. Existing VMs and new VMs added to the catalog take property values from the machine profile unless overwritten by explicit custom properties.
+
+{: .box-note}
+
+**Feature:** [Support for double encryption on managed disk in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#double-encryption-on-managed-disk)
+
+**Detail:**  In Azure, you can now create an MCS machine catalog with double encryption. Double encryption is platform-side encryption (default) and customer-managed encryption (CMEK). If you are a high security sensitive customer who is concerned about the risk associated with any encryption algorithm, implementation, or a compromised key, you can opt for this double encryption. Persistent OS and data disks, snapshots, and images are all encrypted at rest with double encryption.
+
+{: .box-note}
+
+**Feature:** [Ability to reset the OS disk of a persistent VM in an MCS created machine catalog in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#reset-os-disk)
+
+**Detail:** You can now use the PowerShell command `Reset-ProvVMDisk` to reset the OS disk of a **persistent** VM in an MCS created machine catalog. The feature automates the process of resetting the OS disk. For example, it helps in resetting the VM to its initial status of a persistent development desktop catalog created using MCS. Think of this as a reset back to the initial state of provisioning.
+
+{: .box-note}
+
+**Feature:** [Improved host connection creation experience](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections.html#step-1-connection)
+
+**Detail:** Again, not an MCS specific function, but impacts the process of settings up an environment for MCS. You can now get the following information while you create a host connection:
+
+-  List of all Citrix supported hypervisor plug-ins, including third party plugins
+-  Availability of hypervisor plug-in. If the availability status is false, possible reason might be that Cloud Connector is not installed
+
+This feature helps you correctly set-up a resource location and thus, create a host connection.
+
+{: .box-note}
+
+**Feature:** [New option to turn off forced user logoff for Autocale](https://docs.citrix.com/en-us/citrix-daas/manage-deployment/autoscale/force-user-logoff.html)
+
+**Detail:** Not quite MCS, but included as Autoscale and MCS provisioned workloads are so heavily entwined. A new option, **Neither notify nor force user logoff**, is now available on the **Manage Autoscale -> User Logoff Notification** page. With the option selected, Autoscale will neither force users to log off from machines in drain state nor notify users to log off and log on to a different machine.
+
+{: .box-note}
+
+**Feature:** [There are several enhancements to Azure Active Directory security group capability](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#may-2023)
+
+**Detail:** The following capabilities have been added:
+
+-  [Ability to display the Azure AD assigned security groups for VMs to join](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#create-a-machine-catalog-using-an-azure-resource-manager-image) In Full Configuration, when you create Azure Active Directory joined VMs, an option, **Join an assigned security group as a member**, lets you add the Azure AD security group where the VMs reside to an assigned security group
+-  [Support for renaming Azure AD security groups for VMs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#create-a-machine-catalog-using-an-azure-resource-manager-image) For VMs added to an Azure AD security group through Citrix DaaS, you can now rename the security group using **Full Configuration -> Edit Machine Catalog**. Renaming occurs after you save the change. Names of Azure AD security groups must not contain the following characters: `@ " \ / ; : # . * ? = < > | [ ] ( ) '`.
+
+{: .box-note}
+
+**Feature:** [Support for changing networks for connections](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections.html#edit-networks)
+
+**Detail:** In Full Configuration, you can now change networks for a connection. You can't unassociate networks from a connection if they are in use.
+
+{: .box-note}
+
+**Feature:** [Ability to remove tags in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#remove-tags)
+
+**Detail:** Previously, `Remove-ProvVM` and `Remove-ProvScheme` PowerShell commands with `ForgetVM` parameter removed the VMs and machine catalogs from the Citrix database. However, the commands didn't remove the tags from the resources. You had to individually manage the VMs and machine catalogs that weren’t deleted entirely from all the resources. With this feature, you can use:
+
+-  `Remove-ProvVM` with `ForgetVM` parameter to remove VMs and tags created on the resources from a single VM or a list of VMs from a machine catalog.
+-  `Remove-ProvScheme` with `ForgetVM` parameter to remove a machine catalog from the Citrix database and tags created on the resources from an entire machine catalog.
+
+This implementation helps in identifying orphaned resources that are created by MCS but no longer used by MCS. This feature is only applicable to **persistent VMs**.
+
+## - - - - - April 2023
+
+{: .box-note}
+
+**Feature:** [Support for customizing power on behavior at storage type change failure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#customize-power-on-behavior-at-storage-type-change-failure)
+
+**Detail:** At power-on, the storage type of a managed disk might fail to change to the desired type due to a failure on Azure. Previously, in these scenarios, the VM would remain off with a failure message sent to you. With this feature, you can either choose to power on the VM even when storage cannot be restored to its configured type or choose to keep the VM powered off
+
+{: .box-note}
+
+**Feature:** [Support for Azure disk encryption at host](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#azure-disk-encryption-at-host)
+
+**Detail:** You can now create an MCS machine catalog with encryption at host capability. Currently, MCS supports only the machine profile workflow for this feature. You can use a VM or a template spec as an input for a machine profile.
+
+With this type of encryption, the server hosting the VM encrypts the data and the encrypted data flows through the Azure storage server. Therefore, this method of encryption encrypts data end to end.
+
+{: .box-note}
+
+**Feature:** [Support for modifying Azure AD dynamic security group name](https://docs.citrix.com/en-us/citrix-daas/install-configure/create-machine-identities-joined-catalogs/create-azure-ad-joined-catalogs.html#modify-azure-ad-dynamic-security-group-name)
+
+**Detail:** With this feature, you can now modify the Azure AD dynamic security group name associated with a machine catalog. This modification helps you to make the Azure AD dynamic security group information stored in Azure AD identity pool object to be consistent with the information stored in Azure portal.
+
 ## - - - - - March 2023
+
+{: .box-note}
+
+**Feature:** [There are several enhancements to Azure Active Directory security group capability](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#march-2023)
+
+**Detail:** The following capabilities have been added:
+
+-  [Support for creating dynamic security group under an existing assigned security group](https://docs.citrix.com/en-us/citrix-daas/install-configure/create-machine-identities-joined-catalogs/create-azure-ad-joined-catalogs.html#create-an-azure-ad-dynamic-security-group-under-an-existing-azure-ad-assigned-security-group) An option, Azure AD security group, is now available when you create Azure AD joined VMs. The option lets you add the VMs to an Azure AD security group based on their naming scheme.
+-  [Support for Azure AD dynamic security group for Azure AD joined VM](https://docs.citrix.com/en-us/citrix-daas/install-configure/create-machine-identities-joined-catalogs/create-azure-ad-joined-catalogs.html#azure-active-directory-dynamic-security-group). Citrix now supports dynamic security group for a catalog while creating an MCS machine catalog. Dynamic security group rules place the VMs in the catalog to a dynamic security group based on the naming scheme of the machine catalog.
+-  [Support for adding VMs to Azure AD security groups through Full Configuration](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html). Previously, you could create Azure AD dynamic security groups for a machine catalog. With this feature, you can also add an Azure AD dynamic security group under an existing Azure AD assigned security group.
 
 {: .box-note}
 
@@ -77,8 +172,8 @@ You can now see GPU Utilization of AMD Radeon Instinct MI25 GPUs and AMD EPYC 7V
 
 You can schedule and cancel the configuration update of:
 
-*  A single or multiple VMs
-*  An entire catalog
+-  A single or multiple VMs
+-  An entire catalog
 
 {: .box-note}
 
@@ -130,14 +225,14 @@ This is awesome to see come to life - more cost savings
 
 **Detail:** Previously, in Azure environments, you could use `Request-ProvVMUpdate` to update the `ServiceOffering` custom property of an MCS provisioned machine. Now, you can also update the machine profile and the following custom properties:
 
-*  `StorageType`
-*  `WBCDiskStorageType`
-*  `IdentityDiskStorageType`
-*  `LicenseType`
-*  `DedicatedHostGroupId`
-*  `PersistWBC`
-*  `PersistOsDisk`
-*  `PersistVm`
+-  `StorageType`
+-  `WBCDiskStorageType`
+-  `IdentityDiskStorageType`
+-  `LicenseType`
+-  `DedicatedHostGroupId`
+-  `PersistWBC`
+-  `PersistOsDisk`
+-  `PersistVm`
 
 ## - - - - - October 2022
 
@@ -163,10 +258,10 @@ Trusted launch is a seamless way to improve the security of Generation 2 VMs. Tr
 
 **Detail:** Previously, in Azure environments, you could only select an image within your subscription to create a machine catalog. With this feature, you can now select an image in Azure Compute Gallery (formerly Shared Imaged Gallery) that belongs to a different shared subscription to create and update MCS catalogs.
 
-*  [More information on creating a catalog](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
-*  [Sharing image with another service principal in the same tenant](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#image-sharing-with-another-service-principal-in-the-same-tenant)
-*  [Select an image from a different subscription](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#using-powershell-to-select-an-image-from-a-different-subscription)
-*  [Azure Compute Gallery](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#azure-shared-image-gallery)
+-  [More information on creating a catalog](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
+-  [Sharing image with another service principal in the same tenant](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#image-sharing-with-another-service-principal-in-the-same-tenant)
+-  [Select an image from a different subscription](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#using-powershell-to-select-an-image-from-a-different-subscription)
+-  [Azure Compute Gallery](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#azure-shared-image-gallery)
 
 ## - - - - - August 2022
 
@@ -192,9 +287,9 @@ If you decouple image preparation from provisioning scheme creation, MCS correct
 
 **Detail:** While creating a catalog in an Azure environment, you can now specify the page file setting, including its location and the size, using PowerShell commands. This overrides the page file setting determined by MCS. You can do this by running the `New-ProvScheme` command with the following custom properties:
 
-*  `PageFileDiskDriveLetterOverride`: Page file location disk drive letter
-*  `InitialPageFileSizeInMB`: Initial page file size in MB
-*  `MaxPageFileSizeInMB`: Maximum page file size in MB
+-  `PageFileDiskDriveLetterOverride`: Page file location disk drive letter
+-  `InitialPageFileSizeInMB`: Initial page file size in MB
+-  `MaxPageFileSizeInMB`: Maximum page file size in MB
 
 {: .box-note}
 
@@ -228,7 +323,7 @@ If you decouple image preparation from provisioning scheme creation, MCS correct
 
 **Detail:** Using the Full Configuration interface, the Linux OS license type can be selected when creating Linux VM catalogs in Azure. There are two choices for bring-your-own Linux licenses: 
 
-*  Red Hat Enterprise Linux
+-  Red Hat Enterprise Linux
 *  SUSE Linux Enterprise Server
 
 {: .box-note}
@@ -243,8 +338,8 @@ If you decouple image preparation from provisioning scheme creation, MCS correct
 
 **Detail:** Validation of an ARM template spec to make sure that it can be used as a machine profile to create a machine catalog is now available. There are two ways to validate the ARM template spec:
 
-*  Using the Full Configuration management interface
-*  Using PowerShell
+-  Using the Full Configuration management interface
+-  Using PowerShell
 
 ## - - - - - June 2022
 
@@ -272,13 +367,13 @@ If you decouple image preparation from provisioning scheme creation, MCS correct
 
 **Detail:** While creating an Azure catalog with a machine profile, property values from the ARM template spec or VM, whichever is used as a machine profile, can be set if the values are not explicitly defined in the custom properties. The properties affected by this feature are:
 
-*  Availability zone
-*  Dedicated Host Group Id
-*  Disk Encryption Set Id
-*  OS type
-*  License type
-*  Service Offering
-*  Storage type
+-  Availability zone
+-  Dedicated Host Group Id
+-  Disk Encryption Set Id
+-  OS type
+-  License type
+-  Service Offering
+-  Storage type
 
 If some of the properties are missing from the machine profile and not defined in the custom properties, then the default value of the properties takes place wherever applicable. See [Create a machine catalog using an Azure Resource Manager image](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image) for more information
 
@@ -290,12 +385,12 @@ If some of the properties are missing from the machine profile and not defined i
 
 **Detail:** `Set-ProvServiceConfigurationData` can now be run using Remote PowerShell SDK to apply settings on all applicable parameters. The following list of settings are supported with `Set-ProvServiceConfigurationData`:
 
-*  Change Image Preparation Timeout: `Set-ProvServiceConfigurationData -Name "ImageManagementPrep_PreparationTimeout" -value 60`
-*  Skip Enable DHCP: `Set-ProvServiceConfigurationData -Name ImageManagementPrep_Excluded_Steps -Value EnableDHCP`
-*  Skip Microsoft Windows KMS Rearm: `Set-ProvServiceConfigurationData -Name ImageManagementPrep_Excluded_Steps -Value OsRearm`
-*  Skip Microsoft Office KMS Rearm: `Set-ProvServiceConfigurationData -Name ImageManagementPrep_Excluded_Steps -Value OfficeRearm`
-*  Disable preparation VM auto shutdown: `Set-ProvServiceConfigurationData –Name ImageManagementPrep_NoAutoShutdown –Value true`
-*  Disable domain injection: `Set-ProvServiceConfigurationData –Name DisableDomainInjection –Value true`
+-  Change Image Preparation Timeout: `Set-ProvServiceConfigurationData -Name "ImageManagementPrep_PreparationTimeout" -value 60`
+-  Skip Enable DHCP: `Set-ProvServiceConfigurationData -Name ImageManagementPrep_Excluded_Steps -Value EnableDHCP`
+-  Skip Microsoft Windows KMS Rearm: `Set-ProvServiceConfigurationData -Name ImageManagementPrep_Excluded_Steps -Value OsRearm`
+-  Skip Microsoft Office KMS Rearm: `Set-ProvServiceConfigurationData -Name ImageManagementPrep_Excluded_Steps -Value OfficeRearm`
+-  Disable preparation VM auto shutdown: `Set-ProvServiceConfigurationData –Name ImageManagementPrep_NoAutoShutdown –Value true`
+-  Disable domain injection: `Set-ProvServiceConfigurationData –Name DisableDomainInjection –Value true`
 
 {: .box-note}
 
@@ -355,8 +450,8 @@ For information about requirements and considerations related to Azure Active Di
 
 **Detail:** A couple of small changes to Autoscale
 
-*  Renamed **Restrict Autoscale** to **Autoscaling Tagged Machines** to make it easy to understand
-*  Added a new option, **Control when Autoscale starts powering on tagged machines**. The option lets you control when Autoscale starts powering on tagged machines based on the usage of untagged machines
+-  Renamed **Restrict Autoscale** to **Autoscaling Tagged Machines** to make it easy to understand
+-  Added a new option, **Control when Autoscale starts powering on tagged machines**. The option lets you control when Autoscale starts powering on tagged machines based on the usage of untagged machines
 
 {: .box-note}
 
@@ -388,8 +483,8 @@ This is very handy when you need to change exsting VM sizes within an existing c
 
 **Detail:** There are two sets of permissions required for security requirements and to minimize risk
 
-*  Minimum permissions: This set of permissions gives better security control. However, new features that require additional permissions will fail because of using minimum permissions
-*  General permissions: This set of permissions does not block you from getting new enhancement benefit
+-  Minimum permissions: This set of permissions gives better security control. However, new features that require additional permissions will fail because of using minimum permissions
+-  General permissions: This set of permissions does not block you from getting new enhancement benefit
 
 {: .box-note}
 
@@ -403,10 +498,10 @@ This is very handy when you need to change exsting VM sizes within an existing c
 
 **Detail:** Using the Full Configuration management interface, you can now change the following settings after creating a catalog:
 
-*  Machine size
-*  Availability zones
-*  Machine profile
-*  Windows licenses
+-  Machine size
+-  Availability zones
+-  Machine profile
+-  Windows licenses
 
 On the Machine Catalogs node, select the catalog and then select Edit Machine Catalog in the action bar.
 
@@ -427,8 +522,8 @@ On the Machine Catalogs node, select the catalog and then select Edit Machine Ca
 
 **Detail:** Using the Full Configuration management interface, there is now an option to specify the date after which the application secret expires. This is useful as it will prevent being surprise locked out of Azure
 
-*  For service principals created manually in Azure, you can directly edit the expiration date on the `Edit Connection > Connection Properties` page
-*  For first-time edits of the expiration date for service principals created through Full Configuration on your behalf, go to `Edit Connection > Edit settings > Use existing`. You can make subsequent edits on the `Edit Connection > Connection Properties` page
+-  For service principals created manually in Azure, you can directly edit the expiration date on the `Edit Connection > Connection Properties` page
+-  For first-time edits of the expiration date for service principals created through Full Configuration on your behalf, go to `Edit Connection > Edit settings > Use existing`. You can make subsequent edits on the `Edit Connection > Connection Properties` page
 
 ## - - - - - December 2021
 
@@ -512,10 +607,10 @@ Hopefully this lands in the GUI shortly for general consumption
 
 **Detail:** Customers can now use the same resource group for updating and creating catalogs in the Citrix Virtual Apps and Desktops Service. This process:
 
-*  Applies to any resource group that contains one or more machine catalogs
-*  Supports resource groups that are not created by Machine Creation Services
-*  Creates the VM and associated resources
-*  Deletes resources in the resource group when the VM or the catalog is removed
+-  Applies to any resource group that contains one or more machine catalogs
+-  Supports resource groups that are not created by Machine Creation Services
+-  Creates the VM and associated resources
+-  Deletes resources in the resource group when the VM or the catalog is removed
 
 {: .box-note}
 
@@ -535,11 +630,11 @@ Hopefully this lands in the GUI shortly for general consumption
 
 **Detail:** This option lets you specify which machine profile you want the image to inherit the configuration from when creating VMs in Azure environments. The image can inherit the following configurations from the selected machine profile:
 
-*  Accelerated networking
-*  Boot diagnostics
-*  Host disk caching (OS and MCSIO disks)
-*  Machine size (unless otherwise specified),
-*  Tags placed on the VM
+-  Accelerated networking
+-  Boot diagnostics
+-  Host disk caching (OS and MCSIO disks)
+-  Machine size (unless otherwise specified),
+-  Tags placed on the VM
 
 This is awesome. If you have needed to implement my [Accelerated Networking scripts](https://jkindon.com/2020/11/10/enhancing-citrix-mcs-and-microsoft-azure-part-2-accelerated-networking/), then consider using this feature instead
 
@@ -749,5 +844,5 @@ To retain the data, enable the Use persistent write-back cache disk option, avai
 
 **Details:** This release supports improved boot performance for Citrix Cloud implementations using Azure when MCSIO is enabled. With this support, you can retain the system disk. This provides the following advantages:
 
-*  VMs and applications now boot and launch with performance similar to how the golden image is served
-*  Reduction in API quota consumption, deleting and creating the system disk, and state transition delay caused when you delete a VM
+-  VMs and applications now boot and launch with performance similar to how the golden image is served
+-  Reduction in API quota consumption, deleting and creating the system disk, and state transition delay caused when you delete a VM

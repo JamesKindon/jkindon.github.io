@@ -16,6 +16,104 @@ Citrix WEM Service environment is consistently updating and bringing enhanced ca
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - May 2023
+
+{: .box-note}
+
+**Feature:** [Profile Management backup and quick setup (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management.html#quick-setup)
+
+**Detail:** You can now [back up and restore](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets.html#back-up-and-restore) your Profile Management settings. You can now also setup Citrix Profile configurations using a restored backup, or a fresh template.
+
+This template methodology is something we have been requesting for a little while now, so this is nice to see the first stages of this coming into the release. We hope to see this sort of logic make its way to Citrix Policy and ADMX as well.
+
+Minimum agent version required: `2304.2.0.1`
+
+{: .box-note}
+
+**Feature:** [Additional Actions in the Web Console](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#may-2023)
+
+**Detail:** The following actions have been made available in the web console:
+
+-  [Network Drives](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions.html#network-drives). Using the web console, you can now add network drives as assignable actions. When assigned, those network drives are available for use within the user’s desktop. The feature has been enhanced to provide a better user experience.
+-  [Virtual drives](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions.html#virtual-drives). Using the web console, you can now add virtual drives as assignable actions. When assigned, those virtual drives are available for use within the user’s desktop. The feature has been enhanced to provide a better user experience.
+
+Minimum agent version required: `2304.2.0.1`
+
+{: .box-note}
+
+**Feature:** [Improved advanced settings now available in the web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings.html)
+
+**Detail:** Advanced settings have been migrated to the web console and are available in **Advanced Settings** under each configuration set. Citrix have reorganized the settings to provide a better user experience.
+
+{: .box-note}
+
+**Feature:** [Set your start page](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#set-your-start-page)
+
+**Detail:** You can now set one of the following pages as your start page so that you land on it every time you sign in to the web console:
+
+-  Agents
+-  Reports
+-  User Statistics
+-  Usage Insights
+-  Optimization Insights
+-  Profile Container Insights
+
+If no start page is set, you land on the Home page instead. After setting your start page, you can access it quickly by clicking the lightning icon on the left navigation of the console.
+
+{: .box-note}
+
+**Feature:** [New version of WEM Tool Hub](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub.html)
+
+**Detail:** A new version of WEM Tool Hub is now available: `2304.2.0.1`. The version includes performance enhancements and bug fixes.
+
+## - - - - - April 2023
+
+{: .box-note}
+
+**Feature:** [App access control](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management.html#app-access-control)
+
+**Detail:** This is the AppMasking equivalent feature discussed in the Profile Management tracking post. Using the web console, you can now add rules to control user access to items such as files, folders, and registries. A typical use case is to apply rules to control user access to apps installed on machines — whether to make apps invisible to relevant users. This feature can simplify application and image management. For example, using the feature, you can deliver identical machines to different departments while meeting their different application needs, thus reducing the number of images
+
+Minimum agent version required: `2304.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Printers](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions.html#printers)
+
+**Detail:** Using the web console, you can now add printers to assign to your users. When assigned, those printers are available for use within the user’s desktop. The feature has been enhanced to provide a better user experience
+
+Minimum agent version required: `2304.1.0.1`
+
+{: .box-note}
+
+**Feature:** [WEM Tool Hub (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub.html)
+
+**Detail:** The following two tools are now available in WEM Tool Hub:
+
+-  **Printer assistant**. Use it to get a list of printers from your print server so that you can add them as assignable actions in the management console.
+-  **Rule generator for app access control**. The equivalent of the FSLogix App Rule Editor. Use it to create rules to control user access to items such as files, folders, and registries. The rules are implemented through Citrix Profile Management. A typical use case is to apply rules to control user access to apps installed on machines — whether to make apps invisible to relevant users.
+
+{: .box-note}
+
+**Feature:** [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#profile-management)
+
+**Detail:** Workspace Environment Management now supports all supported versions of Profile Management through 2303. The following features are now available in both the legacy console and the web console.
+
+-  **Enable active write back on session lock and disconnection**. If enabled, profile files and folders are written back only when a session is locked or disconnected. With both this option and the Enable active write back registry option enabled, registry entries are written back only when a session is locked or disconnected. If enabled, profile files and folders are written back only when a session is locked or disconnected. With both this option and the **Enable active write back registry** option enabled, registry entries are written back only when a session is locked or disconnected.
+    -  In the [web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management.html#basic-settings), the feature is available under each configuration set in **Profiles > Profile Management Settings -> Basic settings**.
+    -  In the [legacy console](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/policies-and-profiles/citrix-upm-settings.html#main-citrix-profile-management-settings), the feature is available in **Policies and Profiles > Citrix Profile Management Settings -> Main Citrix Profile Management Settings**.
+-  **Enable app access control**. If enabled, Profile Management controls user access to items (such as files, folders, and registries) based on the rules you provide.
+    -  In the [web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management.html#app-access-control), the feature is available under each configuration set in **Profiles -> Profile Management Settings > App access control**
+    -  In the [legacy console](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/policies-and-profiles/citrix-upm-settings.html#app-access-control), the feature is available in **Policies and Profiles -> Citrix Profile Management Settings > App Access Control**.
+-  **Enable VHD disk compaction**. If enabled, VHD disks are automatically compacted on user logoff when certain conditions are met. This option enables you to save the storage space consumed by profile container, OneDrive container, and mirror folder container.
+    -  In the [web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management.html#profile-container), the feature is available under each configuration set in **Profiles -> Profile Management Settings -> Profile container**.
+    -  In the [legacy console](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/policies-and-profiles/citrix-upm-settings.html#profile-container-settings), the feature is available in **Policies and Profiles -> Citrix Profile Management Settings -> Profile Container Settings**.
+-  **Set free space ratio to trigger VHD disk compaction**, **Set number of logoffs to trigger VHD disk compaction**, and **Disable defragmentation for VHD disk compaction**. If E**nable VHD disk compaction** is enabled, use these three policies to adjust the default VHD compaction settings and behavior.
+    -  In the [web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management.html#advanced-settings), the feature is available under each configuration set in **Profiles -> Profile Management Settings -> Advanced settings**.
+    -  In the [legacy console](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/policies-and-profiles/citrix-upm-settings.html#advanced-settings), the feature is available in **Policies and Profiles -> Citrix Profile Management Settings -> Advanced Settings**.
+
+Minimum agent version required: `2304.1.0.1`
+
 ## - - - - - February 2023
 
 {: .box-note}
@@ -95,8 +193,8 @@ Minimum agent version required: `2211.1.0.1`
 
 **Detail:** Previously, WEM agents periodically connected to the WEM service to download configuration data whether or not there was a configuration change. Agents now periodically check with the service to see if any configuration changes were made:
 
-*  If yes, agents download the configuration data.
-*  If no, the configuration data is not downloaded.
+-  If yes, agents download the configuration data.
+-  If no, the configuration data is not downloaded.
 
 This enhancement significantly reduces network usage, especially if you have a large deployment with many agents.
 
@@ -118,8 +216,8 @@ Minimum agent version required: `2210.2.0.1`
 
 **Detail:** The following built-in trigger types are now available when you create triggers:
 
-*  **Machine shutdown**. Activates the trigger when machines shut down
-*  **Machine startup**. Activates the trigger when machines start up
+-  **Machine shutdown**. Activates the trigger when machines shut down
+-  **Machine startup**. Activates the trigger when machines start up
 
 You can create triggers of these types and associate tasks with them. When activated, the triggers start those tasks in the user environment. The two additional trigger types give you more flexibility to control when to run your scripted tasks
 
@@ -131,9 +229,9 @@ Minimum agent version required: `2210.1.0.1`
 
 **Detail:** The following trigger types are now available when you create triggers
 
-*  **Cloud Health Check result**. Activates the trigger when Cloud Health Check returns specified health statuses
-*  **Profile Management health check result**. Activates the trigger when Profile Management health check returns specified health statuses
-*  **Custom scripted task result**. Activates the trigger when scripted tasks return specified results
+-  **Cloud Health Check result**. Activates the trigger when Cloud Health Check returns specified health statuses
+-  **Profile Management health check result**. Activates the trigger when Profile Management health check returns specified health statuses
+-  **Custom scripted task result**. Activates the trigger when scripted tasks return specified results
 
 You can create triggers of these types and associate tasks with them. When activated, the triggers start those tasks in the user environment. These trigger types let you automatically manage your user environments based on task execution results.
 
@@ -147,9 +245,9 @@ Minimum agent version required: `2210.1.0.1`
 
 **Detail:** Workspace Environment Management now supports all supported versions of Profile Management through 2209. The following feature is now available in both the legacy console and the web console.
 
-*  **File deduplication**. If enabled, Profile Management removes duplicate files from the user store and stores one copy of them in a central location. Doing so reduces the load on the user store by avoiding file duplication, thus reducing your storage cost.
-    *  In the web console, the feature is available under each configuration set in **Profiles > Profile Management Settings > File deduplication**
-    *  In the legacy console, the feature is available in **Policies and Profiles > Citrix Profile Management Settings > File Deduplication**
+-  **File deduplication**. If enabled, Profile Management removes duplicate files from the user store and stores one copy of them in a central location. Doing so reduces the load on the user store by avoiding file duplication, thus reducing your storage cost.
+    -  In the web console, the feature is available under each configuration set in **Profiles > Profile Management Settings > File deduplication**
+    -  In the legacy console, the feature is available in **Policies and Profiles > Citrix Profile Management Settings > File Deduplication**
 
 Minimum agent version required: `2210.1.0.1`
 
@@ -205,8 +303,8 @@ Minimum agent version required: `2207.2.0.1`
 
 **Detail:** A new node, Enrollment, is now available in the web console. The node contains two pages:
 
-*  **Enrolled Agents**. Lists all enrolled agents. You can manage them as needed.
-*  **Invitation**. Lets you send enrollment invitations to users. Each invitation includes an invitation code and the steps needed to complete the enrollment.
+-  **Enrolled Agents**. Lists all enrolled agents. You can manage them as needed.
+-  **Invitation**. Lets you send enrollment invitations to users. Each invitation includes an invitation code and the steps needed to complete the enrollment.
 
 Minimum agent version required: `2207.2.0.1`
 
@@ -228,8 +326,8 @@ Minimum agent version required: `2207.2.0.1`
 
 This feature is available in both the legacy console and the web console.
 
-*  In the web console, go to **Monitoring > Administration > Agents**
-*  In the legacy console, go to **Administration > Agents**
+-  In the web console, go to **Monitoring > Administration > Agents**
+-  In the legacy console, go to **Administration > Agents**
 
 Minimum agent version required: `2207.1.0.1`
 
@@ -247,8 +345,8 @@ Minimum agent version required: `2207.1.0.1`
 
 **Detail:** The following new features are now available when you configure a scripted task:
 
-*  **File path**. A parameter type that lets you pass a file path as a parameter to the `System.IO.FileInfo` class.
-*  **Collect output even if runtime errors occur**. An option that controls whether to collect output file content and console output even if errors occur while running the task
+-  **File path**. A parameter type that lets you pass a file path as a parameter to the `System.IO.FileInfo` class.
+-  **Collect output even if runtime errors occur**. An option that controls whether to collect output file content and console output even if errors occur while running the task
 
 Minimum agent version required: `2207.1.0.1`
 
@@ -266,14 +364,14 @@ Minimum agent version required: `2206.2.0.1`
 
 **Detail:** Workspace Environment Management now supports all versions of Profile Management through 2206. The following new options are now available in both the legacy console and the web console.
 
-*  **Enable profile streaming for pending area**. If enabled, files in the pending area are fetched to the local profile only when they are requested. This ensures optimum logon experience in concurrent session scenarios.
-    *  In the web console, the option is available under each configuration set in **Profiles > Profile Management Settings > Streamed user profiles**
-    *  In the legacy console, the option is available in **Policies and Profiles > Citrix Profile Management Settings > Streamed user profiles**
-*  **Enable concurrent session support**. Provides native Outlook search experience in concurrent sessions. If enabled, each concurrent session uses a separate Outlook OST file. You can specify the maximum number of VHDX disks for storing Outlook OST files.
-*  **Enable asynchronous processing for user Group Policy on logon**. If enabled, Profile Management roams with users a registry value that Windows uses to determine the processing mode for the next user logon — synchronous or asynchronous processing mode. This ensures that the actual processing mode is applied each time users log on.
-*  **Enable OneDrive container**. If enabled, Profile Management roams OneDrive folders with users by storing the folders on a VHDX disk. The disk is attached during logons and detached during logoffs.
-    *  In the web console, the three options are available under each configuration set in **Profiles > Profile Management Settings > Advanced settings**
-    *  In the legacy console, the three options are available in **Policies and Profiles > Citrix Profile Management Settings > Advanced settings**
+-  **Enable profile streaming for pending area**. If enabled, files in the pending area are fetched to the local profile only when they are requested. This ensures optimum logon experience in concurrent session scenarios.
+    -  In the web console, the option is available under each configuration set in **Profiles > Profile Management Settings > Streamed user profiles**
+    -  In the legacy console, the option is available in **Policies and Profiles > Citrix Profile Management Settings > Streamed user profiles**
+-  **Enable concurrent session support**. Provides native Outlook search experience in concurrent sessions. If enabled, each concurrent session uses a separate Outlook OST file. You can specify the maximum number of VHDX disks for storing Outlook OST files.
+-  **Enable asynchronous processing for user Group Policy on logon**. If enabled, Profile Management roams with users a registry value that Windows uses to determine the processing mode for the next user logon — synchronous or asynchronous processing mode. This ensures that the actual processing mode is applied each time users log on.
+-  **Enable OneDrive container**. If enabled, Profile Management roams OneDrive folders with users by storing the folders on a VHDX disk. The disk is attached during logons and detached during logoffs.
+    -  In the web console, the three options are available under each configuration set in **Profiles > Profile Management Settings > Advanced settings**
+    -  In the legacy console, the three options are available in **Policies and Profiles > Citrix Profile Management Settings > Advanced settings**
 
 Minimum agent version required: `2206.2.0.1`
 
@@ -293,8 +391,8 @@ Minimum agent version required: `2206.2.0.1`
 
 **Detail:** Previously, you had to configure Cloud Connectors for WEM agents to manage them. You can configure Cloud Connectors in two ways:
 
-*  [Configure Cloud Connectors while installing the agent](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/install-and-configure.html#step-3-install-the-agent)
-*  [Configure the Discover Citrix Cloud Connector from CVAD service policy](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/install-and-configure.html#step-2-configure-group-policies-optional). The agent discovers Cloud Connector information from the relevant Citrix DaaS (formerly Citrix Virtual Apps and Desktops service) deployment and then connects to the corresponding Cloud Connector machines
+-  [Configure Cloud Connectors while installing the agent](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/install-and-configure.html#step-3-install-the-agent)
+-  [Configure the Discover Citrix Cloud Connector from CVAD service policy](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/install-and-configure.html#step-2-configure-group-policies-optional). The agent discovers Cloud Connector information from the relevant Citrix DaaS (formerly Citrix Virtual Apps and Desktops service) deployment and then connects to the corresponding Cloud Connector machines
 
 Starting with this release, you can enroll WEM agents without configuring Citrix Cloud Connectors. The enrollment applies to both domain-joined and non-domain-joined machines.
 
@@ -306,10 +404,10 @@ Minimum agent version required: `2205.1.0.1`
 
 **Detail:** The following features are now available with scripted tasks:
 
-*  [Support for bundling multiple files into a single zip file to upload](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html#add-a-scripted-task). When adding a scripted task, you can now bundle multiple files into a single zip file to upload. This feature is useful when you want to run a scripted task that comprises multiple script files. After uploading the zip file, you specify an entry point, indicating which file to run at the beginning of the task
-*  [Include only regular expression matches in scripted task reports](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task). A new option, **Include only regular expression matches in reports**, is now available in **Output** when you configure a scripted task. The option controls whether to include the entire output content in reports or only content that matches the regular expression. Enabling the option reduces the amount of data transmitted to Citrix Cloud
-*  [Ability to use tags to identify scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html#add-a-scripted-task). You can now use tags to identify your scripted tasks. Also, the tags act as filters, letting you rearrange your view of tasks depending on criteria that are important to you
-*  [More scheduling options available with scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task). You now have additional options to control when scripted tasks run. In addition to the hourly recurring pattern, you can now set daily, weekly, and monthly recurrence patterns. You can also specify the date and time at which you want scripted tasks to run, giving you more precise control. For agents earlier than 2205.1.0.1, be aware of the considerations when using the feature
+-  [Support for bundling multiple files into a single zip file to upload](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html#add-a-scripted-task). When adding a scripted task, you can now bundle multiple files into a single zip file to upload. This feature is useful when you want to run a scripted task that comprises multiple script files. After uploading the zip file, you specify an entry point, indicating which file to run at the beginning of the task
+-  [Include only regular expression matches in scripted task reports](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task). A new option, **Include only regular expression matches in reports**, is now available in **Output** when you configure a scripted task. The option controls whether to include the entire output content in reports or only content that matches the regular expression. Enabling the option reduces the amount of data transmitted to Citrix Cloud
+-  [Ability to use tags to identify scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html#add-a-scripted-task). You can now use tags to identify your scripted tasks. Also, the tags act as filters, letting you rearrange your view of tasks depending on criteria that are important to you
+-  [More scheduling options available with scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/scripted-task-settings.html#configure-a-scripted-task). You now have additional options to control when scripted tasks run. In addition to the hourly recurring pattern, you can now set daily, weekly, and monthly recurrence patterns. You can also specify the date and time at which you want scripted tasks to run, giving you more precise control. For agents earlier than 2205.1.0.1, be aware of the considerations when using the feature
 
 Minimum agent version required: `2205.1.0.1`
 
@@ -319,11 +417,11 @@ Minimum agent version required: `2205.1.0.1`
 
 **Detail:** Enhancements to the Profile Management health check feature:
 
-*  In the **More** menu of **Monitoring > Administration > Agents**:
-    *  Renamed **Refresh Profile Management configuration check** to **Run Profile Management health check** to make it easy to understand
+-  In the **More** menu of **Monitoring > Administration > Agents**:
+    -  Renamed **Refresh Profile Management configuration check** to **Run Profile Management health check** to make it easy to understand
     *  Added an option, **View Profile Management health check report**. The option provides quick access to Profile Management health reports related to the target agent machines.
-*  In **Advanced Settings > Monitoring Preference**s under a configuration set
-    *  Added a section, **Profile Management health check**. The section lets you specify which aspects to cover in Profile Management health check reports
+-  In **Advanced Settings > Monitoring Preference**s under a configuration set
+    -  Added a section, **Profile Management health check**. The section lets you specify which aspects to cover in Profile Management health check reports
 
 Minimum agent version required: `2205.1.0.1`
 
@@ -333,9 +431,9 @@ Minimum agent version required: `2205.1.0.1`
 
 **Detail:** An option, **Import Group Policy settings from Registry Files**, is now available in **Legacy Console > Actions > Group Policy Settings**. With the option, you can convert registry values that you export using the Windows Registry Editor into GPOs for management and assignment. If you are familiar with the **Import registry files** option available with Registry Entries, this feature:
 
-*  Lets you import registry values under both `HKEY_LOCAL_MACHINE` and `HKEY_CURRENT_USER`
-*  Lets you import registry values of the `REG_BINARY` and `REG_MULTI_SZ` types
-*  Supports converting deletion operations associated with registry keys and values that you define in .reg files
+-  Lets you import registry values under both `HKEY_LOCAL_MACHINE` and `HKEY_CURRENT_USER`
+-  Lets you import registry values of the `REG_BINARY` and `REG_MULTI_SZ` types
+-  Supports converting deletion operations associated with registry keys and values that you define in .reg files
 
 {: .box-note}
 
@@ -353,12 +451,12 @@ Minimum agent version required: `2205.1.0.1`
 
 Additional updates to the **More** menu include:
 
-*  Renaming **Wake up agents** to **Wake** and moving it to the **Power management** group
-*  Adding the following four power management options:
-    *  **Shut down**. Lets you shut down agents
-    *  **Restart**. Lets you restart agents
-    *  **Sleep**. Lets you put agents into sleep mode
-    *  **Hibernate**. Lets you put agents into hibernate mode
+-  Renaming **Wake up agents** to **Wake** and moving it to the **Power management** group
+-  Adding the following four power management options:
+    -  **Shut down**. Lets you shut down agents
+    -  **Restart**. Lets you restart agents
+    -  **Sleep**. Lets you put agents into sleep mode
+    -  **Hibernate**. Lets you put agents into hibernate mode
 
 Minimum agent version required: `2204.1.0.1`
 
@@ -398,8 +496,8 @@ Minimum agent version required: `2203.2.0.1`
 
 **Detail:** You can now upgrade your WEM agents from the console on demand. The option is available in both the legacy console and the web console. To use the feature:
 
-*  In the legacy console, go to **Administration > Agents**, right-click an agent, and then select **Upgrade agent to latest version**
-*  In the web console, go to **Monitoring > Administration > Agents**, select one or more agents, click **More**, and then select **Upgrade agent to latest version**
+-  In the legacy console, go to **Administration > Agents**, right-click an agent, and then select **Upgrade agent to latest version**
+-  In the web console, go to **Monitoring > Administration > Agents**, select one or more agents, click **More**, and then select **Upgrade agent to latest version**
 
 Minimum agent version required: `2203.2.0.1`
 
@@ -409,15 +507,15 @@ Minimum agent version required: `2203.2.0.1`
 
 **Detail:** This release introduces the following pages to the web console:
 
-*  [**Home**](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/home.html): Provides an overview of your WEM deployment along with information necessary for you to get to know and get started with WEM quickly. The interface comprises the following four parts:
-    *  **Overview**: Provides an overview of the WEM deployments
-    *  **Quick access**: Provides quick access to a subset of the key features that WEM offers
-    *  **Highlights**: Shows the key features that WEM offers
-    *  **Preview features**: Shows features that are currently in preview. You can enable or disable preview features yourself
-*  [**Directory Objects** *Preview!*](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/directory-objects.html) Lets you add machines, groups, OUs, and more, that you want WEM to manage. You can now do the following:
-    *  Add machines, groups, Organizational Units (OUs), and more, that you want WEM to manage
-    *  Apply settings to agents that are not bound to any configuration set. You can control how unbound agents behave
-*  [**Assignment Target** *Preview!*](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/assignment.html) Lets you add users and groups (targets) so that you can assign actions and security rules to them
+-  [**Home**](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/home.html): Provides an overview of your WEM deployment along with information necessary for you to get to know and get started with WEM quickly. The interface comprises the following four parts:
+    -  **Overview**: Provides an overview of the WEM deployments
+    -  **Quick access**: Provides quick access to a subset of the key features that WEM offers
+    -  **Highlights**: Shows the key features that WEM offers
+    -  **Preview features**: Shows features that are currently in preview. You can enable or disable preview features yourself
+-  [**Directory Objects** *Preview!*](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/directory-objects.html) Lets you add machines, groups, OUs, and more, that you want WEM to manage. You can now do the following:
+    -  Add machines, groups, Organizational Units (OUs), and more, that you want WEM to manage
+    -  Apply settings to agents that are not bound to any configuration set. You can control how unbound agents behave
+-  [**Assignment Target** *Preview!*](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/assignment.html) Lets you add users and groups (targets) so that you can assign actions and security rules to them
 
 {: .box-note}
 
@@ -435,16 +533,16 @@ It can take up to two days to receive the notification. Citrix encourages migrat
 
 **Detail:** A new, web-based Workspace Environment Management (WEM) console is now available. Citrix are in the process of migrating the full set of functionalities from the legacy console to the web console. The web console generally responds faster than the legacy console. You can switch between the web console and the legacy console from within the Manage tab to perform your configuration or deployment management tasks. Click the down arrow next to Manage and select an option:
 
-*  **Legacy Console** takes you to the legacy console
-*  **Web Console** takes you to the new, web-based console
+-  **Legacy Console** takes you to the legacy console
+-  **Web Console** takes you to the new, web-based console
 
 The following features are available only in the web console:
 
-*  [Run scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html) Scripted tasks can be added to WEM and automatically executed
-*  [Save a backup of a configuration set automatically](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets.html#manage-automatic-backup) Automatic backup for configuration sets
-*  [Scan large files in profile containers](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings.html) The WEM agent to run a scan of large files on profile containers when container usage exceeds the specified threshold value
-*  [Prevent child processes from inheriting CPU priority](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/system-optimization.html#cpu-spike-protection) Allows for specifying a processes whose child processes should not inherit the CPU priority
-*  Language localization support for the web console. The web console supports non-English characters and keyboard input even when the console itself is not localized in the preferred language of an administrator. The supported languages are as follows: French, German, Spanish, and Japanese
+-  [Run scripted tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks.html) Scripted tasks can be added to WEM and automatically executed
+-  [Save a backup of a configuration set automatically](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets.html#manage-automatic-backup) Automatic backup for configuration sets
+-  [Scan large files in profile containers](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings.html) The WEM agent to run a scan of large files on profile containers when container usage exceeds the specified threshold value
+-  [Prevent child processes from inheriting CPU priority](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/system-optimization.html#cpu-spike-protection) Allows for specifying a processes whose child processes should not inherit the CPU priority
+-  Language localization support for the web console. The web console supports non-English characters and keyboard input even when the console itself is not localized in the preferred language of an administrator. The supported languages are as follows: French, German, Spanish, and Japanese
 
 {: .box-note}
 
@@ -474,9 +572,9 @@ Minimum agent version required: `2201.2.0.1`
 
 **Detail:** This release includes enhancements to the external task feature. The feature now provides you with three additional options to control when to run external tasks:
 
-*  **Disconnect** controls whether to run the external task when a user `disconnects` from a machine where the agent is running
-*  **Lock** controls whether to run the external task when a user `locks` a machine where the agent is running
-*  **Unlock** controls whether to run the external task when a user `unlocks` a machine where the agent is running
+-  **Disconnect** controls whether to run the external task when a user `disconnects` from a machine where the agent is running
+-  **Lock** controls whether to run the external task when a user `locks` a machine where the agent is running
+-  **Unlock** controls whether to run the external task when a user `unlocks` a machine where the agent is running
 
 Minimum agent version required: `2201.1.0.1`
 
@@ -486,9 +584,9 @@ Minimum agent version required: `2201.1.0.1`
 
 **Detail:** Workspace Environment Management now supports all versions of Profile Management through 2112. The following new options are now available in the `Administration Console > Policies and Profiles > Citrix Profile Management Settings` interface:
 
-*  **Enable File Exclusions for Profile Container**. Available on the `Profile Container Settings` tab, the option controls whether to exclude the listed files from the profile container
-*  **Enable File Inclusions for Profile Container**. Available on the `Profile Container Settings` tab, the option controls whether to keep the listed files in the profile container when their parent folders are excluded
-*  **Customize storage path for VHDX files**. Available on the `Advanced Setting`s tab, the option controls whether to store VHDX files of different policies in different folders under the specified storage path
+-  **Enable File Exclusions for Profile Container**. Available on the `Profile Container Settings` tab, the option controls whether to exclude the listed files from the profile container
+-  **Enable File Inclusions for Profile Container**. Available on the `Profile Container Settings` tab, the option controls whether to keep the listed files in the profile container when their parent folders are excluded
+-  **Customize storage path for VHDX files**. Available on the `Advanced Setting`s tab, the option controls whether to store VHDX files of different policies in different folders under the specified storage path
 
 Minimum agent version required: `2110.2.0.1`
 
@@ -558,9 +656,9 @@ The service requires Citrix Cloud Connector version `6.29.0.58841`
 
 **Detail:** Previously, when you used the Apply to Child Processes setting in a rule, you applied the rule to all child processes that the executable started. This release provides you with three additional options, giving you more granular control over applying privilege elevation to child processes
 
-*  Apply only to executables in the same folder
-*  Apply only to signed executables
-*  Apply only to executables of the same publisher
+-  Apply only to executables in the same folder
+-  Apply only to signed executables
+-  Apply only to executables of the same publisher
 
 Minimum agent version required: 2109.2.0.1
 
@@ -610,9 +708,9 @@ Minimum agent version required: 2105.1.0.1
 
 **Detail:** Workspace Environment Management now supports all versions of Profile Management through 2106. The Administration Console > Policies and Profiles > Citrix Profile Management Settings user interface has changed, adding:
 
-*  Replicate user stores
-*  Accelerate folder mirroring
-*  User Store Credentials
+-  Replicate user stores
+-  Accelerate folder mirroring
+-  User Store Credentials
 
 Minimum agent version required: 2106.2.0.1
 
@@ -624,8 +722,8 @@ Minimum agent version required: 2106.2.0.1
 
 **Detail:** This release includes enhancements to the external task feature. The feature now provides you with two additional options to control when to run external tasks:
 
-*  **Run when processes start** controls whether to run the external task when specified processes start
-*  **Run when processes end** controls whether to run the external task when specified processes end
+-  **Run when processes start** controls whether to run the external task when specified processes start
+-  **Run when processes end** controls whether to run the external task when specified processes end
 
 Using the two options, you can define external tasks to supply resources only when certain processes are running and to revoke those resources when the processes end. Using processes as triggers for external tasks lets you manage your user environments more precisely compared with processing external tasks on logon or logoff
 
@@ -637,8 +735,8 @@ Minimum agent version required: 2104.1.0.1
 
 **Detail:** This release introduces enhancements to the process hierarchy control feature that improve overall performance and stability. The enhancements include the following changes:
 
-*  The AppInfoViewer tool has been updated to include the following two options: `Enable Process Hierarchy Control` and `Disable Process Hierarchy Control`. For the process hierarchy control feature to work, you must first use the tool on each agent machine to enable the feature. Every time you use the tool to enable or disable the feature, a machine restart is required
-*  In certain scenarios, you must restart your agent machine after upgrading or uninstalling the agent
+-  The AppInfoViewer tool has been updated to include the following two options: `Enable Process Hierarchy Control` and `Disable Process Hierarchy Control`. For the process hierarchy control feature to work, you must first use the tool on each agent machine to enable the feature. Every time you use the tool to enable or disable the feature, a machine restart is required
+-  In certain scenarios, you must restart your agent machine after upgrading or uninstalling the agent
 
 Minimum agent version required: 2105.1.0.1
 
@@ -650,9 +748,9 @@ Minimum agent version required: 2105.1.0.1
 
 **Detail:** This release introduces the process hierarchy control feature. The feature lets you control whether certain child processes can be started through their parent processes. You create a rule by defining parent processes and then designating an allow list or a block list for their child processes. You then assign the rule on a per user or per user group basis. The following rule types are available:
 
-*  **Path** applies the rule to an executable according to the executable file path
-*  **Publisher** applies the rule according to publisher information
-*  **Hash** applies the rule to identical executables as specified
+-  **Path** applies the rule to an executable according to the executable file path
+-  **Publisher** applies the rule according to publisher information
+-  **Hash** applies the rule to identical executables as specified
 
 Minimum agent version required: 2103.2.0.1
 
@@ -662,8 +760,8 @@ Minimum agent version required: 2103.2.0.1
 
 **Detail:** This release adds two settings, **Overwrite** and **Merge**, to the **Administration Console > Security > Application Security tab**. The settings let you determine how the agent processes application security rules.
 
-*  Select Overwrite if you want to overwrite existing rules. When selected, the rules that are processed last overwrite rules that were processed earlier. We recommend that you apply this setting only to single-session machines
-*  Select Merge if you want to merge rules with existing rules. When conflicts occur, the rules that are processed last overwrite rules that were processed earlier
+-  Select Overwrite if you want to overwrite existing rules. When selected, the rules that are processed last overwrite rules that were processed earlier. We recommend that you apply this setting only to single-session machines
+-  Select Merge if you want to merge rules with existing rules. When conflicts occur, the rules that are processed last overwrite rules that were processed earlier
 
 ## - - - - - March  2021
 
@@ -691,9 +789,9 @@ Minimum agent version required: 2103.2.0.1
 
 **Detail:** Workspace Environment Management service now supports all versions of Profile Management through 2103. The following new options are now available in the Administration Console > Policies and Profiles > Citrix Profile Management Settings interface:
 
-*  Enable Local Cache for Profile Container
-*  Enable multi-session write-back for profile containers
-*  Enable Profile Streaming for Folders
+-  Enable Local Cache for Profile Container
+-  Enable multi-session write-back for profile containers
+-  Enable Profile Streaming for Folders
 
 ## - - - - - January  2021
 

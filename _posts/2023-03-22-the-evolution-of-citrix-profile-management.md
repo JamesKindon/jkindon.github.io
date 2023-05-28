@@ -91,9 +91,9 @@ Depending on your needs and the resources available, you can adjust the default 
 
 This is a significant release as it relates to the evolution of Citrix Profile Management Containers vs FSLogix capability. There are a couple of very key features to note below:
 
-*  OneDrive support (preview)
-*  Async policy processing control
-*  concurrent session support for Outlook search data roaming
+-  OneDrive support (preview)
+-  Async policy processing control
+-  concurrent session support for Outlook search data roaming
 
 Combine this capability with the wealth of other options and controls including combining the best of file and container capability, UPM should now start becoming a much more attractive solution for all use cases. The best thing is that the solution is actively and aggressively developed. "Ask and you shall receive" so to speak...
 
@@ -155,9 +155,9 @@ Profile Management monitors VHDX disks that are in use. If any of the disks are 
 
 **Detail:** By default, VHDX files are stored in the user store. It is now possible to specify a separate path to store them. Citrix Profile Management provides the following VHDX-based policies:
 
-*  [Search index roaming for Outlook](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html)
-*  [Profile Container](https://docs.citrix.com/en-us/profile-management/current-release/configure/citrix-profile-management-profile-container.html)
-*  [Accelerate folder mirroring](https://docs.citrix.com/en-us/profile-management/current-release/policies/descriptions-and-defaults.html#accelerate-folder-mirroring)
+-  [Search index roaming for Outlook](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html)
+-  [Profile Container](https://docs.citrix.com/en-us/profile-management/current-release/configure/citrix-profile-management-profile-container.html)
+-  [Accelerate folder mirroring](https://docs.citrix.com/en-us/profile-management/current-release/policies/descriptions-and-defaults.html#accelerate-folder-mirroring)
 
 {: .box-note}
 
@@ -165,8 +165,8 @@ Profile Management monitors VHDX disks that are in use. If any of the disks are 
 
 **Detail:** When configuring inclusion and exclusion for the user store and for the profile container, wildcards can now be specified in folder names.
 
-*  [Include and exclude folders and files for the profile container](https://docs.citrix.com/en-us/profile-management/current-release/configure/citrix-profile-management-profile-container.html#optional-include-and-exclude-folders-and-files)
-*  [Include and exclude items for the user store](https://docs.citrix.com/en-us/profile-management/current-release/configure/include-and-exclude-items/overview.html)
+-  [Include and exclude folders and files for the profile container](https://docs.citrix.com/en-us/profile-management/current-release/configure/citrix-profile-management-profile-container.html#optional-include-and-exclude-folders-and-files)
+-  [Include and exclude items for the user store](https://docs.citrix.com/en-us/profile-management/current-release/configure/include-and-exclude-items/overview.html)
 
 ## - - - - - Version 2109
 
@@ -248,9 +248,9 @@ Not even FSLogix can do this natively – two sessions writing back to the same 
 
 **Detail:** We have improved the experience with the Start menu on Windows Server 2016 and Windows Server 2019 through automatic configuration of the relevant policies as follows:
 
-*  Citrix added `Appdata\Local\Microsoft\Windows\Caches` to `Folders to Mirror`
-*  Citrix are ensuring that `Appdata\Local\Packages` is added to `Exclusion list – directories`
-*  Citrix are ensuring that `Appdata\Local\Microsoft\Windows\UsrClass.Dat*` is added to `Exclusion list – files`
+-  Citrix added `Appdata\Local\Microsoft\Windows\Caches` to `Folders to Mirror`
+-  Citrix are ensuring that `Appdata\Local\Packages` is added to `Exclusion list – directories`
+-  Citrix are ensuring that `Appdata\Local\Microsoft\Windows\UsrClass.Dat*` is added to `Exclusion list – files`
 
 To disable automatic configuration, use the [Disable automatic configuration](https://docs.citrix.com/en-us/profile-management/2103/policies/descriptions-and-defaults.html#disable-automatic-configuration) policy
 

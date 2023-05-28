@@ -41,7 +41,7 @@ I will do my best to maintain this list as and when features come out, as well a
 
 **Detail:** Workspace Environment Management now supports all versions of Profile Management through `2212`. The following tab is now available in **Administration Console > Policies and Profiles > Citrix Profile Management Settings**.
 
-*  **File Deduplication**. If enabled, Profile Management removes duplicate files from the user store and stores one copy of them in a central location. Doing so reduces the load on the user store by avoiding file duplication, thus reducing your storage cost
+-  **File Deduplication**. If enabled, Profile Management removes duplicate files from the user store and stores one copy of them in a central location. Doing so reduces the load on the user store by avoiding file duplication, thus reducing your storage cost
 
 {: .box-note}
 
@@ -49,8 +49,8 @@ I will do my best to maintain this list as and when features come out, as well a
 
 **Detail:** Starting with this release, Workspace Environment Management determines which option of the following two to select based on the region of the machine hosting the infrastructure service:
 
-*  **Help improve Workspace Environment Management using Google Analytics**. This option is selected if the machine resides in non-European regions
-*  **Do not help improve Workspace Environment Management using Google Analytics**. This option is selected if the machine resides in European regions
+-  **Help improve Workspace Environment Management using Google Analytics**. This option is selected if the machine resides in non-European regions
+-  **Do not help improve Workspace Environment Management using Google Analytics**. This option is selected if the machine resides in European regions
 
 This behavior applies only to fresh installations.
 
@@ -62,9 +62,9 @@ This behavior applies only to fresh installations.
 
 **Detail:** Starting with this release, you can convert registry values that you export using the Windows Registry Editor into GPOs for management and assignment. If you are familiar with the **Import registry files** option available with **Registry Entries**, this feature:
 
-*  Lets you import registry values under both `HKEY_LOCAL_MACHINE` and `HKEY_CURRENT_USER`
-*  Lets you import registry values of the `REG_BINARY` and `REG_MULTI_SZ` types
-*  Supports converting delete operations associated with registry keys and values that you define in .reg files
+-  Lets you import registry values under both `HKEY_LOCAL_MACHINE` and `HKEY_CURRENT_USER`
+-  Lets you import registry values of the `REG_BINARY` and `REG_MULTI_SZ` types
+-  Supports converting delete operations associated with registry keys and values that you define in .reg files
 
 {: .box-note}
 
@@ -72,9 +72,9 @@ This behavior applies only to fresh installations.
 
 **Detail:** This release includes enhancements to the external task feature. The feature now provides you with three additional options to control when to run external tasks:
 
-*  **Disconnect**. Controls whether to run the external task when a user disconnects from a machine where the agent is running
-*  **Lock**. Controls whether to run the external task when a user locks a machine where the agent is running
-*  **Unlock**. Controls whether to run the external task when a user unlocks a machine where the agent is running
+-  **Disconnect**. Controls whether to run the external task when a user disconnects from a machine where the agent is running
+-  **Lock**. Controls whether to run the external task when a user locks a machine where the agent is running
+-  **Unlock**. Controls whether to run the external task when a user unlocks a machine where the agent is running
 
 {: .box-note}
 
@@ -82,7 +82,7 @@ This behavior applies only to fresh installations.
 
 **Detail:** Workspace Environment Management now supports all versions of Profile Management through `2209`. The following new option is now available in the **Administration Console > Policies and Profiles > Citrix Profile Management Settings > Advanced Settings** interface.
 
-*  **Enable OneDrive container**. If enabled, Profile Management roams OneDrive folders with users by storing the folders on a VHDX disk. The disk is attached during logons and detached during logoffs
+-  **Enable OneDrive container**. If enabled, Profile Management roams OneDrive folders with users by storing the folders on a VHDX disk. The disk is attached during logons and detached during logoffs
 
 ## - - - - - Version 2206
 
@@ -92,9 +92,9 @@ This behavior applies only to fresh installations.
 
 **Detail:** This release introduces the process hierarchy control feature. The feature lets you control whether certain child processes can be started through their parent processes. You create a rule by defining parent processes and then designating an allow list or a block list for their child processes. You then assign the rule on a per user or per user group basis. The following rule types are available:
 
-*  Path. Applies the rule to an executable according to the executable file path
-*  Publisher. Applies the rule according to publisher information
-*  Hash. Applies the rule to identical executables as specified
+-  Path. Applies the rule to an executable according to the executable file path
+-  Publisher. Applies the rule according to publisher information
+-  Hash. Applies the rule to identical executables as specified
 
 For the feature to work, you need to use the **AppInfoViewer** tool on each agent machine to enable the feature. Every time you use the tool to enable or disable the feature, a machine restart is required
 
@@ -104,8 +104,8 @@ For the feature to work, you need to use the **AppInfoViewer** tool on each agen
 
 **Detail:** This release includes enhancements to the memory management feature. The feature now provides you with two extra options to perform memory management:
 
-*  **Do Not Optimize When Total Available Memory Exceeds (MB).** This option lets you specify a threshold below which WEM optimizes memory usage for idle applications
-*  **Enable Memory Usage Limit for Specific Processes.** This option lets you limit the memory usage of processes by setting upper limits for the memory they can consume
+-  **Do Not Optimize When Total Available Memory Exceeds (MB).** This option lets you specify a threshold below which WEM optimizes memory usage for idle applications
+-  **Enable Memory Usage Limit for Specific Processes.** This option lets you limit the memory usage of processes by setting upper limits for the memory they can consume
 
 {: .box-note}
 
@@ -113,9 +113,9 @@ For the feature to work, you need to use the **AppInfoViewer** tool on each agen
 
 **Detail:** The user interface of the administration console has changed:
 
-*  A new node, **Process Hierarchy Control**, is now available in **Security**. The node contains a tab that lets you control whether certain child processes can be started through their parent processes
-*  An option, **Do Not Optimize When Total Available Memory Exceeds**, is now available in **System Optimization > Memory Management > Memory Management**. The option lets you specify a threshold limit below which Workspace Environment Management optimizes memory usage for idle applications
-*  A new tab, **Memory Usage Limit**, is now available in **System Optimization > Memory Management**. The tab lets you configure memory usage limits for specific processes
+-  A new node, **Process Hierarchy Control**, is now available in **Security**. The node contains a tab that lets you control whether certain child processes can be started through their parent processes
+-  An option, **Do Not Optimize When Total Available Memory Exceeds**, is now available in **System Optimization > Memory Management > Memory Management**. The option lets you specify a threshold limit below which Workspace Environment Management optimizes memory usage for idle applications
+-  A new tab, **Memory Usage Limit**, is now available in **System Optimization > Memory Management**. The tab lets you configure memory usage limits for specific processes
 
 ## - - - - - Version 2203
 
@@ -131,8 +131,8 @@ For the feature to work, you need to use the **AppInfoViewer** tool on each agen
 
 **Detail:** Two additional options to control when to run external tasks have been added
 
-*  **Run when processes start** controls whether to run the external task when specified processes start
-*  **Run when processes end** controls whether to run the external task when specified processes end
+-  **Run when processes start** controls whether to run the external task when specified processes start
+-  **Run when processes end** controls whether to run the external task when specified processes end
 
 This allows for specific actions to apply when a specific process is triggered or ended - very cool
 
@@ -176,10 +176,10 @@ This is similar to how ControlUp etc offer some process stripping functionality 
 
 **Detail:** The administration console user interface has changed:
 
-*  In **System Optimization**, there is a new **Multi-session Optimization** node. On the node, there is a new **Multi-session Optimization** tab for you to configure settings designed to optimize multi-session OS machines with disconnected sessions
-*  In **Security**, there is a new **Privilege Elevation** node. On the node, there is a **Privilege Elevation** tab for controlling whether to enable the feature and to apply global settings. Below the node, there are two subnodes:
-    *  **Executable Rules** with a **Privilege Elevation** tab where you can apply privilege elevation using executable rules
-    *  **Windows Installer** Rules with a **Privilege Elevation** tab where you can apply privilege elevation using Windows installer rules
+-  In **System Optimization**, there is a new **Multi-session Optimization** node. On the node, there is a new **Multi-session Optimization** tab for you to configure settings designed to optimize multi-session OS machines with disconnected sessions
+-  In **Security**, there is a new **Privilege Elevation** node. On the node, there is a **Privilege Elevation** tab for controlling whether to enable the feature and to apply global settings. Below the node, there are two subnodes:
+    -  **Executable Rules** with a **Privilege Elevation** tab where you can apply privilege elevation using executable rules
+    -  **Windows Installer** Rules with a **Privilege Elevation** tab where you can apply privilege elevation using Windows installer rules
 
 ## - - - - - Version 2109
 
@@ -209,8 +209,8 @@ This is similar to how ControlUp etc offer some process stripping functionality 
 
 **Detail:** This release adds two settings, **Overwrite** and **Merge**, to the **Administration Console > Security > Application Security** tab. The settings let you determine how the agent processes application security rules.
 
-*  Select **Overwrite** if you want to overwrite existing rules. When selected, the rules that are processed last overwrite rules that were processed earlier. Citrix recommend that you apply this setting only to single-session machines.
-*  Select **Merge** if you want to merge rules with existing rules. When conflicts occur, the rules that are processed last overwrite rules that were processed earlier.
+-  Select **Overwrite** if you want to overwrite existing rules. When selected, the rules that are processed last overwrite rules that were processed earlier. Citrix recommend that you apply this setting only to single-session machines.
+-  Select **Merge** if you want to merge rules with existing rules. When conflicts occur, the rules that are processed last overwrite rules that were processed earlier.
 
 Nice to not have to go and edit the SQL database directly for this one
 
@@ -228,15 +228,15 @@ Nice to not have to go and edit the SQL database directly for this one
 
 **Detail:** Workspace Environment Management now supports all versions of Profile Management through 2103. Also, the following new options are now available in the **Administration Console > Policies and Profiles > Citrix Profile Management Settings** interface:
 
-*  **Enable Local Cache for Profile Container**
-    *  Available on the P**rofile Container Settings** tab
-    *  If enabled, each local profile serves as a local cache of its profile container
-*  **Enable multi-session write-back for profile containers**
-    *  Available on the **Advanced Settings** tab
-    *  Replaces **Enable multi-session write-back for FSLogix Profile Container** of previous releases to accommodate multi-session write-back support for Citrix Profile Management profile containers
-*  **Enable Profile Streaming for Folders**
-    *  Available on the Streamed User Profiles tab
-    *  If enabled, folders are fetched only when they are being accessed
+-  **Enable Local Cache for Profile Container**
+    -  Available on the P**rofile Container Settings** tab
+    -  If enabled, each local profile serves as a local cache of its profile container
+-  **Enable multi-session write-back for profile containers**
+    -  Available on the **Advanced Settings** tab
+    -  Replaces **Enable multi-session write-back for FSLogix Profile Container** of previous releases to accommodate multi-session write-back support for Citrix Profile Management profile containers
+-  **Enable Profile Streaming for Folders**
+    -  Available on the Streamed User Profiles tab
+    -  If enabled, folders are fetched only when they are being accessed
 
 {: .box-note}
 
@@ -244,8 +244,8 @@ Nice to not have to go and edit the SQL database directly for this one
 
 **Detail:** This release updates PowerShell modules in the Workspace Environment Management SDK. The following cmdlets are no longer usable:
 
-*  Property SDKInfrastructureServiceConfiguration.AgentSyncPort
-*  Property Commandlets.SetWemInfrastructureServiceConfiguration.AgentSyncPort
+-  Property SDKInfrastructureServiceConfiguration.AgentSyncPort
+-  Property Commandlets.SetWemInfrastructureServiceConfiguration.AgentSyncPort
 
 Version 2103 of the Workspace Environment Management SDK documentation reflects the update.
 
@@ -265,8 +265,8 @@ If you enable the **Workspace Environment Management** check box on the **Additi
 
 **Detail:** Previously, the WEM agent startup workflow had the following issues:
 
-*  The agent did not refresh the Citrix Cloud Connector settings after startup. As a result, the Cloud Connector settings deployed to the agent through group policies did not work as expected
-*  In a non-persistent environment, when the agent cache file resided in the base image, the agent could experience cache synchronization issues. As a result, WEM settings might not be applied properly
+-  The agent did not refresh the Citrix Cloud Connector settings after startup. As a result, the Cloud Connector settings deployed to the agent through group policies did not work as expected
+-  In a non-persistent environment, when the agent cache file resided in the base image, the agent could experience cache synchronization issues. As a result, WEM settings might not be applied properly
 
 Starting with this release, the agent refreshes Cloud Connector settings after startup, just like it refreshes other settings. To ensure that the agent cache is up to date, the agent automatically recreates the cache in non-persistent environments
 
@@ -276,8 +276,8 @@ Starting with this release, the agent refreshes Cloud Connector settings after s
 
 **Detail:** This release adds the following agent cache utility options:
 
-*  `-RefreshSettings` or `-S`: Refreshes agent host settings
-*  `-Reinitialize` or `-I`: Reinitializes the agent cache when used together with the -RefreshCache option
+-  `-RefreshSettings` or `-S`: Refreshes agent host settings
+-  `-Reinitialize` or `-I`: Reinitializes the agent cache when used together with the -RefreshCache option
 
 {: .box-note}
 
@@ -285,7 +285,7 @@ Starting with this release, the agent refreshes Cloud Connector settings after s
 
 **Detail:** Citrix optimizer now provides an additional option that enables WEM to automatically select templates for your OS:
 
-*  **Automatically Select Templates to Use**. If you are unsure which template to use, use this option to let WEM select the best match for each OS. You can also apply this option to custom templates with different name formats by using the **Enable Automatic Selection of Templates Starting with Prefixes** option
+-  **Automatically Select Templates to Use**. If you are unsure which template to use, use this option to let WEM select the best match for each OS. You can also apply this option to custom templates with different name formats by using the **Enable Automatic Selection of Templates Starting with Prefixes** option
 
 {: .box-note}
 
@@ -313,8 +313,8 @@ When editing Group Policy settings, you have the following actions: **Set value,
 
 **Detail:** Microsoft Sync Framework 2.1 will reach End of Life on January 12, 2021. WEM will retire the associated legacy agent cache sync service and switch to using the latest agent cache sync service to keep the agent cache in sync with the infrastructure services. The latest agent cache sync service relies on Dotmim.Sync, an open-source sync framework. How does this change impact you?
 
-*  If you use Workspace Environment Management 1912 or later, this change does not require action on your part
-*  If you use Workspace Environment Management 1909 or earlier, upgrade to Workspace Environment Management 1912 or later
+-  If you use Workspace Environment Management 1912 or later, this change does not require action on your part
+-  If you use Workspace Environment Management 1909 or earlier, upgrade to Workspace Environment Management 1912 or later
 
 This change is scheduled to be rolled out in March 2021
 
@@ -332,8 +332,8 @@ This change is scheduled to be rolled out in March 2021
 
 **Detail:** Workspace Environment Management now supports all versions of Profile Management through 2009. The following new options are now available on the Administration Console > Policies and Profiles > Citrix Profile Management Settings > Profile Container Settings tab:
 
-*  **Enable Folder Exclusions for Profile Container** (option for excluding the listed folders from the profile container)
-*  **Enable Folder Inclusions for Profile Container** (option for keeping the listed folders in the profile container when their parent folders are excluded)
+-  **Enable Folder Exclusions for Profile Container** (option for excluding the listed folders from the profile container)
+-  **Enable Folder Inclusions for Profile Container** (option for keeping the listed folders in the profile container when their parent folders are excluded)
 
 {: .box-note}
 
@@ -341,8 +341,8 @@ This change is scheduled to be rolled out in March 2021
 
 **Detail:** The administration console user interface has changed:
 
-*  In **Administration Console > Policies and Profiles > Citrix Profile Management Settings**, there is a new **Profile Container Settings** tab for you to configure Profile Management profile container settings
-*  The **Enable Profile Container** option now moves to the **Profile Container Settings** tab. Previously, the option was present on the **Synchronization** tab
+-  In **Administration Console > Policies and Profiles > Citrix Profile Management Settings**, there is a new **Profile Container Settings** tab for you to configure Profile Management profile container settings
+-  The **Enable Profile Container** option now moves to the **Profile Container Settings** tab. Previously, the option was present on the **Synchronization** tab
 
 ## - - - - - Version 2006
 
@@ -358,7 +358,7 @@ This change is scheduled to be rolled out in March 2021
 
 **Detail:** The administration console user interface has changed:
 
-*  In **Actions**, there is a new **Group Policy Settings** pane. In the pane, there is a **Group Policy Settings** tab for you to configure Group Policy settings
+-  In **Actions**, there is a new **Group Policy Settings** pane. In the pane, there is a **Group Policy Settings** tab for you to configure Group Policy settings
 
 ## - - - - - Version 2003
 
@@ -368,8 +368,8 @@ This change is scheduled to be rolled out in March 2021
 
 **Detail:** Citrix optimizer is now available in Workspace Environment Management (WEM). You can use the feature to optimize user environments for better performance. Citrix optimizer runs a quick scan of user environments and then applies template-based optimization recommendations. You can optimize user environments in two ways:
 
-*  You can use built-in templates to perform optimizations. To do so, select a template applicable to the operating system
-*  Alternatively, you can create your own custom templates with specific optimizations you want and then add them to WEM
+-  You can use built-in templates to perform optimizations. To do so, select a template applicable to the operating system
+-  Alternatively, you can create your own custom templates with specific optimizations you want and then add them to WEM
 
 {: .box-note}
 
@@ -377,8 +377,8 @@ This change is scheduled to be rolled out in March 2021
 
 **Detail:** This release includes enhancements to the external task feature. The feature now provides you with two additional options to control when to run external tasks:
 
-*  **Logoff**. This option lets you specify whether to run external tasks when users log off
-*  **Reconnect**. This option lets you specify whether to run external tasks when a user reconnects to a machine on which the agent is running. This option is not applicable to scenarios where the WEM agent is installed on a physical Windows device
+-  **Logoff**. This option lets you specify whether to run external tasks when users log off
+-  **Reconnect**. This option lets you specify whether to run external tasks when a user reconnects to a machine on which the agent is running. This option is not applicable to scenarios where the WEM agent is installed on a physical Windows device
 
 The logoff option can be useful in scenarios where you want to purge the user environment on logoff
 
@@ -406,7 +406,7 @@ The logoff option can be useful in scenarios where you want to purge the user en
 
 **Detail:** As of this release, you can use the Workspace Environment Management to configure all settings for Citrix Profile Management 2003. The following option is now available in the administration console:
 
-*  **Enable multi-session write-back for FSLogix Profile Container** (option to save changes in multi-session scenarios for FSLogix Profile Container)
+-  **Enable multi-session write-back for FSLogix Profile Container** (option to save changes in multi-session scenarios for FSLogix Profile Container)
 
 {: .box-note}
 
@@ -414,7 +414,7 @@ The logoff option can be useful in scenarios where you want to purge the user en
 
 **Detail:** The user interface of the administration console has changed:
 
-*  In **System Optimization**, there is a new **Citrix Optimizer** pane. In the pane, there is a **Citrix Optimizer** tab for configuring optimization-related settings.
+-  In **System Optimization**, there is a new **Citrix Optimizer** pane. In the pane, there is a **Citrix Optimizer** tab for configuring optimization-related settings.
 
 ## - - - - - Version 1912
 
@@ -444,7 +444,7 @@ The logoff option can be useful in scenarios where you want to purge the user en
 
 **Detail:** The administration console user interface has changed:
 
-*  The **Advanced Settings > UI Agent Personalization > UI Agent Options** tab introduces an "**Allow Users to Reset Actions**" option. Use that option to control whether to let current users specify what actions to reset in their environment
+-  The **Advanced Settings > UI Agent Personalization > UI Agent Options** tab introduces an "**Allow Users to Reset Actions**" option. Use that option to control whether to let current users specify what actions to reset in their environment
 
 {: .box-note}
 
@@ -452,8 +452,8 @@ The logoff option can be useful in scenarios where you want to purge the user en
 
 **Detail:** There are now two policies associated with the WEM agent cache synchronization:
 
-*  **Cache synchronization port** (Applicable to Workspace Environment Management 1909 and earlier; replaced by **Cached data synchronization port** in Workspace Environment Management 1912 and later. The port defaults to 8285.)
-*  **Cached data synchronization port** (Applicable to Workspace Environment Management 1912 and later; replaces **Cache synchronization port** of Workspace Environment Management 1909 and earlier. The port defaults to 8288.)
+-  **Cache synchronization port** (Applicable to Workspace Environment Management 1909 and earlier; replaced by **Cached data synchronization port** in Workspace Environment Management 1912 and later. The port defaults to 8285.)
+-  **Cached data synchronization port** (Applicable to Workspace Environment Management 1912 and later; replaces **Cache synchronization port** of Workspace Environment Management 1909 and earlier. The port defaults to 8288.)
 
 Starting with this release, the WEM agent relies on **Cached data synchronization port** to keep the agent cache in sync with the WEM infrastructure service. If you have Workspace Environment Management 1909 or earlier deployed in your environment, you cannot not use **Cached data synchronization port**. Instead, use **Cache synchronization port**
 
@@ -471,5 +471,5 @@ Note that you still need to back up the database before you perform the upgrade
 
 **Detail:** This release includes enhancements to the PowerShell modules in the WEM SDK. You can now use the PowerShell SDK to:
 
-*  Create, update, query, and delete configuration sets and user-level and machine-level AD objects
-*  Export and import configuration sets or user-level or machine-level AD objects
+-  Create, update, query, and delete configuration sets and user-level and machine-level AD objects
+-  Export and import configuration sets or user-level or machine-level AD objects

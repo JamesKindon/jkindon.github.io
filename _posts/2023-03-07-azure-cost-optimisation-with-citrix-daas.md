@@ -12,7 +12,7 @@ categories: [Citrix, Optimization, Azure, Cost, MCS, DaaS, Cloud, IaaS]
 
 ![dollars]({{site.baseurl}}/assets/img/azure-cost-optimisation-with-citrix-daas/dollars.jpg)
 
-Let’s face it, Azure isn’t cheap, and it isn’t getting any cheaper. EUC workloads are getting heavier and their requirements larger, all of this means you are either sacrificing user experience on sub-par instances, or forking out the dollars to keep end users happy.
+Let's face it, Azure isn't cheap, and it isn't getting any cheaper. EUC workloads are getting heavier and their requirements larger, all of this means you are either sacrificing user experience on sub-par instances, or forking out the dollars to keep end users happy.
 
 Luckily there are some easy wins to try and make a small dent in that bill. Below is my tracking list based on projects and ongoing capability releases in the Citrix DaaS offering, mostly around the MCS space.
 
@@ -31,9 +31,9 @@ Another storage focused win, this one very cool because you get to bundle massiv
 {: .box-note}
 **Change the Storage Tier when VM is shut down**
 
-Standard HDD spec disks really don’t create the nicest experience for users, so most deployments opt for a better SKU (Standard or Premium SSD). But when a machine is turned off (see AutoScale and Power Management note), why pay for the higher Tier? With MCS, you can switch the OS disk to a lower tier (Standard HDD) and take the win. MCS will switch it back when the instance powers on.
+Standard HDD spec disks really don't create the nicest experience for users, so most deployments opt for a better SKU (Standard or Premium SSD). But when a machine is turned off (see AutoScale and Power Management note), why pay for the higher Tier? With MCS, you can switch the OS disk to a lower tier (Standard HDD) and take the win. MCS will switch it back when the instance powers on.
 
-[This feature](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#change-the-storage-type-to-a-lower-tier-when-a-vm-is-shut-down) is most commonly of benefit in persistent/dedicated instance deployments, however will also work if persisting OS disks (by default MCS uses [on demand provisioning](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#azure-on-demand-provisioning), so no disk or VM when the instance is off). Also works with persistent write back cache (but if you have read up on Ephemeral Disks then this likely won’t be relevant)
+[This feature](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#change-the-storage-type-to-a-lower-tier-when-a-vm-is-shut-down) is most commonly of benefit in persistent/dedicated instance deployments, however will also work if persisting OS disks (by default MCS uses [on demand provisioning](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#azure-on-demand-provisioning), so no disk or VM when the instance is off). Also works with persistent write back cache (but if you have read up on Ephemeral Disks then this likely won't be relevant)
 
 {: .box-note}
 **Snapshot Maintenance**
@@ -59,7 +59,7 @@ This one makes the list as more of a "watch out" item. This thing will kick you 
 
 [Citrix Autoscale](https://docs.citrix.com/en-us/citrix-daas/manage-deployment/autoscale.html) is one the best and most powerful tools to get your VM run costs under control. Coupling Autoscale with aggressive session timeouts can massively reduce your run costs.
 
-Don’t forget to plug in your instance $$ figure into your Delivery Group so that you can get some nice reporting in Monitor on how much you are saving (VM run cost + Disk cost should be added if using [on-demand provisioning](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#azure-on-demand-provisioning))
+Don't forget to plug in your instance $$ figure into your Delivery Group so that you can get some nice reporting in Monitor on how much you are saving (VM run cost + Disk cost should be added if using [on-demand provisioning](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#azure-on-demand-provisioning))
 
 {: .box-note}
 **Instance Reservation**
@@ -70,7 +70,7 @@ In some scenarios, where DaaS workloads run for extended periods of time, Reserv
 
 In other scenarios, a combination of both Reserved Instances and Autoscale can be beneficial, where the baseline (minimum) number of instances to serve the business can be reserved, and then Autoscale can handle the rest on a PAYG rate.
 
-Remember, [Instance Reservations float](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-vm-reservation-charges?toc=%2Fazure%2Fcost-management-billing%2Freservations%2Ftoc.json#how-reservation-discount-is-applied), they aren’t tied to a specific VM, so if Autoscale powers off a VM with a reservation associated to it (and MCS is using on-demand provisioning and the VM is destroyed), the benefit can just be moved across to another VM that is still running.
+Remember, [Instance Reservations float](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-vm-reservation-charges?toc=%2Fazure%2Fcost-management-billing%2Freservations%2Ftoc.json#how-reservation-discount-is-applied), they aren't tied to a specific VM, so if Autoscale powers off a VM with a reservation associated to it (and MCS is using on-demand provisioning and the VM is destroyed), the benefit can just be moved across to another VM that is still running.
 
 Build an Excel sheet and map out run time, Reserved Instance (1 and 3 year options) pricing and see what your costs can look like – it will be surprising when you start to mix and match.
 
@@ -90,7 +90,7 @@ Citrix DaaS MCS allows [provisioned machines to be tagged](https://docs.citrix.c
 
 Backups being either native or 3rd party, can have an impact on ongoing costs. Some use snapshots in Azure, whereas the native service uses its own mechanism. Both have cost implication, so making sure that backups are strategic is important.
 
-In the Citrix world, there is no need to backup Cloud Connectors for example. These aren’t supported in a restoration scenario, and can be very quickly rebuilt. So think about the use in backing them up.
+In the Citrix world, there is no need to backup Cloud Connectors for example. These aren't supported in a restoration scenario, and can be very quickly rebuilt. So think about the use in backing them up.
 
 {: .box-note}
 **Single vs Multi Session economics for VDI/DaaS workloads**
@@ -99,7 +99,7 @@ This one can be a fun path to navigate, however the long and short is typically 
 
 The lowest economic value on the Azure fabric natively is typically going to be a single session OS with a single user. This is not always the case, but in most circumstances, there can be significant savings in combing 3 or 4 people onto an instance using Multi Session OS (Server or Client) rather than having 3-4 instances serving users in a 1:1 scenario. Model it, do the math, your milage may vary.
 
-This does not hold true when using bare metal solutions such as Nutanix NC2, where you have full control over your tin, and are not locked into T-Shirt sized instances. In this scenario, it’s game time, you can do everything you do on-prem, but do it in public cloud. Different conversation.
+This does not hold true when using bare metal solutions such as Nutanix NC2, where you have full control over your tin, and are not locked into T-Shirt sized instances. In this scenario, it's game time, you can do everything you do on-prem, but do it in public cloud. Different conversation.
 
 ## Summary Table
 

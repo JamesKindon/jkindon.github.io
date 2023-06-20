@@ -53,7 +53,7 @@ In some scenarios (disaster recovery is a great example), the `uuid` of the virt
 
 Using the native option within Citrix, from CVAD 2212 onwards, the `Set-BrokerMachine -HostedMachineId ""` does indeed update the `BrokerMachine`:`HostedMachineId` and the  `ProvVM`:`VMId` but it does not update the `ProvVM`:`IdentityDiskID`.
 
-Conversely, you can use the `Remove-BrokerMachine` PowerShell command to remove the `BrokerMachine` record from the Citrix Database for an MCS provisioned machine. This does not delete the `ProvVM` record. If the `ProvVM` object is still in the database, and the `HostedMachineId` / `uuid` of the VM hasn't changed, you can simply use `New-BrokerMachine -HostedMachineId "" -HypervisorConnectionUid ""` commandlet to bring the machine back into the MCS world.
+Conversely, you can use the `Remove-BrokerMachine` PowerShell command to remove the `BrokerMachine` record from the Citrix Database for an MCS provisioned machine. This does not delete the `ProvVM` record. If the `ProvVM` object is still in the database, and the `HostedMachineId` / `uuid` of the VM hasn't changed, you can simply use `New-BrokerMachine -HostedMachineId "" -HypervisorConnectionUid ""` cmdlet to bring the machine back into the MCS world.
 
 The current release documentation as at 18.06.2023 reads as:
 
@@ -80,4 +80,4 @@ You can use a combination of `Remove-BrokerMachine` and `New-BrokerMachine` to r
 
 Whilst a short post, hopefully this shines some insight into how persistent virtual machine relationships are handled when provisioned with MCS, and provides some options should your underlying virtual machine `uuid` change.
 
-Would be very nice if we could have a `Set-ProvVM` PowerShell commandlet Citrix...hint hint :)
+Would be very nice if we could have a `Set-ProvVM` PowerShell cmdlet Citrix...hint hint :)

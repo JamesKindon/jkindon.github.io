@@ -16,7 +16,7 @@ Citrix Machine Creation Services is often used to provision dedicated, non-persi
 
 There are exceptions to this tradition, where certain new features are being made available to persistent machine workloads provisioned by MCS:
 
--  Reset OS disk, which allows the original OS disk to be reset back to its defauly provisioned state.
+-  Reset OS disk, which allows the original OS disk to be reset back to its default provisioned state.
 -  {*Another feature here which I will add once it has been released and I wont be in breach of NDA*}.
 
 Persistent VMs deployed with MCS have a couple of challenges when looking at changing the underlying infrastructure:

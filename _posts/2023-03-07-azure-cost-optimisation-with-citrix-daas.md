@@ -83,6 +83,11 @@ BYOL/[Hybrid Use Benefit (HUB)](https://azure.microsoft.com/en-us/pricing/hybrid
 
 Citrix DaaS MCS allows [provisioned machines to be tagged](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html) with either a "Windows Server License" for Server OS or "Windows Client License" for single session desktop OS (Windows 10 or 11. There are also considerations for Redhat and Suse Linux.
 
+{: .box-note}
+**Citrix VDI Reclamation Service**
+
+A smart way of using the Citrix [automated tagging](https://www.citrix.com/blogs/2023/05/23/reduce-your-cloud-costs-with-citrix-vdi-reclamation-service/) feature to build your own service to identify and reclaim orphaned VDI.
+
 ## Category: IaaS
 
 {: .box-note}
@@ -101,6 +106,11 @@ The lowest economic value on the Azure fabric natively is typically going to be 
 
 This does not hold true when using bare metal solutions such as Nutanix NC2, where you have full control over your tin, and are not locked into T-Shirt sized instances. In this scenario, it's game time, you can do everything you do on-prem, but do it in public cloud. Different conversation.
 
+{: .box-note}
+**Identify MCS orphaned resources on Azure**
+
+You can retreieve a list of [orphaned resources](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#retrieve-a-list-of-orphaned-resources) that are created by MCS but are no longer used by MCS.
+
 ## Summary Table
 
 | Category | Item | Guide |
@@ -113,8 +123,10 @@ This does not hold true when using bare metal solutions such as Nutanix NC2, whe
 | Instance Management | Citrix Autoscale | Less Running Instances = Less $$ |
 | Instance Management | Instance Reservation | Less PAYG rates = Less $$ |
 | Instance Management | License/HUB | More BYOL or HUB = Less $$ as far as Azure spend goes |
+| Instance Management | VDI Reclamation Service | Less orphaned crud = Less $$ |
 | IaaS | Erroneous backup jobs | Less (useless) backups = Less $$ |
 | IaaS | Single vs Multi Session economics for EUC workloads | Right workload = Appropriate $$ |
+| IaaS | Identify MCS orphaned resources on Azure | Less orphaned crud = Less $$ |
 
 ## Summary
 

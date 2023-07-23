@@ -23,6 +23,67 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## - - - - - July 2023
+
+{: .box-note}
+
+**Feature:** [Support for getting a list of orphaned resources on Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#retrieve-a-list-of-orphaned-resources)
+
+**Detail:** In Azure environments, you can now get a list of orphaned resources that are created by MCS but are no longer used by MCS. This feature helps to avoid extra costs.
+
+{: .box-note}
+
+**Feature:** [Support for creating persistent multi-session machines using Full Configuration](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create.html#desktop-types-desktop-experience)
+
+**Detail:** When creating a catalog of multi-session machines, you can now specify whether to make them persistent. For persistent multi-session machines, keep in mind that changes users make to the desktops are saved and accessible to all authorized users.
+
+{: .box-note}
+
+**Feature:** [Support for deleting Azure AD devices](https://docs.citrix.com/en-us/citrix-daas/install-configure/create-machine-identities-joined-catalogs/create-azure-ad-joined-catalogs.html)
+
+**Detail:** With this feature, stale Azure AD devices can be consistently deleted by assigning the Cloud Device Administrator role to the service principal and modifying the custom property of the hosting connection. If you do not delete the Azure stale AD devices, then the corresponding non-persistent VM stays in the initializing state until you manually remove it from the Azure AD portal.
+
+{: .box-note}
+
+**Feature:** [Image refresh option](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#july-2023)
+
+**Detail:** When selecting master images for machine catalogs, you can now quickly get the most up-to-date master image list using the Refresh option at the top right. Additionally, a Refresh option is available for machine profiles and host groups in Azure catalogs.
+
+## - - - - - June 2023
+
+{: .box-note}
+
+**Feature:** [Ability to get historical errors and warnings associated with an MCS machine catalog](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#retrieve-warnings-and-errors-associated-with-a-catalog)
+
+**Detail:** Previously, you only got the latest warnings and errors associated with a machine catalog. With this feature, you can now get a list of the historical warnings and errors of an MCS machine catalog. This list helps you to understand any issues with your MCS machine catalog and fix those issues.
+
+{: .box-note}
+
+**Feature:** [Full Configuration now preconfigures certain settings for Azure machines based on machine profiles](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#june-2023)
+
+**Detail:** When you provision Azure VMs, Full Configuration now preconfigures the following settings based on the selected machine profile:
+
+-  Host group
+-  Disk Encryption Set
+-  Availability Zone
+-  License Type
+
+{: .box-note}
+
+**Feature:** [Secure environment for Azure managed traffic](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager.html#create-a-secure-environment-for-azure-managed-traffic)
+
+**Detail:** Traditionally, customers relied on the public internet to let Azure endpoints interact with resources in the environment. As a result, security concerns were raised because the public internet was accessed. With this feature, MCS enables network traffic to be routed through Citrix Cloud Connectors in the environment. This makes the environment safer because  all Azure managed traffic originates from the customers environment. To enable this, add `ProxyHypervisorTrafficThroughConnector` in `CustomProperties`.
+
+After you set the custom properties, you can configure Azure policies to have private disk access to Azure managed disks.
+
+{: .box-note}
+
+**Feature:** [Support for provisioning catalog VMs with Azure Monitor Agent](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure.html#provision-catalog-vms-with-azure-monitor-agent-installed)
+
+**Detail:** Azure Monitor Agent (AMA) collects monitoring data and delivers it to Azure Monitor. With this feature, you can provision MCS machine catalog VMs (persistent and non-persistent) with AMA installed as an extension. This implementation enables monitoring by uniquely identifying the VMs in monitoring data.
+
+Currently, MCS supports only the machine profile workflow for this feature.
+
 ## - - - - - May 2023
 
 {: .box-note}

@@ -18,6 +18,39 @@ This list will start at CVAD 1912 LTSR, anything prior to that, refer to the app
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - Version 2305
+
+{: .box-note}
+
+**Feature:** [Support for user-level policy settings](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-configure-user-level-settings.html)
+
+**Detail:** By default, most Profile Management policies work only at the machine level. With the user-level policy settings feature enabled, those policies can work at the user level, and user-level settings override machine-level settings.
+
+This feature is useful for organizations where different users or user groups require different Profile Management settings.
+
+{: .box-note}
+
+**Feature:** [Enhancements to Outlook container](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html)
+
+**Detail:** These enhancements simplify the process of fully enabling Outlook containers while offering a high level of availability for Outlook service:
+
+-  Automatic enabling of Cached Exchange mode. Previously, to have OST files downloaded to Outlook containers, you had to manually enable the **Use Cached Exchange Mode to download email to an Outlook data file** setting for each user’s Exchange account. Profile Management now automatically enables this setting for users when all conditions for Outlook containers to work are met.
+-  Automatic switching between Cached Exchange mode and Online mode. This enhancement offers a high level of availability for the Outlook service.
+    -  When the container is detached, Outlook automatically switches to Online mode.
+    -  When the container is reattached, Outlook automatically switches back to Cached Exchange mode.
+
+{: .box-note}
+
+**Feature:** [Always On Tracing logs](https://docs.citrix.com/en-us/profile-management/current-release/troubleshoot/collect-diagnostics.html#collect-the-always-on-tracing-log-file)
+
+**Detail:** The Always on Tracing feature is now available for Profile Management. This feature provides detailed logs that can help identify critical problems with Profile Management, thereforce reducing the need to reproduce problems.
+
+{: .box-note}
+
+**Feature:** [Support for Google Drive in Mirroring Files for Sync mode](https://docs.citrix.com/en-us/profile-management/current-release/whats-new.html#support-for-google-drive-in-mirroring-files-for-sync-mode)
+
+**Detail:** Profile Management containers now support Google Drive both in **Mirroring Files for Sync mode** and **Streaming Files for Sync mode**, giving you more flexibility in choosing cloud storage.
+
 ## - - - - - Version 2303
 
 {: .box-note}

@@ -16,6 +16,35 @@ Citrix WEM is consistently updating and bringing enhanced capability to the tabl
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - Version 2305
+
+{: .box-note}
+
+**Feature:** [Enhancement to gMSA support](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/infrastructure-services.html#group-managed-service-account)
+
+**Detail:** This enhancement simplifies the process of configuring a group Managed Service Account (gMSA) for use with Workspace Environment Management (WEM). You can now use the GUI to configure the account. After binding the Citrix WEM SPN with the account, you can select the account in the same way as you do for an AD user when you do the following:
+
+-  [Create a WEM database](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/infrastructure-services.html#create-a-workspace-environment-management-database)
+-  [Configure the infrastructure service](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/infrastructure-services.html#configure-the-infrastructure-service)
+-  [Upgrade the database](https://docs.citrix.com/en-us/workspace-environment-management/current-release/upgrade.html#step-2-upgrade-the-database)
+
+{: .box-note}
+
+**Feature:** [Wake up agents](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/advanced-settings.html#wake-on-lan)
+
+**Detail:** This release introduces the Wake on LAN feature, which lets you remotely turn on agent hosts. WEM automatically selects agents that reside on the same subnet as the target agents and uses those agents as Wake on LAN messengers. This feature requires hardware compatible with Wake on LAN. To use this feature, verify that the target machines satisfy the hardware requirements and relevant BIOS settings are configured.
+
+{: .box-note}
+
+**Feature:** [Profile Management Settings](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/policies-and-profiles/citrix-upm-settings.html#main-citrix-profile-management-settings)
+
+**Detail:** Workspace Environment Management now supports the following Profile Management policies. The following new option is now available in the **Administration Console > Policies and Profiles > Citrix Profile Management Settings.**
+
+-  **Enable active write back on session lock and disconnection**. Available on the **Main Profile Management Settings** tab. If enabled, profile files and folders are written back only when a session is locked or disconnected. With both this option and the **Enable Active write back registry** option enabled, registry entries are written back only when a session is locked or disconnected.
+-  **Enable VHD disk compaction**. Available on the **Profile Container Settings** tab. If enabled, VHD disks are automatically compacted on user logoff when certain conditions are met. This option enables you to save the storage space consumed by profile container, OneDrive container, and mirror folder container. Advanced options are available on the **Advanced Settings** tab, including **Disable defragmentation for VHD disk compaction, Set free space ratio to trigger VHD disk compaction**, and **Set number of logoffs to trigger VHD disk compaction**. When **Enable VHD disk compaction** is enabled, use these three options to adjust the default VHD compaction settings and behavior.
+-  **Enable asynchronous processing for user Group Policy on logon**. Available on the **Advanced Settings** tab. If enabled, Profile Management roams with users a registry value that Windows uses to determine the processing mode for the next user logon — synchronous or asynchronous processing mode. This ensures that the actual processing mode is applied each time users log on.
+-  **Enable app access control**. Available on the **App Access Control** tab. If enabled, Profile Management controls user access to items (such as files, folders, and registries) based on the rules you provide. A typical use case is to apply rules to control user access to apps installed on machines — whether to make apps invisible to relevant users. This feature can simplify application and image management. For example, using the feature, you can deliver identical machines to different departments while meeting their different application needs, thus reducing the number of images.
+
 ## - - - - - Version 2303
 
 {: .box-note}

@@ -16,6 +16,99 @@ Citrix WEM Service environment is consistently updating and bringing enhanced ca
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## - - - - - July 2023
+
+{: .box-note}
+
+**Feature:** [User-level Profile Management settings (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management.html#user-level-profile-management-settings)
+
+**Detail:** This feature lets you configure Profile Management settings at the user level for customization and precise control. Use this feature to apply specific Profile Management settings to individual users or user groups, tailoring the profile experience as needed.
+
+To enable this feature, go to **Home**, click the **preview features** icon in the upper-right corner, and enable **User-level Profile Management settings**.
+
+{: .box-note}
+
+**Feature:** [Enhanced WEM agent event logging](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/agent-event-logs.html)
+
+**Detail:** Citrix have made enhancements to WEM agent event logging, aiming at improving troubleshooting capabilities. The enhancements include:
+
+-  Comprehensive event logs: Citrix have provided comprehensive event logs, giving you a complete picture of agent activities.
+-  Unique event IDs: Each event log now has a distinct ID, making it easier for you to filter and identify specific events.
+
+Minimum agent version required: `2307.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Microsoft Edge browser support for WEM Transformer](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#microsoft-edge-browser-support-for-wem-transformer)
+
+**Detail:** The WEM Transformer now supports the latest version of the Microsoft Edge browser.
+
+Minimum agent version required: `2307.1.0.1`
+
+{: .box-note}
+
+**Feature:** [JSON object assignment](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions.html#json-files)
+
+**Detail:** I love this feature because it's yet another example of the WEM team taking on ideas and feedback. I put this in front of them months ago as a suggestion on how to managed Microsoft Teams - we now have a full engine.
+
+You can now add JSON objects and assign them to create or modify JSON files. Using this feature, you can apply personalized settings to applications with a JSON configuration file (for example, Microsoft Teams).
+
+Minimum agent version required: `2306.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Add local applications for quick access](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub.html#add-local-applications-for-quick-access)
+
+**Detail:** This feature lets you add local applications to the WEM Tool Hub for quick access. The added applications are considered your personal data and are retained when you switch machines within the Profile Management environment. You can add and remove multiple applications at a time.
+
+Minimum agent version required: `2307.1.0.1`
+
+{: .box-note}
+
+**Feature:** [New version of WEM Tool Hub](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub.html)
+
+**Detail:** A new version of WEM Tool Hub is now available: `2307.1.0.1`. The version includes performance enhancements and bug fixes.
+
+## - - - - - June 2023
+
+{: .box-note}
+
+**Feature:** [Enhancements to CPU spike protection](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/system-optimization.html#cpu-spike-protection)
+
+**Detail:** This release introduces enhancements to the CPU spike protection feature, giving you more granular control. The enhancements include the following changes:
+
+-  Citrix have reorganized CPU spike protection options with intuitive logic for easier configuration.
+-  When customizing CPU spike protection, you can now configure the CPU usage limit using non-integer values.
+-  A new option, **Set limit relative to single CPU core**, is now available, letting you set a limit on CPU usage based on a single CPU core as a reference.
+
+Minimum agent version required: `2306.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Additional Actions in the Web Console](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#june-2023)
+
+**Detail:** The following actions have been made available in the web console:
+
+-  [Environment variables](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions.html#environment-variables). Using the web console, you can now add environment variables as assignable actions. When assigned, those environment variables are created or set in the user environment.
+
+Minimum agent version required: `2306.1.0.1`
+
+{: .box-note}
+
+**Feature:** [Group Policy setting processing results](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/dynamic-tokens.html#dynamic-token-support-for-group-policy-settings)
+
+**Detail:** You can now use dynamic tokens in Group Policy settings. This feature allows for more adaptable policy configuration in different environments, reduces manual configuration, and simplifies policy management
+
+{: .box-note}
+
+**Feature:** [JSON object assignment (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions.html#json-files)
+
+**Detail:** You can now add JSON objects and assign them to create or modify JSON files. Using this feature, you can apply personalized settings to applications with a JSON configuration file (for example, Microsoft Teams). This feature is available only in the web console.
+
+To enable this feature, go to Home, click the preview features icon in the upper-right corner, and enable JSON object assignment.
+
+Minimum agent version required: `2306.1.0.1`
+
 ## - - - - - May 2023
 
 {: .box-note}

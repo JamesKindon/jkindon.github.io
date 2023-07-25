@@ -109,7 +109,7 @@ This does not hold true when using bare metal solutions such as Nutanix NC2, whe
 {: .box-note}
 **Identify MCS orphaned resources on Azure**
 
-You can retreieve a list of [orphaned resources](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#retrieve-a-list-of-orphaned-resources) that are created by MCS but are no longer used by MCS.
+You can retrieve a list of [orphaned resources](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#retrieve-a-list-of-orphaned-resources) that are created by MCS but are no longer used by MCS.
 
 ## Summary Table
 

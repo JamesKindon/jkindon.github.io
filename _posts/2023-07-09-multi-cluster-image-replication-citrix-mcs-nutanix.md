@@ -37,7 +37,7 @@ Project number two: [Replicating Images for Citrix MCS with Prism Central (Prote
 
 Both projects offer not only an example of how to automate the replication of snapshots across multiple clusters in a consistent fashion but also uses (for CVAD) the Citrix PowerShell Snapins to automate the upgrade of one or many Catalogs, across one or many Citrix Sites. This logic can easily be extrapolated to DaaS deployments using the DaaS SDK as required.
 
-Check them out, the code is housed in Github and free to take, enhance and use accordingly per our [documented terms of use](https://www.nutanix.com/legal/terms-of-use), with documentation, background and associated details outlined for each project mentioned above at the following URLS
+Check them out, the code is [housed in Github](https://github.com/nutanixdev/euc-samples/tree/main/citrix/mcs) and free to take, enhance and use accordingly per our [documented terms of use](https://www.nutanix.com/legal/terms-of-use), with documentation, background and associated details outlined for each project mentioned above at the following URLS
 
 -  [Replicating Images for Citrix MCS with Prism Element (Protection Domains and PowerShell)](https://www.nutanix.dev/2023/07/03/replicating-images-for-citrix-mcs-with-prism-element-protection-domains-and-powershell/)
 -  [Replicating Images for Citrix MCS with Prism Central (Protection Policies and Recovery Points)](https://www.nutanix.dev/2023/07/04/replicating-images-for-citrix-mcs-with-prism-central-protection-policies-and-recovery-points/)

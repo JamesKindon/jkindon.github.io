@@ -12,7 +12,7 @@ categories: [Citrix, MCS, Provisioning, PowerShell]
 
 ![Mechanics]({{site.baseurl}}/assets/img/citrix-mcs-dedicated-workload-mechanics-part-1/mechanics.png)
 
-Citrix Machine Creation Services is often used to provision dedicated, non-persistent virtual desktop workloads. These machines, once provisioned, typically take on a life of their own and post provisioning, MCS currently plays a minimal role in their existence.
+Citrix Machine Creation Services is often used to provision dedicated, persistent virtual desktop workloads. These machines, once provisioned, typically take on a life of their own and post provisioning, MCS currently plays a minimal role in their existence.
 
 There are exceptions to this tradition, where certain new features are being made available to persistent machine workloads provisioned by MCS:
 

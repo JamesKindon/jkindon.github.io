@@ -10,8 +10,8 @@ description: Please feel free to contact me via the form below
     <input type="text" class="form-control" id="Name" placeholder="Please provide your name" required>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
   </div>
   <div class="form-group">
     <label for="Message">Message</label>

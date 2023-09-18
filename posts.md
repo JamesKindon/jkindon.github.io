@@ -1,7 +1,8 @@
 ---
 layout: grid
-title: Blogs and Articles
+title: Posts
 description: >
-  Below is a summary of all currently posted blogs. Enjoy.
+  This is the `list` layout for showing blog posts, which shows just the title and groups them by year of publication.
+  Check out the `blog` layout for comparison.
 grouped: true
 ---

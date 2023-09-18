@@ -5,13 +5,14 @@ permalink: "/microsoft-azure-snapshot-replication-framework/"
 categories: [Citrix, Azure, PowerShell, Automation, CVAD, Cloud, MCS]
 description: Replicating Azure Snapshots to Multiple Azure Regions
 image:
-  path: "/assets/img/microsoft-azure-snapshot-replication-framework/Sync.png"
+  path: /assets/img/microsoft-azure-snapshot-replication-framework/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+-  Table of Contents
 {:toc}
 
 ## Intro

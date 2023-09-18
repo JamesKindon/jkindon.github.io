@@ -8,13 +8,15 @@ redirect_from:
     - /2021/08/09/citrix-session-management-policies
     - /2021/08/09/citrix-session-management-policies/
 image:
-  path: "/assets/img/citrix-session-management-policies/time-out.jpg"
+  path: /assets/img/citrix-session-management-policies/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro

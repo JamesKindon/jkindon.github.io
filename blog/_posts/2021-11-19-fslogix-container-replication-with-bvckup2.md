@@ -4,13 +4,15 @@ title: "FSLogix Container Replication with Bvckup2"
 categories: [Citrix, Profiles, Windows, FSLogix, Replication, Bvckup2]
 description: Utilising bvckup2 to replicate FSLogix Container workloads
 image:
-  path: "/assets/img/fslogix-container-replication-with-bvckup2/bvckup2-screenshot.png"
+  path: /assets/img/fslogix-container-replication-with-bvckup2/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro
@@ -121,5 +123,7 @@ I have had many an email querying around two way replication. My default is do n
 A simple post, but hopefully a pointer in the right direction. I cannot speak higher of the tool or of Mr Alex Pankratov who has been an awesome support throughout many a configuration.
 
 Give it a crack, you think its fast with containers, you should see what it can do with file data.
+
+[![Running]({{site.baseurl}}/assets/img/fslogix-container-replication-with-bvckup2/bvckup2-screenshot.png)]({{site.baseurl}}/assets/img/fslogix-container-replication-with-bvckup2/bvckup2-screenshot.png)
 
 Discount code available if you are interested, send me an contact request and I'll share the code. You will typically be wanting to play with Pro for Windows Server [https://bvckup2.com/features](https://bvckup2.com/features)

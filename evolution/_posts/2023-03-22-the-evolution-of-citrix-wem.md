@@ -5,13 +5,19 @@ permalink: "/the-evolution-of-citrix-wem/"
 categories: [Citrix, UPM, Profiles, Windows, CVAD, Cloud, evolution]
 description: Tracking the progress of Citrix Workspace Environment Management capability On-Prem
 image:
-  path: "/assets/img/the-evolution-of-citrix-wem/evolution-wem.jpg"
+  path: /assets/img/the-evolution-of-citrix-wem/post_default_image.jpg
 sitemap: true
 hide_last_modified: false
 comments: true
+related_posts:
+  - evolution/_posts/2023-03-22-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2023-03-22-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2023-03-22-the-evolution-of-citrix-wem-service.md
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 Citrix WEM is consistently updating and bringing enhanced capability to the table. This post aims to track the changes and releases as they occur, and provide a single point of reference. I have started the tracking at 1912, anything before that, read the docs.

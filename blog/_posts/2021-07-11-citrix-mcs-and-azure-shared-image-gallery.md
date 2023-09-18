@@ -8,13 +8,15 @@ redirect_from:
     - /2021/07/11/citrix-mcs-and-azure-shared-image-gallery/
 description: Road testing Citrix Machine Creation Services with Azure Shared Image Gallery Integration
 image:
-  path: "/assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png"
+  path: /assets/img/citrix-mcs-and-azure-shared-image-gallery/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro to the Shared Image Gallery
@@ -30,6 +32,8 @@ This is the first iteration of SIG support with MCS, and comes at the moment, wi
 -  Lays the foundations for more advanced future state architecture such as single image replication and multi catalog consumption, reducing complexity around how images will be managed and deployed in multi region Azure environments. This involves a lot more than what is currently released
 
 There are no other current benefits of using a SIG with MCS right now. This will of course change as the solution matures, but for now, a lot of what Microsoft offers as an advantage to using a SIG, is not consumable by MCS. Yet.
+
+[![SIG]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-shared-image-gallery/share-image-gallery.png)
 
 Currently, SIG deployments with MCS have the following characteristics
 

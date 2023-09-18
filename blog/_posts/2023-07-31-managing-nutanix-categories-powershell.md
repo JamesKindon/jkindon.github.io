@@ -5,13 +5,15 @@ permalink: "/managing-nutanix-categories-powershell/"
 categories: [Citrix, MCS, Provisioning, PowerShell, Nutanix, HCI, Prism, Categories]
 description: Automating the assignment of Nutanix Categories with PowerShell
 image:
-  path: "/assets/img/managing-nutanix-categories-powershell/categories.png"
+  path: /assets/img/managing-nutanix-categories-powershell/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Nutanix Prism Central Categories

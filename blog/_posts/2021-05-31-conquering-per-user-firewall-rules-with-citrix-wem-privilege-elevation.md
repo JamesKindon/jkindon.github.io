@@ -8,13 +8,15 @@ redirect_from:
     - /2021/05/31/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation
     - /2021/05/31/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/
 image:
-  path: "/assets/img/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/RunAsInvoker.png"
+  path: /assets/img/conquering-per-user-firewall-rules-with-citrix-wem-privilege-elevation/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro

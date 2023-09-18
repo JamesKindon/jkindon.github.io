@@ -5,13 +5,15 @@ permalink: "/shrink-azure-os-disk-for-ephemeral/"
 categories: [Citrix, CVAD, Cloud, Azure, Ephemeral]
 description: Shrink that OS Disk to enable hyper fast Ephemeral goodness
 image:
-  path: "/assets/img/shrink-azure-os-disk-for-ephemeral/shrinkit.jpg"
+  path: /assets/img/shrink-azure-os-disk-for-ephemeral/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro to Ephemeral Disks

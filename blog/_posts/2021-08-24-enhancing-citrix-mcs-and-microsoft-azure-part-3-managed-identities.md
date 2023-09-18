@@ -8,13 +8,15 @@ redirect_from:
     - /2021/08/24/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/
 description: Adding Managed Identities to Citrix MCS Provisioned workloads in Microsoft Azure
 image:
-  path: "/assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/digital_identity.png"
+  path: /assets/img/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/post_default_layout.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro
@@ -28,7 +30,7 @@ I worked with a customer recently (hello!) who had a need to assign a User-Assig
 -  Looks for all machines in a specified list of subscriptions and resource groups. Checks to see if the machine has a managed identity that matches the required one, and assigns it if not
 -  Ignores any machines specified in the ExcludedVMList array
 
-Please note that this post contains configuration associated with an Azure Automation Run As Account. This has been replaced with modern methods such as a System Assigned Managed Identity. Please visit [this post entitled: Migrate Azure Runbook RunAs Accounts to a System Assigned Managed Identity ](https://jkindon.com/migrate-azure-runbook-runas-to-system-assigned-managed-identity) for updated deployment guidance when it comes to configuring the credential
+Please note that this post contains configuration associated with an Azure Automation Run As Account. This has been replaced with modern methods such as a System Assigned Managed Identity. Please visit [this post entitled: Migrate Azure Runbook RunAs Accounts to a System Assigned Managed Identity](https://jkindon.com/migrate-azure-runbook-runas-to-system-assigned-managed-identity) for updated deployment guidance when it comes to configuring the credential
 {:.note title="Warning"}
 
 ## Executing The Script

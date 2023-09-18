@@ -6,13 +6,15 @@ subtitle: "Tips and Tricks to reduce Azure costs with Citrix DaaS capability"
 categories: [Citrix, Optimization, Azure, Cost, MCS, DaaS, Cloud, IaaS]
 description: Tips and Tricks to reduce Azure costs with Citrix DaaS capability
 image:
-  path: "/assets/img/azure-cost-optimisation-with-citrix-daas/dollars.jpg"
+  path: /assets/img/azure-cost-optimisation-with-citrix-daas/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro

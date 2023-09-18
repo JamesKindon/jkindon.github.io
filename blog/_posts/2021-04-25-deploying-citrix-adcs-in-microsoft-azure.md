@@ -8,13 +8,15 @@ redirect_from:
     - /2021/04/25/deploying-citrix-adcs-in-microsoft-azure
     - /2021/04/25/deploying-citrix-adcs-in-microsoft-azure/
 image:
-  path: "/assets/img/deploying-citrix-adcs-in-microsoft-azure/Monitor2.png"
+ path: /assets/img/deploying-citrix-adcs-in-microsoft-azure/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## ADC HA Availability Set Template

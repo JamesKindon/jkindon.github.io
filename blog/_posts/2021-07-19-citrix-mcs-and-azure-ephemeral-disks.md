@@ -8,13 +8,15 @@ redirect_from:
     - /2021/07/19/citrix-mcs-and-azure-ephemeral-disks/
 description: Baseline testing Citrix MCS and Azure Ephemeral Disks
 image:
-  path: "/assets/img/citrix-mcs-and-azure-ephemeral-disks/BlogImage.png"
+  path: /assets/img/citrix-mcs-and-azure-ephemeral-disks/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro

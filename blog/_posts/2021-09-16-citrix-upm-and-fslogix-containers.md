@@ -10,13 +10,15 @@ redirect_from:
     - /citrix-upm-and-fslogix-containers/AMP/
 description: Delving into the when, why and why not of Citrix UPM and FSLogix Profile Containers
 image:
-  path: "/assets/img/citrix-upm-and-fslogix-containers/RightWrong.jpeg"
+  path: /assets/img/citrix-upm-and-fslogix-containers/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro

@@ -10,13 +10,19 @@ redirect_from:
     - /2021/07/08/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/AMP/
 description: Tracking the progress of Citrix MCS and Microsoft Azure
 image:
-  path: "/assets/img/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/mcs-evolution.png"
+  path: /assets/img/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/post_default_image.jpg
 sitemap: true
 hide_last_modified: false
 comments: true
+related_posts:
+  - evolution/_posts/2023-03-22-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2023-03-22-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2023-03-22-the-evolution-of-citrix-wem.md
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 There is a lot of constant improvement being executed by the MCS team at Citrix, the release cadence is impressive and the feature enhancements significant. I spend a lot of time in Microsoft Azure with Citrix Cloud with a lot of happy customers. I thought it would be worthwhile keeping a rolling tally of new features with MCS and how it relates to Azure, so that we don't lose sight of how much value add is provided.

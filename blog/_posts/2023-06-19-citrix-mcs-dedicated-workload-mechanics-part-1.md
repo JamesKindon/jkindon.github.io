@@ -5,13 +5,15 @@ permalink: "/citrix-mcs-dedicated-workload-mechanics-part-1/"
 categories: [Citrix, MCS, Provisioning, PowerShell]
 description: Delving into the mechanics of the MCS ProvVM relationship
 image:
-  path: "/assets/img/citrix-mcs-dedicated-workload-mechanics-part-1/mechanics.png"
+  path: /assets/img/citrix-mcs-dedicated-workload-mechanics-part-1/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Citrix MCS Intro

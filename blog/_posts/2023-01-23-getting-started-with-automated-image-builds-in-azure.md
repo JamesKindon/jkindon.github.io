@@ -5,13 +5,15 @@ permalink: "/getting-started-with-automated-image-builds-in-azure/"
 categories: [Citrix, AVD, Windows, CVAD, DaaS, Packer, Devops, Imags, Azure, Evergreen]
 description: Automating DaaS and AVD Images in Azure
 image:
-  path: "/assets/img/getting-started-with-automated-image-builds-in-azure/FreedomCover.jpg"
+  path: /assets/img/getting-started-with-automated-image-builds-in-azure/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro

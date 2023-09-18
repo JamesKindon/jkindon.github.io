@@ -5,13 +5,15 @@ permalink: "/migrate-azure-runbook-runas-to-system-assigned-managed-identity/"
 categories: [Citrix, Azure, PowerShell, Automation, CVAD, Cloud, MCS]
 description: Migrating existing runbooks from legacy RunAs accounts to System Assigned-Managed Identities
 image:
-  path: "/assets/img/migrate-azure-runbook-runas-to-system-assigned-managed-identity/titleimage.png"
+  path: /assets/img/migrate-azure-runbook-runas-to-system-assigned-managed-identity/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Background

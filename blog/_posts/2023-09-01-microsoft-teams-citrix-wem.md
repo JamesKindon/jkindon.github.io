@@ -5,13 +5,15 @@ permalink: "/microsoft-teams-citrix-wem/"
 categories: [Citrix, WEM, Teams, Cloud]
 description: Utilising Citrix WEM to make Teams management a bit less rubbish
 image:
-  path: "/assets/img/microsoft-teams-citrix-wem/team_json_overview.png"
+  path: /assets/img/microsoft-teams-citrix-wem/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 Here is a short post around a feature that has snuck into WEM without much fanfare, however will have a nice impact on customers trying to deliver, and manage Microsoft Teams in a Citrix environment.

@@ -5,13 +5,15 @@ permalink: "/not-so-hidden-tax-citrix-wem/"
 categories: [Citrix, Profiles, Windows, CVAD, WEM]
 description: The impacts of a high number of Active Directory Group assignments in WEM
 image:
-  path: "/assets/img/not-so-hidden-tax-citrix-wem/burn.png"
+  path: /assets/img/not-so-hidden-tax-citrix-wem/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro

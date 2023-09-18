@@ -5,13 +5,15 @@ permalink: "/citrix-cloud-and-avd-fluff/"
 categories: [Citrix, Windows, CVAD, Cloud, Azure, AVD]
 description: Demystifying the cringe inducing fluff associated with Citrix Cloud and Microsoft AVD
 image:
-  path: "/assets/img/citrix-cloud-and-avd-fluff/memefun.jpg"
+  path: /assets/img/citrix-cloud-and-avd-fluff/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Scene Setting
@@ -31,6 +33,8 @@ Or my personal favorite:
 > "Citrix Cloud on AVD"
 
 Or any of those deliciously rubbish myths that get thrown around and give me the shivers. Use this post to throw at those throwing out silly messages - it should help.
+
+![Fluff](/assets/img/citrix-cloud-and-avd-fluff/memefun.jpg)
 
 ## What is Citrix Cloud?
 

@@ -5,13 +5,15 @@ permalink: "/what-in-the-ras/"
 categories: [Parallels, RAS, EUC]
 description: A very late discovery of Parallels RAS
 image:
-  path: "/assets/img/what-in-the-ras/logo@0,5x.png"
+  path: /assets/img/what-in-the-ras/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro to RAS

@@ -5,13 +5,19 @@ permalink: "/the-evolution-of-citrix-profile-management/"
 categories: [Citrix, UPM, Profiles, Windows, CVAD, Cloud, evolution]
 description: Tracking the progress of Citrix Profile Management capability
 image:
-  path: "/assets/img/the-evolution-of-citrix-profile-management/evolution-upm.jpg"
+  path: /assets/img/the-evolution-of-citrix-profile-management/post_default_image.jpg
 sitemap: true
 hide_last_modified: false
 comments: true
+related_posts:
+  - evolution/_posts/2023-03-22-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2023-03-22-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2023-03-22-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 Citrix Profile Management is quietly kicking goals and developing quickly. This post aims to track the changes and releases as they occur, and provide a single point of reference. It is a companion post to my initial [Citrix UPM and FSLogix Conainers](https://jkindon.com/citrix-upm-and-fslogix-containers/) post, which outlined some decision points around profile management tool selection.

@@ -5,13 +5,15 @@ permalink: "/microsoft-azure-zone-architecture-with-citrix-cvads/"
 categories: [Citrix, CVAD, Cloud, Azure]
 description: Designing, Implementing and Operating CVADS using an Azure Zone Architecture
 image:
-  path: "/assets/img/microsoft-azure-zone-architecture-with-citrix-cvads/availability-zones.png"
+  path: /assets/img/microsoft-azure-zone-architecture-with-citrix-cvads/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Intro

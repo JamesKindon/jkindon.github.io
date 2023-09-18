@@ -4,14 +4,16 @@ title: "FSLogix Synchronous Processing"
 permalink: "/fslogix-synchronous-processing/"
 categories: [Citrix, FSLogix, Profiles, Windows, CVAD, GPO]
 description: Got slow logon times with FSLogix? Hello Synchronous GPO processing
-image:
-  path: "/assets/img/fslogix-synchronous-processing/warning.jpg"
+image: 
+  path: /assets/img/fslogix-synchronous-processing/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 **Preface:** This article is a living breathing article as we delve more into the why, how and expected behaviours of GPO processing, not just with an FSLogix lens. I will be updating, amending and altering content as more information arises. 

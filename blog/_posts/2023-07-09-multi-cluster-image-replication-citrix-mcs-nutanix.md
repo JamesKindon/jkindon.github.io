@@ -5,13 +5,15 @@ permalink: "/multi-cluster-image-replication-citrix-mcs-nutanix/"
 categories: [Citrix, MCS, Provisioning, PowerShell, Nutanix, HCI, Prism]
 description: Automating The Replication of Citrix MCS Images on Nutanix
 image:
-  path: "/assets/img/multi-cluster-image-replication-citrix-mcs-nutanix/logo-automation.png"
+  path: /assets/img/multi-cluster-image-replication-citrix-mcs-nutanix/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Nutanix and MCS Provisioning

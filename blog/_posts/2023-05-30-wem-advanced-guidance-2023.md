@@ -5,17 +5,19 @@ permalink: "/wem-advanced-guidance-2023/"
 categories: [Citrix, WEM, Windows, CVAD]
 description: WEM Advanced Guidance 2023 - 5 years on
 image:
-  path: "/assets/img/wem-advanced-guidance-2023/wem-2023.png"
+  path: /assets/img/wem-advanced-guidance-2023/post_default_image.jpg
 sitemap: true
 hide_last_modified: true
 comments: true
 related_posts:
-  - _posts/wem-advanced-guidance-part-1.md
-  - _posts/wem-advanced-guidance-part-2-user-interaction.md
-  - _posts/wem-advanced-guidance-part-3-the-leftovers-good-bad-ugly.md
+  - blog/_posts/2017-11-30-wem-advanced-guidance-part-1.md
+  - blog/_posts/2018-01-04-wem-advanced-guidance-part-2-user-interaction.md
+  - blog/_posts/2018-02-08-wem-advanced-guidance-part-3-the-leftovers-good-bad-ugly.md
 ---
 
--  this unordered seed list will be replaced by the toc
+<!--excerpt-->
+
+-  Table of Contents
 {:toc}
 
 ## Setting the Scene

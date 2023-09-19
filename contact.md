@@ -5,21 +5,37 @@ description: Please feel free to contact me via the form below
 ---
 
 <form method="post" action="https://forms.un-static.com/forms/93cd5c2516df52dfcbcb3d6e1ac7444a1ba4db8e">
-  <div class="form-group">
-    <label for="Name">Name</label>
-    <input type="text" class="form-control" id="Name" placeholder="Please provide your name" required>
+  <div class="form-group row">
+    <label for="name" class="col-4 col-form-label">Name</label>
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-user"></i>
+        </div>
+        <input id="name" name="name" placeholder="Please enter your name" type="text" required="required" class="form-control">
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+  <div class="form-group row">
+    <label for="email" class="col-4 col-form-label">E-mail address</label>
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-envelope"></i>
+        </div>
+        <input id="email" name="email" placeholder="Your e-mail address" type="text" required="required" class="form-control">
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="Message">Message</label>
-    <textarea class="form-control" id="Message" rows="3" placeholder="What can I help you with?" required></textarea>
+  <div class="form-group row">
+    <label for="message" class="col-4 col-form-label">Message</label>
+    <div class="col-8">
+      <textarea id="message" name="message" cols="40" rows="10" required="required" class="form-control"></textarea>
+    </div>
   </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="SpamBox" required>
-    <label class="form-check-label" for="SpamBox">I am not a jerk trying to spam you</label>
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">Send</button>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>

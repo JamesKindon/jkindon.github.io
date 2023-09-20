@@ -10,7 +10,7 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2023-03-22-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2023-09-22-the-evolution-of-citrix-profile-management.md
   - evolution/_posts/2023-03-22-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
   - evolution/_posts/2023-03-22-the-evolution-of-citrix-wem-service.md
 ---
@@ -26,7 +26,7 @@ I will do my best to maintain this list as and when features come out, as well a
 
 ## Version 2308
 
-### [Web console (Preview](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/web-console)
+### [Web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/web-console)
 
 A new web-based Workspace Environment Management (WEM) console is now available. Citrix have completed the process of migrating the critical features from the legacy console to the web console. The web console generally responds faster than the legacy console. The following features are available only in the web console.
 

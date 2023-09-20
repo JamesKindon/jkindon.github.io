@@ -10,9 +10,9 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2023-09-22-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2023-03-22-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2023-03-22-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2023-09-20-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2023-09-20-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2023-09-20-the-evolution-of-citrix-wem-service.md
 ---
 
 <!--excerpt-->

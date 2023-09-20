@@ -10,7 +10,7 @@ slug: evolution
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
-  This page is used to track specific blog posts associated with tracking feature releases
+  This page is used to track specific blog posts associated with tracking feature releases. Latest update: 20.09.2023
 
 # (Optional) You can disable grouping posts by date.
 no_groups: false

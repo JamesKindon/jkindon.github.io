@@ -24,6 +24,78 @@ Citrix WEM Service environment is consistently updating and bringing enhanced ca
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## September 2023
+
+### [Support for the Windows 11 and Windows Server 2022 in Citrix Optimizer](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/system-optimization/citrix-optimizer)
+
+Citrix added support for the Windows 11 version 21H2 (build 2009) and Windows Server 2022 21H2 (build 2009) in Citrix Optimizer. You can now use the WEM service to perform template-based system optimizations for Windows 11 2009 and Windows Server 2022 2009 machines. 
+
+In addition, Citrix have updated all existing templates to reflect changes introduced in the latest standalone Citrix optimizer.
+
+Minimum agent version required: `2309.1.0.1`
+
+### [Enhancements to the manual backup limit](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets#back-up-a-configuration-set)
+
+Citrix have enhanced the maximum manual export limit from 10 to 25 per account.
+
+### [Enhancements to the optimization and usage insight application limit](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/insights)
+
+Citrix have enhanced the maximum manual export limit from 10 to 25 per account
+
+### [Registry Entries](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#registry-entries)
+
+This is another enhancement request after years of painful single-object-management or registry entries. Now it's much nicer.
+
+Using the web console, you can now add registry entries as assignable actions, which let you create, set, or delete registry values in the user environment. The feature has been enhanced to provide a better user experience.
+
+Additionally, you are now able to add tags to registry entries and assign multiple registry entries at the same time.
+
+### [AAD/NDJ object selector tool](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub#assigning-app-access-rules-to-aad-usersgroups-and-ndj-machines)
+
+You can now assign app access rules to AAD users/groups and NDJ machines in addition to AD users/groups and domain-joined machines that are currently supported. A tool, **AAD/NDJ object selector** is now available on the web console, where you can get the object data and paste them into the Rule Generator.
+
+Minimum agent version required: `2309.1.0.1`
+
+### [File System Operations in web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#file-system-operations)
+
+Administrators can create and manage file system operations and assign them to the users now using the web console.
+
+### [User-level Profile Management settings](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#user-level-profile-management-settings)
+
+This feature lets you configure Profile Management settings at the user level for customization and precise control. Use this feature to apply specific Profile Management settings to individual users or user groups, tailoring the profile experience as needed.
+
+See also [The Evolution Of Citrix Profile Management](https://jkindon.com/theevolutionseries/)
+
+### [Support reporting Privilege elevation and process hierarchy control logs through agent reports](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings#monitoring-preferences)
+
+Administrators can now review the privilege elevation logs in the web console by enabling security log collection per configuration set and get the corresponding reports. The administrator can view the logs by sub-type within the details of each report.
+
+Minimum agent version required: `2309.1.0.1`
+
+### [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#profile-management)
+
+Workspace Environment Management now supports all supported versions of Profile Management through 2308. The following features are now available in the web console:
+
+-  [Enable VHD auto-expansion for profile container](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#profile-container). If enabled, when the profile container reaches 90% utilization, it automatically expands by 10 GB, with a maximum capacity of 80 GB. Depending on your needs, you can adjust the default auto-expansion settings using the following options: Auto-expansion trigger threshold (%), Auto-expansion increment (GB), Auto-expansion limit (GB).
+-  [Default capacity of VHD containers](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#advanced-settings). Specifies the default storage capacity (in GB) of each VHD container.
+-  [Enable exclusive access to profile container](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#advanced-settings). If enabled, the profile container allows only one access at a time.
+-  [Enable exclusive access to OneDrive container](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#advanced-settings). If enabled, the OneDrive container allows only one access at a time.
+-  [Enable UWP app roaming](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#advanced-settings). If enabled, UWP (Universal Windows Platform) apps roam with users. As a result, users can access the same UWP apps from different computers.
+
+All features are available under each configuration set in **Profiles -> Profile Management Settings -> Profile Container**.
+
+Minimum agent version required: `2307.1.0.1`
+
+See also [The Evolution Of Citrix Profile Management](https://jkindon.com/theevolutionseries/)
+
+### [Configure task settings](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks#configure-task-settings-option)
+
+A new option, **Configure task settings** is introduced in the **Scripted Tasks** page that directs you to the specifically chosen filtered task wizard in the **Scripted Task Settings** page.
+
+### [New version of WEM Tool Hub](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub)
+
+A new version of WEM Tool Hub is now available: 2309.1.0.1. This version includes performance enhancements, support for AAD/NDJ object selector support, and bug fixes.
+
 ## July 2023
 
 ### [User-level Profile Management settings (preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management.html#user-level-profile-management-settings)

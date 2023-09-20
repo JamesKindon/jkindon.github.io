@@ -24,6 +24,50 @@ Citrix WEM is consistently updating and bringing enhanced capability to the tabl
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## Version 2308
+
+### [Web console (Preview](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/web-console)
+
+A new web-based Workspace Environment Management (WEM) console is now available. Citrix have completed the process of migrating the critical features from the legacy console to the web console. The web console generally responds faster than the legacy console. The following features are available only in the web console.
+
+-  Scripted tasks
+-  Triggers
+-  Configure Windows GPOs by using Group Policy Administrative Templates
+-  Insights
+-  Save a backup of a configuration set automatically and more.
+
+### [Enhanced WEM agent event logging](https://docs.citrix.com/en-us/workspace-environment-management/current-release/reference/agent-event-logs)
+
+Citrix have made enhancements to WEM agent event logging, aiming at improving troubleshooting capabilities. The enhancements include:
+
+-  Comprehensive event logs: We have provided comprehensive event logs, giving you a complete picture of agent activities.
+-  Unique event IDs: Each event log now has a distinct ID, making it easier for you to filter and identify specific events.
+
+### [Microsoft Edge browser support for WEM Transformer](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#microsoft-edge-browser-support-for-wem-transformer)
+
+The WEM Transformer now supports the latest version of the Microsoft Edge browser.
+
+### [Enhancements to CPU spike protection](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/system-optimization/cpu-management#cpu-spike-protection-option)
+
+This release introduces enhancements to the CPU spike protection feature, giving you more granular control. The enhancements include the following changes:
+
+-  Citrix have reorganized CPU spike protection options with intuitive logic for easier configuration, which applies only to the WEM Web console.
+-  When customizing CPU spike protection, you can now configure the CPU usage limit using non-integer values. This configuration applies to both legacy and the web console.
+-  A new option, **Set limit relative to single CPU core**, is now available and applicable to the web console, letting you set a limit on CPU usage based on a single CPU core as a reference.
+
+### [WiX support for WEM AdminConsole and Infrastructure installers](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#wix-support-for-wem-adminconsole-and-infrastructure-installers)
+
+Citrix is offering WiX-based installers for the infrastructure services and administration console. The new installers include changes to the .Net framework, installation path, service name, event log name, parameters, and more.
+
+Watch out. The install and service names have changed. This means any form of startup scripts for cache-management etc. will need to be updated
+{:.note title="Attention"}
+
+### [Dynamic token support for Group Policy settings](https://docs.citrix.com/en-us/workspace-environment-management/current-release/reference/dynamic-tokens#dynamic-token-support-for-group-policy-settings)
+
+You can now use dynamic tokens in **Group Policy** settings. This feature allows for more adaptable policy configuration in different environments, reduces manual configuration, and simplifies policy management.
+
+See also [WEM Variables, Dynamic Tokens, Hashtags and Strings](https://jkindon.com/wem-variables-dynamic-tokens-hashtags-and-strings/)
+
 ## Version 2305
 
 ### [Enhancement to gMSA support](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/infrastructure-services.html#group-managed-service-account)

@@ -31,6 +31,67 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## September 2023
+
+### [Support for creating empty machine catalogs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create#machines)
+
+In Full Configuration, you can now create a machine catalog without immediate VM creation. With this feature, you can postpone VM creation until back-end hosts are fully prepared or VM provisioning is completed, gaining more flexibility in creating catalogs. Currently, this feature applies only to Machine Creation Services-provisioned catalogs.
+
+### [Removed the Azure Germany option](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#new-and-enhanced-features)
+
+In line with the closure of Microsoft Cloud Deutschland on October 29, 2021, Citrix removed the Azure Germany option from the host connection creation page.
+
+## August 2023
+
+### [VDA upgrade support for Azure Quick Deploy-created machine catalogs](https://docs.citrix.com/en-us/citrix-daas/upgrade-migrate#upgrade-vdas-using-the-full-configuration-interface)
+
+With Full Configuration, you can now enable **VDA Upgrade** for machine catalogs created through Azure Quick Deploy and then perform **Upgrade VDA** on them for immediate or scheduled upgrades.
+
+### [Update properties of individual VMs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure#update-properties-of-individual-vms)
+
+An Azure only feature right now, you can now update properties of individual VMs in a persistent MCS machine catalog using a PowerShell command. This implementation helps you to manage individual VMs efficiently without updating the entire machine catalog.
+
+### [Restrict upload and download of managed disks](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#august-2023)
+
+As per Azure policy, you cannot upload or download more than five disks or snapshots at the same time with the same disk access object. With this feature, the limit of five concurrent upload or download is not enforced if you:
+
+-  Configure `ProxyHypervisorTrafficThroughConnector` in `CustomProperties`, and
+-  Do not configure Azure policy to create Disk Accesses automatically for each new disk to use private endpoints.
+
+### [Support for assigning a specific drive letter to MCS I/O write-back cache disk](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create#assign-a-specific-drive-letter-to-mcs-io-write-back-cache-disk)
+
+Previously, the Windows operating system automatically assigned a drive letter to MCS I/O write-back cache disk. You can now assign a specific drive letter to MCS I/O write-back cache disk. This implementation helps to avoid conflicts between the drive letter of any applications that you use and the drive letter of MCS I/O write-back cache disk. This feature is applicable to only Windows operating system.
+
+Not applicable when Azure temporary disk is used as write-back cache disk
+{:.note title="Attention"}
+
+Applicable drive letter for write-back cache disk: `E` to `Z`
+{:.note title="Attention"}
+
+### [Retry creating catalog after failure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#retry-catalog-creation)
+
+When catalog creation fails, you can now retry the creation job. On failure, you can review troubleshooting information to help resolve the issues. The information describes the issues found and provides recommendations for resolving them. Failed catalogs are marked with an error icon. To see the details, go to the **Troubleshoot** tab of each catalog.
+
+### [Enable cleanup of stale Azure AD joined devices](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager#enable-azure-ad-joined-device-management)
+
+This one scrapes in on the Azure front, but only just. Citrix introduced an option to simplify the cleanup of stale Azure AD joined devices in Citrix DaaS. Previously, you had to run a custom PowerShell script to perform the task. Enabling this option grants host connections permission to automatically clean stale Azure AD joined devices.
+
+### [Monitor image update status for catalogs using Full Configuration](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#august-2023)
+
+You can now monitor image update statuses for non-persistent machine catalogs using a new column, **Image Update**. This column indicates whether images of a catalog are **Fully updated**, **Partially updated**, or **Pending update**.
+
+To show the column in the Machine Catalogs table, follow these steps:
+
+-  In the **Machine Catalogs** node, select the **Columns to Display** icon in the action bar.
+-  Select **Machine Catalog** -> **Image Status**.
+-  Click **Save**.
+
+Displaying the Image update column might degrade the console performance. We recommend displaying it only when necessary.
+
+### [Image refresh option for Catalog Tasks](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#new-and-enhanced-features-2)
+
+When selecting master images for machine catalogs, you can now quickly get the most up-to-date master image list using the Refresh option at the top right. Additionally, a **Refresh** option is available for machine profiles and host groups in Azure catalogs.
+
 ## July 2023
 
 ### [Support for getting a list of orphaned resources on Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#retrieve-a-list-of-orphaned-resources)

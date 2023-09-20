@@ -26,6 +26,50 @@ This list will start at CVAD 1912 LTSR, anything prior to that, refer to the app
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## Version 2308
+
+### [Extended app access control (AppMasking)](https://docs.citrix.com/en-us/profile-management/current-release/configure/app-access-control)
+
+The *app access control* feature (AppMasking equivalent) now applies to users and machines outside the traditional domain environment. You can implement app access control for non-domain-joined machines and control app access based on Active Directory and Azure Active Directory user accounts.
+
+The built-in PowerShell rule generator has also been enhanced. You can now set up app access rules not only for AD users and machines but also for Azure Active Directory users and non-domain-joined machines.
+
+### [Profile migration tool for Citrix container-based profile solution](https://docs.citrix.com/en-us/profile-management/current-release/upgrade-and-migrate/migrate)
+
+Looking to ditch FSLogix Profiles for something that is actually focused on?
+
+Citrix Profile Management now offers a profile migration tool to facilitate the migration process to the Citrix container-based profile solution. With this tool, you can migrate user profiles from the following profile solutions to the Citrix container-based profile solution:
+
+-  Windows local profiles
+-  FSLogix Profile Container
+-  Citrix file-based profile solution
+
+### [Auto-expansion policies for profile containers](https://docs.citrix.com/en-us/profile-management/current-release/configure/citrix-profile-management-profile-container#optional-enable-and-configure-vhd-auto-expansion)
+
+Citrix Profile Management now offers a set of storage auto-expansion policies for profile containers:
+
+-  Enable VHD auto-expansion for profile container
+-  Profile container auto-expansion threshold
+-  Profile container auto-expansion increment
+-  Profile container auto-expansion limit
+
+With these policies, profile containers can automatically expand as user profiles grow, eliminating the need for manual expansion and delivering improved user experience.
+
+This is the equivalent of the FSLogix `SizeInMBs` expansion capability.
+
+### [Support for enabling exclusive access to VHD containers](https://docs.citrix.com/en-us/profile-management/current-release/configure/vhd-disk-compaction#enable-exclusive-access-to-vhd-containers)
+
+This one is important (and a feature request answered). In the FSLogix world, the default container access is mode 0 (Direct-Access). In CPM Profile Containers, the default and only model was the equivalent of a Mode 3 (Try for Read Write, Fall back to Read-Only) logic. This has now been fixed to allow you to do an appropriate Direct-Access approach. Citrix calls this `Exclusive Access`
+{:.note title="Attention"}
+
+By default, VHD containers allow concurrent access. With a new policy, **Enable exclusive access to VHD containers**, you can disable concurrent access for profile containers and OneDrive containers, letting them allow only direct access to the Container.
+
+### [UWP app roaming (preview)](https://docs.citrix.com/en-us/profile-management/current-release/configure/uwp-app-roaming)
+
+With the new policy, **UWP app roaming**, UWP (Universal Windows Platform) apps can now roam with users. As a result, users can access the same UWP apps from different devices.
+
+For those wondering, UWP = Modern Apps. Those things.
+
 ## Version 2305
 
 ### [Support for user-level policy settings](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-configure-user-level-settings.html)

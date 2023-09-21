@@ -1,19 +1,23 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 
-gem 'tzinfo', '~> 2.0'
-gem 'tzinfo-data', '~> 1.2020', '>= 1.2020.1'
+# Hello! This is where you manage which Jekyll version is used to run.
+# When you want to use a different version, change it below, save the
+# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+#
+#     bundle exec jekyll serve
+#
+# This will help ensure the proper Jekyll version is running.
+# Happy Jekylling!
+gem "jekyll", "~> 3.8"
 
-gem 'wdm', '~> 0.1.1', :install_if => Gem.win_platform?
+# Fixes `jekyll serve` in ruby 3
+gem "webrick"
 
-gem "webrick", "~> 1.7"
+group :jekyll_plugins do
+  gem "github-pages"
+  gem "jekyll-include-cache"
+  gem "jekyll-compose"
+end
 
-gem 'jekyll-redirect-from'
-
-gem 'jemoji'
-
-gem 'jekyll-admin', group: :jekyll_plugins
-
-gemspec
-
+gem 'wdm' if Gem.win_platform?
+gem "tzinfo-data" if Gem.win_platform?

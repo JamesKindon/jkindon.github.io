@@ -4,7 +4,12 @@ title: Script Index
 subtitle: Scripts that may be of interest
 ---
 
-**Category: Nutanix**
+-  this unordered seed list will be replaced by the toc
+{:toc}
+
+Here is a script index. Hopefully these are of use to some folks. They have been of use to me.
+
+## Nutanix Scripts
 
 -  **[UpdatePCVMCategories.ps1](https://github.com/nutanixdev/euc-samples/tree/main/citrix/categories/manage_pc_vm_categories)**. Use PowerShell to assign VM Categories in Prism Central. [Info](https://www.nutanix.dev/2023/07/26/)
 -  **[ReplicateCitrixBaseImageVM.ps1](https://github.com/nutanixdev/euc-samples/tree/main/citrix/mcs/replicate_citrix_base_image_pd)**. Use PowerShell to replicate Gold Images across Nutanix Clusters via Prism Element Protection Domains. [Info](https://www.nutanix.dev/2023/07/03/replicating-images-for-citrix-mcs-with-prism-element-protection-domains-and-powershell/)
@@ -13,7 +18,7 @@ subtitle: Scripts that may be of interest
 -  **[UpdateCVADHostedMachineId.ps1](https://github.com/nutanixdev/euc-samples/tree/main/citrix/multi_cluster_migration/citrix_cvad_reset_hostedmachineid)**. Migrate Citrix workloads across Nutanix Clusters and update hosting details for CVAD.
 -  **[UpdateDaaSHostedMachineId.ps1](https://github.com/nutanixdev/euc-samples/tree/main/citrix/multi_cluster_migration/citrix_daas_reset_hostedmachineid)**. Migrate Citrix workloads across Nutanix Clusters and update hosting details for DaaS.
 
-**Category: Azure**
+## Azure Scripts
 
 -  **[ChangeVMAz.ps1](https://github.com/JamesKindon/Azure/blob/master/ChangeVMAz.ps1)**. Switch a VMs Availability Zone
 -  **[MigrateVMAvailabilitySet.ps1](https://github.com/JamesKindon/Azure/blob/master/MigrateVMAvailabilitySet.ps1)**. Move a VM to a different Availability Set
@@ -22,7 +27,7 @@ subtitle: Scripts that may be of interest
 -  **[ShrinkAzureOSDisk.ps1](https://github.com/JamesKindon/Azure/blob/master/ShrinkAzureOSDisk.ps1)**. Shrink an OS disk for Ephemeral Use. [Info](https://jkindon.com/shrink-azure-os-disk-for-ephemeral/)
 -  **[JoinStorageAccountToDomain.ps1](https://github.com/JamesKindon/Azure/tree/master/JoinStorageAccountToDomain)**. Join a Storage Account to an Active Directory Domain. [Info](https://jkindon.com/automating-active-directory-domain-join-for-azure-storage-accounts-with-container-workloads/)
 
-**Category: Citrix**
+## Citrix Scripts
 
 -  **[CheckBrokerService.ps1](https://github.com/JamesKindon/Citrix/blob/master/CheckBrokerService.ps1)**. Checks the Citrix Broker Desktop Service is started after the predefined sleep time. Uses as a Startup Script.
 -  **[CreateDesktopsForVDAs.ps1](https://github.com/JamesKindon/Citrix/blob/master/CreateDesktopsForVDAs.ps1)**. Creates a Tag per VDA and Creates a dedicated desktop to launch only against that Tag.
@@ -42,16 +47,14 @@ subtitle: Scripts that may be of interest
 -  **[UpdateMCSCatalogViaAPI.ps1](https://github.com/JamesKindon/Citrix/blob/master/Azure/UpdateMCSCatalogViaAPI.ps1)**. Updates a Citrix Cloud MCS catalog with an Azure image via API.
 -  **[WEMSelectiveActionTrackingReset.ps1](https://github.com/JamesKindon/CitrixWEMActionTrackingReset/blob/master/WEMSelectiveActionTrackingReset.ps1)**. A simple Powershell script to manage the registry caching of tracked WEM actions. [Info](https://jkindon.com/selective-deletion-of-the-wem-actions-tracking-cache/)
 
-**Category: Misc EUC**
+## Misc EUC Scripts
 
 -  **[SetShellFolderDefaults.ps1](https://github.com/JamesKindon/Citrix/blob/master/SetShellFolderDefaults.ps1)**.  Script to reset the shell folder keys associated with folder redirections. Idea is to avoid having to use GPO to force data back to default locations (avoid CSE processing).
-
-**Category: FSLogix**
 
 -  **[DistributeContainerShares.ps1](https://github.com/JamesKindon/Citrix/blob/master/FSLogix/DistributeContainerShares.ps1)**. Builds on the work of Ryan Revord to order FSLogix Share locations by available space.
 -  **[GetContainerSizes.ps1](https://github.com/JamesKindon/Citrix/blob/master/FSLogix/GetContainerSizes.ps1)**. List and export container sizes from a share.
 
-**Category: BIS-F Custom Scripts**
+## BIS-F Sealing Scripts
 
 -  **[BISF_ConnectWiseControl.ps1](https://github.com/JamesKindon/Citrix/tree/master/Sealing/Connectwise)**. Custom script to handle Connect Wise prep tasks. To be executed via BIS-F.
 -  **[BISF_Kaseya.ps1](https://github.com/JamesKindon/Citrix/tree/master/Sealing/Kaseya)**. Custom script to handle Kaseya prep tasks. To be executed via BIS-F.

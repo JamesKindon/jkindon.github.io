@@ -75,7 +75,7 @@ docker run --name prod_blog --mount src=C:\Temp\Site\hydejack-pro-9.1.6\starter-
 
 This ultimately means that:
 
--  We mounting the `c:\temp\site\hydejack-pro-9.1.6\start-kit-gh-pages\` windows directory to the `/website` folder within the Container.
+-  We are mounting the `c:\temp\site\hydejack-pro-9.1.6\start-kit-gh-pages\` windows directory to the `/website` folder within the Container.
 -  We are port forwarding from port `4000` from the local host running Docker to the container on port `4000`.
 -  We are using the Container named `ruby` and naming it `prod_blog`.
 -  We are making the session interactive and executing the `sh` command so we can do stuff.

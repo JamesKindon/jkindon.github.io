@@ -151,7 +151,7 @@ There were some challenges with initial builds in github, this was likely due to
 
 There are few really handy references who have done some cool stuff with Hydejack sites (both running Pro), a couple below worth checking out:
 
--  [Dan Tsekhanksiy](https://tseknet.com/blog/startblogging)
+-  [Dan Tsekhanskiy](https://tseknet.com/blog/startblogging)
 -  [DaeIn Lee](https://lazyren.github.io/devlog/how-i-customized-hydejack-theme.html)
 
 In particular, a shout out to Dan who fielded a few noob questions from a random on the other side of the world. Kudos.

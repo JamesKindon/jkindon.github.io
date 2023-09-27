@@ -22,7 +22,7 @@ related_posts:
 ## Intro
 
 This is an [old post](https://blogs.mycugc.org/2018/01/04/wem-advanced-guidance-part-2-user-interaction/) which I initially wrote with Hal Lange for CUGC, however the indexing on their site isn't great, so I have ported the content here, and scrapped out any legacy guidance. For up to date recaps 5 years on, see [WEM Advanced Guidance 2023](https://jkindon.com/wem-advanced-guidance-2023)
-{:.note title="Warning"}
+{:.warning}
 
 The [first part of](https://jkindon.com/wem-advanced-guidance-part-1) this series looked at the some architectural and thought processes around Workspace Environment Deployment into your environments. We focused primarily on the infrastructure and configuration options from an administrative perspective. In this second part, we are going to look at how WEM interacts with the users it is working to look after, and what your options are around how the users and WEM engage with each other, as well as some guidelines around how to optimize or make this engagement smooth and relatively seamless.
 

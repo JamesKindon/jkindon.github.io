@@ -137,7 +137,7 @@ Within WEM, Under **filters -> conditions** I have created **5** new Conditions
 [![Conditions2]({{site.baseurl}}/assets/img/multi-site-and-onedrive-folder-redirection-with-wem/Conditions2.png)]({{site.baseurl}}/assets/img/multi-site-and-onedrive-folder-redirection-with-wem/Conditions2.png)
 
 Don't forget to add the "`*`" at the end of an OU match else it will fail
-{:.note title="Warning"}
+{:.warning}
 
 > OU=Sydney,OU=KindonEnterprises,DC=Kindo,DC=com
 
@@ -198,7 +198,7 @@ Note that he is now just an everyday **Sydney** user WEM now processes the `fold
 For a long time now I have been perplexed about some of the other behaviours associated with Folder Redirection and WEM, to the point that I simply don't include it in most of my deployments, and leave things GPO driven. My biggest challenge was the refusal of WEM to ever self-heal folder redirection if for some reason the redirected folders were altered, or there was a problem of some sort that required manual interaction with the redirected folders.
 
 Update: this is not just limited to WEM it would seem, but is a native issue with GPO driven Folder Redirection also.
-{:.note title="Warning"}
+{:.warning}
 
 There were two actions that would resolve the issue
 

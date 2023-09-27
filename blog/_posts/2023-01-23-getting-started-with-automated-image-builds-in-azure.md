@@ -23,7 +23,7 @@ Anyone in our industry has at some point heard/been subject to the discussions o
 Automation can be a daunting concept, particularly for those that are not naturally "*developer minded*" like myself. I love scripting and automation, but I find it a challenge, and am amazed at some of the brains that can fly around different toolsets and develop capabilities on the fly. But automation doesn't need to be a frightening concept and can take many forms, from basic to advanced. If we think about the *why* of automation when it comes to image builds, the tools become a secondary consideration and factor. My why is simply this:
 
 ***Images support users. Users are important. Consistency is king, installing things is boring, and I am not always going to be the one that builds these images***
-{:.note title="Why"}
+{:.why}
 
 To that end, I will suggest that anyone who executes anything in their images in a repeatable fashion, is already somewhere along the automation journey. Be it batch scripts, package deployents via PDQ Deply or MDT, copy and paste command line installs into PowerShell, or a one-liner chocolatey package, all of these are supporting `consistency`, `repeatability`, a complete `disinterest in clicking buttons` and `laying an easily understood execution for the next person who steps in`.
 
@@ -42,7 +42,7 @@ A note to [Aaron Parker](https://twitter.com/stealthpuppy), the man is awesome a
 Before we dive in, here is a key takeaway that I think is important:
 
 ***Each environment is different. Not every application is suited to always being the latest, and judgement should be applied accordingly. Just because you can pull down something from it's source, doesn't always mean you should.***
-{:.note title="Attention"}
+{:.attention}
 
 One of the single biggest challenges with an `always-latest` methodology is that it is really unknown on what breaks what, and what works with who. One problematic application can result in a completely dead image, and with the automated `latest approach frameworks` noted below, outside of hosting the packages yourselves, there is no way to handle a specific version of an app. So be warned, and consider carefully.
 

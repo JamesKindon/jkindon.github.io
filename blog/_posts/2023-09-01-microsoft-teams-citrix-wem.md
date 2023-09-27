@@ -92,7 +92,7 @@ Here is Teams launched for the first time in the user profile, pre-configured wi
 [![teams_client]({{site.baseurl}}/assets/img/microsoft-teams-citrix-wem/teams_app_settings_applied.png)]({{site.baseurl}}/assets/img/microsoft-teams-citrix-wem/teams_app_settings_applied.png)
 
 ***You will need to be running agent version: `2306.1.0.1` as at the time of writing, and this currently a WEM Service feature.***
-{:.note title="Attention"}
+{:.attention}
 
 You can read more on some Teams considerations from Mr James Rankin below:
 

@@ -137,7 +137,7 @@ Phase 5 - External Access
 -  2 x Citrix Application Delivery Controllers (NetScaler)
 
 Note that we have already address the requirement of both internal and external access requirements in the internal access decision phase, and as such may have local Storefront available to utilise already.
-{:.note title="Note"}
+{:.special_note}
 
 If MFA is not required (Specifically RADIUS based MFA), then consumption of the [Citrix Gateway Service](https://docs.citrix.com/en-us/netscaler-gateway/service.html) in place of a traditional NetScaler ADC may be enough. It is important to be aware of the limitations of the Service and implications of those limitations against your deployment. As at time of writing, there is no support for RADIUS authentication with the Citrix Gateway Service.
 

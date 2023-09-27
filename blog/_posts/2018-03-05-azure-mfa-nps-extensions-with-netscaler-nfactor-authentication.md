@@ -45,7 +45,7 @@ I suggest starting with his article as the only point of change here, is once we
 This configuration is based on a NetScaler Enterprise Licence, if you do not have Enterprise you will need to configure traditional Authentication Policies.
 
 **Update 24.04.22** - Additional Logic and Code by [Wee Sern Soo](https://www.linkedin.com/in/citrixconsultant). The code block allows for group based decisions to selectively control MFA requirements at the ADC level. The block is at the end of this article
-{:.note title="Note"}
+{:.special_note}
 
 ## Setting up Load Balancing for the NPS Servers
 
@@ -293,7 +293,7 @@ This behaviour will follow across Web, Receiver, Mobile Receiver and the SSL VPN
 As with everything NetScaler, there are many ways to achieve the same result. This is only a basic use of the nFactor capability on NetScaler and there probably more advanced or different ways of configuring the above, however it seems to fit well together with NPS and Azure MFA across multiple device types.
 
 **Update 24.04.22** - Additional Logic and Code by [Wee Sern Soo](https://www.linkedin.com/in/citrixconsultant)
-{:.note title="Note"}
+{:.special_note}
 
 The below nFactor flow command blocks re-create the above, modified to contain a decision block between the secure LDAP and RADIUS factors to check for a group membership before deciding to perform RADIUS authentication or allow the user to login with just secure LDAP.
 
@@ -304,7 +304,7 @@ The below assumes you have setup the NPS servers and have a Citrix Gateway virtu
 Note to replace the angular bracketed fields <*replaceme*> with your environment's specifics.
 
 The below code is for example and simplicity only. It is suggested in all instances that both LDAPS and RADIUS is load balanced by the ADC for resiliency, and as such you would be pointing back to the ADC for the appropriate LB values
-{:.note title="Warning"}
+{:.warning}
 
 First create secure LDAP authentication action and policy, noting that this action will also perform group extraction for the authenticated user hence we will specify the `groupAttrName` parameter in the LDAP action:
 

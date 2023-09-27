@@ -22,7 +22,7 @@ related_posts:
 ## Intro
 
 This is an [old post](https://blogs.mycugc.org/2018/02/08/wem-advanced-guidance-part-3-the-leftovers-good-bad-ugly/) which I initially wrote with Hal Lange for CUGC, however the indexing on their site isn't great, so I have ported the content here, and scrapped out any legacy guidance. For up to date recaps 5 years on, see [WEM Advanced Guidance 2023](https://jkindon.com/wem-advanced-guidance-2023)
-{:.note title="Warning"}
+{:.warning}
 
 In our last two posts, we discussed topics ranging from architectural guidance and considerations, through to how users interact with WEM in their environments and how to try and keep that experience smooth.
 
@@ -51,7 +51,7 @@ I am basing this as a "gotcha" purely based on user expectations and some feedba
 Let's be clear on WEM's primary objective: Its sole reason for existence is to give users access to their resources quickly, and to ensure that the user experience is optimised and protected at all times. There are some other features and bonuses that we get from WEM, but this is the reason for its existence.
 
 **Historical Note**: It would be fair to say the solution has progressed far past its positioning below 5 years on.
-{:.note title="Warning"}
+{:.warning}
 
 Further to this, WEM is provided at no additional cost to valid Citrix Entitlements. ~~~Importantly, WEM does not compete with Ivanti, Liquidware, etc. It is a small tool with giant capability, but it is not a full UEM behemoth such as those mentioned~~~. It provides configuration for HKCU configuration and machine-based CPU/Memory/IO protection, as well as some new security functionality. It optionally drives Citrix UPM, ~~~VMware Persona~~~ and Microsoft USV Settings. It complements other configuration tools (GPO etc) and that's it.
 

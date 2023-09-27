@@ -42,7 +42,7 @@ A note to [Aaron Parker](https://twitter.com/stealthpuppy), the man is awesome a
 Before we dive in, here is a key takeaway that I think is important:
 
 ***Each environment is different. Not every application is suited to always being the latest, and judgement should be applied accordingly. Just because you can pull down something from it's source, doesn't always mean you should.***
-{:.note title="Attention"}
+{:.attention}
 
 One of the single biggest challenges with an `always-latest` methodology is that it is really unknown on what breaks what, and what works with who. One problematic application can result in a completely dead image, and with the automated `latest approach frameworks` noted below, outside of hosting the packages yourselves, there is no way to handle a specific version of an app. So be warned, and consider carefully.
 

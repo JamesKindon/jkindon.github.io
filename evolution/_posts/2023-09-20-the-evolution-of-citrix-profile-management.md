@@ -60,7 +60,7 @@ This is the equivalent of the FSLogix `SizeInMBs` expansion capability.
 ### [Support for enabling exclusive access to VHD containers](https://docs.citrix.com/en-us/profile-management/current-release/configure/vhd-disk-compaction#enable-exclusive-access-to-vhd-containers)
 
 This one is important (and a feature request answered). In the FSLogix world, the default container access is mode 0 (Direct-Access). In CPM Profile Containers, the default and only model was the equivalent of a Mode 3 (Try for Read Write, Fall back to Read-Only) logic. This has now been fixed to allow you to do an appropriate Direct-Access approach. Citrix calls this `Exclusive Access`
-{:.attention}
+{:.note title="Attention"}
 
 By default, VHD containers allow concurrent access. With a new policy, **Enable exclusive access to VHD containers**, you can disable concurrent access for profile containers and OneDrive containers, letting them allow only direct access to the Container.
 

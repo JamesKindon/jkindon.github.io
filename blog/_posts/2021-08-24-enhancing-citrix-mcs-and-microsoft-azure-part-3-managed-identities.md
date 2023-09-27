@@ -31,7 +31,7 @@ I worked with a customer recently (hello!) who had a need to assign a User-Assig
 -  Ignores any machines specified in the ExcludedVMList array
 
 Please note that this post contains configuration associated with an Azure Automation Run As Account. This has been replaced with modern methods such as a System Assigned Managed Identity. Please visit [this post entitled: Migrate Azure Runbook RunAs Accounts to a System Assigned Managed Identity](https://jkindon.com/migrate-azure-runbook-runas-to-system-assigned-managed-identity) for updated deployment guidance when it comes to configuring the credential
-{:.warning}
+{:.note title="Warning"}
 
 ## Executing The Script
 

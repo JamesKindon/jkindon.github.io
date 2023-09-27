@@ -110,7 +110,7 @@ I tend to have a couple of advanced options that I play with
 | `conf.preserve_newer_files   mtime` | This is what I use in migration scenarios where I have two locations in sync, and I have started to migrate users over to the destination directory. <br> <br> This configuration basically says "if you see a modified time in the destination which is newer than the source - leave it the hell alone". <br> <br> Perfect for migration scenarios |
 
 These settings are all available in the gui for newer releases
-{:.important}
+{:.note title="Update"}
 
 There is a nice simulation feature allowing you to view what will happen based on your current configurations
 

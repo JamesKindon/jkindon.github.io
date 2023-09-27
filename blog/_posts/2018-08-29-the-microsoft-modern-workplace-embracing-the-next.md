@@ -75,7 +75,7 @@ Azure Active Directory started out as 100% user focused, meaning that it was aim
 -  [Azure Active Directory Domain Services](https://azure.microsoft.com/en-au/services/active-directory-ds/) (AADDS): This is aimed at Azure Workloads where effectively a "Domain Controller as a Service" model exists, allowing you to publish Active Directory Endpoints into an Azure vNet, allowing for a "Traditional" Domain Join of your azure-based machines, without the need to extend your entire ADDS environment into Azure
 
 > [Azure Active Directory Premium](https://docs.microsoft.com/en-au/azure/active-directory/fundamentals/active-directory-get-started-premium) provides the basis for some pretty special and key technologies utilised in the Modern Workplace, allowing for more control for the users, and less overhead for the admin. A few of these capabilities are outlined below, and importantly, are forever expanding, maturing and having new features introduced:
-{:.special_note}
+{:.note title="Note"}
 
 -  [Self Service Password Reset](https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-howitworks) (SSPR):  Self Service Password Seset basically allows for Azure AD to provide a cloud based point of password reset for your users, the service is driven via the Cloud and changes are written securely back to your on premise ADDS
 -  [Conditional Access Policies](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview) (CA): Conditional Access is a capability of Azure Active Directory. With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions

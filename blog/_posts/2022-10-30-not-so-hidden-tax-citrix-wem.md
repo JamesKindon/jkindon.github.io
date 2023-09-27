@@ -56,10 +56,10 @@ At the start of this assessment/remediation piece:
 Let's pause on that for a second. I'm going to stick the below in a warning box to make a point:
 
 Being a member of the Domain Users group resulted in **29 group memberships**. Being granted access to a desktop resulted in **157 group memberships**. 70 of those groups with assignments in WEM.
-{:.warning}
+{:.note title="Warning"}
 
 That means for every user, regardless of their role, they will, at a minimum, have **70 Groups that WEM needs to process**. 70.
-{:.warning}
+{:.note title="Warning"}
 
 Over the space of 5 weeks, the defined Active Directory Group count grew to over 620 Groups. The problem was compounded weekly.
 

@@ -39,7 +39,7 @@ The script has the following modes of operation and filtering controls:
 To implement the solution, you simply need an Azure Automation Account using a [System Assigned Managed Identity](https://jkindon.com/migrate-azure-runbook-runas-to-system-assigned-managed-identity/).
 
 The managed identity must have ***contributor*** permissions on the **source** *and* **target** Resource Groups as the script will handle locks on existing Snapshots, Storage Account creation and deletion when going cross-region and creation/deletion of snapshots in the target Resource Group when in Sync mode
-{:.attention}
+{:.note title="Attention"}
 
 Update the Azure Modules on the runbook to make sure they are the latest (PowerShell 7.1 please)
 

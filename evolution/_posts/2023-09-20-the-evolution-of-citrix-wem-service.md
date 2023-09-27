@@ -665,8 +665,9 @@ Minimum agent version required: 2109.2.0.1
 
 You can now use the CVAD Service console to bind a catalog to a WEM configuration set. This is a quick option to automatically add a catalog to WEM configuration sets
 
+{: .box-warning}
+
 Whilst a great feature, I have seen instances of inconsistencies in configuration set bindings - tried and proven AD objects in WEM fixed the issue
-{:.warning}
 
 ### [Workspace Environment Management now available in Citrix Cloud Japan](https://docs.citrix.com/en-us/citrix-cloud-japan)
 

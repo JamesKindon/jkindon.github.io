@@ -38,7 +38,7 @@ Take an NV12 spec machine, for example, it has a massive temporary disk (300Gb),
 An Ephemeral disk is simply put, your Operating System disk placed onto either the VM Cache `If` the size of that Cache is larger than the OS disk, or, at time of writing, [a preview feature allows the OS disk to be housed on the Temporary disk](https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks#preview---ephemeral-os-disks-can-now-be-stored-on-temp-disks) `If` the Temp disk is larger than the OS disk.
 
 **Update 15.12.2021** - this feature is now GA and production ready
-{:.important}
+{:.note title="Update"}
 
 Why do we care? Simple. An Ephemeral Disk is free and its fast. There is no charge for operating an Ephemeral Disk. It is housed on high performing, low latent local SSD disk.
 
@@ -49,12 +49,12 @@ Ephemeral Disks do NOT survive a VM de-allocation. They are destroyed and recrea
 Citrix MCS now can utilise cached base ephemeral disks. Once Microsoft removes the preview status of "cache disk based Ephemeral Disks", MCS will support that too with a logic of "*if the cache is big enough – use it, if it's not, use the temp disk*".
 
 **Update 15.12.2021** - Citrix MCS will support deployment of the OS disk to either the Cache Disk if present and capable, or to the Temp SSD if the Cache is not. A preference to local cache is always the default, if the machine is resized and the temp SSD disk is the only available option, MCS will handle the configuration accordingly
-{:.important}
+{:.note title="Update"}
 
 The Citrix iteration of this relies on the use of a shared image gallery, and as of the time of writing, requires a custom provisioning scheme driven by PowerShell. I am expecting at some point soon, this will be a tick box in Studio.
 
 **Update 18.10.2021** - you can now select to consume Azure Ephemeral Disks via the CVAD Studio GUI
-{:.important}
+{:.note title="Update"}
 
 In a Microsoft world, the use of Ephemeral Disks is typically associated with services that can consume scale sets, and one of the significant changes is that if an Ephemeral Disk is in use, the page lives on the OS disk. With MCS however, the brains of provisioning still move this page file to the Temp Disk, freeing up IOPS for more important use cases.
 
@@ -90,17 +90,17 @@ Comparing the [throughput spec against the temp/cache storage of the VM against 
 ### Consuming Ephemeral Disks with Citrix MCS
 
 **Update 18.10.2021** - you can now select to consume Azure Ephemeral Disks via the CVAD Studio GUI
-{:.important}
+{:.note title="Update"}
 
 [![GUI]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/GUI.png)]({{site.baseurl}}/assets/img/citrix-mcs-and-azure-ephemeral-disks/GUI.png)
 
     Above: Updated ability to deploy Ephemeral Disks via the GUI
 
 **Update 18.10.2021** Note that MCSIO is not available when using Ephemeral Disks. The GUI will remove the option for any disk cache configurations
-{:.important}
+{:.note title="Update"}
 
 **NOTE:** You no longer are forced to deploy via PowerShell, however it is still a valid option
-{:.warning}
+{:.note title="Warning"}
 
 You will need to deploy a Citrix Catalog with a custom provisioning scheme via PowerShell. This Catalog will also need to be deployed with a Shared Image Gallery. These two go hand in hand. This is far less scary than it sounds, however for those not comfortable in PowerShell, will likely be a small challenge. The three key components are simply:
 

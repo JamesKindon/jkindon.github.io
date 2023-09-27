@@ -27,10 +27,10 @@ Microsoft offers two native forms of high-availability and resiliency within Azu
 As defined by Microsoft:
 
 > Azure availability zones are physically separate locations within each Azure region that are tolerant to local failures. Failures can range from software and hardware failures to events such as earthquakes, floods, and fires. Tolerance to failures is achieved because of redundancy and logical isolation of Azure services. To ensure resiliency, a minimum of three separate availability zones are present in all availability zone-enabled regions.
-{:.per_microsoft}
+{:.note title="Per Microsoft"}
 
 > Each zone is composed of one or more datacenters equipped with independent power, cooling, and networking infrastructure. Availability zones are designed so that if one zone is affected, regional services, capacity, and high availability are supported by the remaining two zones
-{:.per_microsoft}
+{:.note title="Per Microsoft"}
 
 ## Designing for Citrix
 
@@ -93,7 +93,7 @@ The current MCS architecture means there are two key deployment models for Zone 
 Simple is typically better, the latter option is what I tend to lead with in design workshops, however requirements will define your decisions.
 
 Currently, Citrix MCS deploys the preparation VM used to prep the image with an awareness of Zones based on the catalog configuration. This means that if there are capacity issues within a zone, your prep machine can, and will be impacted.
-{:.warning}
+{:.note title="Warning"}
 
 **Citrix FAS** has a direct dependency on **Microsoft Certificate Authorities** to provide user certificates. I like the architecture of combining each FAS server with a subordinate issuing CA role, allowing each box to act independently, and also provide high availability for each component with a crossover logic (FAS server 2 is a secondary issuing CA for FAS server 1).
 
@@ -149,7 +149,7 @@ There is no way to simply change a VM's zone once that VM is deployed. Additiona
 The process typically involves blowing away the existing VM and Disk, redeploying a new one of each in the appropriate Zone, and then moving on with life. Lucky enough, there is PowerShell. I have written a small but powerful script which will take an existing VM and its associated disks and redeploy them into a zone of your choice. The script also supports Citrix ADC via the `*-IsADC*` switch. This switch retrieves additional required attributes for marketplace details.
 
 If you are migrating an ADC, you must ensure that ALL components are of a supported SKU. You cannot have any `Basic` tier components in the mix (Load balancers or public IP's). These must be of a `Standard` Sku.
-{:.warning}
+{:.note title="Warning"}
 
 You can [view the code here](https://github.com/JamesKindon/Azure/blob/master/ChangeVMAz.ps1). Feel free to add, update or critique as required.
 

@@ -69,7 +69,7 @@ Firstly, you must set accurate peak and off-peak windows in your Autoscale confi
 [![Autoscale Schedule Configurations]({{site.baseurl}}/assets/img/citrix-session-management-policies/Autoscale_Schedule.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/citrix-session-management-policies/Autoscale_Schedule.png)
 
 You may well have differing peak times for Weekdays vs Weekends. Make sure these are accurate.
-{:.think_about_it}
+{:.note title="Think About It"}
 
 Then you configure advanced timeouts under the Dynamic Session Timeouts node.
 

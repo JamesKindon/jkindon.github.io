@@ -60,7 +60,7 @@ This release introduces enhancements to the CPU spike protection feature, giving
 Citrix is offering WiX-based installers for the infrastructure services and administration console. The new installers include changes to the .Net framework, installation path, service name, event log name, parameters, and more.
 
 Watch out. The install and service names have changed. This means any form of startup scripts for cache-management etc. will need to be updated
-{:.attention}
+{:.note title="Attention"}
 
 ### [Dynamic token support for Group Policy settings](https://docs.citrix.com/en-us/workspace-environment-management/current-release/reference/dynamic-tokens#dynamic-token-support-for-group-policy-settings)
 

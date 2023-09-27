@@ -63,10 +63,10 @@ As per Azure policy, you cannot upload or download more than five disks or snaps
 Previously, the Windows operating system automatically assigned a drive letter to MCS I/O write-back cache disk. You can now assign a specific drive letter to MCS I/O write-back cache disk. This implementation helps to avoid conflicts between the drive letter of any applications that you use and the drive letter of MCS I/O write-back cache disk. This feature is applicable to only Windows operating system.
 
 Not applicable when Azure temporary disk is used as write-back cache disk
-{:.attention}
+{:.note title="Attention"}
 
 Applicable drive letter for write-back cache disk: `E` to `Z`
-{:.attention}
+{:.note title="Attention"}
 
 ### [Retry creating catalog after failure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#retry-catalog-creation)
 
@@ -501,8 +501,8 @@ Using the Full Configuration management interface, you can now change the follow
 
 On the Machine Catalogs node, select the catalog and then select Edit Machine Catalog in the action bar.
 
-These changes only impact newly reprovisioned machines. Previously created machines remain the same
-{:.warning}
+{: .box-warning}
+**Note:** These changes only impact newly reprovisioned machines. Previously created machines remain the same
 
 ### [Support for storing Azure ephemeral OS disk either on the cache disk or temporary disk](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
 

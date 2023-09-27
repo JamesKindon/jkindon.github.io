@@ -22,7 +22,7 @@ comments: true
 ## Intro
 
 This script is pretty much useless these days, the product evolved with too much complexity to map. This is a historical post.
-{:.warning}
+{:.note title="Warning"}
 
 WEM has offered a world of fun when it comes to environment management, however it introduces a black hole when it comes to documentation. Once your configuration is in WEM, it's almost impossible to document, and not the easiest to track for complex deployments.
 

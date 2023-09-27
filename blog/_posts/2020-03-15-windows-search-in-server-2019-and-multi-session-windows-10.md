@@ -31,7 +31,7 @@ As always in our industry, small changes in one platform can result in significa
 `C:\Users\username\AppData\Roaming\Microsoft\Search\Data\Applications\{SID}`
 <br><br>
 *As a result, `searchindexer.exe` stops working and duplicate profile names are created.*
-{:.special_note}
+{:.note title="Note"}
 
 Windows Search in both Windows Server 2019 and Windows 10 Multi-Session has [changed how it operates](https://social.msdn.microsoft.com/Forums/en-US/a9b5000d-e2a8-442b-9cbf-48e05136f732/support-for-server-2019-and-office-2019-search-roaming?forum=FSLogix), introducing the concept of per-user search natively into the Search Service. This is fundamentally different from previous versions (namely Windows Server 2016 etc) and changes how we need to think about search roaming with supporting technologies such as FSLogix Containers and Citrix UPM.
 

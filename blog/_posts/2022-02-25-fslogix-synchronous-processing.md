@@ -17,7 +17,7 @@ comments: true
 {:toc}
 
 **Preface:** This article is a living breathing article as we delve more into the why, how and expected behaviours of GPO processing, not just with an FSLogix lens. I will be updating, amending and altering content as more information arises. 
-{:.warning}
+{:.note title="Warning"}
 
 ## Intro
 
@@ -28,7 +28,7 @@ This is not a new behaviour; however, it is undocumented (to the best of my know
 The support information I have from a customer direct from Microsoft is as follows:
 
 > *The current functionality is expected. Unfortunately, the logon may take longer in the newer FSLogix version, but this is how we do as FSLogix users should be treated as “FirstLogon" every time in non-persistent VDI environment, and the slow logon is expected because the user needs to be applied GP synchronously on every logon. <br><br> The previous FSLogix version(2.9.7349.30108) had some wrongly optimization on GP processing as it caused regression, so we need to revert back in the later version. The FSLogix behavior has historically always been to not roam any GP state. We attempted to add some optimizations for this, but this optimization caused some GP issues so that change was reverted. <br><br> This is currently working as designed from FSLogix perspective.*
-{:.per_microsoft}
+{:.note title="Per Microsoft"}
 
 In the ideal state, the first time we logon we will have an expected Synchronous process for GPO as shown below
 
@@ -45,7 +45,7 @@ It would appear the secret sauce (and I am making an educated guess here) was th
 > `HKLM\Software\Microsoft\Windows\CurrentVersion\Group Policy\State\user_SID`
 
 **07.03.2022**: Functionality confirmation
-{:.special_note}
+{:.note title="Note"}
 
 With version 2.9.7349.30108, FSLogix introduced some new capability which appears to have actioned the following:
 

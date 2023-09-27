@@ -71,7 +71,7 @@ Azure Conditional Access Policies
 {:.figcaption}
 
 > Handling this process via Azure Conditional Access will not change the state in Azure MFA, it will still show as disabled for the user
-{:.warning}
+{:.note title="Warning"}
 
 ## Word of Warning for NetScaler deployments
 

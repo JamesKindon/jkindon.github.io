@@ -85,14 +85,14 @@ This can be run in the form of a Logon Script, a scheduled task to run at each l
 If you do this, then decide you want to manage tiles later, and edge happens to be one of those tiles then remove the logon script. 
 
 **Edit 24.04.2018** [Mans Hurtigh](https://discussions.citrix.com/profile/12582752-m%C3%A5ns-hurtigh/) over on the [Citrix Forums](https://discussions.citrix.com/topic/394711-w10-1709-ent-start-menu-and-tiles/) has offered an alternative way to remove the remaining icon using effectively a blank Start Menu Layout - I have not had the chance to test it yet, however this is a nice alternative to dealing with Edge 
-{:.special_note}
+{:.note title="Note"}
 
 ## Common Programs
 
 Now we have dealt with tiles, lets strip back the start menu even more and clean out what we don't want users to see. Much of this content comes from the `%ALLUSERS%` profile, which is conveniently located here: `C:\Programdata\Microsoft\Windows\Start Menu\Programs`
 
 Now here is a disclaimer. If you plan to deploy custom start menu layouts in the future (pinning tiles), do not block access to the above location, as that's where your tiles primarily come from. If you aren't planning on doing so, then the following GPO should clean up some clutter for you
-{:.warning}
+{:.note title="Warning"}
 
 *User Configuration > Administrative Templates > Start Menu and Taskbar > Remove Common program groups from the Start Menu (Enabled)*
 

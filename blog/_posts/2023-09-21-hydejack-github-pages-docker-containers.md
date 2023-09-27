@@ -81,7 +81,7 @@ This ultimately means that:
 -  We are making the session interactive and executing the `sh` command so we can do stuff.
 
 I am by no means of any use with Container logic. There may well be smarter ways to handle the mount methodology.
-{:.disclaimer}
+{:.note title="Disclaimer"}
 
 From here, once starting to to serve the content within the container (read on), we should, in a web browser on the local Windows machine, access `https://127.0.0.1:4000` which will port forward into the Container down to Jekyll, which will also be listening on port `4000`.
 

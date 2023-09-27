@@ -52,10 +52,10 @@ Processing from the cache introduces some new considerations though which should
 -  You can reduce the cache sync interval in the WEM console (Agent Cache Refresh Delay), else you can consider a scheduled task to force a regular refresh of the cache if you are making regular changes
 
 **UPDATE! 11.02.19. Important to note that the following occurs regardless of your cache refresh settings**
-{:.special_note}
+{:.note title="Note"}
 
 "The minimum interval for cloud agent cache sync is 15 mins, there is a randomized mechanism to control it. If you config the interval to 5 minutes, the true interval will be a random one between 7.5 mins to 30 minutes"
-{:.warning}
+{:.note title="Warning"}
 
 [![Agent Cache Refresh Setting]({{site.baseurl}}/assets/img/improve-the-wem-cloud-service-agent-processing-speed/ServiceOptions.png)]({{site.baseurl}}/assets/img/improve-the-wem-cloud-service-agent-processing-speed/ServiceOptions.png)
 
@@ -73,7 +73,7 @@ This is usually down to a form of network connectivity challenges. If you are ru
 With an ADC in place, you typically load balance ports 8285 and 8286 (and now of course 8288 but that's irrelevant here) for WEM agent connectivity to the Broker. In a broken state, when you enable processing from cache and WEM detects that the Brokers are actually online, the setting is ignored and standard processing occurs. If you were to lose the brokers however, the agent will process in offline mode, and process from the cache. So, with an ADC, you can simply disable the VIP for Port 8286 and make the agent think that the brokers are offline. Cache Synchronization occurs across port 8285 so leave that alone, and you can continue to sync in a supported fashion, whilst processing from the cache.
 
 **Note** that if you add <u>new</u> WEM agents into the mix, you will need to enable 8286 to allow them to register for the first time. So whilst it's not pretty, it gets passed the bug. That, or upgrade and move on in your life.
-{:.special_note}
+{:.note title="Note"}
 
 This is not a new fix, my buddy Munro figured this out a couple of years back, but it took a while to convince people that the bug was real – credit where it’s due, it is now fixed and there are also future improvements on the way to assist with the processing speed.
 

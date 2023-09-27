@@ -501,8 +501,8 @@ Using the Full Configuration management interface, you can now change the follow
 
 On the Machine Catalogs node, select the catalog and then select Edit Machine Catalog in the action bar.
 
-{: .box-warning}
 **Note:** These changes only impact newly reprovisioned machines. Previously created machines remain the same
+{:.note title="Warning"}
 
 ### [Support for storing Azure ephemeral OS disk either on the cache disk or temporary disk](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
 

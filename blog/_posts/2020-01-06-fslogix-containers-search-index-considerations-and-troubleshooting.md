@@ -22,7 +22,7 @@ comments: true
 ## Intro
 
 This post is not addressing Windows 10 Multi-Session or Windows Server 2019 Per-User Search. For changes with these Operating Systems, please see my follow up post [here](https://jkindon.com/2020/03/15/windows-search-in-server-2019-and-multi-session-windows-10/)
-{:.note title="Warning"}
+{:.warning}
 
 This post was initially posted on the FSLogix Blog which has been recently removed. I thought it was worth reposting as the content is still relevant. Extremely important to me is that credit is sent where it should be, this post was a collaboration between four individuals:
 
@@ -351,4 +351,4 @@ As with many Microsoft features, Windows Search is not greatly documented, parti
 Anyway, here's hoping you find this compilation of our shared experiences helpful in troubleshooting your own environments – any questions or queries, please feel free to leave a comment or hit us up on Twitter.
 
 This post is not addressing Windows 10 Multi-Session or Windows Server 2019 Per-User Search. For changes with these Operating Systems, please see my follow up post [here](https://jkindon.com/2020/03/15/windows-search-in-server-2019-and-multi-session-windows-10/)
-{:.note title="Warning"}
+{:.warning}

@@ -72,8 +72,8 @@ This typically results in a model like below:
 
 INC mode for the HA pair is critical for ADC operations in Azure. The following snippet from Citrix docs describes the why:
 
-*In the HA-INC mode, the SNIP address of the ADC-VPX-0 and ADC-VPX-1 VMs are different while in the same subnet, unlike with the classic on-premises ADC HA deployment where both are the same. To support deployments when the VPX pair SNIP is in different subnets, or anytime the VIP is not in the same subnet as a SNIP, you must either enable Mac-Based Forwarding (MBF), or add a static host route for each VIP to each VPX node.*
-{:.note title="Per Citrix"}
+> *In the HA-INC mode, the SNIP address of the ADC-VPX-0 and ADC-VPX-1 VMs are different while in the same subnet, unlike with the classic on-premises ADC HA deployment where both are the same. To support deployments when the VPX pair SNIP is in different subnets, or anytime the VIP is not in the same subnet as a SNIP, you must either enable Mac-Based Forwarding (MBF), or add a static host route for each VIP to each VPX node.*
+
 
 [![HA INC Mode]({{site.baseurl}}/assets/img/deploying-citrix-adcs-in-microsoft-azure/HA_Overview.png)]({{site.baseurl}}/assets/img/deploying-citrix-adcs-in-microsoft-azure/HA_Overview.png)
 

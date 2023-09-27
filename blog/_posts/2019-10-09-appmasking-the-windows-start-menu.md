@@ -49,13 +49,13 @@ I have a process that I use consistently with success and have been more than ha
 Results are grand (and by grand I mean simple) but it's complex to achieve what should be simple, and admittedly some components are intrusive and there is no easy way to come back from the changes that get made. Enter FSLogix AppMasking to once again simply my life. Using AppMasking rules, we can create the perfect junk-free Start Menu with simplicity and ease, also allowing for an immediate rollback of any changes should things go pear-shaped, reverting the user profile and OS itself to an unaltered state in no time. Using AppMasking, we can mask the following
 
 **Folders or Files in the Common Start Menu Location** `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WhateverDirectoryOrFile`
-{:.note title="Note"}
+{:.special_note}
 
 **Folders or Files within the user profile** `C:\Users\*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WhateverDirectoryOrFile`
-{:.note title="Note"}
+{:.special_note}
 
 **The right-click WinX folders** `C:\Users\*\AppData\Local\Microsoft\Windows\WinX\Group3`
-{:.note title="Note"}
+{:.special_note}
 
 [![Example Masking File]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/AppMaskProfile.png)]({{site.baseurl}}/assets/img/appmasking-the-windows-start-menu/AppMaskProfile.png)
 

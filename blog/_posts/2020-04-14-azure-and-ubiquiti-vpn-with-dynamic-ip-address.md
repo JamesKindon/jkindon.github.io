@@ -112,7 +112,7 @@ Backup first, please.
 Your [reconfigvpn.sh](https://github.com/JamesKindon/AzureVPNUbiquitiUSG/blob/master/reconfigvpn.sh) script goes here: `/config/scripts/reconfigvpn.sh` and you will need to `chmod 777` on that sucker to make it executable (you need to WinSCP to the actual USG not the cloud key for this).
 
 **_Make sure you alter this script to use your Remote Peer IP (Azure IP)._**
-{:.note title="Warning"}
+{:.warning}
 
 Your corresponding [scheduled task JSON](https://github.com/JamesKindon/AzureVPNUbiquitiUSG/blob/master/config.gateway.json) goes here: `/usr/lib/unifi/data/sites/default/config.gateway.json`
 

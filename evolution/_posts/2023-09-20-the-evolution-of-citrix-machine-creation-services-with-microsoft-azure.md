@@ -63,10 +63,10 @@ As per Azure policy, you cannot upload or download more than five disks or snaps
 Previously, the Windows operating system automatically assigned a drive letter to MCS I/O write-back cache disk. You can now assign a specific drive letter to MCS I/O write-back cache disk. This implementation helps to avoid conflicts between the drive letter of any applications that you use and the drive letter of MCS I/O write-back cache disk. This feature is applicable to only Windows operating system.
 
 Not applicable when Azure temporary disk is used as write-back cache disk
-{:.note title="Attention"}
+{:.attention}
 
 Applicable drive letter for write-back cache disk: `E` to `Z`
-{:.note title="Attention"}
+{:.attention}
 
 ### [Retry creating catalog after failure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#retry-catalog-creation)
 

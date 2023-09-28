@@ -22,7 +22,7 @@ related_posts:
 ## Intro
 
 This is an [old post](https://blogs.mycugc.org/2017/11/30/wem-advanced-guidance-part-1/) which I initially wrote with Hal Lange for CUGC, however the indexing on their site isn't great, so I have ported the content here, and scrapped out any legacy guidance. For up to date recaps 5 years on, see [WEM Advanced Guidance 2023](https://jkindon.com/wem-advanced-guidance-2023)
-{:.note title="Warning"}
+{:.warning}
 
 Citrix WEM is starting to get some serious traction, and so it should, as it is a fantastic offering available to most customers at no cost. I have spent some time with the WEM Jedi himself, Hal Lange, and together we have started a blog series based on our experiences with WEM to date. This is a joint series and I have been plucking Hal's brain for a while now, so this is great to have his insight into solutions!
 
@@ -39,7 +39,7 @@ The usual suspects have fantastic resources available for getting started with W
 Let's start with the highest level in the WEM environment – the Configuration Set. This is your configuration boundary for computer settings. WEM being focused on user environment control, it feels a little strange to be talking about the computer side of things, however there are a few key components that are computer based within WEM.
 
 **Historical Note**: WEM is far more than user based now and VMware Persona management was removed from the product set. Optimization is also now dynamic.
-{:.note title="Warning"}
+{:.warning}
 
 [![WEM Process Model]({{site.baseurl}}/assets/img/wem-advanced-guidance-part-1/wem-model.png)]({{site.baseurl}}/assets/img/wem-advanced-guidance-part-1/wem-model.png)
 
@@ -54,14 +54,14 @@ There are a few things that would dictate the use of a different configuration s
 -  Multi Region requirements may dictate configuration set divisions
 
 **Historical Note**: This is all fixed now. Import/Export is now simple.
-{:.note title="Warning"}
+{:.warning}
 
 The biggest challenge with multiple configuration sets now, is the ~~lack of ability to synchronise assignments, rules and filters~~. You can export pretty much everything in WEM, ~~however the assignments portion is a right pain as it stands. I have tried all sorts of SQL manipulation to try and synchronise these, and I made some progress with filters and rules, but assignments were something I simply couldn't get past.~~
 
 ## CONFIGURATION POINTS
 
 **Historical Note**: Significant changes to the product impact the below statements
-{:.note title="Warning"}
+{:.warning}
 
 WEM provides an alternative way to drive some of the common components we are used to dealing with in every day deployments, commonly driven by Group Policy, and services such as
 
@@ -90,7 +90,7 @@ This will stop WEM wasting time looking for things that will never be there.
 ## SYSTEM OPTIMIZATION
 
 **Historical Note**: Updated settings, capabilities and guidance can be found on a more [modern set of guidance 5 years on](https://jkindon.com/wem-advanced-guidance-2023)
-{:.note title="Warning"}
+{:.warning}
 
 System optimization for WEM is one of two core reasons for implementing the solution. Given the amount of performance enhancements that it can do with Memory Optimization, CPU Optimization and IO Management, it is a no-brainer to simply dump WEM into an existing environment, even just to get the gains from this alone. Density figures go up, server resource requirements go down, and it's all using standard windows magic to make it happen (no weird 3rd party tools).
 
@@ -156,7 +156,7 @@ There hasn't been a huge amount of guidance communicated around the ideal archit
 ## CACHE REDIRECTION
 
 **Historical Note**: This entire section has been removed given the change in the WEM landscape, however is captured for historical reference and accuracy at the time of release
-{:.note title="Warning"}
+{:.warning}
 
 ~~Anyone who deals with PVS is familiar with the requirement of redirecting certain application requirements to a cache/persistent disk, SCCM, Event logs, definition files etc. WEM can support this also, and it's common to see the WEM Cache moved to the persistent drive, and this is documented over the web in a few different places.~~
 

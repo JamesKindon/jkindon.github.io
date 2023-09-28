@@ -66,7 +66,7 @@ You can find the source here: [WEM Hydration Kit](https://github.com/JamesKindon
 Enjoy
 
 15.11.17 Update: Note that there is an updated post with some more community input for this tool [here](http://jkindon.com/2017/11/14/wem-hydration-kit-update-community-style/) 
-{:.note title="Update"}
+{:.attention}
 
 27.11.17 Update: UPM Module Added [Here](http://jkindon.com/2017/11/27/citrix-upm-module-for-the-wem-hydration-kit/)
-{:.note title="Update"}
+{:.attention}

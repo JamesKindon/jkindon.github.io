@@ -38,7 +38,7 @@ Sadly, a profile is typically tied to an operating system version, a Windows 7 p
 A local profile is the default happy place in any windows environment. No profile management, no worries. The profile lives locally, it contains by default, absolutely everything associated with that users operating environment. You upgrade windows, you upgrade your profile…too easy really. That is of course, until you sign in to another machine and start all over again. Uh Oh.
 
 User experience fail number 1.
-{:.note title="User Experience Fail"}
+{:.user_experience_fail}
 
 ### Roaming Profiles
 
@@ -49,7 +49,7 @@ Great plan, except it often sucked. I know I know, we all start somewhere, but g
 Roaming profiles grew legs and it became commonplace. They filled a gap that we as admins and users as users needed filled, and whilst it solved some challenges, the user experience was often slow and painful, it hurt admins sleep patterns, and it was not an enjoyable time to live in the EUC world (yet it's still out there). I have seen miracles performed by admins with Roaming Profiles, the patience they have to tweak these things to within an inch of their life is nothing short of Medal worthy, but reality is, this is often due to implementations that try to address situations that simply should not exist.
 
 User experience fail number 2.
-{:.note title="User Experience Fail"}
+{:.user_experience_fail}
 
 Microsoft did admittedly have some neat tricks up their sleeves with mandatory profiles and even super mandatory profiles if you really needed to lock and control your environment, but other solutions also provided the same (read on).
 
@@ -85,7 +85,7 @@ Folder redirection is [not without its drawbacks](http://james-rankin.com/articl
 A common bearer of misery and endless sorrow often utilised to plug some holes in folder redirection, is the magic that is Offline Files.What a glorious, file corrupting, data isolating, user enraging system this was. Offline Files was a great concept, but a [horrible reality](https://helgeklein.com/blog/2012/04/windows-7-offline-files-survival-guide/) that resulted in next to no happy stories.
 
 User experience fail number 3.
-{:.note title="User Experience Fail"}
+{:.user_experience_fail}
 
 You have all been there. I won't waste any more of your time in going further down that path in life again, needless to say, it's not right and thank god basic concepts such as OneDrive and Known Folder Move address some of the utter rubbish we had to manage back in the day.
 
@@ -110,7 +110,7 @@ There are three methods here when dealing with AppData via Citrix UPM:
 -  Include everything. This means your profiles are huge and will bog down and start to cause performance issues.
 
 User experience fail number 4
-{:.note title="User Experience Fail"}
+{:.user_experience_fail}
 
 -  Include what you need and ignore everything else. This is a Nirvana state really and not something I have seen done well with UPM unless very much fine tuned. Other profile solutions chose to implement this model as the default, Citrix recommended it as the best path, but the overhead of management was huge
 -  Exclude a whole load of useless crap that you know about and include everything else. This is realistically the most common way of handling UPM. Citrix give you templates, the community gives you better templates (thanks [James Rankin](https://www.htguk.com/everything-you-wanted-to-know-about_23/)) and it tends to be the path of least resistance. Its biggest challenge is when new apps onboard, and they do stupid things (I am looking at you Slack, Teams) and store themselves in the user profile. Then we end up having to back track on how and what to exclude

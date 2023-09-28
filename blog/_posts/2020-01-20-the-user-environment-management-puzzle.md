@@ -53,8 +53,8 @@ Some common things I like to store centrally and address with Group Policy Prefe
 -  FSLogix AppMasking files (or BIS-F)
 -  Start Menu common shortcut creation
 
-**Decision Point:** Anything machine-based that builds the environment in a dynamic fashion or controls the environment in a positive user experience impacting way.
-{:.note title="Decision"}
+Anything machine-based that builds the environment in a dynamic fashion or controls the environment in a positive user experience impacting way.
+{:.decision}
 
 ### Base Image Script Framework
 
@@ -69,8 +69,8 @@ BIS-F has a level of optimization it performs, but also hands off these services
 
 BIS-F is also highly customisable so should there be unique requirements to the environment that requires custom scripting to cater for, then you can simply ask BIS-F to run custom scripts as part of the sealing process.
 
-**Decision Point:** After any image build for any EUC facing workloads, BIS-F is a no brainer.
-{:.note title="Decision"}
+After any image build for any EUC facing workloads, BIS-F is a no brainer.
+{:.decision}
 
 ### Default File Type Associations
 
@@ -82,8 +82,8 @@ Browser management, PDF handlers, document handlers etc are the common trigger p
 
 There may also be user-based FTA requirements. I touch on these later on.
 
-**Decision Point:** If there are machine-wide defaults that need to be set, a default file type associations files is the way to go.
-{:.note title="Decision"}
+If there are machine-wide defaults that need to be set, a default file type associations files is the way to go.
+{:.decision}
 
 ### File Handlers
 
@@ -91,8 +91,8 @@ File handlers work hand in hand with default file type associations. In modern O
 
 Luckily there are handlers such as the old Windows Photo Viewer which is just waiting to be turned on and happiness granted back to the users.
 
-**Decision Point:** Per Project basis for the most part, however low hanging fruit like the example mentioned above is pretty much standard. Most modern apps have a Win32 alternative that can be leveraged
-{:.note title="Decision"}
+Per Project basis for the most part, however low hanging fruit like the example mentioned above is pretty much standard. Most modern apps have a Win32 alternative that can be leveraged
+{:.decision}
 
 ### Sysinternals Autoruns
 
@@ -102,8 +102,8 @@ Autoruns is a critical tool that shows you exactly what happens when the machine
 
 I use Autoruns at the end of every image update prior to sealing with BIS-F. This allows me to address any lovely nuggets that new applications may drop into the environment which will negatively, and uselessly affect the user experience. If there are items that I need to have auto-started from a user standpoint, I will typically have Citrix Workspace Environment Management drive the execution on a requirements basis.
 
-**Decision Point:** Every environment after every image update to sanity check no unforeseen impact.
-{:.note title="Decision"}
+Every environment after every image update to sanity check no unforeseen impact.
+{:.decision}
 
 ### FSLogix AppMasking
 
@@ -113,8 +113,8 @@ Many organisations traditionally leveraged Microsoft AppLocker to handle the res
 
 AppMasking has a few other tricks - a post maybe for another time, but I feel it's worth mentioning that it's more than just hiding applications from users. It can be used for all sorts of file system trickery such as redirects in place of traditional SymLinks, Application Containers etc.
 
-**Decision Point:** Any environment that requires customisation of what users should have visibility towards, including as a default, Windows Start Menu (read on)
-{:.note title="Decision"}
+Any environment that requires customisation of what users should have visibility towards, including as a default, Windows Start Menu (read on)
+{:.decision}
 
 ### Microsoft AppLocker
 
@@ -122,8 +122,8 @@ AppMasking has a few other tricks - a post maybe for another time, but I feel it
 
 Whitelisting and Blacklisting of certain areas on the file system to address malware execution etc are best handled by Microsoft AppLocker, hiding of applications for compliance or basic user experience requirements is the job of FSLogix AppMasking.
 
-**Decision Point:** Any security-based whitelist/blacklist requirement. Driven by either GPO or Citrix WEM.
-{:.note title="Decision"}
+Any security-based whitelist/blacklist requirement. Driven by either GPO or Citrix WEM.
+{:.decision}
 
 ## Pillar 2: Image Optimization
 
@@ -135,8 +135,8 @@ If you are operating a Citrix Environment, then running the Citrix Optimizer is 
 
 Delving into the community-based optimization templates is also a really cool way if you want to see what others are doing in their environments. As a consultant, I want gentle and guaranteed results so I tend to stick with the basics, but there is always more than can be done should you have time to play.
 
-**Decision Point:** Always. I see next to no reason to not utilise this tool.
-{:.note title="Decision"}
+Always. I see next to no reason to not utilise this tool.
+{:.decision}
 
 ### Modern Apps
 
@@ -146,8 +146,8 @@ The impact of modern apps to user experience in a non-persistent (and even a per
 
 I mentioned above that Citrix Optimizer is the gentlest way of dealing with optimizing an environment, it will handle a large amount of Modern App removal with a guarantee of not breaking things. There are still additional Modern Apps that can be happily stepped on should you have alternate solutions for your users in the form a win32 application replacement (think calculator) and there are [many scripts out there which will assist you in removing that scum from your images](https://github.com/SCConfigMgr/ConfigMgr/blob/master/Operating%20System%20Deployment/Invoke-RemoveBuiltinApps.ps1).
 
-**Decision Point:** If they aren't required by the business. Remove them.
-{:.note title="Decision"}
+If they aren't required by the business. Remove them.
+{:.decision}
 
 ## Pillar 3: User Environment Management
 
@@ -159,8 +159,8 @@ And as always, I am not talking about Group Policy Preferences in this context.
 
 Group Policy Preferences in the user context offer a huge amount of flexibility and capability, typically at the tax of the user login experience. They are great when they structured properly, but a nightmare on the user experience when things go wrong. Not all preferences are avoidable, some in the user context offers a more simple way of delivering settings than other alternatives (think regional settings for example).
 
-**Decision Point:** If there is an ADMX template that provides configuration settings in the user context then I'll leverage it. Group Policy Preferences in the user context are typically second to WEM being the preferred delivery agent where possible.
-{:.note title="Decision"}
+If there is an ADMX template that provides configuration settings in the user context then I'll leverage it. Group Policy Preferences in the user context are typically second to WEM being the preferred delivery agent where possible.
+{:.decision}
 
 ### Workspace Environment Management
 
@@ -174,8 +174,8 @@ WEM can do much of what Group Policy Preferences can do in the user context, and
 
 If I see a logon script, it moves to WEM, if I see something show up in Sysinternals autoruns that looks ugly, I will validate the requirement and then move it to WEM to action instead. In fact, anything user-focused that impacts the logon times will typically move to WEM. [I've blogged enough over the years about WEM](https://jkindon.com/?s=wem), so will leave it there for now.
 
-**Decision Point:** If there is an entitlement for WEM, it should be there for system optimization. How much moves into WEM is a per customer conversation, typically anything GPP based in the user context is an ideal candidate for a move
-{:.note title="Decision"}'
+If there is an entitlement for WEM, it should be there for system optimization. How much moves into WEM is a per customer conversation, typically anything GPP based in the user context is an ideal candidate for a move
+{:.decision}'
 
 ### Profile Management
 
@@ -185,8 +185,8 @@ I don't like to have anything in a profile that cannot be replaced. Keeping a co
 
 Regardless of the technology, a great practice for learning what hurts is to delete a profile and see what manual configurations are required to restore the user to a happy place. Then automate it. I have written previously about [my thoughts on profile management](https://jkindon.com/2019/06/12/profile-management-in-2019-what-how-why/) which outlines the differences and where the technologies fit.
 
-**Decision Point:** Most (not all) environments will require a level of profile management. Optimizing it is paramount in file-based solutions, managing size typically more important in Container-based technologies.
-{:.note title="Decision"}
+Most (not all) environments will require a level of profile management. Optimizing it is paramount in file-based solutions, managing size typically more important in Container-based technologies.
+{:.decision}
 
 ### Start Menu Management
 
@@ -194,8 +194,8 @@ Don't underestimate the power of presenting a clean stable and consistent Start 
 
 You can read both [my article](https://jkindon.com/2019/10/09/appmasking-the-windows-start-menu/) and James Rankin also wrote a [cracking post](https://james-rankin.com/videos/dynamic-start-menu-on-server-2016-2019-and-windows-10/) on the topic.
 
-**Decision Point:** The Windows Start Menu is pretty much the users first touchpoint into their environment. Ensuring its managed, and flexible and robust is critical. A job often much easier said than done.
-{:.note title="Decision"}
+The Windows Start Menu is pretty much the users first touchpoint into their environment. Ensuring its managed, and flexible and robust is critical. A job often much easier said than done.
+{:.decision}
 
 ### Control Panel and the Immersive Control Panel
 
@@ -205,8 +205,8 @@ The key is to find a nice middle ground of control vs enablement to allow the ba
 
 `Showonly:notifications;multitasking;printers;mousetouchpad;personalization-background;colors;lockscreen;themes;personalization-start;taskbar;dateandtime;regionlanguage;defaultapps;display`
 
-**Decision Point:** Per customer for the most part and always good to align the lockdowns of both Control Panels to avoid confusion.
-{:.note title="Decision"}
+Per customer for the most part and always good to align the lockdowns of both Control Panels to avoid confusion.
+{:.decision}
 
 ### User-Based Default File Type Associations
 
@@ -216,8 +216,8 @@ This is not natively possible in Modern Windows OS, I have [written previously](
 
 I am including a note here to capture that when combining FSLogix AppMasking with user-based FTA requirements, things may often get hairy. The first point of troubleshooting is to remove any ruleset which may involve the File Type Handling you are trying to customise.
 
-**Decision Point:** Per customer requirements.
-{:.note title="Decision"}
+Per customer requirements.
+{:.decision}
 
 ## Summary
 

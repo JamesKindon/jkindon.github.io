@@ -233,7 +233,7 @@ The following shows the platforms, Citrix products, and features that are deprec
 ### Core server components on Windows Server 2012 R2 (including Service Packs). Includes: Delivery Controller, Studio and Director.
 
 Deprecation announced in: 1906
-{:.note title="Warning"}
+{:.warning}
 
 Removed in: TBD
 
@@ -242,7 +242,7 @@ Alternative: Install on a supported operating system.
 ### Support for Site Configuration, Configuration Logging, and Monitoring databases on Microsoft SQL Server versions 2008 R2, 2012, and 2014 (including all Service Packs and editions).
 
 Deprecation announced in: 1906
-{:.note title="Warning"}
+{:.warning}
 
 Removed in: TBD
 
@@ -251,7 +251,7 @@ Alternative: Install databases on a supported Microsoft SQL Server version.
 ### Support for VDAs on Windows 10 on x86 platforms.
 
 Deprecation announced in: 1906
-{:.note title="Warning"}
+{:.warning}
 
 Removed in: TBD
 

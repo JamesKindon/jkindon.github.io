@@ -18,7 +18,7 @@ related_posts:
 <!--excerpt-->
 
 -  Table of Contents
-{:toc}
+{:toc .large-only}
 
 Citrix Profile Management is quietly kicking goals and developing quickly. This post aims to track the changes and releases as they occur, and provide a single point of reference. It is a companion post to my initial [Citrix UPM and FSLogix Conainers](https://jkindon.com/citrix-upm-and-fslogix-containers/) post, which outlined some decision points around profile management tool selection.
 

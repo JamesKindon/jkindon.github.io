@@ -23,7 +23,7 @@ related_posts:
 <!--excerpt-->
 
 -  Table of Contents
-{:toc}
+{:toc .large-only}
 
 There is a lot of constant improvement being executed by the MCS team at Citrix, the release cadence is impressive and the feature enhancements significant. I spend a lot of time in Microsoft Azure with Citrix Cloud with a lot of happy customers. I thought it would be worthwhile keeping a rolling tally of new features with MCS and how it relates to Azure, so that we don't lose sight of how much value add is provided.
 

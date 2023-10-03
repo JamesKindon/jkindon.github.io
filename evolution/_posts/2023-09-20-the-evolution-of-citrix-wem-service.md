@@ -18,7 +18,7 @@ related_posts:
 <!--excerpt-->
 
 -  Table of Contents
-{:toc}
+{:toc .large-only}
 
 Citrix WEM Service environment is consistently updating and bringing enhanced capability to the table. This post aims to track the changes and releases as they occur, and provide a single point of reference
 
@@ -496,7 +496,7 @@ Enhancements to the Profile Management health check feature:
 
 -  In the **More** menu of **Monitoring > Administration > Agents**:
     -  Renamed **Refresh Profile Management configuration check** to **Run Profile Management health check** to make it easy to understand
-    *  Added an option, **View Profile Management health check report**. The option provides quick access to Profile Management health reports related to the target agent machines.
+    -  Added an option, **View Profile Management health check report**. The option provides quick access to Profile Management health reports related to the target agent machines.
 -  In **Advanced Settings > Monitoring Preference**s under a configuration set
     -  Added a section, **Profile Management health check**. The section lets you specify which aspects to cover in Profile Management health check reports
 

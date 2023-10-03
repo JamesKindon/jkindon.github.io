@@ -18,7 +18,7 @@ related_posts:
 <!--excerpt-->
 
 -  Table of Contents
-{:toc}
+{:toc .large-only}
 
 Citrix WEM is consistently updating and bringing enhanced capability to the table. This post aims to track the changes and releases as they occur, and provide a single point of reference. I have started the tracking at 1912, anything before that, read the docs.
 

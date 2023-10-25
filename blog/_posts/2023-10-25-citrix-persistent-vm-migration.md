@@ -97,12 +97,12 @@ Anything you want to fix - feel free to submit a pull request, or shoot me the d
 Cool story, but you know Citrix has the automated configuration tool right?
 {:.why}
 
-Indeed. But this is way more granular and gives you some funky features with ACT does not. It is also limited to DaaS and current releases with the orchestration APIs in preview.
+Indeed. But this is way more granular and gives you some funky features with ACT does not. ACT is also limited to DaaS and CVAD current releases with the orchestration APIs in preview.
 
 Why not just use the Remote PowerShell SDK for DaaS and save yourself the heartache of API mapping
 {:.why}
 
-That would be boring, and combining with the Remote PS SDK with the On-prem one is a nightmare. API for DaaS it is.
+That would be boring, and combining the Remote PS SDK with the On-prem one is a nightmare. API for DaaS it is.
 
 Did anyone actually ask you these questions?
 {:.why}

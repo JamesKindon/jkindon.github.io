@@ -31,7 +31,7 @@ Pipe down and get to the point? Fair play. Two new scripts below:
 
 The script is designed to move a dedicated single-session machines from one CVAD site to another whilst retaining full power management. It does the following:
 
--  Queries a Source Delivery Controller (CVAD) for dedicated machines that you specify. This can be either via a Catalog, or a list of machines that you specify.
+-  Queries a Source Delivery Controller (CVAD) for dedicated machines. This can be either via a Catalog, or a list of machines that you specify.
 -  Queries a Target Delivery Controller (CVAD) to understand target Catalog, Hypervisor Connection, Delivery Group etc. If you forget to provide these, you will be presented with an appropriate list of candidates.
 -  Sanity checks a whole load of things to make sure that hypervisor types are the same, target Catalogs are not of a provisioned type, source machines are not PVS provisioned etc.
 -  Executes a migration from Site 1 to Site 2 handling:
@@ -52,9 +52,9 @@ You can find the script in the usual github repo [MigrateDedicatedMachines.ps1](
 
 ## MigrateDedicatedMachinesDaaS.ps1
 
-Similar to the above script, this one is designed to move a dedicated single-session machines from one CVAD site to Citrix Cloud DaaS whilst retaining full power management. It does the following:
+Similar to the above script, this one is designed to move dedicated single-session machines from one CVAD site to Citrix Cloud DaaS whilst retaining full power management. It does the following:
 
--  Queries a Source Delivery Controller (CVAD) for dedicated machines that you specify. This can be either via a Catalog, or a list of machines that you specify.
+-  Queries a Source Delivery Controller (CVAD) for dedicated machines. This can be either via a Catalog, or a list of machines that you specify.
 -  Queries Citrix Cloud (DaaS) to understand target Catalog, Hypervisor Connection, Delivery Group etc. If you forget to provide these, you will be presented with an appropriate list of candidates.
 -  Sanity checks a whole load of things to make sure that hypervisor types are the same, target Catalogs are not of a provisioned type, source machines are not PVS provisioned etc.
 -  Executes a migration from CVAD to DaaS handling:
@@ -97,7 +97,7 @@ Anything you want to fix - feel free to submit a pull request, or shoot me the d
 Cool story, but you know Citrix has the automated configuration tool right?
 {:.why}
 
-Indeed. But this is way more granular and gives you some funky features with ACT does not. ACT is also limited to DaaS and CVAD current releases with the orchestration APIs in preview.
+Indeed. But this is way more granular and gives you some funky features that ACT does not. ACT is also limited to DaaS and CVAD current releases with the orchestration APIs in preview.
 
 Why not just use the Remote PowerShell SDK for DaaS and save yourself the heartache of API mapping
 {:.why}

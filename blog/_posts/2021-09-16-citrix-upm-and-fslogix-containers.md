@@ -23,7 +23,7 @@ comments: true
 
 ## Preface
 
-This article was written in 2021 where tha landscape was very different to what it is today (end of 2023). I am both updating this article for relevance (but keeping the initial content also), and revamping with some updated logic and comparison in a [new post here](https://jkindon.com/citrix-upm-and-fslogix-containers-2023)
+This article was written in 2021 where the landscape was very different to what it is today (end of 2023). I am both updating this article for relevance (but keeping the initial content also), and revamping with some updated logic and comparison in a [new post here](https://jkindon.com/citrix-upm-and-fslogix-containers-2023)
 
 ## Intro
 

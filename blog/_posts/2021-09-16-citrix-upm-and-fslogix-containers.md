@@ -12,7 +12,7 @@ description: Delving into the when, why and why not of Citrix UPM and FSLogix Pr
 image:
   path: /assets/img/citrix-upm-and-fslogix-containers/post_default_image.jpg
 sitemap: true
-hide_last_modified: true
+hide_last_modified: false
 comments: true
 ---
 
@@ -20,6 +20,10 @@ comments: true
 
 -  Table of Contents
 {:toc}
+
+## Preface
+
+This article was written in 2021 where tha landscape was very different to what it is today (end of 2023). I am both updating this article for relevance (but keeping the initial content also), and revamping with some updated logic and comparison in a [new post here](https://jkindon.com/citrix-upm-and-fslogix-containers-2023)
 
 ## Intro
 
@@ -44,11 +48,14 @@ This post is purely focusing on Citrix CVAD deployments.
 
 I will preface the following with the simple fact that I have fallen victim to my own rants here, and have deployed solutions that looking back, and knowing what I know now, I would not do again. Power of hindsight really.
 
-I will also preface with the fact that I think both Microsoft FSLogix and Citrix Profile Management are equally exceptional tools in the toolbox, and both serve us very well when positioned appropriately.
+I will also preface with the fact that I think both Microsoft FSLogix and Citrix Profile Management are ~~equally~~ exceptional tools in the toolbox, and both serve us very well when positioned appropriately.
 
-I do not believe one solution is better than the other. I don’t believe there is a default stance that should be taken, and I firmly believe that if appropriate discovery and architecture is not undertaken, then you are doing yourself, or your clients a complete injustice.
+~~I do not believe one solution is better than the other.~~ I don’t believe there is a default stance that should be taken, and I firmly believe that if appropriate discovery and architecture is not undertaken, then you are doing yourself, or your clients a complete injustice.
 
 Container technology is not appropriate for every deployment. Fact.
+
+The world moved on and CPM developed at a very rapid pace. These days, CPM is a far more robust and all round better solution across the board. FSLogix is still great, but CPM takes the cake.
+{:.think_about_it}
 
 ## A Quick Recap
 
@@ -58,7 +65,7 @@ FSLogix Profiles are a container-based solution, utilising VHD or VHDX virtual d
 
 FSLogix also provides an Office Container designed to bolt onto existing profile management solutions (including FSLogix Profiles) to capture Office Cache data and provide the missing link between Office 365 and non-persistent VDI and published application environments.
 
-Citrix Profile Management is primarily a file-based profile solution, which has extended out into containerisation (large file handling, Outlook Cache and Search Index along with selective containerisation of data). It is very fast, very flexible and very resilient. It comes at the cost of management and fine tuning. UPM also enhances what FSLogix can deliver, an example being multi session write back to a single container.
+Citrix Profile Management is ~~primarily~~ a file-based profile solution, which has extended out into containerisation (large file handling, Outlook Cache and Search Index along with selective containerisation of data). It is very fast, very flexible and very resilient. It comes at the cost of management and fine tuning. UPM also enhances what FSLogix can deliver, an example being multi session write back to a single container.
 
 FSLogix is now owned and provided by Microsoft. Citrix Profile Management is available to all customer who own Citrix CVAD licencing of any level.
 
@@ -117,10 +124,10 @@ I am not classifying or referring to Office Container as a profile solution. Whe
 
 [Citrix UPM](https://docs.citrix.com/en-us/profile-management/current-release.html) offers a massive amount of capability and has for some reason become the poor cousin or an afterthought in many environments where it is 100% the correct choice. Some trigger points I work with:
 
--  Any Citrix deployment that is not using Windows 10 Modern Apps
--  An adequate level of technical expertise exists to adapt the solution as requirements change
+-  ~~Any Citrix deployment that is not using Windows 10 Modern Apps~~
+-  ~~An adequate level of technical expertise exists to adapt the solution as requirements change~~
 -  No technical debt associated with profile dependency. Profiles can (and will need to) be reset with any file-based solution. This is a nature of roaming file-based solutions unfortunately
--  If an environment uses OneDrive, then UPM is still an option for profiles, however, must be combined with FSLogix Office Container
+-  If an environment uses OneDrive, then UPM is still an option for profiles~~however, must be combined with FSLogix Office Container~~
 -  Environments that use a combination of published applications, desktops and double hope scenarios. These are complex use patterns, UPM handles them well and in a very lean fashion
 -  High performing storage is not readily accessible. Performance is still a consideration, but less user impacting than FSLogix on that same underperforming storage
 -  Storage capacity is a challenge. UPM profiles can be configured and streamlined within an inch of their life
@@ -134,6 +141,9 @@ And here is a bonus one that seems to be forgotten but is critical:
 -  The loss of profile storage is not an acceptable reason to bring an entire environment to its knees
 
 It is important to note, that it is OK to use a combination of both Profile Management solutions. The right tool for the right scenario.
+
+Citrix enhanced it's Container capability to the point where there isn't really a specifc trigger to not use it any more.
+{:.think_about_it}
 
 ## Assumptions Rebuked, Myths Defunct and Lessons Learned
 
@@ -174,6 +184,9 @@ Understood, designed, implemented and supported appropriately, FSLogix Profiles 
 
 In all, are FSLogix Profiles less management and a simpler solution? Yes, if you follow the design principals of the solution, no if you are trying to make them more like your old mate Citrix UPM profiles. If doing this, surely the ***why*** questioning must start being asked?
 
+Most of this still relevent in 2023, but keep in mind, Container impacts are relevant for both technologies
+{:.think_about_it}
+
 ## The Progression of Citrix UPM
 
 I want to take a few minutes here to bring some attention back to the capability of the Citrix UPM solution and the enhancements that the team have been quietly making over the years. Like the [Citrix MCS development](https://jkindon.com/2021/07/08/the-evolution-of-citrix-machine-creation-services-with-microsoft-azure/), the solution progresses but the marketing of those capabilities is lacking. Let’s just dive into a few of the cool features that will surely raise a few eyebrows for those that claim it is dead.
@@ -194,12 +207,18 @@ I want to take a few minutes here to bring some attention back to the capability
 
 I recall a chat I had with the profile management team a while back, where I asked if they had concerns over the long-term direction of the Citrix Profile Management solution. Their response, which I am paraphrasing slightly, but which I now completely understand was simply "*No. Citrix believes that customers are nowhere near as simple as they often think, and UPM offers, or will offer moving forward, a solution for almost every scenario*". They have even enhanced the capability of the FSLogix solution.
 
+Ah to be where we are now. Looking back, it turns out the team was 100% spot on as we watch a return to the CPM fold occur across the globe. These capabilities were what was introduced at the time of writing. Check the [tracking post for everything else](https://jkindon.com/the-evolution-of-citrix-profile-management/)
+{:.think_about_it}
+
 ## Summary
 
-If you were looking for a "which is better" article, you came to the wrong place. There is no better solution between the two. One is simple and serves a simple purpose. One is flexible, robust and continues to be developed heavily for a myriad of different use cases.
+~~If you were looking for a "which is better" article, you came to the wrong place. There is no better solution between the two. One is simple and serves a simple purpose. One is flexible, robust and continues to be developed heavily for a myriad of different use cases.~~
 
 I will continue to use FSLogix Profiles under the right conditions, because it does what it does extremely well. I will also continue to rant at those that have decided to ignore alternative or pre-existing tooling and continue to fight the fight on where profiles are even needed at all (I am looking at you health sector – long live mandatory profiles).
 
-I will also admit openly that I am trending back towards Citrix Profile Management being a more appropriate choice in many environments, with FSLogix Office Container filling the gaps and providing the M365 enablement piece. I am also not at all scared to be suggesting that you can use both solutions in the same customer to address their requirements
+I will also admit openly that I am trending back towards Citrix Profile Management being a more appropriate choice in many environments~~,with FSLogix Office Container filling the gaps and providing the M365 enablement piece~~. I am also not at all scared to be suggesting that you can use both solutions in the same customer to address their requirements.
 
 Profile Management (where profile management is required), is such a critical component that it deserves consideration and respect. Any consultant, architect or admin that does not give it that, is doing half a job. Understand what you are positioning and both the short and long-term impacts that those choices have on customers. There is no default.
+
+I am changing my stance based on where we are now. CPM is clearly better.
+{:.think_about_it}

@@ -18,7 +18,7 @@ comments: true
 
 ## Intro
 
-A few years back, I put together [my thoughts on Citrix Profile Management (CPM) and FSLogix Profiles](https://jkindon.com/citrix-upm-and-fslogix-containers/) and where they make sense. That post is over two years old now, and then world moved on significantly. I have updated the old post with some commentary around the changes, but felt it was nice to keep this historical data.
+A few years back, I put together [my thoughts on Citrix Profile Management (CPM) and FSLogix Profiles](https://jkindon.com/citrix-upm-and-fslogix-containers/) and where they make sense. That post is over two years old now, and the world moved on significantly. I have updated the old post with some commentary around the changes, but felt it was nice to keep this historical data.
 
 This post is designed as a brief point in time thought provoker on where I see the same two technology sets and their current state of play.
 

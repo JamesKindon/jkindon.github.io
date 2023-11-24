@@ -28,8 +28,8 @@ As a principal, I always use Azure snapshots to update Machine Catalogs. I have 
 To fill the gap, I have written a [script](https://github.com/JamesKindon/Azure/blob/master/ReplicateAzureSnapshot.ps1) in PowerShell designed to (but not limited to) be executed via [Azure Automation](https://docs.microsoft.com/en-us/azure/automation/overview) Accounts which offers the following capabilities/modes:
 
 -  `DifferentSubDifferentRegion` will replicate Snapshots from one region to another region in a different subscription. This is the ***default*** mode of operations
--  `DifferentSubSameRegion` will replicate Snapshots from one region to another region in the same subscription
--  `SameSubDifferentRegion` will replicate Snapshots to the same region in different subscription
+-  `DifferentSubSameRegion` will replicate Snapshots to the same region in different subscription
+-  `SameSubDifferentRegion` will replicate Snapshots from one region to another region in the same subscription
 
 The script has the following modes of operation and filtering controls:
 

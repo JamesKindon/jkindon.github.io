@@ -35,7 +35,7 @@ You will note in this blog I am using the hydejack-pro theme. I decided to purch
 -  Gridview for blogs is pretty nice
 -  Dark/light mode options are handy
 -  Forms was important
--  This blog is used my own technical dumping ground for me to refer to, so Search was important
+-  This blog is used as my own technical dumping ground for me to refer to, so Search was important
 
 You can use the free version just as easily, the process is the same, you will just have different theme configurations. In fact, I did the entire build outside of the contact form on the free version prior to upgrading. It's fantastic.
 
@@ -83,7 +83,7 @@ This ultimately means that:
 I am by no means of any use with Container logic. There may well be smarter ways to handle the mount methodology.
 {:.disclaimer}
 
-From here, once starting to to serve the content within the container (read on), we should, in a web browser on the local Windows machine, access `https://127.0.0.1:4000` which will port forward into the Container down to Jekyll, which will also be listening on port `4000`.
+From here, once starting to serve the content within the container (read on), we should, in a web browser on the local Windows machine, access `https://127.0.0.1:4000` which will port forward into the Container down to Jekyll, which will also be listening on port `4000`.
 
 And herein lies the rub. I have always run my jekyll serving as below on Windows:
 
@@ -97,13 +97,13 @@ This has been great, and it binds the the Jekyll serving to to the `127.0.0.1:40
 bundle exec jekyll serve --host 0.0.0.0 --incremental --watch --force_polling --strict_front_matter --drafts
 ```
 
-There a couple of switches there of note
+There are a couple of switches there of note
 
 -  The `--host 0.0.0.0` command will force Jekyll to bind to the local `0.0.0.0` address which then allows port-forwarding (thanks google).
 -  The `--incremental` switch is used to pick up changes as you make them, and force rendering of that changed content. The `--force_polling` switch was needed as funny enough, when running a Linux Docker Container on Windows and using a `mount` to local content, change detection doesn't work.
 -  The `--watch` command was used as part of my testing on the above, I left it there as it wasn't doing any damage.
 -  I like the `--strict_front_matter` switch as I had so much to rework from my old posts that I was making mistakes all over the place. This helped me understand what I broke.
--  Using `--drafts` allows you to serve draft posts localed in the `_drafts` folder.
+-  Using `--drafts` allows you to serve draft posts located in the `_drafts` folder.
 
 So when I start my container now, I simply change directory across to `/website` and then run my serve command `bundle exec jekyll serve --host 0.0.0.0 --incremental --watch --force_polling --strict_front_matter --drafts`
 
@@ -136,7 +136,7 @@ Multiple Containers
 Some time consuming P-I-T-A components that I had to deal with:
 
 -  I had skimped on image sizing for a long time on my old blog theme, and nested the image within the post excerpt in markdown to help with rendering the size. This was nasty when moving to a new theme, and I had to fix it. This meant touching every post and making sure that I had an appropriate sized image. Painful. I highly suggest the awesome [Unsplash](https://unsplash.com/) site for free high definition images.
--  There were some nasty issues with the default view in Hydejack refusing to "excerpt-compact" properly. This meant that every post was fully expanded on the landing page. I have absolutely no idea what in the world was causing it, I am convinced there was some rubbish in my posts historically as the example post templates played fine and I could port old content into new post template and life was good. Scrap that for manual rubbish. I simply used an <!--excerpt--> tag as the opening piece of my posts which did the job.
+-  There were some nasty issues with the default view in Hydejack refusing to "excerpt-compact" properly. This meant that every post was fully expanded on the landing page. I have absolutely no idea what in the world was causing it, I am convinced there was some rubbish in my posts historically as the example post templates played fine and I could port old content into new post template and life was good. Scrap that for manual rubbish. I simply used an "excerpt" tag as the opening piece of my posts which did the job.
 -  Trying to figure out how to use forms was fun initially, but following along with the integration of [unstatic-forms with Hugo](https://un-static.com/how-to/add-hugo-contact-form/) was spot on. Job done on the markdown pro theme (you can dump this straight into markdown).
 
 ## Cutting over Github Pages
@@ -145,7 +145,7 @@ I branched my current site and simply replaced all my current configurations wit
 
 Once happy, I merged to main, and changed my publishing again. I then opened a ticket with Github to remove the fork status from my original site.
 
-There were some challenges with initial builds in github, this was likely due to the amount of hacking and cracking that had been done locally. The easiest way to fix, was using the `github-pages-starter-kit` that was provided with Hydejack. Starting from scratch, and then simple porting over images, pages, authors, _config.yml settings and cleaning up the appropriate default stuff was the easiest path to a win.
+There were some challenges with initial builds in github, this was likely due to the amount of hacking and cracking that had been done locally. The easiest way to fix, was using the `github-pages-starter-kit` that was provided with Hydejack. Starting from scratch, and then simply porting over images, pages, authors, _config.yml settings and cleaning up the appropriate default stuff was the easiest path to a win.
 
 ## Reference sites
 
@@ -160,9 +160,9 @@ In particular, a shout out to Dan who fielded a few noob questions from a random
 
 Some tools I have found very useful in my adventures:
 
--  [Visual Studio Code](https://code.visualstudio.com/) for post editing with markdown all in one extension and makrdownlint extension
+-  [Visual Studio Code](https://code.visualstudio.com/) for post editing with markdown all in one extension and markdownlint extension
 -  [Unstatic forms](https://un-static.com/) for handling the forms side of things if you want one
--  [Unsplash](https://unsplash.com/) for images of decent scaling
+-  [Unsplash](https://unsplash.com/) for images of decent quality
 -  [Docker](https://www.docker.com/) for running containers
 -  [Ruby Container Image](https://hub.docker.com/_/ruby) for jekyll
 -  [Github Utterances](https://github.com/utterance) for comments

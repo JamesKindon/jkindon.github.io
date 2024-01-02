@@ -31,6 +31,121 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## November 2023
+
+### [A single option to retain VM and system disk during power cycles](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#november-2023)
+
+Starting an existing VM on Azure is now faster than launching a new one, making it a more efficient choice to retain VMs across power cycles. In response to this change, Citrix has combined the options **Retain VMs across power cycles** and **Retain system disk during power cycles** into a single option **Retain VM and system disk during power cycles**. This means that when you select this option to reduce VM restart times by retaining system disks, your VMs are retained as well.
+
+### [New capability in Full Configuration to filter machine sizes based on Encryption at Host property in machine profiles (Azure VMs specific)](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#november-2023)
+
+Once you choose a machine profile with Encryption at Host enabled during Azure machine catalog creation or management, only machine sizes that support this feature are displayed.
+
+### [Image information on the Machine Catalogs page](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#november-2023)
+
+You can now view the following image information through the Template Properties of the machine catalog:
+
+-  Operating system
+-  Machine identity service
+-  Machine Creation Service storage
+-  Filepath for pagefile.sys for Azure deployments.
+
+This enhancement provides better clarity on the image information and ensures that the administrators have all the information about the machine catalog in one place.
+
+### [Ignore orphaned resources with specific tag](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#november-2023)
+
+In Azure environments, a customer-managed resource tagged with all Citrix tags is detected as an orphaned resource. With this feature, if you add another tag `CitrixDetectIgnore` with value as true to that resource, then the resource is ignored while detecting orphaned resources.
+
+### [Solution for SCCM duplicated GUID issue](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#november-2023)
+
+After creating multiple VMs using MCS, the System Center Configuration Manager (SCCM) displayed only one VM on its console because of duplicated GUIDs. This issue is now resolved by adding a step in the image preparation. This step deletes the existing certificates and GUID information within master image. The step is enabled by default.
+
+Not azure specific, but will impact Azure provisioned VMs.
+
+### [Repair the identity information of active computer accounts](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#repair-the-identity-information-of-active-computer-accounts)
+
+With this feature, you can reset the identity information of active computer accounts that have identity-related problems. You can choose to reset only the machine password and trust keys, or reset all configuration of the identity disk. This implementation is applicable to both persistent and non-persistent machine catalogs. Currently, the feature is supported only for Azure and VMware virtualization environments.
+
+### [Get encryption at host information associated with a machine profile](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#retrieve-encryption-at-host-information-from-a-machine-profile)
+
+In Azure environments, with this feature, you can now know whether encryption at host is enabled for a machine profile input (VM or template spec) using PowerShell commands.
+
+### [Support for Azure confidential VMs (Preview)](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#azure-confidential-vms-preview)
+
+Azure confidential computing VMs ensures that your virtual desktop is encrypted in memory and protected in use. With this feature, you can now use MCS to create a catalog with Azure confidential VMs. You must use the machine profile workflow to create such a catalog. You can use both VM and ARM template spec as a machine profile input.
+
+### [Ability to change memory and disk cache size](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#change-cache-configuration-on-an-existing-machine-catalog)
+
+With this feature, you can now change the memory and disk cache size of the Write-back cache (when MCSIO is enabled) using a PowerShell command without creating a new machine catalog. This implementation helps you to have the optimized cache configuration that is suitable for your business needs. This feature is applicable to:
+
+-  GCP and Microsoft Azure environments, and
+-  a non-persistent catalog with MCSIO enabled
+
+### [Support for creating a customer-managed encryption key enabled catalog](https://docs.citrix.com/en-us/provisioning/current-release/configure/citrix-provisioning-catalog-in-daas.html#create-a-customer-managed-encryption-key-enabled-catalog)
+
+In Azure environments, you can now create a Citrix Provisioning catalog enabled with customer-managed encryption key (CMEK) using the Full Configuration interface and PowerShell commands.
+
+### [Ability to copy tags on all resources in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#copy-tags-on-all-resources)
+
+With this feature, in Azure environment, you can now copy tags specified in a machine profile to all the resources such as, multiple NICs and disks (OS disk, Identity disk, and write-back cache disk) of a new VM or an existing VM in a machine catalog.
+
+The machine profile source can be a VM or an ARM template spec.
+
+### [Support for hibernation-capable VMs in Azure (Preview)](https://docs.citrix.com/en-us/citrix-daas/install-configure/power-management/power-manage-azure-vms#create-hibernation-capable-vms-preview)
+
+In Azure environments, you can create an MCS machine catalog that supports hibernation. Using this feature, you can suspend a VM, and then reconnect to the previous state of the VM when a user signs in again.
+
+### [Assign drive letters to write-back cache disks using Full Configuration](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create#configure-cache-for-temporary-data)
+
+Previously, you could assign a specific drive letter to the write-back cache disk only by using a PowerShell cmdlet. You can now accomplish the same task using Full Configuration.
+
+### [Support for changing various Azure machine properties using Full Configuration](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#edit-a-catalog)
+
+For Machine Creation Services-provisioned Azure machines, you can now change the following property settings using Full Configuration:
+
+-  Storage type
+-  Dedicated host group
+-  Azure Compute Gallery settings
+
+When you change any of these settings, Full Configuration automatically identifies related settings and provides automatic synchronization or prompt messages requesting you to reselect related settings. This capability ensures consistent changes across associated settings, preventing potential configuration errors.
+
+## October 2023
+
+### [Multiple NICs support for Azure VMs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#create-or-update-a-catalog-with-multiple-nics-per-vm)
+
+With Full Configuration, you can now create Azure VMs with multiple NICs. A VM’s maximum NIC count is determined by the machine size setting while its actual NIC count allowed is defined by the machine profile setting
+
+### [Support for creating empty machine catalogs for non-MCS-provisioned machines](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#october-2023)
+
+Creating empty machine catalogs now extends to non-MCS-provisioned machines, including:
+
+-  Virtual or blade machines provisioned using technologies other than Machine Creation Services.
+-  Physical machines not power managed by Citrix DaaS
+-  Remote PC Access machines
+
+With this feature, you can now create machine catalogs without the need to add machines to them during catalog creation.
+
+### [Preserve NIC settings on provisioned VMs](https://docs.citrix.com/en-us/citrix-daas/install-configure/install-vdas#step-4-install-additional-components)
+
+Previously, the NIC settings of the master image were not retained in the provisioned VMs. For example, if you configured the DNS settings on the master image, the provisioned VMs did not retain the configured DNS settings of the master image. With this feature, the provisioned VMs can now retain the NIC settings of the master image. The settings are retained even after a Windows update.
+
+The filter driver is automatically installed if you do a fresh installation of VDA version 2308 or later on a Hyper-V (Azure) deployed machine through the MCS master image installations. However, currently, if you upgrade from an older version of VDA (version less than 2308) and want to install the filter driver, then you must select the checkbox Citrix HyperV Filter Driver on the Additional Components page while upgrading the VDA.
+
+This feature is applicable to:
+
+-  Hyper-V VMs (including Azure and SCVMM)
+-  Persistent and non-persistent MCS machine catalogs
+-  Non-persistent MCS machine catalogs with MCSIO
+-  Master image with multiple NICs
+
+### [Detect Orphaned Azure resources](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections#detect-orphaned-azure-resources)
+
+With this feature, you can now detect the orphaned resources in your Azure deployment, enabling efficient resource management. After the orphaned resources are identified, you can take further action, bringing in more productivity and cost reduction.
+
+### [New image update status](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#change-the-master-image)
+
+When monitoring image update statuses for catalogs in Full Configuration, you can now view a new status Preparing image, in addition to the existing ones **Fully updated**, **Partially updated**, and **Pending update.**
+
 ## September 2023
 
 ### [Support for creating empty machine catalogs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create#machines)

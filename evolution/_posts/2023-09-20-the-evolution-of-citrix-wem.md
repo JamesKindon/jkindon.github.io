@@ -24,6 +24,100 @@ Citrix WEM is consistently updating and bringing enhanced capability to the tabl
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## Version 2311
+
+### [Automatic agent upgrade (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/app-package-delivery)
+
+-  You can select the desired agent package from the centralized SMB share package storage location, and schedule automatic upgrades for all agent machines in a configuration set
+-  You can now specify the time and schedule the day(s) of the week on which you want WEM to automatically roll out the upgrade to all agent machines in a configuration set
+-  You can now specify the device name and IP of agent machines in a configuration set for which you want WEM to automatically roll out the upgrades.
+
+Minimum agent version required: `2311.1.0.1`
+
+### [Support for the Windows 11 and Windows Server 2022 in Citrix Optimizer](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/system-optimization/citrix-optimizer)
+
+Citrix added support for the Windows 11 version 21H2 (build 2009) and Windows Server 2022 21H2 (build 2009) in Citrix Optimizer. You can now use the WEM service to perform template-based system optimizations for Windows 11 2009 and Windows Server 2022 2009 machines. In addition, we have updated all existing templates to reflect changes introduced in the latest standalone Citrix optimizer
+
+Minimum agent version required: `2311.1.0.1`
+
+### [Registry Entries in web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#registry-entries)
+
+Using the web console, you can now add registry entries as assignable actions, which let you create, set, or delete registry values in the user environment. The feature has been enhanced to provide a better user experience. Additionally, you are now able to add tags to registry entries and assign multiple registry entries at the same time.
+
+### [File System Operations in web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#file-system-operations)
+
+Administrators can create and manage file system operations and assign them to the users now using the web console.
+
+### [Support for File Type Association (FTA) settings in web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#file-type-associations)
+
+This feature lets the administrators create, manage FTAs, and assign them to the users. Administrators can also use the File Type Association Assistant tool in the WEM Tool Hub to easily get the information they need for configuring FTAs in the web console.
+
+### [Enhancements to extended data in reports (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/reports#export-reports)
+
+Two new export options are introduced for agent reports, CSV (formatted) and JSON (formatted). These options enhance the readability of extended data within the reports.
+
+### [Categorize Profile Management settings in the web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management)
+
+This feature lets you reorganize your view of Profile Management settings. The three built-in tags, File-based, Container-based, and App access control act like filters, helping you concentrate on the settings available to the selected tag. The latest selected tags are retained as your administrator preference.
+
+### [Enhanced Agent Settings (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings#agent-settings)
+
+A new setting **Enable agent to use cached domain search results** is added to the agent settings. When enabled, the agent uses the cache for domain query results to improve performance and resiliency. You can also update WEM group policies when the agent cannot contact the domain.
+
+Minimum agent version required: `2311.1.0.1`
+
+### [Enhancements to the manual backup limit (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets#back-up-a-configuration-set)
+
+Citrix have now enhanced the maximum manual export limit from 10 to 25 per account.
+
+### [Windows Logon analysis](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub#windows-logon-analysis)
+
+This tool collects the logon duration data and generates reports about the recent logon duration data. Each logon report is categorized further allowing you to identify potential issues and bottlenecks.
+
+### [Enhancements to the health check report functionality in web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/reports)
+
+This feature improves the user experience of configuring Profile Management through WEM. When you follow the link on the Agent health check result page to **Profile Management** settings, you can see the errors/warnings in the results with their corresponding setting highlighted in the **Profile Management** configuration page on the web console. You can then modify the settings according to the results displayed in the footer.
+
+### [Application security log reports (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings#monitoring-preferences)
+
+Administrators can now review the Application security logs in the web console by enabling application security log collection per configuration set and get the corresponding reports. The administrator can view the logs by subtype within the details of each report.
+
+Minimum agent version required: `2311.1.0.1`
+
+### [Enhancements to optimization and usage insights (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/insights#excluded-applications)
+
+This feature lets you configure the list of excluded applications by providing the application names. You can add, edit, and delete the excluded applications using the settings under Preferences.
+
+### [Privilege Elevation and Process Hierarchy Control log reports (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings#monitoring-preferences)
+
+Administrators can now review the privilege elevation logs in the web console by enabling security log collection per configuration set and get the corresponding reports. The administrator can view the logs by subtype within the details of each report.
+
+Minimum agent version required: `2311.1.0.1`
+
+### [Profile Management in web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#profile-management-in-web-console-preview)
+
+Workspace Environment Management now supports all supported versions of Profile Management through 2311. The following features are now available in the web console.
+
+-  **User store selection method**. Specify the user store selection method when multiple user stores are available. Options include:
+    -  **Configuration order**. Profile Management selects the earliest configured store.
+    -  **Access performance**. Profile Management selects the store with the best access performance.
+
+   The feature is available under each configuration set in **Profiles > Profile Management Settings > Advanced settings > Replicate user stores**.
+
+-  **Deduplicate files this size or larger (MB)**. Specifies the minimum size of files to deduplicate from profile containers. The default size is 256 MB. 
+
+   The feature is available under each configuration set in P**rofiles > Profile Management Settings > File deduplication > Enable file deduplication**.
+
+-  **Log off users when profile container is not available during logon**. Specifies whether to force log-off users when the profile container is unavailable during user logon.
+
+   The feature is available under each configuration set in **Profiles > Profile Management Settings > Profile container > Enable profile container**.
+
+-  **Set users and groups to access profile container**. Specifies which AD domain users and groups have Read & Execute permission on profile containers. By default, a profile container is accessible only to its owner.
+
+   The feature is available under each configuration set in **Profiles > Profile Management Settings > Profile container**.
+
+Minimum agent version required: `2311.1.0.1`
+
 ## Version 2308
 
 ### [Web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/web-console)

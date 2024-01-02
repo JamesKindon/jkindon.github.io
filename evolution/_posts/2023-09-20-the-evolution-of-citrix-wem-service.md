@@ -24,11 +24,79 @@ Citrix WEM Service environment is consistently updating and bringing enhanced ca
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## November 2023
+
+### [Automatic agent upgrade](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/app-package-delivery)
+
+The following enhancements have been made to the automatic agent upgrade feature:
+
+-  You can select the desired agent package from the centralized SMB share package storage location, and schedule automatic upgrades for all agent machines in a configuration set.
+-  You can now specify the time period and schedule the day(s) of the week on which you want WEM to automatically roll out the upgrade to all agent machines in a configuration set.
+-  You can now specify the device name and IP of agent machines in a configuration set for which you want WEM to automatically roll out the upgrades.
+
+Minimum agent version required: `2310.1.0.1`
+
+### [Extended limit for the Memory Usage Limit functionality](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new#extended-limit-for-the-memory-usage-limit-functionality)
+
+This feature is enhanced to extend the limitation set for the maximum value of the Memory Usage Limit functionality from 4 GB to 32 GB in 64-bit OS. This enhancement provides more flexibility based on real situations in the customer system environment.
+
+Minimum agent version required: `2310.1.0.1`
+
+### [Windows Logon analysis](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub#windows-logon-analysis)
+
+This tool collects the logon duration data and generates reports about the recent logon duration data. Each logon report is categorized further allowing you to identify potential issues and bottlenecks.
+
+This is a really cool amount of information similar to the gathered by Diretor/Monitor, ControlUp or multiple 3rd party PowerShell scripts.
+
+### [Application security log reports](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings#monitoring-preferences)
+
+Administrators can now review the Application security logs in the web console by enabling application security log collection per configuration set and get the corresponding reports. The administrator can view the logs by subtype within the details of each report.
+
+Minimum agent version required: `2310.1.0.1`
+
+## October 2023
+
+### [Registry Entries](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#registry-entries)
+
+Using the web console, you can now add registry entries as assignable actions, which let you create, set, or delete registry values in the user environment. The feature has been enhanced to provide a better user experience.
+
+Additionally, you are now able to add tags to registry entries and assign multiple registry entries at the same time. This is yet another example of "ask and ye shall receive". Awesome!
+
+### [Enhancements to extended data in reports](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/reports#export-reports)
+
+Two new export options are introduced for agent reports, **CSV (formatted)** and **JSON (formatted)**. These options enhance the readability of extended data within the reports
+
+### [Categorize Profile Management settings in the web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management)
+
+This feature lets you reorganize your view of Profile Management settings. The three built-in tags, **File-based**, **Container-based**, and **App access control** act like filters, helping filter on the settings available to the selected tag. The latest selected tags are retained as your preference.
+
+### [Enhancements to optimization and usage insights](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/insights#excluded-applications)
+
+This feature lets you configure the list of excluded applications by providing the application names. You can add, edit, and delete the excluded applications using the settings under **Preferences**.
+
+### [Support for File Type Association (FTAs) settings on web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#file-type-associations)
+
+This feature lets the administrators create, manage FTAs, and assign them to the users. Administrators can also use the **File Type Association Assistant** tool in the **WEM Tool Hub** to easily get the information they need for configuring FTAs in the web console.
+
+### [Enhanced Agent Settings](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings#agent-settings)
+
+A new setting **Enable agent to use cached domain search results** is added to the agent settings. When enabled, the agent uses the cache for domain query results to improve performance and resiliency. You can also update WEM group policies when the agent cannot contact the domain.
+
+Minimum agent version required: `2309.2.0.1`
+
+### [Enhancements to the health check report functionality in web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/reports)
+
+This feature improves the user experience of configuring Profile Management through WEM. When you follow the link on the Agent health check result page to **Profile Management** settings, you can see the errors/warnings in the results with its corresponding setting highlighted in the **Profile Management** configuration page on the web console. You can then modify the settings according to the results displayed in the footer.
+
+### [New version of WEM Tool Hub](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub)
+
+A new version of WEM Tool Hub is now available: `2309.2.0.1`. This version includes performance enhancements, support for AAD/NDJ object selector support, and bug fixes.
+
 ## September 2023
 
 ### [Support for the Windows 11 and Windows Server 2022 in Citrix Optimizer](https://docs.citrix.com/en-us/workspace-environment-management/service/using-environment-management/system-optimization/citrix-optimizer)
 
-Citrix added support for the Windows 11 version 21H2 (build 2009) and Windows Server 2022 21H2 (build 2009) in Citrix Optimizer. You can now use the WEM service to perform template-based system optimizations for Windows 11 2009 and Windows Server 2022 2009 machines. 
+Citrix added support for the Windows 11 version 21H2 (build 2009) and Windows Server 2022 21H2 (build 2009) in Citrix Optimizer. You can now use the WEM service to perform template-based system optimizations for Windows 11 2009 and Windows Server 2022 2009 machines.
 
 In addition, Citrix have updated all existing templates to reflect changes introduced in the latest standalone Citrix optimizer.
 

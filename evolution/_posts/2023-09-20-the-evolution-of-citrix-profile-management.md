@@ -26,6 +26,63 @@ This list will start at CVAD 1912 LTSR, anything prior to that, refer to the app
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## Version 2311
+
+### [Improved user store selection](https://docs.citrix.com/en-us/profile-management/current-release/configure/replicate-user-stores#change-the-user-store-selection-method)
+
+By default, when multiple user stores are available, CPM selects the store with the *latest* profile data. If more than one store has the latest profile, Profile Management selects the one configured earliest.
+
+With a new policy, **User store selection method**, you can now enable Profile Management to select the store with the best access performance.
+
+CPM performs a check to see which store has the better performance (how fast it can be accessed) and then uses that path as the primary store.
+
+### [Files deduplication support extended to profile containers](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-file-deduplication)
+
+File deduplication has been extended to profile containers, allowing you to efficiently reduce storage costs for profile containers. By default, Profile Management deduplicates files from profile containers only when those files are larger than 256 MB. If necessary, you can increase this threshold size using a new policy, **Minimum size of files to deduplicate from profile containers**.
+
+### [Support for force logging off users when the profile container is unavailable during logon](https://docs.citrix.com/en-us/profile-management/current-release/configure/citrix-profile-management-profile-container#optional-specify-whether-to-log-off-users-when-the-profile-container-is-not-available-during-logon)
+
+By default, when the profile container is unavailable during user logon, a user logs on using the temporary profile instead. However, this behavior leads to data loss for any changes made during the session.
+
+There is a new policy, **Log off users when profile container is not available during logon**. With this policy, you can now force log-off users off instead.
+
+### [Support for enabling read access to profile containers](https://docs.citrix.com/en-us/profile-management/current-release/configure/citrix-profile-management-profile-container#optional-grant-ad-users-read-access-to-profile-containers)
+
+By default, a profile container is accessible only to its owner. With a new policy, **Users and groups to access profile container**, you can now enable other users to have Read access to the profile container.
+
+This policy empowers you to exercise more precise and secure control over profile container access.
+
+### [Support for enabling both multi-session write-back and local caching for profile containers](https://docs.citrix.com/en-us/profile-management/current-release/configure/citrix-profile-management-profile-container)
+
+In container-based profile solutions, you can now enable both the **Enable multi-session write-back for profile containers** and **Enable local caching for profile containers** policies. This enhancement improves user experience by combining the benefits of both policies, which include:
+
+-  Data consistency across concurrent sessions (through multi-session write-back)
+-  Faster logon and logoff times and reduced network load (through local caching)
+
+### [Multi-session runtime sync support for OneDrive files](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-the-onedrive-container)
+
+With the OneDrive container enabled, any changes a user makes to OneDrive files in a session are now instantly visible in its concurrent sessions. This improvement reduces synchronization conflicts and ensures data integrity.
+
+### [Single Sign-On (SSO) sync support for OneDrive Container](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-the-onedrive-container)
+
+With this enhancement, users now don’t have to reenter credentials for OneDrive during subsequent logons, improving user convenience.
+
+### [Support for the new Microsoft Teams](https://docs.citrix.com/en-us/profile-management/current-release/whats-new.html#support-for-the-new-microsoft-teams)
+
+With the UWP app roaming policy enabled, the new Microsoft Teams app can now roam with users. Therefore, users can access the same Microsoft Teams app with their personalized settings and data from different devices.
+
+### [Health check enhancements](https://docs.citrix.com/en-us/profile-management/current-release/whats-new.html#health-check-enhancements)
+
+Citrix enhanced the Profile Management health check tool to provide more comprehensive health checks. Besides the existing status checks, the tool can now provide more checks such as an assessment of logon times, letting you quickly identify and resolve issues that might impact the user experience.
+
+### [Enhanced Profile Management logs](https://docs.citrix.com/en-us/profile-management/current-release/troubleshoot/log-file-checklist)
+
+Citrix enhanced the Profile Management logs to provide more details for user logon and logoff processes. This improvement enables you to quickly pinpoint the underlying reasons for slow logons or logoffs.
+
+### [New Windows events for monitoring size changes and sync process durations for pending areas](https://docs.citrix.com/en-us/profile-management/current-release/troubleshoot/events)
+
+Citrix added more Windows events for monitoring tools to track both size changes and sync process durations for the pending area. This enhancement provides you with valuable data to more efficiently identify and resolve relevant issues.
+
 ## Version 2308
 
 ### [Extended app access control (AppMasking)](https://docs.citrix.com/en-us/profile-management/current-release/configure/app-access-control)

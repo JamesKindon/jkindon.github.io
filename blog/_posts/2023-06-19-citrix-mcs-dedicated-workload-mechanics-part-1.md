@@ -30,7 +30,7 @@ Persistent VMs deployed with MCS have a couple of challenges when looking at cha
 -  They are tied to the Catalog they were provisioned in, and that catalog is tied to the hosting connection it was created against. You cannot change this and keep the MCS relationship in tact.
 -  If something happens to the underlying infrastructure, where the ID of the machine changes at the hypervisor layer, then the machine is, for the most part, orphaned.
 
-For these reasons, when dealing with scenarios such as disaster recovery, migration or infrastructure refreshes, it is typically recommened to remove the virtual machine from the MCS provisioning world, and bring the machine back in as a manual power managed instance. Once this is completed, there is a lot more flexibility around what can be done with the machine. I wrote a script a while back which can [automate the process of moving from an MCS provisioned catalog, to a manual power-managed catalog](https://github.com/JamesKindon/Citrix/blob/master/Migration%20Scripts/MigrateMCSToManual/MigrateMCSToManual.ps1).
+For these reasons, when dealing with scenarios such as disaster recovery, migration or infrastructure refreshes, it is typically recommended to remove the virtual machine from the MCS provisioning world, and bring the machine back in as a manual power managed instance. Once this is complete, there is a lot more flexibility around what can be done with the machine. I wrote a script a while back which can [automate the process of moving from an MCS provisioned catalog, to a manual power-managed catalog](https://github.com/JamesKindon/Citrix/blob/master/Migration%20Scripts/MigrateMCSToManual/MigrateMCSToManual.ps1).
 
 ## The Provisioning Puzzle
 
@@ -55,7 +55,7 @@ In a persistent MCS environment on Nutanix AHV, the Nutanix VM `uuid`, the `Brok
 
 In some scenarios (disaster recovery is a great example), the `uuid` of the virtual machine can change, rendering the machine orphaned from an MCS standpoint. If we want to remediate the MCS relationship, there are a couple of options we can play with.
 
-### Using the Citrix VAD PowerShell SDK
+### Using the CVAD PowerShell SDK
 
 Using the native option within Citrix, from CVAD 2212 onwards, the `Set-BrokerMachine -HostedMachineId ""` does indeed update the `BrokerMachine`:`HostedMachineId` and the  `ProvVM`:`VMId` but it does not update the `ProvVM`:`IdentityDiskID`.
 

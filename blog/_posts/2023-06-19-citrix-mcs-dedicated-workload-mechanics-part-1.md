@@ -22,8 +22,8 @@ Citrix Machine Creation Services is often used to provision dedicated, persisten
 
 There are exceptions to this tradition, where certain new features are being made available to persistent machine workloads provisioned by MCS:
 
--  Reset OS disk, which allows the original OS disk to be reset back to its default provisioned state.
--  {*Another feature here which I will add once it has been released and I wont be in breach of NDA*}.
+-  [Reset OS disk](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#reset-os-disk), which allows the original OS disk to be reset back to its default provisioned state.
+-  [Repair the identity information of active computer accounts](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#repair-the-identity-information-of-active-computer-accounts), which lets you reset the identity information of active computer accounts that have identity-related problems.
 
 Persistent VMs deployed with MCS have a couple of challenges when looking at changing the underlying infrastructure:
 

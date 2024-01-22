@@ -7,7 +7,7 @@ description: Are you maximizing the value from your Citrix investment?
 image:
   path: /assets/img/finding-the-value-in-your-citrix-investment/post_default_image.jpg
 sitemap: true
-hide_last_modified: false
+hide_last_modified: true
 comments: true
 ---
 
@@ -268,7 +268,7 @@ For regulated and sensitive environments, [Citrix Session Recording](https://doc
 
 [![Session Recording]({{site.baseurl}}/assets/img/finding-the-value-in-your-citrix-investment/session-recording-service-diagram.jpg)]({{site.baseurl}}/assets/img/finding-the-value-in-your-citrix-investment/session-recording-service-diagram.jpg)
 
-Additional capabilities exist for enhanced security, both solutions have an offering so whilst this isn't a differentiator, it's still important to note.
+Additional capabilities exist for enhanced security, alternate solutions may have an offering so whilst this isn't a differentiator, it's still important to note.
 
 -  Text-based session [Watermarks](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/graphics/session-watermark.html) help to deter and enable tracking data theft.
 -  [App Protection](https://docs.citrix.com/en-us/citrix-workspace-app/app-protection.html) provides enhanced security when using published resources. Two policies provide anti-keylogging and anti-screen-capturing capabilities.
@@ -297,7 +297,7 @@ Whilst Microsoft has made it clear that MSIX is the future of their packaging an
 
 Citrix out-of-the-box integrates and drives the delivery of those packages. For customers who are happy with MSIX including App-Attach, Citrix supports the [integration and delivery of these packages](https://www.citrix.com/blogs/2023/04/12/simplify-your-app-deployment-with-citrix-daas-and-microsoft-msix/) also.
 
-Again, conversely, for either platform handling either of these package types, it would be completely remiss of me to not include a reference to the sensational work Bram Wolfs has done in building out the [AppVentix](https://appventix.com/) solution which trumps both Microsoft and Citrix delivery methods.
+Again, conversely, for any platform handling either of these package types, it would be completely remiss of me to not include a reference to the sensational work Bram Wolfs has done in building out the [AppVentix](https://appventix.com/) solution which trumps both Microsoft and Citrix delivery methods.
 
 Citrix has **App Layering** and management of both **MSIX & App-V solutions**. How are you going to deliver the same packages if you are looking at something else? How much fun have you had with MSIX to date?
 {:.tldr}

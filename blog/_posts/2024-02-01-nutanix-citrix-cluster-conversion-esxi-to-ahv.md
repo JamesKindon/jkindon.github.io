@@ -18,7 +18,7 @@ comments: true
 
 ## Intro
 
-Customers across the globe have enjoyed Citrix workloads running on VMWare ESXi with Nutanix Cloud Infrastructure for many years.
+Customers across the globe have enjoyed Citrix workloads running on VMware ESXi with Nutanix Cloud Infrastructure for many years.
 
 In some scenarios, the choice to use ESXi was made because it was known and was a logical decision. For others, AHV may not have had the relevant feature set required at the time.
 

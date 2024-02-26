@@ -7,7 +7,7 @@ subtitle: Scripts that may be of interest
 -  this unordered seed list will be replaced by the toc
 {:toc}
 
-Here is a script index. Hopefully these are of use to some folks. They have been of use to me.
+Here is a script index. Hopefully, these are of use to some folks. They have been of use to me.
 
 ## Nutanix Scripts
 
@@ -31,7 +31,7 @@ Here is a script index. Hopefully these are of use to some folks. They have been
 
 -  **[CheckBrokerService.ps1](https://github.com/JamesKindon/Citrix/blob/master/CheckBrokerService.ps1)**. Checks the Citrix Broker Desktop Service is started after the predefined sleep time. Uses as a Startup Script.
 -  **[CreateDesktopsForVDAs.ps1](https://github.com/JamesKindon/Citrix/blob/master/CreateDesktopsForVDAs.ps1)**. Creates a Tag per VDA and Creates a dedicated desktop to launch only against that Tag.
--  **[EnableSSL.ps1](https://github.com/JamesKindon/Citrix/blob/master/EnableSSL.ps1)**. Handles the assignment of certificates requried for both Citrix Brokers and Citrix Cloud Connectors as well as enabling or disabling HTTP based XML Access.
+-  **[EnableSSL.ps1](https://github.com/JamesKindon/Citrix/blob/master/EnableSSL.ps1)**. Handles the assignment of certificates required for both Citrix Brokers and Citrix Cloud Connectors as well as enabling or disabling HTTP based XML Access.
 -  **[GetUserSessions.ps1](https://github.com/JamesKindon/Citrix/blob/master/GetUserSessions.ps1)**. Script to hunt for sessions based on StoreFront launch points.
 -  **[PreFetchStartApps.ps1](https://github.com/JamesKindon/Citrix/blob/master/PreFetchStartApps.ps1)**. Startup Script to deal with Application pre-launch at machine startup.
 -  **[WeeklyRebootSchedulesByTag.ps1](https://github.com/JamesKindon/Citrix/blob/master/WeeklyRebootSchedulesByTag.ps1)**. Creates a Tag driven daily reboot schedule using `BrokerRebootScheduleV2` schedules.
@@ -47,6 +47,7 @@ Here is a script index. Hopefully these are of use to some folks. They have been
 -  **[EnableManagedIdentity.ps1](https://github.com/JamesKindon/Citrix/blob/master/Azure/EnableManagedIdentity.ps1)**. Loops through a list of Azure Resource Groups and Subscriptions, grabs the virtual machines and assigns a UserAssigned managed identity. [Info](https://jkindon.com/enhancing-citrix-mcs-and-microsoft-azure-part-3-managed-identities/)
 -  **[UpdateMCSCatalogViaAPI.ps1](https://github.com/JamesKindon/Citrix/blob/master/Azure/UpdateMCSCatalogViaAPI.ps1)**. Updates a Citrix Cloud MCS catalog with an Azure image via API.
 -  **[WEMSelectiveActionTrackingReset.ps1](https://github.com/JamesKindon/CitrixWEMActionTrackingReset/blob/master/WEMSelectiveActionTrackingReset.ps1)**. A simple Powershell script to manage the registry caching of tracked WEM actions. [Info](https://jkindon.com/selective-deletion-of-the-wem-actions-tracking-cache/)
+-  **[QuickCatalogUpdate.ps1](https://github.com/JamesKindon/Citrix/blob/master/QuickCatalogUpdate.ps1)**. A small PowerShell script using the Citrix DaaS and CVAD Rest API to update Nutanix based MCS Catalogs.
 
 ## Misc EUC Scripts
 

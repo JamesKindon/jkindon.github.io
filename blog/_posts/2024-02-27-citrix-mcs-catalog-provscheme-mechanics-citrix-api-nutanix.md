@@ -20,7 +20,7 @@ comments: true
 
 I spend a fair bit of time with Citrix MCS, it’s a wonderful provisioning solution that the industry has enjoyed for a long time.
 
-Many environments have multiple MCS Catalogs. Each *Catalog*, when deployed using MCS, is tied to an image via the *Provisioning Scheme* construct. This is captured as the `ProvisioningScheme.MasterImage.Name` attribute when consuming the API. That image may be used across multiple different *Catalogs*.
+Many environments have multiple MCS *Catalogs*. Each *Catalog*, when deployed using MCS, is tied to an image via the *Provisioning Scheme* construct. This is captured as the `ProvisioningScheme.MasterImage.Name` attribute when consuming the API. That image may be used across multiple different *Catalogs*.
 
 For example, in the Nutanix world, our hosting is currently linked to a Nutanix Cluster via Prism Element, so when we have multiple *Clusters*, we have multiple *Catalogs*, those multiple *Catalogs* may all share the same image which is replicated around the hosting layer to the multiple different Clusters.
 

@@ -8,7 +8,7 @@ description: Tips and Tricks to reduce Azure costs with Citrix DaaS capability
 image:
   path: /assets/img/azure-cost-optimisation-with-citrix-daas/post_default_image.jpg
 sitemap: true
-hide_last_modified: true
+hide_last_modified: false
 comments: true
 ---
 
@@ -85,6 +85,10 @@ Citrix DaaS MCS allows [provisioned machines to be tagged](https://docs.citrix.c
 
 A smart way of using the Citrix [automated tagging](https://www.citrix.com/blogs/2023/05/23/reduce-your-cloud-costs-with-citrix-vdi-reclamation-service/) feature to build your own service to identify and reclaim orphaned VDI.
 
+**Azure Spot VMs**
+
+[Azure Spot VMs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#create-a-catalog-using-azure-spot-vms) allow you to take advantage of Azure’s unused computing capacity at a significant cost savings. However, the ability to allocate an Azure Spot VM depends on the current capacity and pricing. Azure Spot VMs are good for some non-critical applications and desktops.
+
 ## Category: IaaS
 
 **Erroneous backup jobs**
@@ -103,7 +107,7 @@ This does not hold true when using bare metal solutions such as Nutanix NC2, whe
 
 **Identify MCS orphaned resources on Azure**
 
-You can retrieve a list of [orphaned resources](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage.html#retrieve-a-list-of-orphaned-resources) that are created by MCS but are no longer used by MCS.
+You can retrieve a list of [orphaned resources](https://support.citrix.com/article/CTX573477/efficiently-manage-orphaned-azure-resources-with-citrix) that are created by MCS but are no longer used by MCS.
 
 ## Summary Table
 
@@ -118,6 +122,7 @@ You can retrieve a list of [orphaned resources](https://docs.citrix.com/en-us/ci
 | Instance Management | Instance Reservation | Less PAYG rates = Less $$ |
 | Instance Management | License/HUB | More BYOL or HUB = Less $$ as far as Azure spend goes |
 | Instance Management | VDI Reclamation Service | Less orphaned crud = Less $$ |
+| Instance Management | Azure Spot VMs | Cheaper Instances = Less $$ |
 | IaaS | Erroneous backup jobs | Less (useless) backups = Less $$ |
 | IaaS | Single vs Multi Session economics for EUC workloads | Right workload = Appropriate $$ |
 | IaaS | Identify MCS orphaned resources on Azure | Less orphaned crud = Less $$ |

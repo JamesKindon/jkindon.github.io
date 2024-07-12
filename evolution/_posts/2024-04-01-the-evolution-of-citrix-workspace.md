@@ -28,7 +28,7 @@ Workspace releases are broken into two categories:
 -  Platform. These are platform functionalities and cover features and capabilities relevant for administrators.
 -  User Interface. This the interface consumed by the users, features released here tend to be directly visibile to the end-user.
 
-Citrix DaaS also has features which impact the Workspace Service, as such, any relevant DaaS feature is captured in this blog under the Platform section in the same month. You should keep an eyes on the DaaS releases [here](https://docs.citrix.com/en-us/citrix-daas/whats-new.html).
+Citrix DaaS also has features which impact the Workspace Service, as such, any relevant DaaS feature is captured in this blog under the Platform section in the same month. You should keep an eye on the DaaS releases [here](https://docs.citrix.com/en-us/citrix-daas/whats-new.html).
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 

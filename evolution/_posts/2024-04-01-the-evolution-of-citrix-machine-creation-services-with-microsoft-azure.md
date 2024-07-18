@@ -32,6 +32,84 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## July 2024
+
+### [Increased limit of replicas per image version in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#configure-azure-compute-gallery)
+
+Azure has increased the maximum count of replicas for a gallery image single version to 100. With this limit increase, you can now set the property `SharedImageGalleryReplicaMaximum` to a maximum value of 100 while creating an MCS machine catalog using the Azure Compute Gallery image.
+
+### [Managing prepared images with the Images node](https://docs.citrix.com/en-us/citrix-daas/install-configure/image-management)
+
+An **Images** node is now available in Web Studio, letting you prepare an MCS image (prepared image) from a single source image and deploy it across various MCS machine catalogs. This node facilitates complete image lifecycle management, enabling you to create image definitions, versions, and catalogs.
+
+Images prepared using this node can only be used in Azure and VMware environments. Alternatively, you can also create catalogs with prepared images using the **Machine Catalogs** node.
+
+### [Support for Azure’s nested virtualization](https://azure.microsoft.com/en-us/blog/nested-virtualization-in-azure/)
+
+With this feature, if you configure the master VM with nested virtualization enabled, then all VMs in the MCS machine catalog created using that master VM have nested virtualization enabled. This feature is applicable to both persistent and non-persistent VMs. You can update an existing MCS machine catalog and existing VMs to have nested virtualization through image update.
+
+Currently, only Dv3 and Ev3 VM sizes support nested virtualization.
+
+### [Support for on-demand capacity reservation in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#create-a-catalog-of-on-demand-capacity-reservation-vms)
+
+You can create an MCS machine catalog of Azure VMs with on-demand capacity reservation using a machine profile (VM or template spec). This feature is applicable to persistent and non-persistent machine catalogs. You can update an existing machine catalog and existing VMs to have or remove on-demand capacity reservations.
+
+For more information on Azure on-demand capacity reservation, see the [Microsoft documentation On-demand Capacity Reservation](https://learn.microsoft.com/en-us/azure/virtual-machines/capacity-reservation-overview)
+
+### [Option to update write-back cache settings post creation for Machine Creation Service (MCS) catalogs](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#july-2024)
+
+You now have the option to update the memory and disk cache size of the write-back cache, when Machine Creation Service (MCS) Storage Optimization (MCSIO) is enabled, after the catalog is created for MCS catalogs.
+
+### [Option for manually managing the service principal’s role for Azure AD joined device management](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager#enable-azure-ad-joined-device-management)
+
+Citrix enhanced the **Enable Azure AD joined device management option** for greater flexibility. Previously, you had to sign in to Azure and allow Citrix to assign the **Cloud Device Administrator** role to the connection's service principal on your behalf. This design worked only when your Azure account had permission to grant this role.
+
+With this enhancement, if your Azure account doesn't have the required permission, you can now choose Don't sign in to Azure when enabling Azure AD joined device management. This allows you to manually assign the role to the connection's service principal in the Azure portal.
+
+## June 2024
+
+### [Simplified subnet updates for machine catalogs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#edit-a-catalog)
+
+Previously, to change the subnet settings of a machine catalog, you had to delete and recreate it. With this feature, you can now achieve the same functionality by editing the catalog. Note that only new virtual machines created under the catalog will be on the newly associated subnets. This enhancement reduces the need for catalog deletion and associated tasks.
+
+### [Support for creating resource groups during Azure catalog creation (for PVS)](https://docs.citrix.com/en-us/provisioning/2402-ltsr/configure/citrix-provisioning-catalog-in-studio#create-a-citrix-provisioning-catalog-using-the-citrix-studio-interface)
+
+I know, it's not MCS, but it still falls under "Provisioning" so I am adding it.
+
+Previously, when creating Azure catalogs using Full Configuration, you had to create the resource groups using PowerShell commands. With this feature, you can now seamlessly create a resource group as part of catalog creation in Web Studio. This enhancement simplifies the overall creation workflow.
+
+## May 2024
+
+### [Azure GPU hibernation support (Preview)](https://learn.microsoft.com/en-us/azure/virtual-machines/hibernate-resume#supported-vm-sizes)
+
+You now have the option to support hibernation for Azure machine SKUs that support GPU
+
+### [Support for creating and managing Azure confidential VMs using Full Configuration](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#azure-confidential-vms-preview)
+
+Azure confidential VMs provide a strong, hardware-enforced boundary to help meet your security needs. With the Full Configuration user interface, you can now create and manage confidential VMs on Azure
+
+### [Cost optimization [Preview]](https://docs.citrix.com/en-us/citrix-daas/monitor/cost-optimization)
+
+I am going to dump this one here as even though it's not provisioning, there is an obvious dotted line towards it, and this feature is really, really cool.
+
+## April 2024
+
+### [Change disk encryption in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure#change-disk-encryption)
+
+You can now change the disk encryption in Azure virtualization environments. You can do the following:
+
+-  Create an MCS machine catalog with a disk encryption set (DES) that is different from the master image DES.
+-  Change the disk encryption type from one DES key to another DES key of an existing MCS machine catalog and existing VMs.
+-  Update an MCS machine catalog and VM that was not previously CMEK enabled to have customer-managed encryption key (CMEK) encryption (DES), disk encryption at host, or double encryption.
+-  Update an existing MCS machine catalog and VM to be non-encrypted that was previously encrypted.
+-  Enable disk encryption with private endpoint (an MCS machine catalog that used a host connection enabled with `ProxyHypervisorTrafficThroughConnector`).
+
+### [Support for modifying the page file settings](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#modify-page-file-settings)
+
+You can now modify the page file settings of the newly added VMs to an existing catalog without updating the master image. This is currently an Azure only feature.
+
+To modify the page file settings, you need `VDA version 2311` or later. You can modify the page file settings using the PowerShell commands.
+
 ## March 2024
 
 ### [Simplified subnet updates for machine catalogs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage#edit-a-catalog)

@@ -16,9 +16,9 @@ hide_last_modified: false
 comments: true
 related_posts:
   - evolution/_posts/2024-04-01-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2024-07-20-the-evolution-of-citrix-wem-service.md
   - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2024-07-20-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -44,7 +44,7 @@ An **Images** node is now available in Web Studio, letting you prepare an MCS im
 
 Images prepared using this node can only be used in Azure and VMware environments. Alternatively, you can also create catalogs with prepared images using the **Machine Catalogs** node.
 
-### [Support for Azure’s nested virtualization](https://azure.microsoft.com/en-us/blog/nested-virtualization-in-azure/)
+### [Support for Azure's nested virtualization](https://azure.microsoft.com/en-us/blog/nested-virtualization-in-azure/)
 
 With this feature, if you configure the master VM with nested virtualization enabled, then all VMs in the MCS machine catalog created using that master VM have nested virtualization enabled. This feature is applicable to both persistent and non-persistent VMs. You can update an existing MCS machine catalog and existing VMs to have nested virtualization through image update.
 
@@ -60,7 +60,7 @@ For more information on Azure on-demand capacity reservation, see the [Microsoft
 
 You now have the option to update the memory and disk cache size of the write-back cache, when Machine Creation Service (MCS) Storage Optimization (MCSIO) is enabled, after the catalog is created for MCS catalogs.
 
-### [Option for manually managing the service principal’s role for Azure AD joined device management](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager#enable-azure-ad-joined-device-management)
+### [Option for manually managing the service principal's role for Azure AD joined device management](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager#enable-azure-ad-joined-device-management)
 
 Citrix enhanced the **Enable Azure AD joined device management option** for greater flexibility. Previously, you had to sign in to Azure and allow Citrix to assign the **Cloud Device Administrator** role to the connection's service principal on your behalf. This design worked only when your Azure account had permission to grant this role.
 
@@ -125,13 +125,13 @@ With Full Configuration, you can now update a wider range of settings for MCS-pr
 -  Availability Zone
 -  Dedicated Host Group ID
 
-After you update the machine profile, Full Configuration compares the current settings with the new ones. If differences exist, you’ll be prompted to confirm which to apply. This design ensures transparent and efficient VM setting updates.
+After you update the machine profile, Full Configuration compares the current settings with the new ones. If differences exist, you'll be prompted to confirm which to apply. This design ensures transparent and efficient VM setting updates.
 
 ### [Support for Changing write-back cache properties for MCS-provisioned Azure VMs (Full Configuration)](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#march-2024)
 
 For Azure VMs provisioned using Machine Creation Services (MCS), you can now change their write-back cache (WBC) properties using Full Configuration, such as **Disk cache size**, **Memory cache size,** and **Enable storage cost saving**. 
 
-In addition, when you select a new machine size or machine profile for those VMs, Full Configuration validates WBC settings to prevent conflicts, such as exceeding the memory limit of the new selection. If conflicts occur, you’ll be prompted to re-configure WBC settings.
+In addition, when you select a new machine size or machine profile for those VMs, Full Configuration validates WBC settings to prevent conflicts, such as exceeding the memory limit of the new selection. If conflicts occur, you'll be prompted to re-configure WBC settings.
 
 ## February 2024
 
@@ -156,7 +156,7 @@ When you migrate from on-premises configuration to a cloud site, or from your cl
 
 ### [Validate configuration before creating an MCS machine catalog](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create#validate-configuration-before-creating-an-mcs-machine-catalog)
 
-With this feature, you can now validate configuration settings before creating an MCS machine catalog using the parameter `-validate` in `New-ProvScheme` command. After you run this PowerShell command with the parameter, you get an appropriate error message if there’s an incorrect parameter used or a parameter has conflict with another parameter. You can then use the error message to resolve the issue and successfully create an MCS machine catalog using PowerShell.
+With this feature, you can now validate configuration settings before creating an MCS machine catalog using the parameter `-validate` in `New-ProvScheme` command. After you run this PowerShell command with the parameter, you get an appropriate error message if there's an incorrect parameter used or a parameter has conflict with another parameter. You can then use the error message to resolve the issue and successfully create an MCS machine catalog using PowerShell.
 
 Currently, this feature is applicable to Azure, GCP, and VMware virtualization environments.
 
@@ -164,7 +164,7 @@ For anyone who has played with automating Catalog creations, this is a welcome f
 
 ### [Azure support for using spot VMs with MCS](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#create-a-catalog-using-azure-spot-vms)
 
-Azure Spot VMs allow you to take advantage of Azure’s unused computing capacity at significant cost savings. However, due to its eviction policy, Azure Spot VMs are good for only some **non-critical** applications and desktops.
+Azure Spot VMs allow you to take advantage of Azure's unused computing capacity at significant cost savings. However, due to its eviction policy, Azure Spot VMs are good for only some **non-critical** applications and desktops.
 
 With this feature, you can create an MCS machine catalog of Azure Spot VMs using a machine profile (VM or template spec). You can update an existing catalog to have Azure Spot VMs as the newly created VMs or switch to have standard Azure VMs. You can also update existing VMs to be Azure Spot VMs.
 
@@ -180,14 +180,14 @@ With this feature, you can manage the configuration versions of a machine catalo
 
 -  See the list of versions.
 -  Use any previous version to update a machine catalog.
--  Manually delete a version if it isn’t used by a VM.
+-  Manually delete a version if it isn't used by a VM.
 -  Change the number of maximum versions to be retained by a machine catalog.
 
 ## January 2024
 
 ### [Azure catalogs support for inheriting DES settings from master images (Full Configuration)](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#create-a-machine-catalog-using-an-azure-resource-manager-image-in-the-full-configuration-interface)
 
- Previously, Full Configuration set the Azure catalogs' default DES settings only based on **machine profiles**. With this enhancement, in the following cases, Full Configuration sets an Azure catalog’s default DES settings directly based on the **master image**:
+ Previously, Full Configuration set the Azure catalogs' default DES settings only based on **machine profiles**. With this enhancement, in the following cases, Full Configuration sets an Azure catalog's default DES settings directly based on the **master image**:
 
 -  If a machine profile isn't selected
 -  If the profile specifies a Platform Managed Key (PMK)
@@ -283,7 +283,7 @@ When you change any of these settings, Full Configuration automatically identifi
 
 ### [Multiple NICs support for Azure VMs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#create-or-update-a-catalog-with-multiple-nics-per-vm)
 
-With Full Configuration, you can now create Azure VMs with multiple NICs. A VM’s maximum NIC count is determined by the machine size setting while its actual NIC count allowed is defined by the machine profile setting
+With Full Configuration, you can now create Azure VMs with multiple NICs. A VM's maximum NIC count is determined by the machine size setting while its actual NIC count allowed is defined by the machine profile setting
 
 ### [Support for creating empty machine catalogs for non-MCS-provisioned machines](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#october-2023)
 
@@ -462,7 +462,7 @@ In Full Configuration, you can now change networks for a connection. You can't u
 
 ### [Ability to remove tags in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure.html#remove-tags)
 
-Previously, `Remove-ProvVM` and `Remove-ProvScheme` PowerShell commands with `ForgetVM` parameter removed the VMs and machine catalogs from the Citrix database. However, the commands didn't remove the tags from the resources. You had to individually manage the VMs and machine catalogs that weren’t deleted entirely from all the resources. With this feature, you can use:
+Previously, `Remove-ProvVM` and `Remove-ProvScheme` PowerShell commands with `ForgetVM` parameter removed the VMs and machine catalogs from the Citrix database. However, the commands didn't remove the tags from the resources. You had to individually manage the VMs and machine catalogs that weren't deleted entirely from all the resources. With this feature, you can use:
 
 -  `Remove-ProvVM` with `ForgetVM` parameter to remove VMs and tags created on the resources from a single VM or a list of VMs from a machine catalog.
 -  `Remove-ProvScheme` with `ForgetVM` parameter to remove a machine catalog from the Citrix database and tags created on the resources from an entire machine catalog.
@@ -608,7 +608,7 @@ Previously, in Azure environments, you could only select an image within your su
 
 ### [Support for using host groups and Azure availability zones at the same time](https://docs.citrix.com/en-us/citrix-daas/install-configure/resource-location/azure-resource-manager.html#using-host-groups-and-azure-availability-zones-at-the-same-time)
 
-There is now a pre-flight check to assess whether the creation of a machine catalog will be successful based on the Azure availability zone specified in the custom property and the host group’s zone. Catalog creation fails if the availability zone custom property does not match the host group’s zone.
+There is now a pre-flight check to assess whether the creation of a machine catalog will be successful based on the Azure availability zone specified in the custom property and the host group's zone. Catalog creation fails if the availability zone custom property does not match the host group's zone.
 
 A host group is a resource that represents a collection of dedicated hosts. A dedicated host is a service that provides physical servers that host one or more virtual machines. Azure availability zones are physically separate locations within each Azure region that are tolerant to local failures.
 
@@ -773,7 +773,7 @@ There are two sets of permissions required for security requirements and to mini
 
 ### [Use VM's temporary disk to host the write-back cache disk](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/azure-resource-manager.html#create-a-machine-catalog-using-an-azure-resource-manager-image)
 
-A new option added: `Use non-persistent write-back cache disk`, to the `Machine Catalog Setup > Disk Settings` page of the `Manage > Full Configuration` interface. Select that option if you do not want the write-back cache disk to persist for the provisioned VMs. With the option selected, the VM’s temporary disk is used to host the write-back cache disk if the temporary disk has sufficient space. Doing this reduces cost
+A new option added: `Use non-persistent write-back cache disk`, to the `Machine Catalog Setup > Disk Settings` page of the `Manage > Full Configuration` interface. Select that option if you do not want the write-back cache disk to persist for the provisioned VMs. With the option selected, the VM's temporary disk is used to host the write-back cache disk if the temporary disk has sufficient space. Doing this reduces cost
 
 ### [Change certain VM settings after creating Azure VM catalogs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-manage.html#edit-a-catalog)
 

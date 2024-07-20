@@ -12,8 +12,8 @@ comments: true
 related_posts:
   - evolution/_posts/2024-04-01-the-evolution-of-citrix-profile-management.md
   - evolution/_posts/2024-07-18-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2024-07-20-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2024-07-20-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->

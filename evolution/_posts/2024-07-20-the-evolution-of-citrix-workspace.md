@@ -12,7 +12,7 @@ comments: true
 related_posts:
   - evolution/_posts/2024-04-01-the-evolution-of-citrix-profile-management.md
   - evolution/_posts/2024-07-18-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2024-07-20-the-evolution-of-citrix-wem-service.md
   - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem.md
 ---
 
@@ -35,6 +35,14 @@ I will do my best to maintain this list as and when features come out, as well a
 # Citrix Workspace Platform
 
 You can find the official release documentation for Workspace Platform releases [here](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-platform)
+
+## July 2024
+
+### [Configure store names for your store URL](https://docs.citrix.com/en-us/citrix-workspace/configure/configure-custom-store-name-for-your-url)
+
+Administrators can now add custom store names while adding stores to Citrix Workspace app. Store names make identifying and distinguishing the stores easier for end users. Previously, in a multiple Workspace URL setup (subdomains of cloud.com), all the stores would be called "Store", with an automatically generated numeric suffix. For example, Store 1, Store 2, Store 3, and so on. This arrangement made it difficult for the administrators and end users to associate the store name with the store URLs.
+
+With this feature, admins can give the stores a short name that end users can recognize. In addition, admins have the capability to enable or disable the ability for end users to modify the store name on their Citrix Workspace app.
 
 ## Feb 2024
 
@@ -278,6 +286,33 @@ Recents and Favorites are loaded first in Workspace, so users can launch their c
 # Citrix Workspace UI
 
 You can find the official release documentation for Workspace UI releases [here](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience)
+
+## 24.28
+
+### [Deprecation of old Workspace UI](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience#deprecation-of-old-workspace-ui)
+
+The old Workspace UI experience is now deprecated. Administrators no longer have the option to enable the old UI for end users. The new Workspace UI offers a better user experience and increases productivity, and it is enabled by default.
+
+## 24.20
+
+### [Enhanced search experience](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience#2420)
+
+The Citrix Workspace app introduces an enhanced search engine feature, allowing end users to view the app path alongside search results. This functionality assists end users in quickly identifying an app’s location. Long app paths are truncated to maintain a clean and uncluttered search results list. You can see the complete path when hovering the mouse pointer over the path’s breadcrumb. Additionally, the category name will be highlighted in bold for easy recognition if it matches the search input.
+
+### [Performance improvement](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience#performance-improvement)
+
+Citrix Workspace UI now loads faster than before after the enhancements in the following areas:
+
+1.  Parallelizing user authentication and Workspace UI loading - Citrix Workspace UI loads quickly while the user authentication check runs in the background
+2.  Caching Workspace UI - The Workspace UI now loads from cache, resulting in quicker opening of the app than before.
+
+## 24.19
+
+### [Hibernate and Resume virtual desktop sessions (Preview)](https://docs.citrix.com/en-us/citrix-workspace/get-started/activity-manager#hibernate-and-resume-virtual-desktop-sessions-preview)
+
+Users can now hibernate their virtual desktop sessions on Citrix Workspace app when not in use and resume them from where they left off. The hibernate action preserves the entire state of the desktop session, including the running apps. The feature allows the users to seamlessly resume their sessions upon signing back again. When resumed, the desktop session launches faster compared to stopped or deallocated virtual desktops.
+
+Citrix Activity Manager's Hibernate and Resume feature represents a significant advancement in VDI management, offering organizations a powerful tool to optimize resource utilization and enhance user experience. This feature efficiently manages resources, improves user experience, and reduces energy consumption during hibernation, resulting in significant cost savings.
 
 ## 24.12
 

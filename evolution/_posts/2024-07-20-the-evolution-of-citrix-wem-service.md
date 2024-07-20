@@ -13,7 +13,7 @@ related_posts:
   - evolution/_posts/2024-04-01-the-evolution-of-citrix-profile-management.md
   - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem.md
   - evolution/_posts/2024-07-18-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2024-07-20-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -24,6 +24,45 @@ related_posts:
 Citrix WEM Service environment is consistently updating and bringing enhanced capability to the table. This post aims to track the changes and releases as they occur, and provide a single point of reference
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
+
+
+## June 2024
+
+### [Support for testing the app access control rules](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub#rule-generator-for-app-access-control)
+
+You can now validate app access control rules on the local machine before deploying in the testing or production environment.
+
+### [View a GPO](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#group-policy-settings)
+
+You can now view the WEM Group Policy settings. GPO summaries in read-only mode without editing the GPO. This implementation eliminates the risk of misconfiguration while reviewing the existing settings.
+
+### [Support data export to third-party platforms for flexible management](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/reports)
+
+Previously, you were restricted to exporting reports solely to cloud storage or local machines, hindering your ability to effectively analyze and monitor task outcomes.
+
+With this feature, you can now effortlessly configure and export report data to third-party platforms such as Grafana. This enhancement helps to seamlessly integrate and utilize external analytics tools for comprehensive performance monitoring and analysis, whether automatically scheduled or manually initiated.
+
+## May 2024
+
+### [Windows event-based triggers for external tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#considerations)
+
+Windows event-based triggers for external tasks now allow you to associate external tasks (session-level tasks) with them. When the Windows events meet the defined criteria, the trigger is activated. This trigger begins to perform the associated external tasks that help in automatically managing the session-level tasks, based on Windows events.
+
+Minimum agent version required: `2404.1.0.1`
+
+### [WEM agent basic deployment mode](https://docs.citrix.com/en-us/workspace-environment-management/service/manage-basic-deployment-agents)
+
+A basic deployment mode for the WEM agent is introduced to provide basic agent functions, such as system optimization and logon duration analysis without the need to connect to the infrastructure service. You can use this deployment method for utilizing WEM basic functionalities. 
+
+Minimum agent version required: `2404.1.0.1`
+
+### [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#folder-redirection)
+
+**Folder redirection settings**: This feature lets you configure rule sets for redirecting the paths of local folders to new locations. Each rule set specifies where you want to redirect the folders based on the users accessing them.
+
+To configure folder redirection for a configuration set, locate the set, go to **Profiles** -> **Profile Management Settings** -> **Folder redirection**, and then add rule sets.
+
+A much nicer way of handling group based folder redirection that the [previous method I played](https://jkindon.com/multi-site-and-onedrive-folder-redirection-with-wem/).
 
 ## March 2024
 

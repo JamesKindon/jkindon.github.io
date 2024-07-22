@@ -17,6 +17,7 @@ Here is a script index. Hopefully, these are of use to some folks. They have bee
 -  **[ReplicateCitrixBaseImageRP.ps1](https://github.com/nutanixdev/euc-samples/tree/main/citrix/mcs/replicate_citrix_base_image_pc/recovery_point_replication)**. Use PowerShell to replicate Gold Images across Nutanix Clusters via Prism Central Protection Policies. [Info](https://www.nutanix.dev/2023/07/04/replicating-images-for-citrix-mcs-with-prism-central-protection-policies-and-recovery-points/)
 -  **[UpdateCVADHostedMachineId.ps1](https://github.com/nutanixdev/euc-samples/tree/main/citrix/multi_cluster_migration/citrix_cvad_reset_hostedmachineid)**. Migrate Citrix workloads across Nutanix Clusters and update hosting details for CVAD.
 -  **[UpdateDaaSHostedMachineId.ps1](https://github.com/nutanixdev/euc-samples/tree/main/citrix/multi_cluster_migration/citrix_daas_reset_hostedmachineid)**. Migrate Citrix workloads across Nutanix Clusters and update hosting details for DaaS.
+-  **[ResizeVMDiskAPI.ps1](https://github.com/JamesKindon/Nutanix/blob/main/ResizeVMDiskAPI.ps1)**. Programmatically expand the size of a VM(s) disk via the Nutanix Prism Element v2 API and Microsoft PowerShell.
 
 ## Azure Scripts
 

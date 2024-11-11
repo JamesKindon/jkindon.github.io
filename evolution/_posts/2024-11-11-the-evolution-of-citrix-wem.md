@@ -10,10 +10,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2024-07-18-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-07-20-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2024-07-20-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -24,6 +24,97 @@ related_posts:
 Citrix WEM is consistently updating and bringing enhanced capability to the table. This post aims to track the changes and releases as they occur, and provide a single point of reference. I have started the tracking at 1912, anything before that, read the docs.
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
+
+## Version 2407
+
+### [Support for Windows Server 2025](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#support-for-windows-server-2025)
+
+WEM now supports Windows Server 2025
+
+### [WEM agent basic deployment mode](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#wem-agent-basic-deployment-mode)
+
+A basic deployment mode for the WEM agent is introduced to provide basic agent functions, such as system optimization and logon duration analysis without the need to connect to the infrastructure service. This feature now provides a lightweight method to deploy WEM. You can use this deployment method for utilizing WEM basic functionalities easily. The WEM health check tool runs checks for these types of agents providing the ability to reconfigure the agent as an on-premises or service agent. You can now start the health check tool on an agent in basic deployment mode to run checks. You can also switch the agent type to on-premises or the service agent by providing necessary information about the infrastructure service or cloud connectors.
+
+### [Enhanced automatic backup limit for configuration sets](https://docs.citrix.com/en-us/workspace-environment-management/current-release/manage/configuration-sets#manage-automatic-backup)
+
+WEM provides automatic backup of configuration sets. The automatic backup limit is now enhanced to support storage of up to 25 backup files for each configuration set before overwriting the oldest existing file. This enhancement reduces the operation effort, especially for large and complex environments
+
+### [Customizing the Start menu layout for Windows 11](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#customizing-the-start-menu-layout-for-windows-11)
+
+To support user level assignments, you can now apply the WEM action **JSON files** for the Windows 11 Start menu configuration. Using the new tool **Start Menu Configurator for Windows 11** in the WEM Tool Hub, you can now select applications that you prefer to add to the **Pinned** section of the **Start menu** and arrange the layout as needed. After customizing the layout, copy the configuration data and paste the data in the web console, when you add a new JSON object in the **JSON Files** page.
+
+Minimum agent version required: `2403.1.0.1`
+
+### [Profile Migration Tool in the WEM Tool Hub](https://docs.citrix.com/en-us/workspace-environment-management/current-release/reference/wem-tool-hub#profile-migration-tool)
+
+With the new Profile Migration Tool, you can now migrate different types of profiles to the Citrix container-based profile solution. This feature simplifies the profile migration process, ensuring a smooth transition and minimal disruption to user workflows. The following types of profiles are supported:
+
+-  FSLogix profile container
+-  Citrix file-based solution
+-  Local profile
+
+### [User Store Creation Tool](https://docs.citrix.com/en-us/workspace-environment-management/current-release/reference/wem-tool-hub#user-store-creation-tool)
+
+This tool is introduced in the WEM Tool Hub to help you create user stores. The user store is the central network location for storing Citrix user profiles. This tool helps you to set up user stores by creating file shares and setting appropriate permissions to them according to your specifications. This tool simplifies the configuration process and reduces errors. You can choose to create the user store on the current machine (running the tool) or on a different machine.
+
+### [Windows event-based triggers for external tasks](https://docs.citrix.com/en-us/workspace-environment-management/current-release/manage/configuration-sets/actions#considerations)
+
+Windows event-based triggers for external tasks now allow you to associate external tasks (session-level tasks) with them. When the Windows events meet the defined criteria, the trigger is activated. This trigger begins to perform the associated external tasks that help in automatically managing the session-level tasks, based on Windows events.
+
+### [VHD disk compaction report](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#vhd-disk-compaction-report)
+
+Administrators can now view the VHD disk compaction reports in the web console by enabling VHD disk compaction report collection. 
+
+### [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#profile-management)
+
+Workspace Environment Management now supports all supported versions of Profile Management through 2407. The following features are now available in the web console.
+
+-  [Enable in-session profile container failover among user stores](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/policies-and-profiles/citrix-upm-settings#advanced-settings). Specifies whether to enable in-session profile container failover among user stores. This feature enhances profile redundancy in the contain-based solution by expanding the container failover scope from occurring only at user logons to throughout the entire session. The feature is available under each configuration set in **Profiles** -> **Profile Management Settings** -> **Advanced settings** -> **Replicate user stores**.
+-  [Folder redirection](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/policies-and-profiles/citrix-upm-settings#folder-redirection). Specifies rule sets for redirecting the paths of local folders to new locations. Each rule set specifies where you want to redirect the folders based on the users accessing them. The feature is available under each configuration set in **Profiles** -> **Profile Management Settings** -> **Folder redirection**.
+
+Minimum agent version required: `2407.1.0.1`
+
+## Version 2402
+
+### [Web Console Additions](https://docs.citrix.com/en-us/workspace-environment-management/2402/manage.html)
+
+The following features are added to the web console.
+
+-  User Data source name
+-  Ports
+-  INI files
+
+### [Agent on-demand task history](https://docs.citrix.com/en-us/workspace-environment-management/2402/manage/monitoring/administration#agents)
+
+This enhancement allows you to check the progress and results of tasks initiated in the last 24 hours. You can see the task status for each of the target agents after you trigger a task. You can also view the history of recent tasks and their statuses. For tasks with reports, you can access those reports directly from the **Reports** tab.
+
+Note: `WEM on-premises web console only`
+
+### [Enhanced filter condition capability for report management](https://docs.citrix.com/en-us/workspace-environment-management/2402/whats-new.html#enhanced-filter-condition-capability-for-report-management)
+
+This enhancement lets you filter and add multiple values by separating each value with a semicolon when you choose the **Result summary** condition, providing a flexible method for report management that enables you to monitor and optimize the system.
+
+Note: `WEM on-premises web console only`
+
+### [Health check enhancements in the web console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/administration#statistics)
+
+You can now gain a clearer and more detailed insight into the status of Profile Management through Workspace Environment Management:
+
+-  **Invalid**: Indicates that Profile Management is either not found or not enabled.
+-  **Error**: Indicates configuration issues in Profile Management.
+-  **Warning**: Identifies a suboptimal state of Profile Management.
+-  **Notice**: Identities an acceptable state of Profile Management.
+-  **Good**: Identities Profile Management is in a healthy state.
+
+### [Enhanced analysis capability for Windows Logon](https://docs.citrix.com/en-us/workspace-environment-management/2402/reference/wem-tool-hub#windows-logon-analysis)
+
+This enhancement provides a more detailed data analysis for User profile and Citrix Profile Management. Group policy objects sub-metric is now introduced with HDX connection sub-metric being enabled
+
+Note: `WEM on-premises web console only`
+
+### [WEM health check tool](https://docs.citrix.com/en-us/workspace-environment-management/2402/reference/wem-health-check-tool)
+
+You can now launch the WEM standalone tool to check the status of the WEM components and troubleshoot. This tool can run on WEM agents or the infrastructure server providing results for different selected (check) items respectively. After completing a check, a report is saved to their machine. You can turn on the debug mode and retrieve the log files to the specified location. You can also fix some configuration issues automatically.
 
 ## Version 2311
 

@@ -15,10 +15,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2024-07-20-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem.md
-  - evolution/_posts/2024-07-20-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -32,7 +32,120 @@ I will do my best to maintain this list as and when features come out, as well a
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
 
+## October 2024
+
+### [Enroll persistent machines of hybrid Azure AD joined type into Microsoft Intune for co-management](https://docs.citrix.com/en-us/citrix-daas/install-configure/create-machine-identities-joined-catalogs/create-microsoft-intune-enabled-catalogs#create-co-management-enabled-catalogs)
+
+During machine catalog creation, you can now enroll persistent machines of the hybrid Azure AD joined type into Microsoft Intune (with Configuration Manager) for co-management. This feature applies to single and multi-session, persistent VMs and on all hypervisors and cloud services, ensuring uniform device management across your infrastructure. This feature is applicable only to VDA version `2407 and later`.
+
+### [Service accounts for machine identity management](https://docs.citrix.com/en-us/citrix-daas/install-configure/service-accounts)
+
+To simplify and enhance the management of machine identities including computer accounts in on-premises Active Directory, Azure AD joined devices and Intune enrolled devices, MCS has a new mechanism for managing on-premises Active Directory and Azure Active Directory (Azure AD) identity service accounts.
+
+-  For Active Directory, there is a new Service Account mechanism where a saved Service Account can be used.
+-  For Azure AD (EntraID), Azure AD identity Service Principal Names (SPN) can be used.
+
+### [Export a machine profile to an ARM template spec](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#export-a-machine-profile-to-a-json-file)
+
+You can now export the machine profile used by a catalog into an ARM template spec. Now you can easily reuse an existing machine profile as a template and modify it for future provisioning needs.
+
+### [Reboot schedules for hibernated VMs](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#october-2024)
+
+Ticks the box for this list as MCS can provision Hibernate enabled VMs in Azure, this new capability is a direct follow on from the provision phase.
+
+You can configure reboot schedules for hibernated VMs if the Delivery Group is hibernation enabled. In the reboot cycle, the VMs are resumed and, then shut down. The reboot schedule can be set as weekly, daily, monthly, and once. You can configure multiple schedules. Note that VMs resuming from hibernation can take few mins.
+
+### [Support for creating a host connection using Azure Managed Identity](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager#create-a-host-connection-using-azure-managed-identity)
+
+Goodbye Service Principals. Hello managed Identities.
+
+You can create a host connection to Microsoft Azure Resource Manager using Azure Managed Identity. Currently, you can create the host connection using only PowerShell commands.
+
+### [Support for Boot Integrity Monitoring](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#boot-integrity-monitoring)
+
+You can enable Boot Integrity Monitoring for MCS machine catalog VMs (persistent and non-persistent VMs) using a machine profile (VM or template spec) that has GuestAttestation extension installed. Boot Integrity Monitoring is only supported for Trusted Launch and Confidential VMs that use Secure Boot and virtual Trusted Platform Module(vTPM).
+
+If your VM has Secure Boot and vTPM enabled, and GuestAttestation extension installed, Microsoft Defender for Cloud can remotely validate that your VM boots correctly.
+
+### [Filter empty resource groups](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager#filter-empty-resource-groups)
+
+You can filter out empty resource groups while selecting a master image, machine profile, or prepared image during the machine catalog creation. You can do this using a PowerShell command `Get-HypInventoryItem`.
+
+### [Support for creating preformatted WBC disk catalogs in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#create-a-preformatted-wbc-disk-catalog)
+
+you are able to utilize a preformatted WBC disk for newly created catalogs. This action significantly reduces the time required to start each VM of an MCS or MCS provisioned Citrix Provisioning machine catalog. To implement this functionality, create an Azure catalog with WBC enabled and include an additional custom property `PreformatWriteBackCache` as `True`.
+
+You can update an existing catalog using the `Set-ProvScheme` command to update the WBC disk size.
+
+This feature is compatible with the Image management workflow where MCS separates the mastering phase from the overall provisioning workflow. 
+
+### [Delete WBC disk at shutdown for MCS provisioned Citrix Provisioning catalogs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#delete-wbc-disk-at-shutdown-for-mcs-provisioned-citrix-provisioning-catalogs)
+
+Some more PVS by MCS love. You now have the option to delete the write-back cache (WBC) disk after you shut down the VM for MCS provisioned Citrix Provisioning catalogs in Azure. This helps to save cost when you do not need a persistent WBC disk. This feature is also applicable to an existing catalog.
+
+### [Support for creating a network security group](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager#use-a-pre-created-network-security-group)
+
+You can now create a Deny-All network security group for image preparation instead of requesting Citrix to create and modify a network security group automatically. Edit the custom properties of the hosting unit using a PowerShell command `Set-Item` to include the parameter `NsgForPreparation` to provide the Deny-All network security group.
+
+### [Support for using Azure temporary disk as a WBC disk for existing MCS machine catalogs](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure#use-temporary-disk-as-wbc-disk-for-existing-catalogs)
+
+You can now use Azure Temporary disk as a write-back cache (WBC) disk for existing MCS machine catalogs and existing VMs. Use the `Set-ProvScheme` PowerShell command to update existing catalogs. This implementation saves storage cost because Azure temporary disk is free of charge (nothing is really `free` in Azure, you are paying for an instance type that comes with temp SSD - not all do.) 
+
+## September 2024
+
+### [Validate permissions on host connection in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections/connection-azure-resource-manager#validate-permissions-on-host-connection)
+
+Previously, in Azure environments, you could validate only the host connection credentials (client id or application id) used to create a connection to Azure.
+
+With this feature, you can:
+
+-  Get the list of permissions assigned to your host connection credential
+-  Get the list of operations that can be performed with the permissions assigned 
+-  Information on the permissions required
+-  Information on how to add the desired permissions
+
+This helps to troubleshoot and get necessary permissions ahead of time.
+
+### [Support for creating Azure AD joined catalogs enrolled in Microsoft Intune for non-persistent VMs](https://docs.citrix.com/en-us/citrix-daas/install-configure/create-machine-identities-joined-catalogs/create-microsoft-intune-enabled-catalogs)
+
+You can now create Azure AD joined catalogs enrolled in Microsoft Intune for non-persistent single-session and multi-session. 
+
+This feature is applicable only to VDA version `2407 and later`.
+
+## August 2024
+
+### [Persist BDM storage type as standard SSD in Azure](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#august-2024)
+
+PVS in an MCS blog... but its PVS by MCS so you make the list.
+
+For Citrix Provisioning catalogs that are created using MCS in Azure, the BDM storage type is configured as standard SSD by default. This option is considered as a cost-saving measure and cannot be modified.
+
+### [Convert legacy MCS catalogs to machine profile-based catalogs in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-manage/manage-machine-catalog-azure#convert-legacy-mcs-catalogs-in-azure-to-machine-profile-based-catalogs)
+
+you can now convert non-machine profile-based machine catalogs to machine profile-based machine catalogs in Full Configuration in Azure environments. This new capability allows you to upgrade legacy MCS catalogs to the recommended machine profile-based catalogs.
+
+Moving to machine profile based Catalog allows for enhanced capability and flexibility in Azure deployments.
+
+### [Support for backup VM sizes configuration](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create#configure-backup-vm-sizes)
+
+Another feature request addressed by Citrix. For those who have been through situations where machines cannot be provisioned/powered on due to a lack of capacity, this feature is long awaited.
+
+Azure can run out of capacity for a specific VM size. If you use Azure Spot VMs (surely no one does this in prod...), then the VMs are evicted at any time based on Azure capacity needs. In the case of insufficient capacity on Azure or a Spot VM power-on failure, MCS now falls back on the backup VM sizes.
+
+You can provide a list of backup VM sizes using a custom property `BackupVmConfiguration`. MCS tries to fall back on the VM sizes in the order that is specified in the list. If MCS fails to fall back to any instance in the list of backup VM sizes provided, you get an error message. This feature is supported only for a catalog that uses a machine profile and is applicable to both persistent and non-persistent MCS machine catalogs.
+
 ## July 2024
+
+### [Configure required Azure host connection permissions](https://github.com/citrix/citrix-mcs-sdk-samples/tree/main/Azure/Hosting%20Connection/Role)
+
+Previously, the host connection test validated whether the credential is good to connect to the hypervisor. The test did not perform validation on actual permissions that you might need to perform relevant MCS operations such as power management, VM creation, and more.
+
+You can now easily configure all the minimum permissions required for a service principal or user account in Azure tied to a host connection to perform all MCS operations using an ARM template. This ARM template automates the following:
+
+-  Creation of an Azure Role with minimal permissions necessary for operations.
+-  Assignment of this role to an existing Azure Service Principal at the subscription level.
+
+You can deploy this ARM template using the Azure Portal or PowerShell commands.
 
 ### [Increased limit of replicas per image version in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#configure-azure-compute-gallery)
 

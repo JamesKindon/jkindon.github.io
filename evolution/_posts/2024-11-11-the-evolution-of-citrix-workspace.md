@@ -10,10 +10,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2024-07-18-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-07-20-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem.md
 ---
 
 <!--excerpt-->
@@ -286,6 +286,40 @@ Recents and Favorites are loaded first in Workspace, so users can launch their c
 # Citrix Workspace UI
 
 You can find the official release documentation for Workspace UI releases [here](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience)
+
+## 24.41
+
+### [Mandate users to authenticate and open apps and desktops only through the native Citrix Workspace app (Preview)](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience#mandate-users-to-authenticate-and-open-apps-and-desktops-only-through-the-native-citrix-workspace-app-preview)
+
+Administrators can enforce the use of the native Citrix Workspace app, eliminating the option for users to access the Citrix Workspace web client on browsers. This feature is designed for customers who want to leverage the full benefits of the native app. The native app offers advantages such as built-in App Protection service, no browser version compatibility issues, enhanced security and telemetry for monitoring and troubleshooting.
+
+When the administrators enable this feature, end users see the following webpage when they attempt to access the web client by entering the store URL in a browser.
+
+## 24.39
+
+### [Workspace offline mode prompt: Enhanced design, behavior, and loading Time](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience#workspace-offline-mode-prompt-enhanced-design-behavior-and-loading-time)
+
+The Workspace offline mode feature is optimized in terms of design, behavior, and loading time. The new prompt for offline mode is less intrusive as it doesn't interrupt the ongoing user authentication. Users can continue with their authentication process when the offline mode option appears. They can either continue signing in or use offline mode to work and access available apps offline in case of authentication issues. Additionally, the prompt is movable, allowing users to drag it to see the contents it was hiding.
+
+Previously, the offline mode prompt appeared in just 30 seconds while user signing in to the store URL, interrupting the flow. However, the enhanced prompt now waits for 60 seconds before appearing, and it can appear on any webpage, including the sign-in screen, and other redirecting pages. The new prompt now appears as an optional prompt, allowing users to complete the ongoing authentication process uninterrupted.
+
+The feature is enabled by default and is available only for cloud stores.
+
+## 24.37
+
+### [Enhanced UI centralized layout](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience#enhanced-ui-centralized-layout)
+
+The Workspace UI has a better resource alignment, unlike the previous layout where resources stretched across the entire width of the screen, the enhanced UI offers a more visually appealing design by centrally aligning the resources and limiting the display to a maximum of six resources per row.
+
+## 24.30
+
+### [Manage installation prompt for Workspace Web extension](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience#manage-installation-prompt-for-workspace-web-extension)
+
+You can now manage the display of the installation prompt for the Workspace Web extension. Enabling the prompt allows Workspace to detect whether the extension is installed on the user's device when they open Citrix Workspace from a browser. 
+
+If the extension isn't installed, users are prompted to download and install it. Once users install the extension, it helps to open the apps and desktops in the native Citrix Workspace app automatically without the intervention of Workspace detection screen. You can set the prompt as either mandatory or optional.
+
+This prompt feature is compatible with Google Chrome and Microsoft Edge browsers.
 
 ## 24.28
 

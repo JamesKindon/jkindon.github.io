@@ -10,10 +10,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-07-20-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem.md
-  - evolution/_posts/2024-07-18-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-07-20-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -26,6 +26,66 @@ Citrix Profile Management is quietly kicking goals and developing quickly. This 
 This list will start at CVAD 1912 LTSR, anything prior to that, refer to the appropriate documentation
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
+
+## Version 2407
+
+### [In-session profile container failover among user stores](https://docs.citrix.com/en-us/profile-management/current-release/configure/citrix-profile-management-profile-container#optional-enable-in-session-profile-container-failover-among-user-stores)
+
+By default, when multiple user stores are deployed, profile container failover occurs only ***at user logon***. A new policy, **Enable in-session policy container failover among user stores**, now expands the failover scope to the entire session, ensuring profile redundancy throughout the session. With this policy enabled, if Profile Management loses connection to the active profile container during a session, it automatically switches to another available one.
+
+### [Support for OneNote cache synchronization](https://docs.citrix.com/en-us/profile-management/current-release/whats-new#support-for-onenote-cache-synchronization)
+
+OneNote cache folders can now roam with users. Therefore, a user can access the same OneNote cache data from different devices.
+
+### [Registry exclusion and inclusion support extended to container-based profile solution](https://docs.citrix.com/en-us/profile-management/current-release/configure/include-and-exclude-items)
+
+The existing registry exclusion and inclusion policies now apply to the container-based profile solution. With those policies, you can specify registry keys in the HKCU hive that Profile Management excludes from syncing to profile containers during user logoff.
+
+### [Enhancements to Folder Redirection policies](https://docs.citrix.com/en-us/profile-management/current-release/configure/configure-folder-redirection)
+
+Improved Folder Redirection policies with two enhancements for greater configuration flexibility:
+
+-  **Redirect to the local user profile location**. A new option that enables you to redirect folders to the local user profile location. Previously, to disable a folder redirection, you had to set the corresponding **Folder Redirection** policy to either **Not Configured** or **Disabled**. With this new option, you can now achieve the same goal of disabling folder redirection while keeping the policy **Enabled**.
+-  **Disable moving contents to new location**. By default, when you modify redirection paths, Profile Management automatically moves contents from the previous path to the new one. With this new option, you can now disable content moving.
+
+### [Windows event for calculating logon duration](https://docs.citrix.com/en-us/profile-management/current-release/troubleshoot/events#list-of-events)
+
+Profile Management introduces a new Window event (event ID: 5009) for calculating logon duration. With this event, you can now receive a clear indication when the desktop window becomes visible, a crucial endpoint for logon completion.
+
+### [User store sync enhancement](https://docs.citrix.com/en-us/profile-management/current-release/whats-new#user-store-sync-enhancement)
+
+Previously, during fault recovery for a replicated user store, Profile Management copied user profiles from a functioning user store to the failed one ***during user logon***. This behavior often strained file servers and storage during peak hours, leading to potential delays in user logon times. With this enhancement, synchronization is now delayed ***until after user logon***, ensuring a more efficient and streamlined process.
+
+### [Enhanced profile reset for the container-based solution](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/director/troubleshoot-deployments/user-issues/reset-user-profile.html)
+
+When resetting container-based profiles, Profile Management now not only restores policy settings to defaults but also preserves user data. With this enhancement, you can reset container-based profiles without the risk of losing user data.
+
+### [Health check enhancements](https://docs.citrix.com/en-us/profile-management/current-release/whats-new#health-check-enhancements)
+
+To describe Profile Management status, Citrix introduced new result types for the Profile Management health check tool:
+
+-  **Invalid**: Indicates Profile Management is either not found or not enabled.
+-  **Error**: Indicates configuration issues in Profile Management.
+-  **Warning**: Identifies a suboptimal state of Profile Management.
+-  **Notice**: Identities an acceptable state of Profile Management.
+-  **Good**: Identities Profile Management is in a healthy state.
+
+You can now gain a clearer and more detailed insight into the status of Profile Management through Workspace Environment Management.
+
+### [Ability to collect insights on VHD compaction actions](https://docs.citrix.com/en-us/profile-management/current-release/whats-new#ability-to-collect-insights-on-vhd-compaction-actions)
+
+Profile Management can now collect statistical data on VHD compaction actions and provide it to Workspace Environment Management (WEM) for reporting.
+
+### [Enhanced user profile monitoring](https://docs.citrix.com/en-us/profile-management/current-release/whats-new#enhanced-user-profile-monitoring)
+
+The Profile Management plug-in can now gather performance metrics from Profile Management and FSLogix. This enhancement enables Citrix Director to deliver comprehensive profile usage and performance data in user session reports.
+
+## Version 2402 (CU1)
+
+LTSR 2402 CU1 introduced two changes for CPM:
+
+-  Profile streaming for folders feature is enabled by automatic configuration in the file-based profile solution
+-  Citrix profile management supports new Microsoft Teams registration in user roaming scenario
 
 ## Version 2311
 

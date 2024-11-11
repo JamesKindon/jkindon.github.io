@@ -10,10 +10,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2024-04-01-the-evolution-of-citrix-wem.md
-  - evolution/_posts/2024-07-18-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-07-20-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2024-11-11-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -25,6 +25,135 @@ Citrix WEM Service environment is consistently updating and bringing enhanced ca
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
+## November 2024
+
+### [Unified Platform experience for navigation](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#unified-platform-experience-for-navigation0)
+
+The primary navigation menu is now expanded to include a secondary navigation menu for the **Monitoring** and **Enrollment** menu items on the WEM web console. Navigation breadcrumbs are now displayed on the top of every page. To provide a unified platform experience, a drop-down menu is now included on the top right-hand corner of the page that lets you switch to either the **Legacy console**, Utilities, or to the **Web console**.
+
+### [User statistics quick search and refresh icon](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/administration#user-statistics)
+
+This enhancement provides the ability to search in the user statistics table using the user name and other relevant properties, such as, display name and email.
+
+You can now use the refresh icon that appears when you hover your mouse on every record or user display name instead of the SID.
+
+### [Upload scripts for external tasks](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#create-an-external-task)
+
+Previously, to use the external task feature, the path to a script (or executable) on the agent machine (or network storage) had to be specified. This required maintenance of the script files either on network storage locations or locally on a VDA running WEM causing inconvenience.
+
+With this feature, you can now directly upload scripts when configuring external tasks. To create an external task, you now have an option to upload the script file for the task to run. After uploading, you can also view the content of the script.
+
+Minimum agent version required: `2410.1.0.1`
+
+### [Rule Generator updated with expanded app access control features](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub#rule-generator-for-app-access-control)
+
+The Rule Generator for App Access Control tool now supports the expanded features of the App access control policy. With this tool, you can now create redirection rules and configure exclusions for rule assignments.
+
+### [Enhancements to Group Policy Migration Tool](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub#group-policy-migration-tool)
+
+This feature enables you to auto-configure `script path` and parameters when you migrate the Windows Logon scripts to WEM external tasks using the **Group Policy Migration** Tool
+
+### [New details to diagonize logon duration](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub#windows-logon-analysis)
+
+This feature introduces new details to diagonize the logon duration. You can find more details for the sub-metrics, **FSLogix profile loading** and WEM logon services in the table that lists all the metrics, submetrics, and tips in detail.
+
+### [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#profile-management)
+
+Workspace Environment Management now supports all supported versions of Profile Management through 2411. The following features are now available in the web console.
+
+-  [Alert user when profile size exceeds quota](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#other-options). This feature helps prevent data loss by notifying users when their profile size exceeds a quota. You can customize the quota limit and the notification content based on the default settings. The feature is available under each configuration set in **Profiles** -> **Profile Management Settings** -> **Advanced settings**.
+-  [Enable UWP app load acceleration](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#applications). This feature accelerates the loading of UWP apps and improves their consistency in non-persistent environments. By default, Windows stores UWP App registration information locally on each machine, which can be lost upon restart in non-persistent environments. With this policy enabled, Profile Management creates a VHDX container for each machine to store the UWP app registration data, speeding up user logon and preventing data loss on restarts. The feature is available under each configuration set in **Profiles** -> **Profile Management Settings** -> **Advanced settings**.
+-  [App access control policy expanded](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#app-access-control). With the policy, you can now implement machine-level redirections for files, folders, registry keys, and registry values. In addition, you can now exclude specific users, machines, and processes from rule enforcement for more precise control. The feature is available under each configuration set in **Profiles** -> **Profile Management Settings** -> **App access control**.
+-  [Folder redirection policy enhanced for more secure access control](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#folder-redirection). With a new option, Grant access to specific users and groups, you can now grant specific users or groups Read and Execute permissions on the redirection target folders.
+
+Minimum agent version required: `2411.1.0.1`
+
+## October 2024
+
+### [Group policy migration to WEM](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub#group-policy-migration-tool)
+
+You can now migrate Group policy preferences that cause slow sign-ons into WEM actions to improve your sign-on experience. In the WEM Tool Hub, you can begin the migration workflow either within a logon duration report, while viewing GPO processing times, or from the **Group Policy Migration Tool**. This tool allows you to scan for currently applied GPOs.
+
+You can select from the listed items supported for migration. Selected items are exported as a ZIP file to the local machine, which is later imported as WEM actions. This feature is enhanced to guide you through the process of creating an assignment group with the exported settings, and also assign the group to the respective user.
+
+### [Introducing new insights to monitor and diagonize logon duration](https://docs.citrix.com/en-us/workspace-environment-management/service/how-to/analyze-logon-duration)
+
+This enhancement introduces profile container and GPP processing insights to monitor and diagonize logon duration. This feature enables you to identify the possible issues, which may cause slow logon and to also provide recommendations to resolve issues.
+
+### [Centralized configuration set level agent cache synchronization](https://docs.citrix.com/en-us/workspace-environment-management/service/get-started/install-and-configure#agent-cache-utility-options)
+
+This feature is introduced to enhance the existing agent cache synchronization mechanism. Based on the new mechanism, you can avoid performance issues for large WEM deployments and the database cost on the Cloud is also reduced.
+
+Minimum agent version required: `2409.1.0.1`
+
+## September 2024
+
+### [Support data export to Splunk](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/reports#manually---export-to-third-party-platform)
+
+Previously, you were restricted only to Grafana when exporting agent reports to third-party platforms. With this feature, you can now effortlessly export the data to Splunk as well.
+
+### [Privilege elevation](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/security-web-console#privilege-elevation)
+
+This enhancement enables you to configure privilege elevation rules and assign them to users using the web console. You can now use the existing File Info Viewer in WEM Tool Hub to get the file information needed for rule configuration, such as, path, publisher, and hash values.
+
+Minimum agent version required: `2408.1.0.1`
+
+### [WEM agent support for persistent cache on non-persistent machines](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#wem-agent-support-for-persistent-cache-on-non-persistent-machines)
+
+This enhancement enables the WEM agent to automatically detect non-persistent machines provisioned by MCS or PVS and use the persistent data location provided by the underlying Provisioning Service to persist agent cache and other crucial information. This improves the WEM performance and resiliency on non-persistent machines. Also, the WEM agent enrollment now supports non-persistent machines. You can now enroll the master image and the provisioned non-persistent machines are automatically enrolled.
+
+Minimum agent version required: `2408.1.0.1`
+
+### [Configuring registry and GPO settings with a new registry value type](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#import-group-policy-settings)
+
+`REG_NONE` registry value type is introduced for more customized configurations by providing a way to specify settings or parameters that do not fit into other predefined data categories, such as, strings, integers, or binary data. You can use this flexibility to handle unique or specialized configurations.
+
+`REG_NONE` registry value type supports the following functions:
+
+-  In creating/updating registry entry action
+-  In creating/updating registry entry-based GPO action
+-  When importing a registry entry-based GPO
+-  On the agent side
+-  For legacy console
+-  For backup and restore from the web console and the legacy console
+
+Minimum agent version required: `2408.1.0.1`
+
+### [Selective WEM reset feature](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#selective-wem-reset-feature)
+
+WEM is enhanced to selectively reset WEM actions tracking cache. When you enable **Allow Users to reset Cached Actions**, the **Reset Cached Actions** is turned on. On clicking it, a new wizard gets displayed and then you can choose the cached actions that need a reset. This enhancement enables you to reset the process history for JSON files or the user group policy objects. After the reset, the actions get processed during the subsequent user logons.
+
+Minimum agent version required: `2408.1.0.1`
+
+## August 2024
+
+### [Enhancements to the selection of Microsoft Entra ID (Azure AD) groups or users](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#enhancements-to-the-selection-of-microsoft-entra-id-azure-ad-groups-or-users)
+
+Policies, including actions and security rules, assigned to Microsoft Entra ID (Azure AD) groups or users now automatically take effect on the agent side without requiring manual user-device associations. To ensure the proper functioning of this feature, adhere to the following requirements:
+
+-  In Citrix WEM User Logon Service Properties dialog, set the Startup type as Automatic.
+-  Log out of your local machine and login again.
+
+Minimum agent version required: `2407.2.0.1`
+
+### [Add new built-in scripted tasks to reduce operation efforts](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/scripted-tasks)
+
+Added more built-in script tasks that help admins use built-in scripted tasks directly and reduce operation efforts. This feature resolves unregistered VDA issues and sets CDF trace configurations.
+
+### [VHD disk compaction report](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/advanced-settings#monitoring-preferences)
+
+Administrators can now view the VHD disk compaction reports in the web console by enabling VHD disk compaction report collection.
+
+### [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#profile-management-1)
+
+Workspace Environment Management now supports all supported versions of Profile Management through 2407. The following features are now available in the web console.
+
+-  [Enable in-session profile container failover among user stores](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#advanced-settings) Specifies whether to enable in-session profile container failover among user stores. This feature enhances profile redundancy in the contain-based solution by expanding the container failover scope from occurring ***only at user logons*** to ***throughout the entire session***. The feature is available under each configuration set in **Profiles** -> **Profile Management Settings** -> **Advanced settings** -> **Replicate user stores**.
+-  [Folder redirection](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/citrix-profile-management#folder-redirection) enhanced with two new options:
+    -  **Redirect to the local user profile**, allowing you to redirect a folder to the local user profile.
+    -  **Move contents to new location**, allowing you to decide whether to move contents from the previous folder to the new one when setting or modifying redirection target folders.
+
+Minimum agent version required: `2407.1.0.1`
 
 ## June 2024
 
@@ -52,7 +181,7 @@ Minimum agent version required: `2404.1.0.1`
 
 ### [WEM agent basic deployment mode](https://docs.citrix.com/en-us/workspace-environment-management/service/manage-basic-deployment-agents)
 
-A basic deployment mode for the WEM agent is introduced to provide basic agent functions, such as system optimization and logon duration analysis without the need to connect to the infrastructure service. You can use this deployment method for utilizing WEM basic functionalities. 
+A basic deployment mode for the WEM agent is introduced to provide basic agent functions, such as system optimization and logon duration analysis without the need to connect to the infrastructure service. You can use this deployment method for utilizing WEM basic functionalities.
 
 Minimum agent version required: `2404.1.0.1`
 

@@ -38,4 +38,4 @@ Interestingly the whole AppAttach world is now open to include App-V packages as
 
 Tim Mangan has a [good write-up here](https://www.tmurgent.com/TmBlog/?p=3925) around his take on it all, as one of the App-Virt megaminds, it's worth taking note for future and current planning.
 
-A can think of a few organizations that will be happy with this result. A good win I would say.
+I can think of a few organizations that will be happy with this result. A good win I say.

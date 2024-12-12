@@ -88,7 +88,7 @@ There are a range of things that can be detected, actioned, and controlled, and 
 
 ## Some Control Examples
 
-Straight from the lab....Here is a nice simple policy that checks the following:
+Straight from the lab....
 
 Here is a nice simple policy that checks the following:
 

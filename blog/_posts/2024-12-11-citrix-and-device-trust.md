@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Citrix aquires deviceTRUST. Why this is Awesome"
+title: "Citrix acquires deviceTRUST. Why this is Awesome"
 permalink: "/citrix-and-device-trust/"
 description: "Some basics about deviceTRUST and why it's awesome"
 categories: [Citrix, Windows, deviceTRUST, EUC, DaaS]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Citrix aquires deviceTRUST. Why this is Awesome"
+title: "Citrix acquires deviceTRUST. Why this is Awesome"
 permalink: "/citrix-and-device-trust/"
 description: "Some basics about deviceTRUST and why it's awesome"
 categories: [Citrix, Windows, deviceTRUST, EUC, DaaS]
@@ -88,7 +88,7 @@ There are a range of things that can be detected, actioned, and controlled, and 
 
 ## Some Control Examples
 
-Straight from the lab....Here is a nice simple policy that checks the following:
+Straight from the lab....
 
 Here is a nice simple policy that checks the following:
 

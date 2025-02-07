@@ -18,7 +18,7 @@ This site is a place for me to be able to share some of my learnings, in the hop
 
 | Logo | Award | Years awarded |
 |:-:|:--|:--|
-| ![Citrix Technology Professional]({{site.baseurl}}/assets/img/about/ctp.png) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2019-Program-Killed-Off-By-Citrix |
+| ![Citrix Technology Professional]({{site.baseurl}}/assets/img/about/ctp.png) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2019-2025-Program-Killed-Off-By-Citrix |
 | ![Microsoft MVP]({{site.baseurl}}/assets/img/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-US/mvp/profile/2c0ae4ed-409a-e411-b4b5-6c3be5a84f98) Enterprise Mobility (previously Directory Services) | 2007-2009 & 2021-2024 (self-ejected 2024) |
 {:.smaller}
 

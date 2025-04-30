@@ -15,10 +15,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -31,6 +31,61 @@ There is a lot of constant improvement being executed by the MCS team at Citrix,
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
 It is important to be across the options when designing your delivery platform on Azure, many changes have a direct implication on the ongoing operational costs associated with running workloads on/in Azure, as well as availability and global deployment options. Looking at what we have now, vs what was available 12 months ago, many designs and deployments would look remarkably different.
+
+## March 2025
+
+### [Support for creating Azure AD joined and Microsoft Intune enrolled catalogs with prepared images](https://docs.citrix.com/en-us/citrix-daas/install-configure/identity-pools-of-different-machine-identity-join-types/identity-pool-aad-joined-machine-identity#use-powershell)
+
+With this feature, you can now use prepared images to create Azure Active Directory joined and Microsoft Intune enrolled catalogs using Studio and PowerShell commands. This feature is applicable to single and multi-session persistent and non-persistent type MCS catalogs. This implementation significantly reduces the storage and time costs, and simplifies the VM deployment and image update process.
+
+## February 2025
+
+### [Support for provisioning data disk on Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#provision-data-disk)
+
+ou can now create and assign a persistent data disk to an MCS created persistent or non-persistent VM of an MCS machine catalog in Azure. The data disk is used for storage of persistent data like event logs, security traces, and application data.
+
+The data disk must be provisioned from the master image. The properties such as storage type, encryption settings, zones are derived from custom properties or from the OS disk template if the properties are not specified in the custom properties.
+
+## January 2025
+
+### [Filter master images based on hosting unit regions](https://docs.citrix.com/en-us/citrix-daas/install-configure/create-prepared-image-machine-catalogs-azure#create-a-machine-catalog-from-the-machine-catalogs-node)
+
+During machine catalog creation for the Azure platform, Studio can now filter out and exclude master images that belong to different regions other than the hosting unit’s region. This ensures that only images from the same region as the hosting unit are available for selection.
+
+### [MCSIO with only disk cache is no longer supported](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create#configure-cache-for-temporary-data)
+
+The option to configure MCSIO with only disk cache (without memory cache) has been removed across all hypervisor and cloud service environments. When creating machine catalogs with the MCSIO enabled, you must now set a non-zero memory cache size. In addition, you can't edit catalogs configured with only a disk cache until you set a memory cache size.
+
+## December 2024
+
+### [New permission for orphaned resource detection in Citrix DaaS](https://docs.citrix.com/en-us/citrix-daas/install-configure/connections#retrieve-a-list-of-orphaned-resources)
+
+ Previously, only **Full Administrator** or **Cloud Administrator** roles could perform orphaned resource detection. With the introduction of a **Use Host Connection to Detect Orphaned Resources in Hypervisor** permission to the Hosts category, any roles assigned with this permission can now detect orphaned resources.
+
+### [Autoscale powers on hibernated VMs](https://docs.citrix.com/en-us/citrix-daas/whats-new.html#december-2024)
+
+With this feature, in Azure, autoscale can power on hibernated multi-session Remote Desktop Services (RDS) and shared single session VMs with no sessions on it during peak time. The VMs can be of MCS and non-MCS machine catalogs.
+
+### [Support for NVMe-only SKUs in Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure#create-a-catalog-using-a-service-offering-that-supports-both-scsi-and-nvme)
+
+Previously, MCS supported only SCSI storage controller type. With this feature, MCS also supports the NVMe storage controller type to support the new VM SKUs on Azure. For information on NVMe, see the Microsoft documentation [General FAQ for NVMe](https://learn.microsoft.com/en-us/azure/virtual-machines/enable-nvme-faqs). For information on creating an MCS machine catalog using a service offering that:
+
+-  supports both SCSI and NVMe
+-  supports only NVMe
+
+## November 2024
+
+### [Image management is now Generally Available](https://docs.citrix.com/en-us/citrix-daas/install-configure/image-management)
+
+Image management functionality is now generally available for Azure and VMware virtualization environments. Also, the Images node now allows you to share image versions across hosting units within the same hosting connection in Azure. This implementation ensures consistency and uniformity of images across different host units, enhancing deployment flexibility and operational efficiency. You can also use PowerShell commands.
+
+### [Support to configure secondary VMs scale up or scale down list for MCS-created catalogs on Azure](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create/create-machine-catalog-citrix-azure)
+
+Web Studio now enables the administrators to define secondary VMs to scale up and scale down the MCS-created catalogs on Azure. Based on the usage of CPU and memory resources, if the CPU or memory usage exceeds a certain threshold, the system will automatically use the secondary VMs to handle the load. Alternatively, if the usage falls below a certain level, the system will automatically shut down some VMs to conserve resources.
+
+### [Studio: Support for provisioning persistent VMs on Windows Server OS using Full Copy Clone](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-catalogs-create#select-a-desktop-experience)
+
+Studio now supports provisioning persistent VMs on Windows Server OS using the Full Copy Clone approach. This approach improves data recovery and migration capabilities and can help reduce IOPS after machines are created.
 
 ## October 2024
 

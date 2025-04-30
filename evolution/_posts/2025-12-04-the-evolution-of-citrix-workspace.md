@@ -10,10 +10,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem.md
 ---
 
 <!--excerpt-->
@@ -286,6 +286,27 @@ Recents and Favorites are loaded first in Workspace, so users can launch their c
 # Citrix Workspace UI
 
 You can find the official release documentation for Workspace UI releases [here](https://docs.citrix.com/en-us/citrix-workspace/whats-new/whats-new-workspace-user-experience)
+
+## 25.10
+
+### [Enhanced Activity Manager experience and introducing power management control](https://docs.citrix.com/en-us/citrix-workspace/user-experience/activity-manager#power-management-controls)
+
+The Activity Manager feature is now enabled by default, allowing users to disconnect, log out, and restart their virtual sessions. Additionally, administrators can manage the power management controls such as shut down, force shut down, and hibernate virtual sessions using Citrix Cloud.
+
+## 25.09
+
+### [Color customization applies to Workspace UI elements](https://docs.citrix.com/en-us/citrix-workspace/experience/appearance#customize-your-default-theme)
+
+This feature introduces enhancements in the following areas:
+
+-  **Full UI Color Customization**: Consistent color scheme now applies to Workspace UI elements.
+-  **Unified Blue Theme**: A new default blue theme has been implemented to align with common end-user themes across all Citrix apps. Admins can still customize the colors to their preference using Citrix Cloud.
+
+## 25.04
+
+### [Pinned links support](https://docs.citrix.com/en-us/citrix-workspace/experience/interaction#pinned-links)
+
+Pinned links refer to customer-defined hyperlinks that provide quick access to specific websites. This feature functions as a shortcut that helps users navigate to websites directly from the Workspace UI. Important links, such as support websites or company portals, can be made available to the users without needing them to search for these links. Feature reminds me of the old published content capability.
 
 ## 24.41
 

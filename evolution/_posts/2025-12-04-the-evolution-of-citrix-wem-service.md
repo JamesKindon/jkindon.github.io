@@ -10,10 +10,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -24,6 +24,94 @@ related_posts:
 Citrix WEM Service environment is consistently updating and bringing enhanced capability to the table. This post aims to track the changes and releases as they occur, and provide a single point of reference
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
+
+## March 2025
+
+### [UI Enhancements](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#ui-enhancements)
+
+The WEM UI enhancements are as follows:
+
+-  **Agent UI Update**: All UI interfaces in the **Agent** section have been updated to adopt the **Windows 11 theme style**.
+-  **System Tray Icon Context Menu**: The right-click menu of the Agent UI’s system tray icon has been optimized with a new modern design.
+-  **Light and Dark Mode Support**: All Agent UI elements, including the system tray icon’s context menu, now support **Light Mode** and **Dark Mode**. These modes automatically align with the **System theme** settings.
+-  **Agent Skin Customization**: Starting from version `2502.1.0.1`, the ability to change skins through the **Console's Workspace Environment Management > Configuration sets > UI agent personalization** feature has been removed for newer agents. Agents from versions before `2502.1.0.1` continue to support skin customization. For more information, see UI Agent Personalization under the web console.
+
+Minimum agent version required: `2502.1.0.1`
+
+### [Summary View for Agent Statistics](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/administration#summary-view)
+
+This enhancement includes a new summary view with four charts displaying statistical results and a rearranged layout, moving the search bar and filter.
+
+Minimum agent version required: `2502.1.0.1`
+
+### [Enhanced Analysis of Process Activities During User Logon](https://docs.citrix.com/en-us/workspace-environment-management/service/reference/wem-tool-hub#process-activity-and-details)
+
+Citrix introduced an analysis of process activities during user logon in the Windows Logon Analysis to help users identify more logon performance issues
+
+### [Improved Security for Password Storage in Configurations](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#improved-security-for-password-storage-in-configurations)
+
+Citrx have updated the internal workflow to store passwords contained in configurations, such as network drives and printers, more securely. This change is compatible with version `2005.2.0.1` and newer.
+
+Using older versions before `2005.2.0.1` might result in the following issues:
+
+-  WEM agents older than version `2005.2.0.1` are unable to process configurations containing passwords correctly.
+-  When importing configuration sets exported with a console older than version `2005.2.0.1`, configurations containing passwords are not imported.
+-  When restoring actions or settings backed up with a console older than version `2005.2.0.1`, configurations containing passwords are not restored.
+-  When migrating from on-premises older than version `2005.2.0.1` to the cloud service, configurations containing passwords are not migrated.
+
+### [New Functionalities in the Web Console](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#create-a-gpo)
+
+New functionalities in the web console:
+
+-  **Save and Assign** button: A new **Save and Assign** button has been added, allowing for continuous action creation.
+-  **Manage Assignments** link: A new **Manage Assignments** link has been added to the toast notification.
+-  **Registry Operations** column: A **Registry Operations** column has been added to the data table.
+
+### [Enhanced Performance of Assignment Targets and Directory Objects](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/assignment#assignment-targets)
+
+Previously, loading the **Directory objects** and **Assignment target** pages triggerred numerous translation requests leading to slow load times, especially with large datasets.
+
+With this enhancement, the object names are stored in the database, translating them only when necessary, significantly improving the performance. You can manually refresh individual records to see the updated names. Additionally, Refresh options are added to **refresh** all or selected records or only usernames.
+
+## January 2025
+
+### [Expanded Access for Non-Administrator Users](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#expanded-access-for-non-administrator-users)
+
+Non-administrator users can now directly access the WEM Tool Hub with a subset of its features. This subset includes Windows Logon Analysis and third-party applications pinned by users. A switch to the top of the main page is recommended when a non-administrator user must use the restricted functions. This update broadens accessibility, enabling more users to utilize key functionalities efficiently, while maintaining security and control.
+
+### [Process Hierarchy Control](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/security-web-console#process-hierarchy-control)
+
+This release introduces the Process hierarchy control feature in the web console. This feature allows you to control whether specific child processes can be initiated by their parent processes. You create a rule by defining parent processes and then designating an allow list or a block list for their child processes. You then assign the rule on a per user or per user group basis. The following rule types are available:
+
+-  **Path**. Applies the rule to an executable according to the executable file path.
+-  **Publisher**. Applies the rule according to publisher information.
+-  **Hash**. Applies the rule to identical executables as specified.
+
+Minimum agent version required: `2501.1.0.1`
+
+### [Unique Identification Support in WEM Agent](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/administration#settings)
+
+Previously, WEM agents used the MAC address as the device identifier. In certain scenarios, the MAC address was not unique that led to the malfunctioning of some WEM features.
+
+With this enhancement, you can use the agent identity concept to replace the MAC address as the device identifier for WEM agents. This feature is applicable to both domain-joined and non-domain-joined agents.
+
+Minimum agent version required: `2501.1.0.1`
+
+### [Enhancement to the WEM Optimizer Template](https://docs.citrix.com/en-us/workspace-environment-management/service/whats-new.html#enhancement-to-the-wem-optimizer-template)
+
+You can now use the WEM service to perform template-based system optimizations for Windows 11 2009 and Windows Server 2025 2009 machines. The WEM optimizer template is now updated to support the memory compression and cache disc mount enhancement in the Citrix optimizer.
+
+## December 2024
+
+### [Accurate Search of OUs (Organizational units) with Precise Criteria](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/assignment#add-an-assignment-target)
+
+Previously due to a large number of duplicate-named OUs in the domain controller, WEM was unable to locate the target OU accurately.
+
+This feature now introduces a location configuration option allowing IT administrators to restrict the OU search scope to a specific location node. This helps in finding the desired target OU quickly.
+
+### [Support the New Filter Design to Save Update or Delete Existing Filters](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/reports#columns-to-display-and-filters)
+
+You can now save the filters used as filter sets and directly manage these filter sets. You can conveniently switch between different filter sets when you try to query the required data. This functionality is available for use on the **Reports** page, **Agent statistics** page, and **User statistics** page.
 
 ## November 2024
 
@@ -242,7 +330,7 @@ You can now open the WEM standalone tool to check the status of the WEM componen
 The following actions have been made available in the web console:
 
 -  [User Data source name](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#user-dsns). Using the web console, you can now add user data source names (DSNs) and assign them to users.
-- [Ports](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#ports). Using the web console, you can now add port mappings and assign them to users
+-  [Ports](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#ports). Using the web console, you can now add port mappings and assign them to users
 -  [INI files](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/configuration-sets/actions#ini-files). Using the web console, you can now add INI file operations and assign them to users.
 
 ### [Agent on-demand task history](https://docs.citrix.com/en-us/workspace-environment-management/service/manage/monitoring/administration#agents)

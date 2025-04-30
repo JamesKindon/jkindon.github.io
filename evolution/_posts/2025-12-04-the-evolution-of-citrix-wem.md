@@ -10,10 +10,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -25,27 +25,27 @@ Citrix WEM is consistently updating and bringing enhanced capability to the tabl
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
 
-## Version 2407
+## Version 2411
 
-### [Support for Windows Server 2025](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#support-for-windows-server-2025)
+### [Log export](https://docs.citrix.com/en-us/workspace-environment-management/2411/manage/home#global-configurations)
 
-WEM now supports Windows Server 2025
+This feature allows you to export your infrastructure service and web console logs to third-party platforms like Grafana and Splunk. After configuration, your infrastructure service and web console logs are sent to the specified platform within one minute. You can also disable or delete the configuration at any time if you no longer need to export the logs
 
-### [WEM agent basic deployment mode](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#wem-agent-basic-deployment-mode)
+### [Support data export to Splunk](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#support-data-export-to-splunk)
 
-A basic deployment mode for the WEM agent is introduced to provide basic agent functions, such as system optimization and logon duration analysis without the need to connect to the infrastructure service. This feature now provides a lightweight method to deploy WEM. You can use this deployment method for utilizing WEM basic functionalities easily. The WEM health check tool runs checks for these types of agents providing the ability to reconfigure the agent as an on-premises or service agent. You can now start the health check tool on an agent in basic deployment mode to run checks. You can also switch the agent type to on-premises or the service agent by providing necessary information about the infrastructure service or cloud connectors.
+Previously, you were restricted only to Grafana when exporting agent reports to third-party platforms. With this feature, you can now export the data to Splunk as well.
 
-### [Enhanced automatic backup limit for configuration sets](https://docs.citrix.com/en-us/workspace-environment-management/current-release/manage/configuration-sets#manage-automatic-backup)
+### [Integration of the WEM Health Check tool into the WEM Tool Hub](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#integration-of-the-wem-health-check-tool-into-the-wem-tool-hub)
 
-WEM provides automatic backup of configuration sets. The automatic backup limit is now enhanced to support storage of up to 25 backup files for each configuration set before overwriting the oldest existing file. This enhancement reduces the operation effort, especially for large and complex environments
+The WEM Health Check tool is now integrated and listed within the WEM Tool Hub Home page for ease of access and use. This tool runs checks on the WEM agent or infrastructure server and identifies potential issues with your WEM deployment.
 
-### [Customizing the Start menu layout for Windows 11](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#customizing-the-start-menu-layout-for-windows-11)
+### [Support data export to third-party platforms for flexible management](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#support-data-export-to-third-party-platforms-for-flexible-management)
 
-To support user level assignments, you can now apply the WEM action **JSON files** for the Windows 11 Start menu configuration. Using the new tool **Start Menu Configurator for Windows 11** in the WEM Tool Hub, you can now select applications that you prefer to add to the **Pinned** section of the **Start menu** and arrange the layout as needed. After customizing the layout, copy the configuration data and paste the data in the web console, when you add a new JSON object in the **JSON Files** page.
+Previously, you were restricted to exporting reports solely to cloud storage or local machines, hindering your ability to effectively analyze and monitor task outcomes.
 
-Minimum agent version required: `2403.1.0.1`
+With this feature, you can now configure and export report data to third-party platforms such as Grafana. This enhancement helps to seamlessly integrate and utilize external analytics tools for comprehensive performance monitoring and analysis, whether automatically scheduled or manually initiated.
 
-### [Profile Migration Tool in the WEM Tool Hub](https://docs.citrix.com/en-us/workspace-environment-management/current-release/reference/wem-tool-hub#profile-migration-tool)
+### [Profile Migration Tool in the WEM Tool Hub](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#profile-migration-tool-in-the-wem-tool-hub)
 
 With the new Profile Migration Tool, you can now migrate different types of profiles to the Citrix container-based profile solution. This feature simplifies the profile migration process, ensuring a smooth transition and minimal disruption to user workflows. The following types of profiles are supported:
 
@@ -53,19 +53,117 @@ With the new Profile Migration Tool, you can now migrate different types of prof
 -  Citrix file-based solution
 -  Local profile
 
-### [User Store Creation Tool](https://docs.citrix.com/en-us/workspace-environment-management/current-release/reference/wem-tool-hub#user-store-creation-tool)
+### [Support for testing the app access control rules](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#support-for-testing-the-app-access-control-rules)
+
+You can now validate app access control rules on the local machine before deploying in the testing or production environment.
+
+### [Add new built-in scripted tasks to reduce operation efforts](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#add-new-built-in-scripted-tasks-to-reduce-operation-efforts)
+
+Added more valuable built-in script tasks that help admins use built-in scripted tasks directly and reduce operation efforts. This feature resolves unregistered VDA issues and sets CDF trace configurations
+
+### [Configuring registry and GPO settings with a new registry value type](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#configuring-registry-and-gpo-settings-with-a-new-registry-value-type)
+
+-  *REG_NONE* registry value type is introduced for more customized configurations by providing a way to specify settings or parameters that do not fit into other predefined data categories, such as, strings, integers, or binary data. You can use this flexibility to handle unique or specialized configurations.
+-  *REG_NONE* registry value type supports the following functions:
+
+    -  In creating/updating registry entry action
+    -  In creating/updating registry entry-based GPO action
+    -  When importing a registry entry-based GPO
+    -  On the agent side
+    -  For legacy console
+    -  For backup and restore from the web console and the legacy console
+
+### [View a GPO](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#view-a-gpo)
+
+You can now view the **WEM Group Policy** settings. GPO summaries in read-only mode without editing the GPO. This implementation eliminates the risk of misconfiguration while reviewing the existing settings.
+
+### [Selective WEM reset feature](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#selective-wem-reset-feature)
+
+WEM is enhanced to selectively reset WEM actions tracking cache. When you enable Allow Users to reset Cached Actions, the Reset Cached Actions is turned on. On clicking it, a new wizard gets displayed and then you can choose the cached actions that need a reset. This enhancement enables you to reset the process history for JSON files or the user group policy objects. After the reset, the actions get processed during the subsequent user logons.
+
+### [Group policy migration to WEM](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#group-policy-migration-to-wem)
+
+You can now use the Group policy migration to migrate Group policy preferences that cause slow sign-ons into WEM actions to improve your sign-on experience. In the WEM Tool Hub, you can begin the migration workflow either within a logon duration report, while viewing GPO processing times, or from the Group Policy Migration Tool. This tool allows you to scan for currently applied GPOs. You can select from the listed items supported for migration. Selected items are exported as a ZIP file to the local machine, which is later imported as WEM actions. This feature is enhanced to guide you through the process of creating an assignment group with the exported settings, and also assign the group to the respective user.
+
+### [Introducing new insights to monitor and diagnose logon duration](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#introducing-new-insights-to-monitor-and-diagnose-logon-duration)
+
+This enhancement introduces profile container and GPP processing insights to monitor and diagnose logon duration. This feature enables you to identify the possible issues, which may cause slow logon and to also provide recommendations to resolve issues.
+
+### [Privilege elevation](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#privilege-elevation)
+
+This enhancement enables you to configure privilege elevation rules and assign them to users using the web console. You can now use the existing File Info Viewer in WEM Tool Hub to get the file information needed for rule configuration, such as, path, publisher, and hash values.
+
+### [Application security rules for WEM web console](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#application-security-rules-for-wem-web-console)
+
+This feature allows you to create and configure different types of application security rules and assign them to users in the web console. This feature uses the same workflow that is used for action assignments. You can now import rules configured with AppLocker to manage them in WEM. You can also use the WEM Tool Hub to retrieve information needed for rule configuration, such as path, publisher, and hash values
+
+### [Group managed service account support for API service impersonation](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#group-managed-service-account-support-for-api-service-impersonation)
+
+You can now use a Group Managed Service Account (gMSA) for API service impersonation, where you can either use a domain account or a gMSA to improve security. This feature now lets you use an updated UI of the WEM web console configuration tool, where you can select and configure the gMSA to the WEM API service.
+
+### [Configure multiple SPNs in a single forest for various WEM deployments](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#configure-multiple-spns-in-a-single-forest-for-various-wem-deployments)
+
+Previously, you could create only one service principal name (SPN) for separate domains that reside in the same forest. With this feature, you can now configure multiple SPNs in a single forest for various WEM deployments across different domains.
+
+### [Rule Generator updated with expanded app access control features](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#rule-generator-updated-with-expanded-app-access-control-features)
+
+The Rule Generator for App Access Control tool now supports the expanded features of the App access control policy. With this tool, you can now create redirection rules and configure exclusions for rule assignments.
+
+### [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/2411/whats-new.html#profile-management)
+
+Workspace Environment Management now supports all supported versions of Profile Management through 2411. The following features are now available in the web console.
+
+-  **App access control policy expanded**. With the policy, you can now use rules to implement machine-level redirections for files, folders, and registry keys and values. In addition, You can now exclude specific users, machines, and processes from rule enforcement for more precise control. The feature is available under each configuration set in **Profiles > Profile Management Settings > App access control**.
+-  Folder redirection policy enhanced with more options.
+    -  New options for redirection rule configuration:
+        -  **Redirect to the local user profile**. Lets you redirect a folder to the local user profile.
+        -  **Move contents to new location**. Lets you decide whether to move contents from the previous folder to the new one when setting or modifying redirection target folders.
+    -  New option for more secured access control:
+        -  **Grant access to specific users and groups**. Lets you grant specific users or groups Read & Execute permissions on the redirection target folders. The feature is available under each configuration set in **Profiles > Profile Management Settings > Folder redirection**.
+-  **Enable UWP app load acceleration**. Lets you accelerate the loading of UWP apps and improve their consistency in non-persistent environments. By default, Windows stores UWP App registration data locally, which can be lost upon restart in non-persistent environments. With this policy enabled, Profile Management creates a VHDX container for each machine to store that data, improving user logon and preventing data loss on restarts. The feature is available under each configuration set in **Profiles > Profile Management Settings > Advanced settings**.
+-  **Alert user when profile size exceeds quota**. Lets you notify users when their profile size exceeds a set quota. You can customize the quota value and the notification message based on the default settings. The feature is available under each configuration set in **Profiles > Profile Management Settings > Advanced settings**. 
+
+## Version 2407
+
+### [Support for Windows Server 2025](https://docs.citrix.com/en-us/workspace-environment-management/2407/whats-new.html#support-for-windows-server-2025)
+
+WEM now supports Windows Server 2025
+
+### [WEM agent basic deployment mode](https://docs.citrix.com/en-us/workspace-environment-management/2407/whats-new.html#wem-agent-basic-deployment-mode)
+
+A basic deployment mode for the WEM agent is introduced to provide basic agent functions, such as system optimization and logon duration analysis without the need to connect to the infrastructure service. This feature now provides a lightweight method to deploy WEM. You can use this deployment method for utilizing WEM basic functionalities easily. The WEM health check tool runs checks for these types of agents providing the ability to reconfigure the agent as an on-premises or service agent. You can now start the health check tool on an agent in basic deployment mode to run checks. You can also switch the agent type to on-premises or the service agent by providing necessary information about the infrastructure service or cloud connectors.
+
+### [Enhanced automatic backup limit for configuration sets](https://docs.citrix.com/en-us/workspace-environment-management/2407/whats-new.html#enhanced-automatic-backup-limit-for-configuration-sets)
+
+WEM provides automatic backup of configuration sets. The automatic backup limit is now enhanced to support storage of up to 25 backup files for each configuration set before overwriting the oldest existing file. This enhancement reduces the operation effort, especially for large and complex environments
+
+### [Customizing the Start menu layout for Windows 11](https://docs.citrix.com/en-us/workspace-environment-management/2407/whats-new.html#customizing-the-start-menu-layout-for-windows-11)
+
+To support user level assignments, you can now apply the WEM action **JSON files** for the Windows 11 Start menu configuration. Using the new tool **Start Menu Configurator for Windows 11** in the WEM Tool Hub, you can now select applications that you prefer to add to the **Pinned** section of the **Start menu** and arrange the layout as needed. After customizing the layout, copy the configuration data and paste the data in the web console, when you add a new JSON object in the **JSON Files** page.
+
+Minimum agent version required: `2403.1.0.1`
+
+### [Profile Migration Tool in the WEM Tool Hub](https://docs.citrix.com/en-us/workspace-environment-management/2407/whats-new.html#profile-migration-tool-in-the-wem-tool-hub)
+
+With the new Profile Migration Tool, you can now migrate different types of profiles to the Citrix container-based profile solution. This feature simplifies the profile migration process, ensuring a smooth transition and minimal disruption to user workflows. The following types of profiles are supported:
+
+-  FSLogix profile container
+-  Citrix file-based solution
+-  Local profile
+
+### [User Store Creation Tool](https://docs.citrix.com/en-us/workspace-environment-management/2407/whats-new.html#user-store-creation-tool)
 
 This tool is introduced in the WEM Tool Hub to help you create user stores. The user store is the central network location for storing Citrix user profiles. This tool helps you to set up user stores by creating file shares and setting appropriate permissions to them according to your specifications. This tool simplifies the configuration process and reduces errors. You can choose to create the user store on the current machine (running the tool) or on a different machine.
 
-### [Windows event-based triggers for external tasks](https://docs.citrix.com/en-us/workspace-environment-management/current-release/manage/configuration-sets/actions#considerations)
+### [Windows event-based triggers for external tasks](https://docs.citrix.com/en-us/workspace-environment-management/2407/whats-new.html#windows-event-based-triggers-for-external-tasks)
 
 Windows event-based triggers for external tasks now allow you to associate external tasks (session-level tasks) with them. When the Windows events meet the defined criteria, the trigger is activated. This trigger begins to perform the associated external tasks that help in automatically managing the session-level tasks, based on Windows events.
 
-### [VHD disk compaction report](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#vhd-disk-compaction-report)
+### [VHD disk compaction report](https://docs.citrix.com/en-us/workspace-environment-management/2407/whats-new.html#vhd-disk-compaction-report)
 
-Administrators can now view the VHD disk compaction reports in the web console by enabling VHD disk compaction report collection. 
+Administrators can now view the VHD disk compaction reports in the web console by enabling VHD disk compaction report collection.
 
-### [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#profile-management)
+### [Profile Management](https://docs.citrix.com/en-us/workspace-environment-management/2407/whats-new.html#profile-management)
 
 Workspace Environment Management now supports all supported versions of Profile Management through 2407. The following features are now available in the web console.
 
@@ -118,7 +216,7 @@ You can now launch the WEM standalone tool to check the status of the WEM compon
 
 ## Version 2311
 
-### [Automatic agent upgrade (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/app-package-delivery)
+### [Automatic agent upgrade (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/2311/whats-new.html#automatic-agent-upgrade-preview)
 
 -  You can select the desired agent package from the centralized SMB share package storage location, and schedule automatic upgrades for all agent machines in a configuration set
 -  You can now specify the time and schedule the day(s) of the week on which you want WEM to automatically roll out the upgrade to all agent machines in a configuration set
@@ -126,7 +224,7 @@ You can now launch the WEM standalone tool to check the status of the WEM compon
 
 Minimum agent version required: `2311.1.0.1`
 
-### [Support for the Windows 11 and Windows Server 2022 in Citrix Optimizer](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/system-optimization/citrix-optimizer)
+### [Support for the Windows 11 and Windows Server 2022 in Citrix Optimizer](https://docs.citrix.com/en-us/workspace-environment-management/2311/whats-new.html#support-for-the-windows-11-and-windows-server-2022-in-citrix-optimizer)
 
 Citrix added support for the Windows 11 version 21H2 (build 2009) and Windows Server 2022 21H2 (build 2009) in Citrix Optimizer. You can now use the WEM service to perform template-based system optimizations for Windows 11 2009 and Windows Server 2022 2009 machines. In addition, we have updated all existing templates to reflect changes introduced in the latest standalone Citrix optimizer
 
@@ -186,7 +284,7 @@ Administrators can now review the privilege elevation logs in the web console by
 
 Minimum agent version required: `2311.1.0.1`
 
-### [Profile Management in web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#profile-management-in-web-console-preview)
+### [Profile Management in web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/2311/whats-new.html#profile-management-in-web-console-preview)
 
 Workspace Environment Management now supports all supported versions of Profile Management through 2311. The following features are now available in the web console.
 
@@ -212,7 +310,7 @@ Minimum agent version required: `2311.1.0.1`
 
 ## Version 2308
 
-### [Web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/current-release/install-and-configure/web-console)
+### [Web console (Preview)](https://docs.citrix.com/en-us/workspace-environment-management/2308/whats-new.html#web-console-preview)
 
 A new web-based Workspace Environment Management (WEM) console is now available. Citrix have completed the process of migrating the critical features from the legacy console to the web console. The web console generally responds faster than the legacy console. The following features are available only in the web console.
 
@@ -222,18 +320,18 @@ A new web-based Workspace Environment Management (WEM) console is now available.
 -  Insights
 -  Save a backup of a configuration set automatically and more.
 
-### [Enhanced WEM agent event logging](https://docs.citrix.com/en-us/workspace-environment-management/current-release/reference/agent-event-logs)
+### [Enhanced WEM agent event logging](https://docs.citrix.com/en-us/workspace-environment-management/2308/whats-new.html#enhanced-wem-agent-event-logging)
 
 Citrix have made enhancements to WEM agent event logging, aiming at improving troubleshooting capabilities. The enhancements include:
 
 -  Comprehensive event logs: We have provided comprehensive event logs, giving you a complete picture of agent activities.
 -  Unique event IDs: Each event log now has a distinct ID, making it easier for you to filter and identify specific events.
 
-### [Microsoft Edge browser support for WEM Transformer](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#microsoft-edge-browser-support-for-wem-transformer)
+### [Microsoft Edge browser support for WEM Transformer](https://docs.citrix.com/en-us/workspace-environment-management/2308/whats-new.html#microsoft-edge-browser-support-for-wem-transformer)
 
 The WEM Transformer now supports the latest version of the Microsoft Edge browser.
 
-### [Enhancements to CPU spike protection](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/system-optimization/cpu-management#cpu-spike-protection-option)
+### [Enhancements to CPU spike protection](https://docs.citrix.com/en-us/workspace-environment-management/2308/whats-new.html#enhancements-to-cpu-spike-protection)
 
 This release introduces enhancements to the CPU spike protection feature, giving you more granular control. The enhancements include the following changes:
 
@@ -241,14 +339,14 @@ This release introduces enhancements to the CPU spike protection feature, giving
 -  When customizing CPU spike protection, you can now configure the CPU usage limit using non-integer values. This configuration applies to both legacy and the web console.
 -  A new option, **Set limit relative to single CPU core**, is now available and applicable to the web console, letting you set a limit on CPU usage based on a single CPU core as a reference.
 
-### [WiX support for WEM AdminConsole and Infrastructure installers](https://docs.citrix.com/en-us/workspace-environment-management/current-release/whats-new.html#wix-support-for-wem-adminconsole-and-infrastructure-installers)
+### [WiX support for WEM AdminConsole and Infrastructure installers](https://docs.citrix.com/en-us/workspace-environment-management/2308/whats-new.html#wix-support-for-wem-adminconsole-and-infrastructure-installers)
 
 Citrix is offering WiX-based installers for the infrastructure services and administration console. The new installers include changes to the .Net framework, installation path, service name, event log name, parameters, and more.
 
 Watch out. The install and service names have changed. This means any form of startup scripts for cache-management etc. will need to be updated
 {:.attention}
 
-### [Dynamic token support for Group Policy settings](https://docs.citrix.com/en-us/workspace-environment-management/current-release/reference/dynamic-tokens#dynamic-token-support-for-group-policy-settings)
+### [Dynamic token support for Group Policy settings](https://docs.citrix.com/en-us/workspace-environment-management/2308/whats-new.html#dynamic-token-support-for-group-policy-settings)
 
 You can now use dynamic tokens in **Group Policy** settings. This feature allows for more adaptable policy configuration in different environments, reduces manual configuration, and simplifies policy management.
 

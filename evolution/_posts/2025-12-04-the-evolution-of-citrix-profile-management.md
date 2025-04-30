@@ -10,10 +10,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-wem.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
-  - evolution/_posts/2024-11-11-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-machine-creation-services-with-microsoft-azure.md
+  - evolution/_posts/2025-12-04-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->
@@ -26,6 +26,46 @@ Citrix Profile Management is quietly kicking goals and developing quickly. This 
 This list will start at CVAD 1912 LTSR, anything prior to that, refer to the appropriate documentation
 
 I will do my best to maintain this list as and when features come out, as well as some commentary around their value where I can.
+
+## Version 2411
+
+### [Support for machine-level redirections](https://docs.citrix.com/en-us/profile-management/current-release/configure/rule-based-redirections)
+
+With the **App access control** policy, you can now implement machine-level redirections for files, folders, registry keys, and registry values using rules. The use cases for this feature include:
+
+-  Implement data roaming. Redirect non-user-profile data to a file share, ensuring users can access the same data regardless of which machines they sign into.
+-  Enhance data protection. Redirect critical data to alternative locations or values, protecting it from unauthorized access.
+-  Customize the user experience. Tailor app experience based on specific requirements.
+
+### [App access control policy enhanced with assignment exclusions](https://docs.citrix.com/en-us/profile-management/current-release/configure/app-access-control)
+
+You can now specify excluded users, machines, and processes when configuring rule assignments for the **App access control** policy. Previously, you could only assign rules to groups of users, machines, and processes. This enhancement lets you define exclusions within those groups, offering more precise control over rule enforcement.
+
+### [New policy for access control for redirected folders](https://docs.citrix.com/en-us/profile-management/current-release/configure/configure-folder-redirection#grant-users-access-to-redirected-folders)
+
+By default, when you enable folder redirection policies for a user, the redirection target folders are accessible only to the user and the SYSTEM user. Previously, to grant other users access, you had to enable the **Grant administrator permission** policy. This policy grants members in the Local Administrators group access to the redirection target folders.
+
+With a new policy, **Users and groups to access redirection target paths**, you can now grant specific domain users or groups **Read & Execute** permissions on the redirection target folders, eliminating the need to add them to the Local Administrators group. This policy enhances security by limiting permissions only to what is necessary.
+
+### [New policy for accelerating UWP app loading](https://docs.citrix.com/en-us/profile-management/current-release/configure/uwp-app-loading-accelerate)
+
+With a new policy, **Enable AppX package load acceleration**, you can now accelerate the loading of UWP apps and improve their consistency in non-persistent environments.
+By default, Windows stores UWP App registration information locally on each machine, which can be lost upon restart in non-persistent environments. With this policy enabled, Profile Management creates a VHDX container for each machine to store the UWP app registration data, speeding up user logon and preventing data loss on restarts. 
+
+### [New policies for notifying users when their profile size exceeds a quota](https://docs.citrix.com/en-us/profile-management/current-release/configure/alert-users-for-oversized-profile)
+
+Citrix Profile Management now introduces two new policies to monitor the user profile size and notify users when it exceeds a quota:
+
+-  **Notify user when profile size exceeds quota**: Lets you set a quota for the user profile and notify users when their profile size exceeds it.
+-  **Notification message when profile size exceeds quota**: Lets you set the notification message users receive.
+
+This feature helps prevent data loss by notifying users to manage their profile data before logging off. It applies only to the file-based profile solution.
+
+### [In-session failover support for profile streaming](https://docs.citrix.com/en-us/profile-management/current-release/whats-new.html#in-session-failover-support-for-profile-streaming)
+
+Profile streaming now includes improved failover capabilities. When the **Replicate user stores** policy is enabled, if the active user store becomes unavailable, Profile Management automatically switches to an available store for subsequent streaming requests. This enhancement lets files and folders be streamed continuously after the failover, minimizing data disruptions.
+
+This update applies to profile streaming for files, folders, and the pending area.
 
 ## Version 2407
 

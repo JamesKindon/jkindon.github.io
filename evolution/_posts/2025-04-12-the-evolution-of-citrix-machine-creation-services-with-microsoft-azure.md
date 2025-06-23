@@ -15,10 +15,10 @@ sitemap: true
 hide_last_modified: false
 comments: true
 related_posts:
-  - evolution/_posts/2025-12-04-the-evolution-of-citrix-profile-management.md
-  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem-service.md
-  - evolution/_posts/2025-12-04-the-evolution-of-citrix-wem.md
-  - evolution/_posts/2025-12-04-the-evolution-of-citrix-workspace.md
+  - evolution/_posts/2025-04-12-the-evolution-of-citrix-profile-management.md
+  - evolution/_posts/2025-04-12-the-evolution-of-citrix-wem-service.md
+  - evolution/_posts/2025-04-12-the-evolution-of-citrix-wem.md
+  - evolution/_posts/2025-04-12-the-evolution-of-citrix-workspace.md
 ---
 
 <!--excerpt-->

@@ -59,7 +59,7 @@ Must have tools in your EUC kit bag (not paid by any of these tools FYI - just g
 | Remote Display Analyzer | [https://rdanalyzer.com/](https://rdanalyzer.com/) | Analyze and change display protocol settings on the fly |
 | AppVentix | [https://appventix.com/](https://appventix.com/) | Powerful Deployment & Application Lifecycle Management for App-V and MSIX |
 | BVCKUP2 | [https://bvckup2.com/](https://bvckup2.com/) | Light, versatile and very capable software for professional data replication |
-| DeviceTrust | [https://devicetrust.com/](https://devicetrust.com/) | A ridiculously awesome contextually focused security tool for Virtual Desktop environments |
+| deviceTrust | [https://devicetrust.com/](https://devicetrust.com/) | A ridiculously awesome contextually focused security tool for Virtual Desktop environments |
 {:.smaller}
 
 ## Feature Feed Sites

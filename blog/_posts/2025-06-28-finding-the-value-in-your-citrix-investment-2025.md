@@ -108,11 +108,13 @@ Citrix supports Windows Client, Windows 10/11 Client Multi-Session, and Windows 
 
 Customers often invest heavily in extremely powerful desktop workstations to address developer or designer workload demands. These can present a challenge when a user removes themselves from the physical location hosting the desktop.
 
+As of CVAD 2503, Citrix provide the [Citrix VDA for MacOS](https://docs.citrix.com/en-us/mac-vda), enabling customers to bring MacOS based devices into the fold. A concept that would have blown our minds 10 years ago.
+
 With **Citrix Remote PC Access** for [DaaS](https://docs.citrix.com/en-us/citrix-daas/install-configure/remote-pc-access.html) or [CVAD](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/remote-pc-access.html), customers can deploy the Citrix Virtual Delivery Agent onto these endpoints and have them report to their existing delivery solution. Consumers can then access those workloads over the HDX protocol, with all the security and management features expected for virtual workloads.
 
 This is often missed in customer deployments but is technology available out of the box. It is one of the most under-utilized components of a Citrix solution.
 
-Citrix supports **Windows and Linux** workloads. Citrix **Remote PC Access** provides **secure connectivity to physical endpoints** integrated with the full management stack of Citrix.
+Citrix supports **Windows, MacOS and Linux** workloads. Citrix **Remote PC Access** provides **secure connectivity to physical endpoints** integrated with the full management stack of Citrix, inclusive of MacOS.
 {:.tldr}
 
 ## Citrix Provisioning and Lifecycle Management
@@ -396,7 +398,7 @@ Based on what we have discussed above, let's summarize in a table. Instead of do
 | **Authentication** | Any IDP supporting SAML. Citrix FAS for SSO |❓|
 | **Access** | Citrix Gateway Service (DaaS) NetScaler Gateway (DaaS and CVAD) Direct Workload Connection (DaaS) Rendezvous (DaaS) |❓|
 | **Provisioning** | Machine Creation Services & Provisioning Services |❓|
-| **Remote PC** | Remote PC Access |❓|
+| **Remote PC** | Remote PC Access including MacOS |❓|
 | **User Environment Management** | Citrix Workspace Environment Management & GPO |❓|
 | **Profile Management** | Citrix Profile Management (Containers and File based) on any SMB solution |❓|
 | **Application Delivery** | Citrix App Layering, MSIX Delivery including App-Attach integration & App-V Delivery |❓|
@@ -406,7 +408,7 @@ Based on what we have discussed above, let's summarize in a table. Instead of do
 | **Proactive Session Testing** | Citrix App and Desktop probing |❓|
 | **Protocol** | ICA/HDX |❓|
 | **Policy Control for protocol and session handling** | Citrix Policy to control the connection. Security, Network, Client, offload capability etc |❓|
-| **OS Support** | Windows Server, Windows Client, Windows Client Multi-Session, Linux |❓|
+| **OS Support** | Windows Server, Windows Client, Windows Client Multi-Session, Linux, MacOS |❓|
 | **User Resource Access** | Citrix Workspace or Citrix StoreFront, HTML 5 or Client based, highly customisable with inbuilt continuity |❓|
 | **Printing** | Citrix Universal Print Server |❓|
 | **Images** | Image Portability Service |❓|

@@ -54,7 +54,6 @@ uberAgent would be a technology familiar to most in the EUC space, the acquisiti
 Citrix Director primarily focuses on servers and clients within a Citrix deployment, whereas uberAgent encompasses all aspects of the user experience across various platforms which Citrix engineers and architects require to effectively investigate bottlenecks and application performance issues.
 
 uberAgent is already being integrated into the Citrix solution stack as part of the VDA installer and is being used to provide enhanced metrics to the current Director/Monitor implementation.
-The full solution became an entitlement of the Citrix Platform offering.
 
 ### deviceTRUST
 
@@ -402,7 +401,7 @@ Based on what we have discussed above, let's summarize in a table. Instead of do
 | **Profile Management** | Citrix Profile Management (Containers and File based) on any SMB solution |❓|
 | **Application Delivery** | Citrix App Layering, MSIX Delivery including App-Attach integration & App-V Delivery |❓|
 | **Session Recording** | Citrix Session Recording |❓|
-| **Monitoring, Helpdesk and Analytics** | uberAgent! Citrix Monitor (DaaS), Citrix Director (CVAD), Citrix Analytics is additional 💰 |❓|
+| **Monitoring, Helpdesk and Analytics** | uberAgent, Citrix Monitor (DaaS), Citrix Director (CVAD), Citrix Analytics |❓|
 | **Autoscale** | Full-fledged solution within CVAD and DaaS inclduing predictive analysis |❓|
 | **Proactive Session Testing** | Citrix App and Desktop probing |❓|
 | **Protocol** | ICA/HDX |❓|

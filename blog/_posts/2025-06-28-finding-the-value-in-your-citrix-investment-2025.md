@@ -165,6 +165,8 @@ Citrix DaaS Device Posture Service
 
 **2025 Update:** If you want to get really down and dirty with contextual security and access across both Citrix and other technologies, then [deviceTRUST](https://devicetrust.com/) is out-of-control awesome in this space, allowing far more flexibility than any provider has natively. This is pure gold in a security-conscious deployment. How good that I get to update this post to reflect that any Citrix customer can now enjoy the benefits of deviceTrust given it's now [owned by Citrix](https://jkindon.com/citrix-and-device-trust/).
 
+As of Workspace App 2503.2, deviceTRUST is [already bundled as part of the installer](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/whats-new#seamless-integration-of-devicetrust-with-citrix-workspace-app).
+
 Citrix solutions offer many [different authentication capabilities](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) and approaches. From standard everyday SAML integration with the likes of Okta, Azure Active Directory, Google, etc., out to [Adaptive Authentication](https://www.citrix.com/solutions/secure-access/what-is-adaptive-authentication.html) for selective authentication requirements with DaaS. Choose your identity model and requirement, and there is a good chance Citrix supports it. [Federated Authentication Service (FAS)](https://docs.citrix.com/en-us/federated-authentication-service/current-release) is used to issue certificates based on SAML requests. This allows for SSO to resources.
 
 [![identity]({{site.baseurl}}/assets/img/finding-the-value-in-your-citrix-investment/identity.jpg)]({{site.baseurl}}/assets/img/finding-the-value-in-your-citrix-investment/identity.jpg)

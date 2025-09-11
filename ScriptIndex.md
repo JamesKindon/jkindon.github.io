@@ -18,6 +18,7 @@ Here is a script index. Hopefully, these are of use to some folks. They have bee
 -  **[UpdateCVADHostedMachineId.ps1](https://github.com/nutanixdev/euc-samples/tree/main/citrix/multi_cluster_migration/citrix_cvad_reset_hostedmachineid)**. Migrate Citrix workloads across Nutanix Clusters and update hosting details for CVAD.
 -  **[UpdateDaaSHostedMachineId.ps1](https://github.com/nutanixdev/euc-samples/tree/main/citrix/multi_cluster_migration/citrix_daas_reset_hostedmachineid)**. Migrate Citrix workloads across Nutanix Clusters and update hosting details for DaaS.
 -  **[ResizeVMDiskAPI.ps1](https://github.com/JamesKindon/Nutanix/blob/main/ResizeVMDiskAPI.ps1)**. Programmatically expand the size of a VM(s) disk via the Nutanix Prism Element v2 API and Microsoft PowerShell.
+-  **[DistributePCRecoveryPoints.ps1](https://github.com/nutanixdev/euc-samples/tree/main/DistributePCRecoveryPoints)**. Automate the distribution of a Prism Central Recovery Point across one or many clusters, under one of many Prism Centrals, leaving either a Prism Central Template or a Prism Element based Snapshot to be used for EUC solution provisioning.
 
 ## Azure Scripts
 

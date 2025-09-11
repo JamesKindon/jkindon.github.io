@@ -10,7 +10,7 @@ redirect_from:
 
 <!--author-->
 
-I am an IT enthusiast and am lucky enough to have worked on many projects both local (Australia) and internationally. My focus and passion is on end-user computing technologies. 
+I am an IT enthusiast and am lucky enough to have worked on many projects both local (Australia) and internationally. My focus and passion is on end-user computing technologies.
 
 This site is a place for me to be able to share some of my learnings, in the hopes that it assists others in their travels
 

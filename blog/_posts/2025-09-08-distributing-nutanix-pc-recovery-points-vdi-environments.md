@@ -3,7 +3,7 @@ layout: post
 title: Distributing Prism Central Recovery Points for VDI Environments
 permalink: "/distributing-nutanix-pc-recovery-points-vdi-environments/"
 categories: [Citrix, MCS, Omnissa, Horizon, PowerShell, Nutanix, HCI, Prism]
-description: Automating The Replication of Citrix MCS Images on Nutanix
+description: Automating The Replication of EUC Images on Nutanix
 image:
   path: /assets/img/distributing-nutanix-pc-recovery-points-vdi-environments/post_default_image.jpg
 sitemap: true

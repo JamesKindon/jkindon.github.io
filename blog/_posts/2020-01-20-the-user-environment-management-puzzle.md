@@ -175,7 +175,7 @@ WEM can do much of what Group Policy Preferences can do in the user context, and
 If I see a logon script, it moves to WEM, if I see something show up in Sysinternals autoruns that looks ugly, I will validate the requirement and then move it to WEM to action instead. In fact, anything user-focused that impacts the logon times will typically move to WEM. [I've blogged enough over the years about WEM](https://jkindon.com/?s=wem), so will leave it there for now.
 
 If there is an entitlement for WEM, it should be there for system optimization. How much moves into WEM is a per customer conversation, typically anything GPP based in the user context is an ideal candidate for a move
-{:.decision}'
+{:.decision}
 
 ### Profile Management
 

@@ -32,7 +32,7 @@ First of all, here is the simplicity of their [product licencing](https://www.pa
 -  One size fits all - you get everything - no tiering, no hidden anything. All yours.
 -  A minimum of 15 users buy-in (yep, 15 concurrent users).
 
-[![RAS Licencing]({{site.baseurl}}/assets/img/what-in-the-ras/Licencing.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/Licencing.png)
+[![RAS Licencing]({{site.baseurl}}/assets/img/what-in-the-ras/Licencing.png)]({{site.baseurl}}/assets/img/what-in-the-ras/Licencing.png)
 
 Complex? Didn't think so. Get your licence, stick it in the RAS console and off you go. I feel like I need to write more, but that's about all there is. Now onto the nerd stuff.
 
@@ -58,33 +58,33 @@ There is as much complexity as you want or as much simplicity. For small shops, 
 -  Remote PC capability - similar to that of Citrix Remote PC. They even have simple onboarding for users and a level of device management for endpoints.
 -  RAS has its own equivalent of Machine Creation Services. It offers an automated approach with full sysprep, or it has its own funky RASPrep which achieves the same thing in way less time. When a machine is cloned, it is prepared and added to a pool of resources for sessions to launch from. Simples. AutoScale steps in and dynamically provisions and de-provisions workloads based on your defined thresholds.
 
-[![RAS Prep]({{site.baseurl}}/assets/img/what-in-the-ras/ras_prep.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_prep.png)
+[![RAS Prep]({{site.baseurl}}/assets/img/what-in-the-ras/ras_prep.png)]({{site.baseurl}}/assets/img/what-in-the-ras/ras_prep.png)
 
 Sticking with the provisioning side of things, RAS supports both MAK and KMS activation of hosts.
 
-[![RAS KMS]({{site.baseurl}}/assets/img/what-in-the-ras/ras_kmsmak.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_kmsmak.png)
+[![RAS KMS]({{site.baseurl}}/assets/img/what-in-the-ras/ras_kmsmak.png)]({{site.baseurl}}/assets/img/what-in-the-ras/ras_kmsmak.png)
 
 They also have on-provision optimization (the usual optimizer suspects at play here - remove the crud from the images), and they also have the ability to both deploy and configure FSLogix Profiles within the console.
 
-[![RAS Opt]({{site.baseurl}}/assets/img/what-in-the-ras/ras_opt.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_opt.png)
+[![RAS Opt]({{site.baseurl}}/assets/img/what-in-the-ras/ras_opt.png)]({{site.baseurl}}/assets/img/what-in-the-ras/ras_opt.png)
 
 ## Authentication and Identity
 
 Things start to get really funky here. RAS and Identity is pretty impressive. Usual Active Directory low-hanging fruit, but also native MFA integration with a long list of providers. To top it off, they of course have modern SAML authentication, and they even have their own Federated Authentication Services (FAS) equivalent. All onboard. Same console, ready to go.
 
-[![RAS auth]({{site.baseurl}}/assets/img/what-in-the-ras/ras_auth.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_auth.png)
+[![RAS auth]({{site.baseurl}}/assets/img/what-in-the-ras/ras_auth.png)]({{site.baseurl}}/assets/img/what-in-the-ras/ras_auth.png)
 
 RAS and auth is crazy flexible, you can write all sorts of different rules, route users to different providers and block/allow based on endpoint posture. Again, all onboard, all ready to go.
 
 The last part of this little "holy crap" moment is the native integration with Let's Encrypt. RAS lets you, from the same console as everything else (you get the theme here right…) integrate, automate and leverage lets encrypt SSL certificates including auto-renewal. Yep.
 
-[![RAS lets Encrypt]({{site.baseurl}}/assets/img/what-in-the-ras/ras_letsencrypt.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_letsencrypt.png)
+[![RAS lets Encrypt]({{site.baseurl}}/assets/img/what-in-the-ras/ras_letsencrypt.png)]({{site.baseurl}}/assets/img/what-in-the-ras/ras_letsencrypt.png)
 
 ## Policy Control and Customisation
 
 As you can probably guess at this point, the gifts keep coming. The policy control here is extremely fine-grained with almost every aspect of the environment tuneable and configurable. Policies can be fine-grained and applied based on users, groups, computers, gateways, client-based operating systems, IP addresses etc.
 
-[![RAS Policy]({{site.baseurl}}/assets/img/what-in-the-ras/ras_policy.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_policy.png)
+[![RAS Policy]({{site.baseurl}}/assets/img/what-in-the-ras/ras_policy.png)]({{site.baseurl}}/assets/img/what-in-the-ras/ras_policy.png)
 
 All the usual controls and more are there, I can't really find anything lacking and the list is long. Additionally, you can customise the client experience and provide different branding for different groups of users or customers.
 
@@ -102,7 +102,7 @@ Admins can converse with their users, they can boot them off, shadow and manage 
 
 RAS monitors itself. Yep. It gives you metrics into the basic performance of each component, and how things are playing. Everything is a click away and easy to find. It even draws a nice picture of itself to show you how the components fit together.
 
-[![RAS monitor]({{site.baseurl}}/assets/img/what-in-the-ras/ras_monitor.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_monitor.png)
+[![RAS monitor]({{site.baseurl}}/assets/img/what-in-the-ras/ras_monitor.png)]({{site.baseurl}}/assets/img/what-in-the-ras/ras_monitor.png)
 
 As mentioned previously, there are advanced session metrics that are captured and reported on using Influx DB, Telegraf and Grafana, and there is a separate installer to deploy and configure this. I am still classifying this as onboard given it auto-integrates with the RAS console - it's line ball, but it makes the cut on integration.
 
@@ -118,7 +118,7 @@ This one is big. Very big. RAS is flying under the radar here big time with what
 
 They automate the deployment of your AVD resources. They can help with initial image builds, Gold image management, application deployment, MSIX app attach, Autoscale, Short Path and cost savings with disk maintenance. And they do this under the same licencing structure we started with - it's just another feature in the bag.
 
-[![RAS AVD]({{site.baseurl}}/assets/img/what-in-the-ras/ras_avd.png)](https://github.com/JamesKindon/jkindon.github.io/blob/main{{site.baseurl}}/assets/img/what-in-the-ras/ras_avd.png)
+[![RAS AVD]({{site.baseurl}}/assets/img/what-in-the-ras/ras_avd.png)]({{site.baseurl}}/assets/img/what-in-the-ras/ras_avd.png)
 
 They are also incredibly clever with how they make all of this work. Long and short, connections to AVD via RAS still go via AVD control planes. It's either the native AVD client or a more advanced set of features layered on top (Uni Scanning and Printing etc). But the rest is AVD at the core, just made "*better*" by RAS. Well played, I have no biff here.
 
